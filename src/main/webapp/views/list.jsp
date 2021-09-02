@@ -8,7 +8,12 @@
 
 <body class="w3-light-grey">
 <div class="w3-container w3-blue-grey w3-opacity w3-right-align">
-    <h1>Super app!</h1>
+    <div>
+        <h3>Login App using HttpSession</h3>
+        <a href="login.html">Login</a>|
+        <a href="LogoutServlet">Logout</a>|
+        <a href="ProfileServlet">Profile</a>
+    </div>
 </div>
 
 <div class="w3-container w3-center w3-margin-bottom w3-padding">
@@ -20,7 +25,7 @@
             List<String> names = (List<String>) request.getAttribute("userNames");
 
             if (names != null && !names.isEmpty()) {
-                out.println("<ul class=w3-ul>");
+                out.println("<ul class=\"w3-ul\">");
                 for (String s : names) {
                     out.println("<li class=\"w3-hover-sand\">" + s + "</li>");
                 }
