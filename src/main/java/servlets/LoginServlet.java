@@ -54,7 +54,10 @@ public class LoginServlet  extends HttpServlet {
 
         if (Model.find_in_hashMap(name, password)){
 
-            resp.sendRedirect("index.html");
+            HttpSession httpSession = req.getSession();
+            httpSession.setAttribute("name",name);
+
+            resp.sendRedirect("index.jsp");
 
 
         }

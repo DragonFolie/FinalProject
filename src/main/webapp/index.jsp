@@ -9,10 +9,27 @@
 <body class="w3-light-grey">
 <div class="w3-container w3-blue-grey w3-opacity w3-right-align">
     <div>
-        <h3>Login App using HttpSession</h3>
-        <a href="login.html">Login</a>|
-        <a href="LogoutServlet">Logout</a>|
-        <a href="ProfileServlet">Profile</a>
+        <%
+
+            String name_user  = (String)session.getAttribute("name");
+
+            if(name_user != null ){
+
+
+
+                out.print("Hello, "+name_user+" Welcome to Profile");
+
+            }
+
+
+
+                out.print("Please login first");
+
+
+
+
+
+        %>
     </div>
 </div>
 

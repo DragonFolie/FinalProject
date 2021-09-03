@@ -25,8 +25,8 @@ public class AddServlet extends HttpServlet {
 
         Model model2 = new Model();
         model2.addValues(name,password);
-        System.out.println(password + " " + name );
-        System.out.println(model2.getHashMap());
+//        System.out.println(password + " " + name );
+//        System.out.println(model2.getHashMap());
 
         User user = new User(name, password);
         Model model = Model.getInstance();
