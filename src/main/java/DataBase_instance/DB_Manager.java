@@ -1,8 +1,10 @@
 package DataBase_instance;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.*;
 import java.util.Properties;
@@ -12,7 +14,7 @@ public class DB_Manager {
 
 
 
-    private static Connection connection;
+    private  Connection connection;
     private static DB_Manager instance;
     public static final String FILANAME = "app.properties";
     private static Logger logger =  Logger.getGlobal();
@@ -21,9 +23,12 @@ public class DB_Manager {
 
 
     public static void main(String[] args) throws SQLException, IOException, ClassNotFoundException {
-
+//
         DB_Manager dbManager = new DB_Manager();
         dbManager.testConnection();
+
+
+
 
     }
 
@@ -42,22 +47,41 @@ public class DB_Manager {
 
 
 
-    public static synchronized DB_Manager getInstance() {
-        if (instance == null) {
-            instance = new DB_Manager();
-        }
-        return instance;
-    }
 
     public static String getFILANAME() {
+        System.out.println("file "+ FILANAME);
         return FILANAME;
     }
+
+
+
+
+
+
+    public boolean userAdd(String name,String password,String birth,String gender){
+        UsersManager usersManager = new UsersManager();
+        System.out.println(" 2  " +name + " " + password+ " " + birth+ " " +gender );
+
+        try {
+            usersManager.userAdd(name,password, birth, gender);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+
+
+    }
+
+
+
+
 
     public void testConnection() throws SQLException, IOException, ClassNotFoundException {
 
         DB_Manager dbManager = new DB_Manager();
         Statement statement = null;
-        try (Connection conn = DB_Manager.getConnection(dbManager.getFILANAME())) {
+        try (Connection conn = dbManager.getConnection(dbManager.getFILANAME())) {
 
 
             statement = conn.createStatement();
@@ -78,6 +102,9 @@ public class DB_Manager {
         }
 
     }
+
+
+
 
 
 

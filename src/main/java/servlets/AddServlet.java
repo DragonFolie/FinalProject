@@ -2,6 +2,7 @@ package servlets;
 
 
 
+import DataBase_instance.DB_Manager;
 import entities.User;
 import model.Model;
 
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 public class AddServlet extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/add.jsp");
@@ -25,14 +27,15 @@ public class AddServlet extends HttpServlet {
 
         Model model2 = new Model();
         model2.addValues(name,password);
-//        System.out.println(password + " " + name );
-//        System.out.println(model2.getHashMap());
+        System.out.println(password + " " + name );
 
         User user = new User(name, password);
-        Model model = Model.getInstance();
-        model.add(user);
+        DB_Manager dbManager = new DB_Manager();
+
+        dbManager.userAdd(name,password,"20.20.20","man");
 
         req.setAttribute("userName", name);
         doGet(req, resp);
+
     }
 }
