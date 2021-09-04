@@ -44,5 +44,19 @@
     </servlet-mapping>
 
 
+    <!-- Admin servlet -->
+    <servlet>
+        <servlet-name>admin</servlet-name>
+        <servlet-class>servlets.AdminServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>admin</servlet-name>
+        <url-pattern>/admin</url-pattern>
+    </servlet-mapping>
+
+
+
+
 
 </web-app>

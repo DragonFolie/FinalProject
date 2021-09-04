@@ -39,6 +39,8 @@
         <button class="w3-btn w3-hover-light-blue w3-round-large" onclick="location.href='/add'">Register user</button>
         <button class="w3-btn w3-hover-light-blue w3-round-large" onclick="location.href='/login'">Login user</button>
 
+<%--        <% %>--%>
+        <button class="w3-btn w3-hover-light-blue w3-round-large" onclick="location.href='/admin'">Admin Page ( Only for admins )</button>
     </div>
 
 </div>

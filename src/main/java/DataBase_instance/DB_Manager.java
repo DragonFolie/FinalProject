@@ -1,12 +1,11 @@
 package DataBase_instance;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Properties;
 import java.util.logging.Logger;
 
@@ -47,6 +46,12 @@ public class DB_Manager {
 
 
 
+    public static synchronized DB_Manager getInstance() {
+        if (instance == null) {
+            instance = new DB_Manager();
+        }
+        return instance;
+    }
 
     public static String getFILANAME() {
         System.out.println("file "+ FILANAME);
@@ -60,7 +65,7 @@ public class DB_Manager {
 
     public boolean userAdd(String name,String password,String birth,String gender){
         UsersManager usersManager = new UsersManager();
-        System.out.println(" 2  " +name + " " + password+ " " + birth+ " " +gender );
+//        System.out.println(" 2  " +name + " " + password+ " " + birth+ " " +gender );
 
         try {
             usersManager.userAdd(name,password, birth, gender);
@@ -70,6 +75,14 @@ public class DB_Manager {
             return false;
         }
 
+    }
+
+    public ArrayList findAllUsers(){
+
+        UsersManager usersManager = new UsersManager();
+
+        return usersManager.findAllUsers();
+
 
     }
 
@@ -77,7 +90,7 @@ public class DB_Manager {
 
 
 
-    public void testConnection() throws SQLException, IOException, ClassNotFoundException {
+    public boolean testConnection() throws SQLException, IOException, ClassNotFoundException {
 
         DB_Manager dbManager = new DB_Manager();
         Statement statement = null;
@@ -99,7 +112,10 @@ public class DB_Manager {
         }catch (IOException | SQLException | ClassNotFoundException e) {
 //            logger.info("Exception here" + e);
             e.printStackTrace();
+            return false;
         }
+
+        return true;
 
     }
 

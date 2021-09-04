@@ -1,16 +1,14 @@
 package DataBase_instance;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.sql.*;
-import java.util.Properties;
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.logging.Logger;
 
 public class UsersManager  {
 
-    private static final String ADD_USER = "Select * From user ";
+    private static final String ADD_USER = "INSERT INTO user (NickName,Dateofbirth,Gender,Role,Password) values (?,?,?,?,?) ";
     private  Connection connection;
     private static UsersManager instance;
     public static final String FILANAME = "app.properties";
@@ -69,12 +67,6 @@ public class UsersManager  {
 
     public static Connection getConnection(String connectionUrl) throws SQLException, ClassNotFoundException, IOException {
 
-//        Properties props = new Properties();
-//        try(InputStream in = Files.newInputStream(Paths.get(connectionUrl))){
-//            props.load(in);
-//        }
-//        String url = props.getProperty("connection.url");
-//        return DriverManager.getConnection(url) ;
         Connection con = null;
         String url1 = "jdbc:mysql://localhost:3306/finaldb";
         String user = "root";
@@ -121,7 +113,7 @@ public class UsersManager  {
 
             System.out.println("conn + " +conn);
 
-            preparedStatement = conn.prepareStatement("INSERT INTO user (NickName,Dateofbirth,Gender,Role,Password) values (?,?,?,?,?) ");
+            preparedStatement = conn.prepareStatement(ADD_USER);
 
 
             preparedStatement.setString(1,name);
@@ -150,4 +142,67 @@ public class UsersManager  {
 
 
     }
+
+    public ArrayList findAllUsers(){
+
+
+        UsersManager usersManager = new UsersManager();
+        Statement statement = null;
+
+        ArrayList list = new ArrayList();
+
+        PreparedStatement preparedStatement = null;
+        try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
+
+            System.out.println("conn + " +conn);
+
+            preparedStatement = conn.prepareStatement("SELECT NickName, Dateofbirth, Gender, Password, Role, idUser FROM user");
+
+            preparedStatement.execute();
+
+
+
+            ResultSet resultSet = preparedStatement.executeQuery("SELECT NickName, Dateofbirth, Gender, Password, Role, idUser FROM user");
+
+            while (resultSet.next()){
+                StringBuilder sb = new StringBuilder();
+                sb.append(resultSet.getString(1));
+                sb.append(",");
+                sb.append(resultSet.getString(2));
+                sb.append(",");
+                sb.append(resultSet.getString(3));
+                sb.append(",");
+                sb.append(resultSet.getString(4));
+                sb.append(",");
+                sb.append(resultSet.getString(5));
+                sb.append(",");
+                sb.append(resultSet.getString(6));
+                list.add(sb);
+
+
+            }
+            return list;
+
+
+        }catch (IOException | SQLException | ClassNotFoundException e) {
+//            logger.info("Exception here" + e);
+            e.printStackTrace();
+            return null;
+        }
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 }
