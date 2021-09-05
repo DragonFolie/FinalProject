@@ -9,6 +9,8 @@ import java.util.logging.Logger;
 public class UsersManager  {
 
     private static final String ADD_USER = "INSERT INTO user (NickName,Dateofbirth,Gender,Role,Password) values (?,?,?,?,?) ";
+    private static final String FIND_ALL_USER = "SELECT NickName, Dateofbirth, Gender, Password, Role, idUser FROM user";
+    private static final String FIND_BY_ROLE = "SELECT  Role FROM user WHERE NickName = ?";
     private  Connection connection;
     private static UsersManager instance;
     public static final String FILANAME = "app.properties";
@@ -79,7 +81,7 @@ public class UsersManager  {
             con = DriverManager.getConnection(url1, user, password);
 
             Statement stmt = con.createStatement();
-            System.out.println("Created DB Connection....");
+//            System.out.println("Created DB Connection....");
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
@@ -91,7 +93,7 @@ public class UsersManager  {
 
 
     public static String getFILANAME() {
-        System.out.println("file "+ FILANAME);
+//        System.out.println("File with jconnector: "+ FILANAME);
         return FILANAME;
     }
 
@@ -111,7 +113,7 @@ public class UsersManager  {
         PreparedStatement preparedStatement = null;
         try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
 
-            System.out.println("conn + " +conn);
+//            System.out.println("conn + " +conn);
 
             preparedStatement = conn.prepareStatement(ADD_USER);
 
@@ -154,15 +156,15 @@ public class UsersManager  {
         PreparedStatement preparedStatement = null;
         try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
 
-            System.out.println("conn + " +conn);
+//            System.out.println("conn + " +conn);
 
-            preparedStatement = conn.prepareStatement("SELECT NickName, Dateofbirth, Gender, Password, Role, idUser FROM user");
+            preparedStatement = conn.prepareStatement(FIND_ALL_USER);
 
             preparedStatement.execute();
 
 
 
-            ResultSet resultSet = preparedStatement.executeQuery("SELECT NickName, Dateofbirth, Gender, Password, Role, idUser FROM user");
+            ResultSet resultSet = preparedStatement.executeQuery(FIND_ALL_USER);
 
             while (resultSet.next()){
                 StringBuilder sb = new StringBuilder();
@@ -196,9 +198,98 @@ public class UsersManager  {
 
 
 
+    public String getUserRole(String name){
+
+
+        UsersManager usersManager = new UsersManager();
+
+
+        PreparedStatement preparedStatement = null;
+        try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
+
+//            System.out.println("conn + " +conn);
+
+            preparedStatement = conn.prepareStatement(FIND_BY_ROLE);
+            preparedStatement.setString(1,name);
+
+            preparedStatement.execute();
+
+
+            String result = null;
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()){
+
+                result = resultSet.getString(1);
+            }
+
+
+            System.out.println("Result: " +result );
+            return   result;
 
 
 
+
+
+
+        }catch (IOException | SQLException | ClassNotFoundException e) {
+//            logger.info("Exception here" + e);
+            e.printStackTrace();
+            return null;
+        }
+
+
+
+    }
+
+
+    public boolean findUserInDb(String name,String password){
+        UsersManager usersManager = new UsersManager();
+
+
+        PreparedStatement preparedStatement = null;
+        try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
+
+            System.out.println("name and pass:" + name + "-" + password );
+
+            preparedStatement = conn.prepareStatement("SELECT  NickName, Password FROM user WHERE NickName = ? AND Password = ?");
+            preparedStatement.setString(1,name);
+            preparedStatement.setString(2,password);
+
+            preparedStatement.execute();
+
+
+            String result = null;
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()){
+
+                String s = resultSet.getString(1);
+
+                return s != null;
+
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+        }catch (IOException | SQLException | ClassNotFoundException e) {
+//            logger.info("Exception here" + e);
+            e.printStackTrace();
+            return false;
+        }
+
+        return false;
+
+    }
 
 
 

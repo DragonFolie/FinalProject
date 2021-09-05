@@ -5,6 +5,8 @@ import model.Model;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -25,46 +27,42 @@ public class LoginServlet  extends HttpServlet {
     }
 
 
+
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws  IOException {
 
         String name = req.getParameter("name_login");
         String password = req.getParameter("pass_login");
-//        HttpSession session = req.getSession();
-
-//        System.out.println(password +  " "+ name);
-        // get response writer
-        PrintWriter writer = resp.getWriter();
-
-
-//        // build HTML code
-//        String htmlRespone = "<html>";
-//        htmlRespone += "<h2>Your username is: " + name + "<br/>";
-//        htmlRespone += "Your password is: " + password + "</h2>";
-//        htmlRespone += "</html>";
-//
-//        // return response
-//        writer.println(htmlRespone);
 
 
 
-//        model.addValues(name,password);
+        System.out.println(name +" "+ password + " login user");
 
-        System.out.println((Model.getHashMap()).toString() + " hash");
-
-        if (Model.find_in_hashMap(name, password)){
+        if (Model.findInDb(name, password)){
 
             HttpSession httpSession = req.getSession();
             httpSession.setAttribute("name",name);
 
+
+            System.out.println("find user with:" + name + "-" + password);
             resp.sendRedirect("index.jsp");
 
 
+
         }
-        if (!Model.find_in_hashMap(name, password)){
+        if (!Model.findInDb(name, password)){
 
-            resp.sendRedirect("views/login.jsp");
 
+            PrintWriter out=resp.getWriter();
+            out.print("Dont find user");
+
+            try {
+                Thread.sleep(700);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            resp.setIntHeader("Refresh", 1);
 
         }
 

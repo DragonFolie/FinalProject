@@ -4,7 +4,6 @@ package servlets;
 
 import DataBase_instance.DB_Manager;
 import entities.User;
-import model.Model;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -25,8 +24,6 @@ public class AddServlet extends HttpServlet {
         String name = req.getParameter("name");
         String password = req.getParameter("pass");
 
-        Model model2 = new Model();
-        model2.addValues(name,password);
         System.out.println(password + " " + name );
 
         User user = new User(name, password);

@@ -1,3 +1,4 @@
+<%@ page import="DataBase_instance.UsersManager" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,10 +21,11 @@
                 out.print("Hello, "+name_user+" Welcome to Profile");
 
             }
-
-
+            if(name_user == null ) {
 
                 out.print("Please login first");
+
+            }
 
 
 
@@ -37,10 +39,41 @@
     <div class="w3-bar w3-padding-large w3-padding-24">
         <button class="w3-btn w3-hover-light-blue w3-round-large" onclick="location.href='/list'">List users</button>
         <button class="w3-btn w3-hover-light-blue w3-round-large" onclick="location.href='/add'">Register user</button>
-        <button class="w3-btn w3-hover-light-blue w3-round-large" onclick="location.href='/login'">Login user</button>
+        <button class="w3-btn w3-hover-light-blue w3-round-large" onclick="location.href='/login'">Login </button>
+        <button class="w3-btn w3-hover-light-blue w3-round-large" onclick="location.href='/logout'">Logout </button>
 
-<%--        <% %>--%>
-        <button class="w3-btn w3-hover-light-blue w3-round-large" onclick="location.href='/admin'">Admin Page ( Only for admins )</button>
+
+
+            <%
+
+                String name_user2  = (String)session.getAttribute("name");
+                UsersManager usersManager = new UsersManager();
+                if (name_user2 != null) {
+
+                    String resultOfRole = usersManager.getUserRole(name_user2);
+                    System.out.println(" + " + resultOfRole);
+
+                    if (resultOfRole.equals("2")){
+
+                        out.print("<button class=w3-btn w3-hover-light-blue w3-round-large onclick=location.href='/admin'>Admin Page</button>");
+
+                    }
+
+                }
+
+                if (name_user2 == null){
+
+                    out.print("Login or Register first");
+
+                }
+
+
+
+            %>
+
+
+
+
     </div>
 
 </div>

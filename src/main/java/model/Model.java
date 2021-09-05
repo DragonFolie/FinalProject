@@ -1,5 +1,6 @@
 package model;
 
+import DataBase_instance.UsersManager;
 import entities.User;
 
 import java.util.ArrayList;
@@ -11,23 +12,16 @@ public class Model {
     private static Model instance = new Model();
 
     private List<User> model;
-
     private ArrayList<String> pass = new ArrayList();
 
-    private static HashMap<String,String> hashMap= new HashMap<>();
 
-    public void addValues(String name,String password) {
-        hashMap.put(name,password);
-//        pass.add(password);
-    }
 
-    public static HashMap<String, String> getHashMap() {
-        return hashMap;
-    }
 
-    public static boolean find_in_hashMap(String name,String password){
+    public static boolean findInDb(String name,String password){
 
-        return hashMap.containsKey(name) && hashMap.containsValue(password);
+        UsersManager usersManager = new UsersManager();
+
+        return usersManager.findUserInDb(name,password);
 
     }
 
