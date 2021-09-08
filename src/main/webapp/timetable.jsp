@@ -320,7 +320,7 @@
             <%
 
                 if (a==6){
-                    out.print("<div class=\"weekend\"> " + a +"</div>");
+                    out.print("<div class=\"accent-orange-gradient\"> " + a +"</div>");
 
                 }
 
@@ -330,7 +330,7 @@
             <%
 
                 if (a==7){
-                    out.print("<div class=\"weekend\"> " + a +"</div>");
+                    out.print("<div class=\"accent-orange-gradient\"> " + a +"</div>");
 
                 }
 
@@ -410,7 +410,7 @@
             <%
 
                 if (a==6){
-                    out.print("<div class=\"weekend\"> " + a +"</div>");
+                    out.print("<div class=\"accent-orange-gradient\"> " + a +"</div>");
 
                 }
 
@@ -420,7 +420,7 @@
             <%
 
                 if (a==7){
-                    out.print("<div class=\"weekend\"> " + a +"</div>");
+                    out.print("<div class=\"accent-orange-gradient\"> " + a +"</div>");
 
                 }
 
@@ -500,7 +500,7 @@
             <%
 
                 if (a==6){
-                    out.print("<div class=\"weekend\"> " + a +"</div>");
+                    out.print("<div class=\"accent-orange-gradient\"> " + a +"</div>");
 
                 }
 
@@ -510,99 +510,7 @@
             <%
 
                 if (a==7){
-                    out.print("<div class=\"weekend\"> " + a +"</div>");
-
-                }
-
-            %>
-        </div>
-
-
-
-
-
-
-
-
-
-        <div>
-            <%
-
-
-                if (a==1){
                     out.print("<div class=\"accent-orange-gradient\"> " + a +"</div>");
-
-                }
-
-
-
-            %>
-        </div>
-        <div>
-            <%
-
-
-                if (a==2){
-                    out.print("<div class=\"accent-orange-gradient\"> " + a +"</div>");
-
-                }
-
-
-
-            %>
-        </div>
-        <div>
-            <%
-
-
-                if (a==3){
-                    out.print("<div class=\"accent-orange-gradient\"> " + a +"</div>");
-
-                }
-
-
-
-            %>
-        </div>
-        <div>
-            <%
-
-
-
-
-                if (a==4){
-                    out.print("<div class=\"accent-orange-gradient\"> " + a +"</div>");
-
-                }
-
-
-            %>
-        </div>
-        <div>
-            <%
-
-                if (a==5){
-                    out.print("<div class=\"accent-orange-gradient\"> " + a +"</div>");
-
-                }
-
-            %>
-        </div>
-        <div>
-            <%
-
-                if (a==6){
-                    out.print("<div class=\"weekend\"> " + a +"</div>");
-
-                }
-
-            %>
-        </div>
-        <div>
-            <%
-
-                if (a==7){
-                    out.print("<div class=\"weekend\"> " + a +"</div>");
 
                 }
 
@@ -684,7 +592,7 @@
             <%
 
                 if (a==6){
-                    out.print("<div class=\"weekend\"> " + a +"</div>");
+                    out.print("<div class=\"accent-orange-gradient\"> " + a +"</div>");
 
                 }
 
@@ -694,7 +602,99 @@
             <%
 
                 if (a==7){
-                    out.print("<div class=\"weekend\"> " + a +"</div>");
+                    out.print("<div class=\"accent-orange-gradient\"> " + a +"</div>");
+
+                }
+
+            %>
+        </div>
+
+
+
+
+
+
+
+
+
+        <div>
+            <%
+
+
+                if (a==1){
+                    out.print("<div class=\"accent-orange-gradient\"> " + a +"</div>");
+
+                }
+
+
+
+            %>
+        </div>
+        <div>
+            <%
+
+
+                if (a==2){
+                    out.print("<div class=\"accent-orange-gradient\"> " + a +"</div>");
+
+                }
+
+
+
+            %>
+        </div>
+        <div>
+            <%
+
+
+                if (a==3){
+                    out.print("<div class=\"accent-orange-gradient\"> " + a +"</div>");
+
+                }
+
+
+
+            %>
+        </div>
+        <div>
+            <%
+
+
+
+
+                if (a==4){
+                    out.print("<div class=\"accent-orange-gradient\"> " + a +"</div>");
+
+                }
+
+
+            %>
+        </div>
+        <div>
+            <%
+
+                if (a==5){
+                    out.print("<div class=\"accent-orange-gradient\"> " + a +"</div>");
+
+                }
+
+            %>
+        </div>
+        <div>
+            <%
+
+                if (a==6){
+                    out.print("<div class=\"accent-orange-gradient\"> " + a +"</div>");
+
+                }
+
+            %>
+        </div>
+        <div>
+            <%
+
+                if (a==7){
+                    out.print("<div class=\"accent-orange-gradient\"> " + a +"</div>");
 
                 }
 

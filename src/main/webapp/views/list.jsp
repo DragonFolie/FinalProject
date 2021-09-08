@@ -1,6 +1,6 @@
 <%@ page import="java.util.List" %>
-<%@ page import="DataBase_instance.UsersManager" %>
-<%@ page import="DataBase_instance.DB_Manager" %>
+<%@ page import="DAO.UsersManager" %>
+<%@ page import="DAO.DB_ManagerDAO" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -21,7 +21,7 @@
         <%
 
             ArrayList list = new ArrayList();
-            DB_Manager dbManager = new DB_Manager();
+            DB_ManagerDAO dbManager = new DB_ManagerDAO();
             list=  dbManager.findAllUsers();
 
             for (int i = 0; i < list.size(); i++) {

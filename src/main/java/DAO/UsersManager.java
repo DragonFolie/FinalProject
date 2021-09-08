@@ -1,9 +1,8 @@
-package DataBase_instance;
+package DAO;
 
 import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.logging.Logger;
 
 public class UsersManager  {
@@ -11,6 +10,9 @@ public class UsersManager  {
     private static final String ADD_USER = "INSERT INTO user (NickName,Dateofbirth,Gender,Role,Password) values (?,?,?,?,?) ";
     private static final String FIND_ALL_USER = "SELECT NickName, Dateofbirth, Gender, Password, Role, idUser FROM user";
     private static final String FIND_BY_ROLE = "SELECT  Role FROM user WHERE NickName = ?";
+    private static final String FIND_USER_IN_DB  = "SELECT  NickName, Password FROM user WHERE NickName = ? AND Password = ?";
+
+
     private  Connection connection;
     private static UsersManager instance;
     public static final String FILANAME = "app.properties";
@@ -38,7 +40,7 @@ public class UsersManager  {
 
     public void testConnection() throws SQLException, IOException, ClassNotFoundException {
 
-        DB_Manager dbManager = new DB_Manager();
+        DB_ManagerDAO dbManager = new DB_ManagerDAO();
         Statement statement = null;
         try (Connection conn = dbManager.getConnection(dbManager.getFILANAME())) {
 
@@ -252,7 +254,7 @@ public class UsersManager  {
 
             System.out.println("name and pass:" + name + "-" + password );
 
-            preparedStatement = conn.prepareStatement("SELECT  NickName, Password FROM user WHERE NickName = ? AND Password = ?");
+            preparedStatement = conn.prepareStatement(FIND_USER_IN_DB);
             preparedStatement.setString(1,name);
             preparedStatement.setString(2,password);
 

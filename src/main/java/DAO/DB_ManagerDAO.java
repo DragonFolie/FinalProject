@@ -1,4 +1,4 @@
-package DataBase_instance;
+package DAO;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -9,12 +9,12 @@ import java.util.ArrayList;
 import java.util.Properties;
 import java.util.logging.Logger;
 
-public class DB_Manager {
+public class DB_ManagerDAO implements InterfaceController {
 
 
 
     private  Connection connection;
-    private static DB_Manager instance;
+    private static DB_ManagerDAO instance;
     public static final String FILANAME = "app.properties";
     private static Logger logger =  Logger.getGlobal();
 
@@ -23,7 +23,7 @@ public class DB_Manager {
 
     public static void main(String[] args) throws SQLException, IOException, ClassNotFoundException {
 //
-        DB_Manager dbManager = new DB_Manager();
+        DB_ManagerDAO dbManager = new DB_ManagerDAO();
         dbManager.testConnection();
 
 
@@ -46,9 +46,9 @@ public class DB_Manager {
 
 
 
-    public static synchronized DB_Manager getInstance() {
+    public static synchronized DB_ManagerDAO getInstance() {
         if (instance == null) {
-            instance = new DB_Manager();
+            instance = new DB_ManagerDAO();
         }
         return instance;
     }
@@ -62,7 +62,7 @@ public class DB_Manager {
 
 
 
-
+    @Override
     public boolean userAdd(String name,String password,String birth,String gender){
         UsersManager usersManager = new UsersManager();
 //        System.out.println(" 2  " +name + " " + password+ " " + birth+ " " +gender );
@@ -77,6 +77,11 @@ public class DB_Manager {
 
     }
 
+
+
+
+
+    @Override
     public ArrayList findAllUsers(){
 
         UsersManager usersManager = new UsersManager();
@@ -87,12 +92,32 @@ public class DB_Manager {
     }
 
 
+    @Override
+    public ArrayList findNicknameAndRole(){
+
+        Admin admin = new Admin();
+
+        return admin.findNicknameAndRole();
+
+
+    }
+
+    @Override
+    public boolean updateRole(String nick,String role){
+
+        Admin admin = new Admin();
+        return admin.updateRole(nick,role);
+
+
+
+    }
+
 
 
 
     public boolean testConnection() throws SQLException, IOException, ClassNotFoundException {
 
-        DB_Manager dbManager = new DB_Manager();
+        DB_ManagerDAO dbManager = new DB_ManagerDAO();
         Statement statement = null;
         try (Connection conn = dbManager.getConnection(dbManager.getFILANAME())) {
 

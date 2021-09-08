@@ -1,10 +1,9 @@
 package model;
 
-import DataBase_instance.UsersManager;
+import DAO.UsersManager;
 import entities.User;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 

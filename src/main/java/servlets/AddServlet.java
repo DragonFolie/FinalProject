@@ -2,7 +2,7 @@ package servlets;
 
 
 
-import DataBase_instance.DB_Manager;
+import DAO.DB_ManagerDAO;
 import entities.User;
 
 import javax.servlet.RequestDispatcher;
@@ -27,7 +27,7 @@ public class AddServlet extends HttpServlet {
         System.out.println(password + " " + name );
 
         User user = new User(name, password);
-        DB_Manager dbManager = new DB_Manager();
+        DB_ManagerDAO dbManager = new DB_ManagerDAO();
 
         dbManager.userAdd(name,password,"20.20.20","man");
 

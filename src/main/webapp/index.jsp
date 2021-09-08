@@ -1,4 +1,4 @@
-<%@ page import="DataBase_instance.UsersManager" %>
+<%@ page import="DAO.UsersManager" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,7 +43,7 @@
         <button class="w3-btn w3-hover-light-blue w3-round-large" onclick="location.href='/logout'">Logout </button>
 
         <button class="w3-btn w3-hover-light-blue w3-round-large" href="timetable.jsp">
-            <a  href="timetable.jsp">Film One </a>
+            <a  href="timetable.jsp">Timetable  </a>
         </button>
 
 
