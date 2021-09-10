@@ -129,16 +129,155 @@ public class Admin {
 
 
 
+    public ArrayList findAllMovieSession(){
 
-//    public ArrayList changeRoleForUser(){
-//
-//
-//
-//
-//
-//
-//
-//    }
+        UsersManager usersManager = new UsersManager();
+
+        ArrayList list = new ArrayList();
+
+        PreparedStatement preparedStatement = null;
+        try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
+
+//            System.out.println("conn + " +conn);
+
+            preparedStatement = conn.prepareStatement("SELECT  TimeStart, TimeEnd FROM session");
+
+            preparedStatement.execute();
+
+
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()){
+                StringBuilder sb = new StringBuilder();
+                sb.append(resultSet.getString(1));
+                sb.append(",");
+                sb.append(resultSet.getString(2));
+                list.add(sb);
+
+
+            }
+            return list;
+
+
+        }catch (IOException | SQLException | ClassNotFoundException e) {
+//            logger.info("Exception here" + e);
+            e.printStackTrace();
+            return null;
+        }
+
+
+    }
+
+
+    public boolean addSession(String ticketCost,String  countSeat,String posterURL,
+                              String date,String timeStart,String timeEnd){
+
+        UsersManager usersManager = new UsersManager();
+
+
+        PreparedStatement preparedStatement = null;
+        try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
+
+//            System.out.println("conn + " +conn);
+
+            preparedStatement = conn.prepareStatement(
+                    "INSERT INTO session (PosterUrl, CountSeat, SessionDate, TimeStart, TimeEnd, Cost,Status) " +
+                            "VALUES (?,?,?,?,?,?,'Open');\n");
+            preparedStatement.setString(1,posterURL);
+            preparedStatement.setString(2,countSeat);
+            preparedStatement.setString(3,date);
+            preparedStatement.setString(4,timeStart);
+            preparedStatement.setString(5,timeEnd);
+
+            preparedStatement.setString(6,ticketCost);
+
+            preparedStatement.execute();
+
+
+
+            return true;
+
+
+        }catch (IOException | SQLException | ClassNotFoundException e) {
+//            logger.info("Exception here" + e);
+            e.printStackTrace();
+            return false;
+        }
+
+
+    }
+
+    public boolean addEngTypeOfMovie(String nameEng,String descriptionEng){
+
+        UsersManager usersManager = new UsersManager();
+
+        PreparedStatement preparedStatement = null;
+        try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
+
+//            System.out.println("conn + " +conn);
+
+            preparedStatement = conn.prepareStatement("INSERT INTO language (Name,Description,filmDetail_idfilmDetail) values (?,?,( SELECT MAX(idMovie) FROM session ));");
+
+            preparedStatement.setString(1,nameEng);
+            preparedStatement.setString(2,descriptionEng);
+
+            preparedStatement.execute();
+
+
+
+            return true;
+
+
+        }catch (IOException | SQLException | ClassNotFoundException e) {
+//            logger.info("Exception here" + e);
+            e.printStackTrace();
+            return false;
+        }
+
+
+    }
+
+    public boolean  addMovie(String nameUkr,String descriptionUkr,
+                             String actor,String director){
+
+        UsersManager usersManager = new UsersManager();
+
+
+        PreparedStatement preparedStatement = null;
+        try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
+
+//            System.out.println("conn + " +conn);
+
+            preparedStatement = conn.prepareStatement("INSERT INTO filmdetail (Name, Description, Actor, Director,session_idMovie )" +
+                    "VALUES (?,?,?,?,( SELECT MAX(idMovie) FROM session ));\n");
+            preparedStatement.setString(1,nameUkr);
+            preparedStatement.setString(2,descriptionUkr);
+            preparedStatement.setString(3,actor);
+            preparedStatement.setString(4,director);
+
+            preparedStatement.execute();
+
+
+
+
+            return true;
+
+
+        }catch (IOException | SQLException | ClassNotFoundException e) {
+//            logger.info("Exception here" + e);
+            e.printStackTrace();
+            return false;
+        }
+
+
+
+    }
+
+
+
+
+
 
 
 

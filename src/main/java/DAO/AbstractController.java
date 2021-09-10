@@ -8,4 +8,5 @@ interface   InterfaceController {
       ArrayList findAllUsers();
       ArrayList findNicknameAndRole();
       boolean updateRole(String nick,String role);
+      ArrayList findAllMovieSession();
 }

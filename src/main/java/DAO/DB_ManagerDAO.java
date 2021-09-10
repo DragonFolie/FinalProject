@@ -112,6 +112,59 @@ public class DB_ManagerDAO implements InterfaceController {
 
     }
 
+    @Override
+    public ArrayList findAllMovieSession() {
+        Admin admin = new Admin();
+
+        return admin.findAllMovieSession();
+    }
+
+
+
+
+
+    public boolean addSession(String ticketCost,String countSeat,String posterURL,
+                              String date,String timeStart,String timeEnd){
+
+        Admin admin = new Admin();
+        return admin.addSession(ticketCost,countSeat,posterURL,date,timeStart,timeEnd);
+
+    }
+
+
+
+
+
+
+    public boolean addEngtypeOfMovie(String nameEng,String descriptionEng){
+
+        Admin admin = new Admin();
+        return admin.addEngTypeOfMovie(nameEng,descriptionEng);
+
+    }
+
+    public boolean  addMovie(String nameUkr,String descriptionUkr,String actor,String director){
+
+
+        Admin admin = new Admin();
+        return admin.addMovie(nameUkr,descriptionUkr,actor,director);
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

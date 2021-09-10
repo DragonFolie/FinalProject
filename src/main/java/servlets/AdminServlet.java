@@ -19,18 +19,95 @@ public class AdminServlet extends HttpServlet {
         requestDispatcher.forward(req, resp);
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException {
+
+        DB_ManagerDAO dbManager = new DB_ManagerDAO();
+
+        //  Change Role
+
         String role  =  request.getParameter("changeRole");
         String nick  =  request.getParameter("userNickName");
 
-        DB_ManagerDAO dbManager = new DB_ManagerDAO();
-        dbManager.updateRole(nick,role);
-        response.setIntHeader("Refresh", 1);
+
+        // Add Movie Ukraine/English language
+
+
+        String nameUkr = request.getParameter("movieName");
+        String nameEng = request.getParameter("movieNameENG");
+        String descriptionUkr = request.getParameter("description");
+        String descriptionEng = request.getParameter("descriptionENG");
+        String actors = request.getParameter("actors");
+        String director = request.getParameter("director");
+
+
+        // Add new Session
+
+        String ticketCost = request.getParameter("ticketCost");
+        String countSeat = request.getParameter("countOfSeat");
+        String posterURL = request.getParameter("posterUrl");
+        String date = request.getParameter("sessionDate");
+        String timeStart = request.getParameter("timeStart");
+        String timeEnd = request.getParameter("timeEnd");
+
+        System.out.println("good0");
+        if (ticketCost != null && countSeat != null && posterURL != null && date != null && timeStart!= null &&timeEnd!= null  ){
+
+            System.out.println("good1");
+            dbManager.addSession(ticketCost,countSeat,posterURL,date,timeStart,timeEnd);
+
+
+            System.out.println("good1");
+        }
+
+
+
+
+
+        if (nameUkr != null && descriptionUkr != null && actors != null && director != null){
+
+
+
+            System.out.println("good3");
+            dbManager.addMovie(nameUkr,descriptionUkr,actors,director);
+
+            System.out.println("good3");
+            response.setIntHeader("Refresh", 1);
+        }
+
+
+
+
+        if (  nameEng != null &&  descriptionEng != null   ){
+
+            System.out.println("good2");
+            dbManager.addEngtypeOfMovie(nameEng,descriptionEng);
+
+
+            System.out.println("good2");
+
+
+        }
+
+
+
+
+
+
+//        if (role == null && nick == null){
+//
+//            //Throw on Error page with empty field
+//        }
+
+        if (role != null && nick != null){
+
+            dbManager.updateRole(nick,role);
+            response.setIntHeader("Refresh", 1);
+
+        }
+
+
 
 
 
     }
-    @Override
-    public void init() throws ServletException {
-        System.out.println("Hello");
-    }
+
 }
