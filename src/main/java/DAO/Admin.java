@@ -140,7 +140,7 @@ public class Admin {
 
 //            System.out.println("conn + " +conn);
 
-            preparedStatement = conn.prepareStatement("SELECT  TimeStart, TimeEnd FROM session");
+            preparedStatement = conn.prepareStatement("SELECT  TimeStart, TimeEnd,Status FROM session");
 
             preparedStatement.execute();
 
@@ -153,6 +153,8 @@ public class Admin {
                 sb.append(resultSet.getString(1));
                 sb.append(",");
                 sb.append(resultSet.getString(2));
+                sb.append(",");
+                sb.append(resultSet.getString(3));
                 list.add(sb);
 
 
@@ -280,8 +282,7 @@ public class Admin {
 
     }
 
-    public boolean  addMovie(String nameUkr,String descriptionUkr,
-                             String actor,String director){
+    public boolean  addMovie(String nameUkr,String descriptionUkr,String actor,String director){
 
         UsersManager usersManager = new UsersManager();
 
@@ -312,6 +313,48 @@ public class Admin {
             return false;
         }
 
+
+
+    }
+
+    public boolean  updateStatusForMovie(String nameOfMovie,String setStatus){
+
+
+        UsersManager usersManager = new UsersManager();
+
+        PreparedStatement preparedStatement = null;
+        try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
+
+//            System.out.println("conn + " +conn);
+            preparedStatement = conn.prepareStatement("SELECT idfilmDetail FROM filmdetail WHERE  Name = ? ");
+            preparedStatement.setString(1,nameOfMovie);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            resultSet.next();
+                StringBuilder sb = new StringBuilder();
+                int id = resultSet.getInt(1);
+
+
+
+            preparedStatement = conn.prepareStatement("UPDATE session SET Status = ? WHERE idMovie = ?");
+            System.out.println(" Status : " + setStatus);
+            System.out.println(" id : " + id);
+            preparedStatement.setString(1,setStatus);
+            preparedStatement.setInt(2, id);
+
+            preparedStatement.execute();
+
+
+
+
+            return true;
+
+
+        }catch (IOException | SQLException | ClassNotFoundException e) {
+//            logger.info("Exception here" + e);
+            e.printStackTrace();
+            return false;
+        }
 
 
     }

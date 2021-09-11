@@ -27,6 +27,11 @@ public class AdminServlet extends HttpServlet {
         String role  =  request.getParameter("changeRole");
         String nick  =  request.getParameter("userNickName");
 
+        //  Change Movie Status
+
+        String nameOfMovie = request.getParameter("filmName");
+        String setStatus = request.getParameter("changeStatus");
+
 
         // Add Movie Ukraine/English language
 
@@ -48,14 +53,26 @@ public class AdminServlet extends HttpServlet {
         String timeStart = request.getParameter("timeStart");
         String timeEnd = request.getParameter("timeEnd");
 
-        System.out.println("good0");
+
+
+
+
+        if (nameOfMovie != null && setStatus != null ){
+
+            dbManager.updateStatusForMovie(nameOfMovie,setStatus);
+
+            response.setIntHeader("Refresh", 1);
+
+        }
+
+
         if (ticketCost != null && countSeat != null && posterURL != null && date != null && timeStart!= null &&timeEnd!= null  ){
 
-            System.out.println("good1");
+//            System.out.println("good1");
             dbManager.addSession(ticketCost,countSeat,posterURL,date,timeStart,timeEnd);
 
 
-            System.out.println("good1");
+//            System.out.println("good1");
         }
 
 
@@ -66,11 +83,11 @@ public class AdminServlet extends HttpServlet {
 
 
 
-            System.out.println("good3");
+//            System.out.println("good3");
             dbManager.addMovie(nameUkr,descriptionUkr,actors,director);
 
-            System.out.println("good3");
             response.setIntHeader("Refresh", 1);
+//            System.out.println("good3");
         }
 
 
@@ -78,11 +95,11 @@ public class AdminServlet extends HttpServlet {
 
         if (  nameEng != null &&  descriptionEng != null   ){
 
-            System.out.println("good2");
+//            System.out.println("good2");
             dbManager.addEngtypeOfMovie(nameEng,descriptionEng);
 
 
-            System.out.println("good2");
+//            System.out.println("good2");
 
 
         }

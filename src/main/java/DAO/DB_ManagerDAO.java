@@ -119,12 +119,27 @@ public class DB_ManagerDAO implements InterfaceController {
         return admin.findAllMovieSession();
     }
 
+
+
+
     public ArrayList findAllMovieName() {
         Admin admin = new Admin();
 
         return admin.findAllMovieName();
     }
 
+
+
+
+
+
+    public boolean  updateStatusForMovie(String nameOfMovie,String setStatus){
+        Admin admin = new Admin();
+
+        return admin.updateStatusForMovie(nameOfMovie,setStatus);
+
+
+    }
 
 
 

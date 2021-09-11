@@ -39,7 +39,7 @@
             ArrayList UserInformation = new ArrayList();
             DB_ManagerDAO dbManager = new DB_ManagerDAO();
             UserInformation=  dbManager.findNicknameAndRole();
-            String regex = "(.+),(.+)";
+            String regex = "(.+),(.+),(.+)";
             String preword = null;
             String afterword = null;
 
@@ -69,6 +69,7 @@
 
             ArrayList timeStartEnd = new ArrayList();
             ArrayList nameOfMovie = new ArrayList();
+            String status  ;
             
             DB_ManagerDAO dbManager2 = new DB_ManagerDAO();
             timeStartEnd=  dbManager2.findAllMovieSession();
@@ -86,8 +87,10 @@
                 while (m.find()) {
                     preword = m.group(1);
                     afterword = m.group(2);
+                    status = m.group(3);
 
-                    out.println( "<li>Movie name: "+ sb2+";&nbsp&nbsp Start: " +preword  + ";&nbsp&nbsp End: " + afterword +"</li>" );
+
+                    out.println( "<li>Movie name: "+ sb2+";&nbsp&nbsp Start: " +preword  + ";&nbsp&nbsp End: " + afterword +";&nbsp&nbsp Status: "+status+" </li>" );
                 }
 
             }
@@ -106,6 +109,24 @@
             <select name="changeRole">
                 <option >1</option>
                 <option >2</option>
+            </select>&nbsp
+            <button type="submit" >Submit</button>
+        </form>
+    </div>
+
+
+    <div>
+        <br><br><br><br><br><br>
+        <h2>Change status for film</h2>
+        <form action="admin" method="post">
+
+            Name <input type="text/html" name="filmName"/>&nbsp
+            <select name="changeStatus">
+                <option >Open</option>
+                <option >Canceled</option>
+                <option >Finished</option>
+                <option >Close to buy</option>
+                <option >Private</option>
             </select>&nbsp
             <button type="submit" >Submit</button>
         </form>
