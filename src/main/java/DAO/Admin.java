@@ -170,6 +170,48 @@ public class Admin {
     }
 
 
+    public ArrayList findAllMovieName(){
+
+        UsersManager usersManager = new UsersManager();
+
+        ArrayList list = new ArrayList();
+
+        PreparedStatement preparedStatement = null;
+        try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
+
+//            System.out.println("conn + " +conn);
+
+            preparedStatement = conn.prepareStatement("SELECT  Name FROM filmdetail");
+
+            preparedStatement.execute();
+
+
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()){
+                StringBuilder sb = new StringBuilder();
+                sb.append(resultSet.getString(1));
+                list.add(sb);
+
+
+            }
+            return list;
+
+
+        }catch (IOException | SQLException | ClassNotFoundException e) {
+//            logger.info("Exception here" + e);
+            e.printStackTrace();
+            return null;
+        }
+
+
+    }
+
+
+
+
+
     public boolean addSession(String ticketCost,String  countSeat,String posterURL,
                               String date,String timeStart,String timeEnd){
 

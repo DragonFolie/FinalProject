@@ -119,6 +119,13 @@ public class DB_ManagerDAO implements InterfaceController {
         return admin.findAllMovieSession();
     }
 
+    public ArrayList findAllMovieName() {
+        Admin admin = new Admin();
+
+        return admin.findAllMovieName();
+    }
+
+
 
 
 

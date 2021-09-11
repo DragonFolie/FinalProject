@@ -27,21 +27,27 @@
 
 <body>
 <div class="w3-container w3-blue-grey w3-opacity w3-right-align">
+
     <div>
+
         <%
 
-            ArrayList list = new ArrayList();
+            request.setCharacterEncoding("UTF-8");
+
+
+
+            ArrayList UserInformation = new ArrayList();
             DB_ManagerDAO dbManager = new DB_ManagerDAO();
-            list=  dbManager.findNicknameAndRole();
+            UserInformation=  dbManager.findNicknameAndRole();
             String regex = "(.+),(.+)";
             String preword = null;
             String afterword = null;
 
 
 
-            for (int i = 0; i < list.size(); i++) {
+            for (int i = 0; i < UserInformation.size(); i++) {
                 StringBuilder sb = new StringBuilder() ;
-                sb.append(    list.get(i) ) ;
+                sb.append(    UserInformation.get(i) ) ;
 //            System.out.println("sb " + sb );
 
                 Matcher m = Pattern.compile(regex).matcher(sb.toString());
@@ -61,25 +67,27 @@
 
         <%
 
-            ArrayList list2 = new ArrayList();
+            ArrayList timeStartEnd = new ArrayList();
+            ArrayList nameOfMovie = new ArrayList();
+            
             DB_ManagerDAO dbManager2 = new DB_ManagerDAO();
-            list2=  dbManager2.findAllMovieSession();
-            String regex2 = "(.+).(.+)";
+            timeStartEnd=  dbManager2.findAllMovieSession();
+            nameOfMovie = dbManager2.findAllMovieName();
 
 
 
-            for (int i = 0; i < list2.size(); i++) {
+            for (int i = 0; i < timeStartEnd.size(); i++) {
                 StringBuilder sb = new StringBuilder() ;
-                sb.append(    list2.get(i) ) ;
-//            System.out.println("sb " + sb );
+                StringBuilder sb2 = new StringBuilder() ;
+                sb.append(    timeStartEnd.get(i) ) ;
+                sb2.append(nameOfMovie.get(i));
 
                 Matcher m = Pattern.compile(regex).matcher(sb.toString());
                 while (m.find()) {
-//                    System.out.println("Find");
                     preword = m.group(1);
                     afterword = m.group(2);
 
-                    out.println( "<li>Start: " +preword  + ";&nbsp&nbsp End: " + afterword +"</li>" );
+                    out.println( "<li>Movie name: "+ sb2+";&nbsp&nbsp Start: " +preword  + ";&nbsp&nbsp End: " + afterword +"</li>" );
                 }
 
             }
