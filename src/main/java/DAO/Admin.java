@@ -1,21 +1,29 @@
 package DAO;
 
+import org.apache.log4j.Logger;
+
 import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.logging.Logger;
 
-public class Admin {
+public class Admin implements  AdminDAO{
 
 
     private static final String FIND_NICKNAME_AND_ROLE = "SELECT NickName,Role FROM user";
     private static final String  UPDATE_ROLE = "UPDATE user SET Role = ? WHERE NickName = ?";
+    private static final String OUTPUT_TIME_AND_STATUS_ABOUT_MOVIE = "SELECT  TimeStart, TimeEnd,Status FROM session";
+    private static final String GET_MOVIE_NAME = "SELECT  Name FROM filmdetail";
+    private static final String ADD_NEW_SESSION = "INSERT INTO session (PosterUrl, CountSeat, SessionDate, TimeStart, TimeEnd, Cost,Status) VALUES (?,?,?,?,?,?,'Open');";
+    private static final String ADD_NEW_MOVIE  =  "INSERT INTO filmdetail (Name, Description, Actor, Director,session_idMovie )VALUES (?,?,?,?,( SELECT MAX(idMovie) FROM session ));\n";
+    private static final String ADD_ENGLISH_VERSION_OF_MOVIE = "INSERT INTO language (Name,Description,filmDetail_idfilmDetail) values (?,?,( SELECT MAX(idMovie) FROM session ));";
+    private static final String GET_ID_BY_NAME_OF_MOVIE  = "SELECT idfilmDetail FROM filmdetail WHERE  Name = ? ";
+    private static final String UPDATE_STATUS_OF_MOVIE = "UPDATE session SET Status = ? WHERE idMovie = ?";
 
 
     private  Connection connection;
     private static UsersManager instance;
     public static final String FILANAME = "app.properties";
-    private static Logger logger =  Logger.getGlobal();
+    private static Logger logger =  Logger.getLogger(Admin.class.getName());
 
 
 
@@ -36,12 +44,11 @@ public class Admin {
             Statement stmt = con.createStatement();
 //            System.out.println("Created DB Connection....");
         } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
+            logger.fatal("Cant connect to DB by DB connector" + e);
         }
         return con;
 
     }
-
 
     public static String getFILANAME() {
 //        System.out.println("File with jconnector: "+ FILANAME);
@@ -54,6 +61,7 @@ public class Admin {
 
 
 
+    @Override
     public boolean updateRole(String nick,String role){
 
 
@@ -76,7 +84,7 @@ public class Admin {
 
         }catch (IOException | SQLException | ClassNotFoundException e) {
 //            logger.info("Exception here" + e);
-            e.printStackTrace();
+            logger.error("Cant updateRole " + e);
             return false;
         }
 
@@ -85,7 +93,7 @@ public class Admin {
 
 
 
-
+    @Override
     public ArrayList findNicknameAndRole(){
 
 
@@ -120,7 +128,7 @@ public class Admin {
 
         }catch (IOException | SQLException | ClassNotFoundException e) {
 //            logger.info("Exception here" + e);
-            e.printStackTrace();
+            logger.error("Cant findNicknameAndRole " + e);
             return null;
         }
 
@@ -128,7 +136,7 @@ public class Admin {
     }
 
 
-
+    @Override
     public ArrayList findAllMovieSession(){
 
         UsersManager usersManager = new UsersManager();
@@ -140,7 +148,7 @@ public class Admin {
 
 //            System.out.println("conn + " +conn);
 
-            preparedStatement = conn.prepareStatement("SELECT  TimeStart, TimeEnd,Status FROM session");
+            preparedStatement = conn.prepareStatement(OUTPUT_TIME_AND_STATUS_ABOUT_MOVIE);
 
             preparedStatement.execute();
 
@@ -164,14 +172,14 @@ public class Admin {
 
         }catch (IOException | SQLException | ClassNotFoundException e) {
 //            logger.info("Exception here" + e);
-            e.printStackTrace();
+            logger.error("Cant findAllMovieSession " + e);
             return null;
         }
 
 
     }
 
-
+    @Override
     public ArrayList findAllMovieName(){
 
         UsersManager usersManager = new UsersManager();
@@ -183,7 +191,7 @@ public class Admin {
 
 //            System.out.println("conn + " +conn);
 
-            preparedStatement = conn.prepareStatement("SELECT  Name FROM filmdetail");
+            preparedStatement = conn.prepareStatement(GET_MOVIE_NAME);
 
             preparedStatement.execute();
 
@@ -203,7 +211,7 @@ public class Admin {
 
         }catch (IOException | SQLException | ClassNotFoundException e) {
 //            logger.info("Exception here" + e);
-            e.printStackTrace();
+            logger.error("Cant findAllMovieName " + e);
             return null;
         }
 
@@ -213,7 +221,7 @@ public class Admin {
 
 
 
-
+    @Override
     public boolean addSession(String ticketCost,String  countSeat,String posterURL,
                               String date,String timeStart,String timeEnd){
 
@@ -225,9 +233,7 @@ public class Admin {
 
 //            System.out.println("conn + " +conn);
 
-            preparedStatement = conn.prepareStatement(
-                    "INSERT INTO session (PosterUrl, CountSeat, SessionDate, TimeStart, TimeEnd, Cost,Status) " +
-                            "VALUES (?,?,?,?,?,?,'Open');\n");
+            preparedStatement = conn.prepareStatement(ADD_NEW_SESSION);
             preparedStatement.setString(1,posterURL);
             preparedStatement.setString(2,countSeat);
             preparedStatement.setString(3,date);
@@ -245,13 +251,15 @@ public class Admin {
 
         }catch (IOException | SQLException | ClassNotFoundException e) {
 //            logger.info("Exception here" + e);
-            e.printStackTrace();
+            logger.error("Cant addSession " + e);
             return false;
         }
 
 
     }
 
+
+    @Override
     public boolean addEngTypeOfMovie(String nameEng,String descriptionEng){
 
         UsersManager usersManager = new UsersManager();
@@ -261,7 +269,7 @@ public class Admin {
 
 //            System.out.println("conn + " +conn);
 
-            preparedStatement = conn.prepareStatement("INSERT INTO language (Name,Description,filmDetail_idfilmDetail) values (?,?,( SELECT MAX(idMovie) FROM session ));");
+            preparedStatement = conn.prepareStatement(ADD_ENGLISH_VERSION_OF_MOVIE);
 
             preparedStatement.setString(1,nameEng);
             preparedStatement.setString(2,descriptionEng);
@@ -275,13 +283,15 @@ public class Admin {
 
         }catch (IOException | SQLException | ClassNotFoundException e) {
 //            logger.info("Exception here" + e);
-            e.printStackTrace();
+            logger.error("Cant addEngTypeOfMovie " + e);
             return false;
         }
 
 
     }
 
+
+    @Override
     public boolean  addMovie(String nameUkr,String descriptionUkr,String actor,String director){
 
         UsersManager usersManager = new UsersManager();
@@ -292,8 +302,7 @@ public class Admin {
 
 //            System.out.println("conn + " +conn);
 
-            preparedStatement = conn.prepareStatement("INSERT INTO filmdetail (Name, Description, Actor, Director,session_idMovie )" +
-                    "VALUES (?,?,?,?,( SELECT MAX(idMovie) FROM session ));\n");
+            preparedStatement = conn.prepareStatement(ADD_NEW_MOVIE);
             preparedStatement.setString(1,nameUkr);
             preparedStatement.setString(2,descriptionUkr);
             preparedStatement.setString(3,actor);
@@ -309,7 +318,7 @@ public class Admin {
 
         }catch (IOException | SQLException | ClassNotFoundException e) {
 //            logger.info("Exception here" + e);
-            e.printStackTrace();
+            logger.error("Cant addMovie " + e);
             return false;
         }
 
@@ -317,6 +326,8 @@ public class Admin {
 
     }
 
+
+    @Override
     public boolean  updateStatusForMovie(String nameOfMovie,String setStatus){
 
 
@@ -326,7 +337,7 @@ public class Admin {
         try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
 
 //            System.out.println("conn + " +conn);
-            preparedStatement = conn.prepareStatement("SELECT idfilmDetail FROM filmdetail WHERE  Name = ? ");
+            preparedStatement = conn.prepareStatement(GET_ID_BY_NAME_OF_MOVIE);
             preparedStatement.setString(1,nameOfMovie);
             ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -336,7 +347,7 @@ public class Admin {
 
 
 
-            preparedStatement = conn.prepareStatement("UPDATE session SET Status = ? WHERE idMovie = ?");
+            preparedStatement = conn.prepareStatement(UPDATE_STATUS_OF_MOVIE);
             System.out.println(" Status : " + setStatus);
             System.out.println(" id : " + id);
             preparedStatement.setString(1,setStatus);
@@ -352,7 +363,7 @@ public class Admin {
 
         }catch (IOException | SQLException | ClassNotFoundException e) {
 //            logger.info("Exception here" + e);
-            e.printStackTrace();
+            logger.error("Cant updateStatusForMovie " + e);
             return false;
         }
 

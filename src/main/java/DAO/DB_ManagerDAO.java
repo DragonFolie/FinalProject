@@ -1,5 +1,7 @@
 package DAO;
 
+import org.apache.log4j.Logger;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
@@ -7,7 +9,6 @@ import java.nio.file.Paths;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Properties;
-import java.util.logging.Logger;
 
 public class DB_ManagerDAO implements InterfaceController {
 
@@ -16,7 +17,7 @@ public class DB_ManagerDAO implements InterfaceController {
     private  Connection connection;
     private static DB_ManagerDAO instance;
     public static final String FILANAME = "app.properties";
-    private static Logger logger =  Logger.getGlobal();
+    private static Logger logger =  Logger.getLogger(DB_ManagerDAO.class.getName());
 
 
 
@@ -71,7 +72,7 @@ public class DB_ManagerDAO implements InterfaceController {
             usersManager.userAdd(name,password, birth, gender);
             return true;
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("Cant addUser " + e);
             return false;
         }
 
@@ -121,7 +122,7 @@ public class DB_ManagerDAO implements InterfaceController {
 
 
 
-
+    @Override
     public ArrayList findAllMovieName() {
         Admin admin = new Admin();
 
@@ -132,7 +133,7 @@ public class DB_ManagerDAO implements InterfaceController {
 
 
 
-
+    @Override
     public boolean  updateStatusForMovie(String nameOfMovie,String setStatus){
         Admin admin = new Admin();
 
@@ -144,7 +145,7 @@ public class DB_ManagerDAO implements InterfaceController {
 
 
 
-
+    @Override
     public boolean addSession(String ticketCost,String countSeat,String posterURL,
                               String date,String timeStart,String timeEnd){
 
@@ -157,14 +158,14 @@ public class DB_ManagerDAO implements InterfaceController {
 
 
 
-
+    @Override
     public boolean addEngtypeOfMovie(String nameEng,String descriptionEng){
 
         Admin admin = new Admin();
         return admin.addEngTypeOfMovie(nameEng,descriptionEng);
 
     }
-
+    @Override
     public boolean  addMovie(String nameUkr,String descriptionUkr,String actor,String director){
 
 

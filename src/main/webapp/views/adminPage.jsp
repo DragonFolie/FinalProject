@@ -88,9 +88,20 @@
                     preword = m.group(1);
                     afterword = m.group(2);
                     status = m.group(3);
+                    if (status.equals("Close to buy")){
+//                        out.println( "<li>Movie name: "+ sb2+";&nbsp&nbsp Start: " +preword  + ";&nbsp&nbsp End: " + afterword +";&nbsp&nbsp </li>" );
+                        continue;
+                    }
+
+                    if (!status.equals("Close to buy")){
+                        out.println( "<li>Movie name: "+ sb2+";&nbsp&nbsp Start: " +preword  + ";&nbsp&nbsp End: " + afterword +";&nbsp&nbsp Status: "+status+" </li>" );
+
+                    }
 
 
-                    out.println( "<li>Movie name: "+ sb2+";&nbsp&nbsp Start: " +preword  + ";&nbsp&nbsp End: " + afterword +";&nbsp&nbsp Status: "+status+" </li>" );
+
+
+
                 }
 
             }

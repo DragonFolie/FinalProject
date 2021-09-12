@@ -1,18 +1,17 @@
 package servlets;
 
-import entities.User;
+import DAO.Admin;
+import DAO.UserManagerDAO;
 import model.Model;
+import org.apache.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.*;
-import java.util.List;
 
 public class LoginServlet  extends HttpServlet {
     @Override
@@ -31,13 +30,15 @@ public class LoginServlet  extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws  IOException {
-
+          Logger logger =  Logger.getLogger(LogoutServlet.class.getName());
         String name = req.getParameter("name_login");
         String password = req.getParameter("pass_login");
 
 
+//
+//        System.out.println(name +" "+ password + " login user");
 
-        System.out.println(name +" "+ password + " login user");
+
 
         if (Model.findInDb(name, password)){
 
@@ -45,7 +46,10 @@ public class LoginServlet  extends HttpServlet {
             httpSession.setAttribute("name",name);
 
 
-            System.out.println("find user with:" + name + "-" + password);
+//            System.out.println("find user with:" + name + "-" + password);
+
+
+            logger.info("Login user: " + name);
             resp.sendRedirect("index.jsp");
 
 
@@ -60,7 +64,7 @@ public class LoginServlet  extends HttpServlet {
             try {
                 Thread.sleep(700);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                logger.error("Exception here " + e);
             }
             resp.setIntHeader("Refresh", 1);
 

@@ -1,22 +1,23 @@
 package DAO;
 
+import org.apache.log4j.Logger;
+
 import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.logging.Logger;
 
-public class UsersManager  {
+public class UsersManager implements UserManagerDAO  {
 
     private static final String ADD_USER = "INSERT INTO user (NickName,Dateofbirth,Gender,Role,Password) values (?,?,?,?,?) ";
     private static final String FIND_ALL_USER = "SELECT NickName, Dateofbirth, Gender, Password, Role, idUser FROM user";
     private static final String FIND_BY_ROLE = "SELECT  Role FROM user WHERE NickName = ?";
     private static final String FIND_USER_IN_DB  = "SELECT  NickName, Password FROM user WHERE NickName = ? AND Password = ?";
-
+    private static final String GET_NAME_OF_USER = "SELECT NickName FROM user";
 
     private  Connection connection;
     private static UsersManager instance;
     public static final String FILANAME = "app.properties";
-    private static Logger logger =  Logger.getGlobal();
+    private static final Logger logger = Logger.getLogger(UsersManager.class.getSimpleName());
 
 
 
@@ -24,9 +25,15 @@ public class UsersManager  {
 
 
     public static void main(String[] args) {
-////
-        UsersManager usersManager = new UsersManager();
-        usersManager.userAdd("1","test2","test3","test4");
+//////
+//        UsersManager usersManager = new UsersManager();
+//        usersManager.userAdd("1","test2","test3","test4");
+        try {
+            logger.info("test");
+        } catch (Exception e) {
+            logger.error("ex" + e);
+        }
+
 
     }
 
@@ -59,7 +66,7 @@ public class UsersManager  {
 
         }catch (IOException | SQLException | ClassNotFoundException e) {
 //            logger.info("Exception here" + e);
-            e.printStackTrace();
+            logger.fatal("TEST CONNECTION FATAL  " + e);
         }
 
     }
@@ -85,7 +92,7 @@ public class UsersManager  {
             Statement stmt = con.createStatement();
 //            System.out.println("Created DB Connection....");
         } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
+            logger.fatal("CANT CONNECTION TO DB   " + e);
         }
         return con;
 
@@ -105,7 +112,7 @@ public class UsersManager  {
 
 
 
-
+    @Override
     public boolean userAdd (String name,String password,String birth,String gender){
 
         UsersManager usersManager = new UsersManager();
@@ -129,7 +136,9 @@ public class UsersManager  {
 
 
 
-            ResultSet resultSet = preparedStatement.executeQuery("SELECT NickName FROM user");
+            ResultSet resultSet = preparedStatement.executeQuery(GET_NAME_OF_USER);
+
+            logger.info("Add new user: " + name);
 
             while (resultSet.next()){
 
@@ -140,13 +149,14 @@ public class UsersManager  {
 
         }catch (IOException | SQLException | ClassNotFoundException e) {
 //            logger.info("Exception here" + e);
-            e.printStackTrace();
+            logger.error("Cant addUser" + e);
             return false;
         }
 
 
     }
 
+    @Override
     public ArrayList findAllUsers(){
 
 
@@ -190,7 +200,7 @@ public class UsersManager  {
 
         }catch (IOException | SQLException | ClassNotFoundException e) {
 //            logger.info("Exception here" + e);
-            e.printStackTrace();
+            logger.error("Cant findAllUsers " + e);
             return null;
         }
 
@@ -199,7 +209,7 @@ public class UsersManager  {
     }
 
 
-
+    @Override
     public String getUserRole(String name){
 
 
@@ -236,7 +246,7 @@ public class UsersManager  {
 
         }catch (IOException | SQLException | ClassNotFoundException e) {
 //            logger.info("Exception here" + e);
-            e.printStackTrace();
+            logger.error("Cant getUserRole " + e);
             return null;
         }
 
@@ -244,7 +254,7 @@ public class UsersManager  {
 
     }
 
-
+    @Override
     public boolean findUserInDb(String name,String password){
         UsersManager usersManager = new UsersManager();
 
@@ -285,7 +295,7 @@ public class UsersManager  {
 
         }catch (IOException | SQLException | ClassNotFoundException e) {
 //            logger.info("Exception here" + e);
-            e.printStackTrace();
+            logger.error("Cant findUserInDb " + e);
             return false;
         }
 

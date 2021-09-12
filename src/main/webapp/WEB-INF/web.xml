@@ -70,6 +70,21 @@
     </servlet-mapping>
 
 
+    <!-- Custom Tag servlet -->
+    <servlet>
+        <servlet-name>tag</servlet-name>
+        <servlet-class>HelloServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>tag</servlet-name>
+        <url-pattern>/tag</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- Custom Tag -->
+
+
 
 
 

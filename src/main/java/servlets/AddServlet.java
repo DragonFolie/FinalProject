@@ -3,6 +3,7 @@ package servlets;
 
 
 import DAO.DB_ManagerDAO;
+import DAO.UserManagerDAO;
 import entities.User;
 
 import javax.servlet.RequestDispatcher;
@@ -11,6 +12,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.logging.Logger;
+
 public class AddServlet extends HttpServlet {
 
     @Override
@@ -23,6 +26,7 @@ public class AddServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String name = req.getParameter("name");
         String password = req.getParameter("pass");
+        Logger logger =  Logger.getLogger(UserManagerDAO.class.getName());
 
         System.out.println(password + " " + name );
 
@@ -30,6 +34,7 @@ public class AddServlet extends HttpServlet {
         DB_ManagerDAO dbManager = new DB_ManagerDAO();
 
         dbManager.userAdd(name,password,"20.20.20","man");
+        logger.info("2Add new user: " + name);
 
         req.setAttribute("userName", name);
         doGet(req, resp);
