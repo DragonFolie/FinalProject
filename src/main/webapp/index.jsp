@@ -1,4 +1,7 @@
 <%@ page import="DAO.UsersManager" %>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,6 +44,7 @@
         <button class="w3-btn w3-hover-light-blue w3-round-large" onclick="location.href='/add'">Register user</button>
         <button class="w3-btn w3-hover-light-blue w3-round-large" onclick="location.href='/login'">Login </button>
         <button class="w3-btn w3-hover-light-blue w3-round-large" onclick="location.href='/logout'">Logout </button>
+        <button class="w3-btn w3-hover-light-blue w3-round-large" onclick="location.href='/tag'">TAG </button>
 
         <button class="w3-btn w3-hover-light-blue w3-round-large" href="timetable.jsp">
             <a  href="timetable.jsp">Timetable  </a>

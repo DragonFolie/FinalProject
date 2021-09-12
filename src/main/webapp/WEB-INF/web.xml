@@ -71,9 +71,10 @@
 
 
     <!-- Custom Tag servlet -->
+
     <servlet>
         <servlet-name>tag</servlet-name>
-        <servlet-class>HelloServlet</servlet-class>
+        <servlet-class>servlets.TagServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -81,8 +82,9 @@
         <url-pattern>/tag</url-pattern>
     </servlet-mapping>
 
-
     <!-- Custom Tag -->
+
+
 
 
 

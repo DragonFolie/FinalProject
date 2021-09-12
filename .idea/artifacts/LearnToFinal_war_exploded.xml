@@ -14,6 +14,9 @@
           <element id="module-output" name="LearnToFinal" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-jsp-api:9.0.52" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-el-api:9.0.52" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-servlet-api:9.0.52" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.25" />
           <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.11.4" />
           <element id="library" level="project" name="Maven: log4j:log4j:1.2.16" />
