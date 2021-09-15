@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Атрибут accesskey</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ </head>
+
+
+ <style>
+/* General */
+
+     *{
+         padding: 0;
+         margin: 0;
+         list-style:none;
+         text-decoration: none;
+
+         
+     }
+     .responsive {
+    width: 100%;
+    height: auto;
+}
+     
+     /*  HEADER  PC */ /*  HEADER  PC */ /*  HEADER  PC */ /*  HEADER  PC */ /*  HEADER  PC */ /*  HEADER  PC */ 
+.header{
+         width: 100%;
+         height: 90px;
+         display: inline-block;
+         background-color: black;
+         color: #666666;
+         
+         
+        
+ 
+     }
+     .header span{
+
+        
+     }
+
+     .inner_header{
+        text-align:center;
+        vertical-align: middle;
+        display: grid;
+        grid-template-columns: 30% 5% 65%;
+         
+
+     }
+     .inner_header > div.logo{
+        padding-left: 30px;
+        font-size: 32px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+
+     }
+     .inner_header > div.empty{
+        display: inline-block;
+
+     }
+     .inner_header > div.navigation{
+        color: #666666;
+         
+         font-size: 20px;
+         display: flex;
+        justify-content: center;
+        align-items: center;
+         
+
+     }
+     .inner_header > div.navigation li{
+        display: inline;
+        padding: 10px;
+
+     }
+     .logo_container_mobile_menu{
+         display: none;
+     }
+
+    
+
+
+    
+
+
+
+    
+
+
+  
+ /* MEDIA */ /* MEDIA *//* MEDIA *//* MEDIA *//* MEDIA *//* MEDIA */
+ @media  (max-width:870px){
+         
+         .inner_header{
+             display: none;
+
+         }
+         
+         
+         /*.logo_container_mobile_menu{
+             display: visibility;
+
+         }*/
+
+         .inner_header{
+        text-align: center;
+        vertical-align: middle;
+        display: grid;
+        grid-template-columns: 35% 0% 65%;
+         
+
+     }
+     .inner_header > div.logo{
+        color: #666666;
+        padding-left: 30px;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+     }
+     .inner_header > div.empty{
+        display: inline-block;
+
+     }
+     .inner_header > div.navigation{
+         color: #666666;
+         
+         font-size: 16px;
+         display: flex;
+        justify-content: center;
+        align-items: center;
+         
+
+     }
+     .inner_header > div.navigation li{
+        display: inline;
+        padding: 10px;
+
+     }
+     .logo_container_mobile_menu{
+         display: none;
+     }
+
+    
+         
+
+         
+     }
+     
+
+     /* Content */ /* Content */ /* Content */ /* Content */ /* Content */
+
+.content{
+      
+
+}
+.content_inner{
+    width: 100%;
+    height: 1000px;
+    
+    
+    font-size: 32px;
+    text-align: center;
+    
+  
+    
+    background-color: orange;
+    display: grid;
+    grid-template-columns: 100%;
+  
+    
+
+  
+}
+.content_inner > div.company{
+    background-color: chocolate;
+    vertical-align: middle;
+    padding-top:100px ;
+    
+}
+.content_inner > div.company span{
+    text-align: 32px;
+    color: white;
+}
+
+.content_inner > div.about{
+    background-color: cornflowerblue;
+}
+
+     
+
+
+
+
+
+
+ </style>
+<body>
+
+    <header>
+        <div class="header">
+            <div class="inner_header">
+
+                
+                <div class="logo">
+
+                    <img src="img/logo.jpg"  alt="logo+Hinterland" srcset=""><span>HINTERLAND</span>
+                
+                </div>
+                <div class="empty"> </div>
+
+                
+
+                <div class="navigation">
+
+                    <ul >
+    
+                        <a><li>THE LONG DARK</li></a>
+                        <a><li>COMMUNITY</li></a>
+                        <a><li>CONTACT</li></a>
+                        <a><li>SUPPORT</li></a>
+                       
+                        
+                    </ul>
+                    
+                </div>
+
+            </div>
+            <div class="inner_header_mobile">
+                <ul class="logo_container_mobile_menu">
+    
+                    <a><li>THE LONG DARK</li></a>
+                    <a><li>COMMUNITY</li></a>
+                    <a><li>CONTACT</li></a>
+                    <a><li>SUPPORT</li></a>
+                   
+                    
+                </ul>
+            </div>
+
+                
+
+
+            
+
+
+        </div>
+        
+          
+
+    </header>
+
+    <content>
+        
+        <div class="content">
+            <div class="content_inner">
+
+
+                <div class="company">
+
+                    <img src="img/logo_big.png"  width="550px" height="254px"  alt="" srcset=""><br><br>
+                    <span>HINTERLAND IS HIRING</span>
+
+
+                </div>
+
+
+                <div class="about">
+                    <img src="img/Hinterland_big.png"  width="550px" height="138px" alt="" srcset="">
+
+
+                </div>
+
+
+
+                <div class="game">
+
+
+
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+
+             </div>
+            
+
+
+                
+    
+    
+    
+    
+    
+                
+    
+    
+    
+               
+
+
+
+
+            
+
+
+
+    </content>
+
+
+
+
+
+ </body>
+</html>
