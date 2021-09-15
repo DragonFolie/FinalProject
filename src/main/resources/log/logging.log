@@ -4,4 +4,6 @@
   2021-09-12 03:38:58 INFO  UserManagerDAO:52 - 11Login new user: admin
   2021-09-12 03:39:09 INFO  UsersManager:141 - Add new user: Drag
   2021-09-12 04:28:47 INFO  UserManagerDAO:52 - Login user: admin
+  2021-09-13 20:14:19 INFO  LogoutServlet:52 - Login user: admin
+  2021-09-15 20:26:06 INFO  LogoutServlet:52 - Login user: admin
   
