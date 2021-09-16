@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -495,7 +496,7 @@ ul.summary-list > li:last-child  {
                     <a href="https://hinterlandforums.com/forums/"  target="_blank" >COMMUNITY</a>
                 </li>
                 <li>
-                    <a href="shop-right-sidebar.html"   >SHOP</a>
+                    <a href="shop-right-sidebar.jsp"   >SHOP</a>
                 </li>
                 <li>
                     <a href="https://hinterlandgames.zendesk.com/hc/en-us"  target="_blank"  > SUPPORT </a>

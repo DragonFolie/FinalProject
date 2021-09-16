@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,28 +6,28 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="addNewMoviePage/images/icons/favicon.ico"/>
+	<link rel="icon" type="image/png" href="views/addNewMoviePage/images/icons/favicon.ico"/>
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="addNewMoviePage/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="views/addNewMoviePage/vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="addNewMoviePage/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="views/addNewMoviePage/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="addNewMoviePage/fonts/iconic/css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" type="text/css" href="views/addNewMoviePage/fonts/iconic/css/material-design-iconic-font.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="addNewMoviePage/vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="views/addNewMoviePage/vendor/animate/animate.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="addNewMoviePage/vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="views/addNewMoviePage/vendor/css-hamburgers/hamburgers.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="addNewMoviePage/vendor/animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" href="views/addNewMoviePage/vendor/animsition/css/animsition.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="addNewMoviePage/vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="views/addNewMoviePage/vendor/select2/select2.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="addNewMoviePage/vendor/daterangepicker/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" href="views/addNewMoviePage/vendor/daterangepicker/daterangepicker.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="addNewMoviePage/vendor/noui/nouislider.min.css">
+	<link rel="stylesheet" type="text/css" href="views/addNewMoviePage/vendor/noui/nouislider.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="addNewMoviePage/css/util.css">
-	<link rel="stylesheet" type="text/css" href="addNewMoviePage/css/main.css">
+	<link rel="stylesheet" type="text/css" href="views/addNewMoviePage/css/util.css">
+	<link rel="stylesheet" type="text/css" href="views/addNewMoviePage/css/main.css">
 <!--===============================================================================================-->
 </head>
 <body>
@@ -36,7 +37,7 @@
 		<div class="wrap-contact100">
 			<form class="contact100-form validate-form">
 				<span class="contact100-form-title">
-					<a href="admin_page.html"><h2>Go back</h2></a><br><br>
+					<a href="views/admin_page.jsp"><h2>Go back</h2></a><br><br>
 				</span>
 				<span class="contact100-form-title">
 					New Movie
@@ -143,14 +144,14 @@
 
 
 <!--===============================================================================================-->
-	<script src="addNewMoviePage/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="views/addNewMoviePage/vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
-	<script src="addNewMoviePage/vendor/animsition/js/animsition.min.js"></script>
+	<script src="views/addNewMoviePage/vendor/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->
-	<script src="addNewMoviePage/vendor/bootstrap/js/popper.js"></script>
-	<script src="addNewMoviePage/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="views/addNewMoviePage/vendor/bootstrap/js/popper.js"></script>
+	<script src="views/addNewMoviePage/vendor/bootstrap/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
-	<script src="addNewMoviePage/vendor/select2/select2.min.js"></script>
+	<script src="views/addNewMoviePage/vendor/select2/select2.min.js"></script>
 	<script>
 		$(".js-select2").each(function(){
 			$(this).select2({
@@ -173,12 +174,12 @@
 		})
 	</script>
 <!--===============================================================================================-->
-	<script src="addNewMoviePage/vendor/daterangepicker/moment.min.js"></script>
-	<script src="addNewMoviePage/vendor/daterangepicker/daterangepicker.js"></script>
+	<script src="views/addNewMoviePage/vendor/daterangepicker/moment.min.js"></script>
+	<script src="views/addNewMoviePage/vendor/daterangepicker/daterangepicker.js"></script>
 <!--===============================================================================================-->
-	<script src="addNewMoviePage/vendor/countdowntime/countdowntime.js"></script>
+	<script src="views/addNewMoviePage/vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
-	<script src="addNewMoviePage/vendor/noui/nouislider.min.js"></script>
+	<script src="views/addNewMoviePage/vendor/noui/nouislider.min.js"></script>
 	<script>
 	    var filterBar = document.getElementById('filter-bar');
 
@@ -203,7 +204,7 @@
 	    });
 	</script>
 <!--===============================================================================================-->
-	<script src="addNewMoviePage/js/main.js"></script>
+	<script src="views/addNewMoviePage/js/main.js"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>

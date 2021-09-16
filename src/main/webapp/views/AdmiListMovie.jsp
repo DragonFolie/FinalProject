@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,15 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="AdminList/fonts/icomoon/style.css">
+    <link rel="stylesheet" href="views/AdminList/fonts/icomoon/style.css">
 
-    <link rel="stylesheet" href="AdminList/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="views/AdminList/css/owl.carousel.min.css">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="AdminList/css/bootstrap.min.css">
+    <link rel="stylesheet" href="views/AdminList/css/bootstrap.min.css">
     
     <!-- Style -->
-    <link rel="stylesheet" href="AdminList/css/style.css">
+    <link rel="stylesheet" href="views/AdminList/css/style.css">
 
     <title>Movie List</title>
     
@@ -27,7 +28,7 @@
   <div class="content">
     
     <div class="container">
-      <h2 class="mb-5" ><a href="admin_page.html">Go Back</a></h2>
+      <h2 class="mb-5" ><a href="admin_page.jsp">Go Back</a></h2>
       <h2 class="mb-5">Movie List</h2>
       
 
@@ -91,9 +92,9 @@
     
     
 
-    <script src="AdminList/js/jquery-3.3.1.min.js"></script>
-    <script src="AdminList/js/popper.min.js"></script>
-    <script src="AdminList/js/bootstrap.min.js"></script>
-    <script src="AdminList/js/main.js"></script>
+    <script src="views/AdminList/js/jquery-3.3.1.min.js"></script>
+    <script src="views/AdminList/js/popper.min.js"></script>
+    <script src="views/AdminList/js/bootstrap.min.js"></script>
+    <script src="views/AdminList/js/main.js"></script>
   </body>
 </html>

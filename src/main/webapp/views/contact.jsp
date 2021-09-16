@@ -1,3 +1,5 @@
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,7 +10,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
     </head>
     <style>
-/* General */
+        @import 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300'; /* General */
 
      *{
          padding: 0;
@@ -618,9 +620,7 @@ align-items: center;
   display: inline-block;
 }
 
-@import 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300';
-
-.button_send {
+        .button_send {
   width: 600px;
   height: 350px;
   overflow: hidden;
@@ -724,13 +724,46 @@ div[class*=box] {
                         <ul>
                             <li><a href="https://dou.ua/">JOIN US</a></li>
                                 
-                                            <li><a href="movies.jsp" >MOVIES</a></li>
+                                            <li><a href="viewes/movies.jsp" >MOVIES</a></li>
                                             
                                             <li><a href="https://www.facebook.com/" >COMMUNITY</a></li>
-                                            
-                                            <li><a href="contact.html" style="color: white;" >CONTACT</a></li>
-                                            
-                                            <li><a href="contact.html" >SUPPORT</a></li>
+
+                            <%
+
+                                String name_user  = (String)session.getAttribute("name");
+
+                                if(name_user != null ){
+
+
+
+                                //                                      out.print("Hello, "+name_user+" Welcome to Profile");
+                                out.print(
+                                "<li>\n" +
+                                "  Hello, "+name_user+" Welcome to <a href='views/user_profile.jsp'  >Profile</a>\n" +
+                                " </li>\n"
+                                );
+
+                                }
+                                if(name_user == null ) {
+
+                                out.print(
+                                "<li>\n" +
+                                "  <a onclick=\"location.href='/login'\">LOGIN</a>\n" +
+                                " </li>\n" +
+
+                                " <li>\n" +
+                                "     <a onclick=\"location.href='/registration'\">REGISTER</a>\n" +
+                                "</li>"
+                                );
+
+
+                                }
+
+
+
+
+
+                            %>
 
                                             
                         </ul>
@@ -973,9 +1006,9 @@ commercialized. For additional information see authorized use conditions and res
                                             
                                             <li><a href="https://www.facebook.com/" >COMMUNITY</a></li>
                                             
-                                            <li><a href="contact.html">CONTACT</a></li>
+                                            <li><a href="contact.jsp">CONTACT</a></li>
                                             
-                                            <li><a href="contact.html" >SUPPORT</a></li>
+                                            <li><a href="contact.jsp" >SUPPORT</a></li>
                                                     
                                             
                                         </ul>

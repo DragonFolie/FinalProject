@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html class="no-js" lang="">
     <head>
@@ -27,7 +28,7 @@
     </head>
     <body>
 
- <!-- <!-- preloader  
+ <!--  preloader
         <div id="preloader">
             <div id="ctn-preloader" class="ctn-preloader">
                 <div class="animation-preloader">
@@ -158,9 +159,9 @@
 
                                             <li ><a href="facebook.com" target="_blank">COMMUNITY</a></li>
 
-                                            <li class="dropdown active"><a href="shop-right-sidebar.html">SHOP</a></li>
+                                            <li class="dropdown active"><a href="shop-right-sidebar.jsp">SHOP</a></li>
 
-                                            <li><a href="contact.html" target="_blank">SUPPORT</a></li>
+                                            <li><a href="contact.jsp" target="_blank">SUPPORT</a></li>
                                             
                                             
 
@@ -169,8 +170,8 @@
                                     <div class="header-action d-none d-md-block">
                                         <ul>
                                             <li><a href="#"><i class="flaticon-two-arrows"></i></a></li>
-                                            <li><a href="wishlist.html"><i class="flaticon-heart"></i></a></li>
-                                            <li class="header-shop-cart"><a href="wishlist.html"><i class="flaticon-shopping-bag"></i><span class="cart-count">2</span></a>
+                                            <li><a href="wishlist.jsp"><i class="flaticon-heart"></i></a></li>
+                                            <li class="header-shop-cart"><a href="wishlist.jsp"><i class="flaticon-shopping-bag"></i><span class="cart-count">2</span></a>
                                                 <span class="cart-total-price">$ 128.00</span>
                                                 <ul class="minicart">
                                                     <li class="d-flex align-items-start">
@@ -227,7 +228,7 @@
                                                     </li>
                                                     <li>
                                                         <div class="checkout-link">
-                                                            <a href="wishlist.html">Shopping Cart</a>
+                                                            <a href="wishlist.jsp">Shopping Cart</a>
                                                             <a class="red-color" href="#">Checkout</a>
                                                         </div>
                                                     </li>
@@ -506,7 +507,7 @@
                                         <li><a href="https://hinterlandgames.zendesk.com/hc/en-us">Returns</a></li>
                                         <li><a href="https://hinterlandgames.zendesk.com/hc/en-us">Product Recalls</a></li>
                                         <li><a href="https://hinterlandgames.zendesk.com/hc/en-us">Accessibility</a></li>
-                                        <li><a href="contact.html">Contact Us</a></li>
+                                        <li><a href="contact.jsp">Contact Us</a></li>
                                     </ul>
                                 </div>
                             </div>

@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
  <head>
@@ -197,8 +198,7 @@
     height:138px;
 }
 
-}
- 
+
 @media  (min-width:870px){
 .down_menu_inner > div.down_menu_inner_second_text span{
 
@@ -984,7 +984,7 @@ div[class*=box] {
             <div class="inner_header">
                 <div class="logo">
                     <img src="views/img/logo.jpg" alt="logo+Hinterland" href="index.html"srcset="">
-                    <span ><a href="index.html" class="HINTERLAND">HINTERLAND</a></span>
+                    <span ><a href="index.jsp" class="HINTERLAND">HINTERLAND</a></span>
                 </div>
                 <div class="empty"></div>
                 <div class="navigation">
@@ -998,19 +998,48 @@ div[class*=box] {
                         </li>
 
                         <li>
-                            <a href="views/contact.html" >CONTACT</a>
+                            <a href="views/contact.jsp" >CONTACT</a>
                         </li>
 
                         <li>
                             <a href="https://hinterlandgames.zendesk.com/hc/en-us"   >SUPPORT</a>
                         </li>
-                        <li>
-<!--                            <a href="views/login.jsp"   >LOGIN</a>-->
-                            <a onclick="location.href='/login'">LOGIN</a>
-                        </li>
-                        <li>
-                            <a onclick="location.href='/registration'">REGISTER</a>
-                        </li>
+                        <%
+
+                        String name_user  = (String)session.getAttribute("name");
+
+                        if(name_user != null ){
+
+
+
+                        //                                      out.print("Hello, "+name_user+" Welcome to Profile");
+                        out.print(
+                        "<li>\n" +
+                        "  Hello, "+name_user+" Welcome to <a href='views/user_profile.jsp'  >Profile</a>\n" +
+                        " </li>\n"
+                        );
+
+                        }
+                        if(name_user == null ) {
+
+                        out.print(
+                        "<li>\n" +
+                        "  <a onclick=\"location.href='/login'\">LOGIN</a>\n" +
+                        " </li>\n" +
+
+                        " <li>\n" +
+                        "     <a onclick=\"location.href='/registration'\">REGISTER</a>\n" +
+                        "</li>"
+                        );
+
+
+                        }
+
+
+
+
+
+                        %>
                     </ul>
                 </div>
             </div>
@@ -1164,15 +1193,10 @@ div[class*=box] {
                                 
                                 <li><a href="https://www.facebook.com/" >COMMUNITY</a></li>
                                 
-                                <li><a href="views/contact.html">CONTACT</a></li>
-                                
-                                <li><a href="views/contact.html" >SUPPORT</a></li>
-                                <li>
-                                    <a href="views/login.html"   >LOGIN</a>
-                                </li>
-                                <li>
-                                    <a href="views/registration.html"    >REGISTER</a>
-                                </li>
+                                <li><a href="views/contact.jsp">CONTACT</a></li>
+
+                                <li><a href="views/contact.jsp" >SUPPORT</a></li>
+
                                
                                 
                             </ul>

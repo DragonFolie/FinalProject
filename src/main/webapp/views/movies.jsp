@@ -68,18 +68,47 @@ INSERT INTO `testtable` ". "(`TestColumn1`, `TestColumn2`) ". "VALUES('Second no
                             <a href="https://hinterlandforums.com/forums/"   >COMMUNITY</a>
                         </li>
                         <li>
-                            <a href="shop-right-sidebar.html"   >SHOP</a>
+                            <a href="shop-right-sidebar.jsp"   >SHOP</a>
                         </li>
                         <li>
                             <a href="https://hinterlandgames.zendesk.com/hc/en-us"   >SUPPORT</a>
                         </li>
-                        <li>
-                            <!--                            <a href="views/login.jsp"   >LOGIN</a>-->
-                            <a onclick="location.href='/login'">LOGIN</a>
-                        </li>
-                        <li>
-                            <a onclick="location.href='/registration'">REGISTER</a>
-                        </li>
+                        <%
+
+                            String name_user  = (String)session.getAttribute("name");
+
+                            if(name_user != null ){
+
+
+
+                                //                                      out.print("Hello, "+name_user+" Welcome to Profile");
+                                out.print(
+                                        "<li>\n" +
+                                                "  Hello, "+name_user+" Welcome to <a href='views/user_profile.jsp'  >Profile</a>\n" +
+                                                " </li>\n"
+                                );
+
+                            }
+                            if(name_user == null ) {
+
+                                out.print(
+                                        "<li>\n" +
+                                                "  <a onclick=\"location.href='/login'\">LOGIN</a>\n" +
+                                                " </li>\n" +
+
+                                                " <li>\n" +
+                                                "     <a onclick=\"location.href='/registration'\">REGISTER</a>\n" +
+                                                "</li>"
+                                );
+
+
+                            }
+
+
+
+
+
+                        %>
                         <li>
                             <a>
 
@@ -207,14 +236,14 @@ INSERT INTO `testtable` ". "(`TestColumn1`, `TestColumn2`) ". "VALUES('Second no
                                 "                <span class=\"time_block\">"+date +"</span>\n" +
                                 "\n" +
                                 "\n" +
-                                "                <a href='views/We_Are_Your_Friend.html' class=\"block_news_img_text\">\n" +
+                                "                <a href='views/We_Are_Your_Friend.jsp' class=\"block_news_img_text\">\n" +
                                 "\n" +
                                 "                    <div class=\"block_news_img_text\">\n" +
                                 "                        <img src=\"views/img/MoviePoster/We_Are_YourFriend/we-are-your-friends-2.jpg\" style=\"width: 329px; height: auto;\"  alt=\"\" srcset=\"\">\n" +
                                 "                    </div>\n" +
                                 "\n" +
                                 "                    <div class=\"block_news_text\">\n" +
-                                "                        <h2 href='views/We_Are_Your_Friend.html' class=\"block_news_text_inner\"> "+ name+"</h2>\n" +
+                                "                        <h2 href='views/We_Are_Your_Friend.jsp' class=\"block_news_text_inner\"> "+ name+"</h2>\n" +
                                 "\n" +
                                 "                    </div>\n" +
                                 "                    \n" +
@@ -359,17 +388,12 @@ INSERT INTO `testtable` ". "(`TestColumn1`, `TestColumn2`) ". "VALUES('Second no
                 <a href="https://www.facebook.com/" class="footer_list_text_li" target="_blank" >COMMUNITY</a>
             </li>
             <li>
-                <a href="shop-right-sidebar.html"  class="footer_list_text_li" >SHOP</a>
+                <a href="shop-right-sidebar.jsp" class="footer_list_text_li" >SHOP</a>
             </li>
             <li>
-                <a href="contact.html"class="footer_list_text_li"  target="_blank"  >SUPPORT</a>
+                <a href="contact.jsp" class="footer_list_text_li" target="_blank"  >SUPPORT</a>
             </li>
-            <li>
-                <a href="login.html" class="footer_list_text_li"  >LOGIN</a>
-            </li>
-            <li>
-                <a href="registration.html"  class="footer_list_text_li"  >REGISTER</a>
-            </li>
+
         </ul>
 
         <div class="footer_logo">

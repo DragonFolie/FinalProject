@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html class="no-js" lang="">
     <head>
@@ -7,28 +8,28 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<link rel="shortcut icon" type="image/x-icon" href="img/logo/logo_big3.png">
+		<link rel="shortcut icon" type="image/x-icon" href="views/img/logo/logo_big3.png">
         <!-- Place favicon.ico in the root directory -->
 
 		<!-- CSS here -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/animate.min.css">
-        <link rel="stylesheet" href="css/magnific-popup.css">
-        <link rel="stylesheet" href="css/fontawesome-all.min.css">
-        <link rel="stylesheet" href="css/owl.carousel.min.css">
-        <link rel="stylesheet" href="css/jquery-ui.min.css">
-        <link rel="stylesheet" href="css/flaticon.css">
-        <link rel="stylesheet" href="css/odometer.css">
-        <link rel="stylesheet" href="css/aos.css">
-        <link rel="stylesheet" href="css/slick.css">
-        <link rel="stylesheet" href="css/default.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="views/css/bootstrap.min.css">
+        <link rel="stylesheet" href="views/css/animate.min.css">
+        <link rel="stylesheet" href="views/css/magnific-popup.css">
+        <link rel="stylesheet" href="views/css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="views/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="views/css/jquery-ui.min.css">
+        <link rel="stylesheet" href="views/css/flaticon.css">
+        <link rel="stylesheet" href="views/css/odometer.css">
+        <link rel="stylesheet" href="views/css/aos.css">
+        <link rel="stylesheet" href="views/css/slick.css">
+        <link rel="stylesheet" href="views/css/default.css">
+        <link rel="stylesheet" href="views//style.css">
+        <link rel="stylesheet" href="views/css/responsive.css">
     </head>
     <body>
 
 
-        <!-- <!-- preloader  
+        <!--  preloader  
         <div id="preloader">
             <div id="ctn-preloader" class="ctn-preloader">
                 <div class="animation-preloader">
@@ -109,12 +110,12 @@
                                             <div class="dropdown">
                                                 <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
                                                     aria-haspopup="true" aria-expanded="false">
-                                                    <img src="img/icon/ship_flag.png" alt=""> US/USD
+                                                    <img src="views/img/icon/ship_flag.png" alt=""> US/USD
                                                 </button>
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                    <a class="dropdown-item" href="#"><img src="img/icon/australia.png" alt="">AUS/USD</a>
-                                                    <a class="dropdown-item" href="#"><img src="img/icon/bng.png" alt="">BNG/TK</a>
-                                                    <a class="dropdown-item" href="#"><img src="img/icon/india.png" alt="">IN/RP</a>
+                                                    <a class="dropdown-item" href="#"><img src="views/img/icon/australia.png" alt="">AUS/USD</a>
+                                                    <a class="dropdown-item" href="#"><img src="views/img/icon/bng.png" alt="">BNG/TK</a>
+                                                    <a class="dropdown-item" href="#"><img src="views/img/icon/india.png" alt="">IN/RP</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -128,9 +129,9 @@
                             <div class="header-top-right">
                                 <ul>
                                     <li>
-                                        <a href="log_reg/register.html"><i class="flaticon-user"></i>Register</a>
+                                        <a href="views/log_reg/register.jsp"><i class="flaticon-user"></i>Register</a>
                                         <span>or</span>
-                                        <a href="log_reg/login.html">Sign in</a>
+                                        <a href="views/log_reg/login.jsp">Sign in</a>
                                     </li>
                                 </ul>
                             </div>
@@ -149,7 +150,7 @@
                             <div class="menu-wrap">
                                 <nav class="menu-nav show">
                                     <div class="logo">
-                                        <a href="http://localhost:8080"><img src="img/logo/222.png" alt="Logo"></a>
+                                        <a href="http://localhost:8080"><img src="views/img/logo/222.png" alt="Logo"></a>
                                     </div>
                                     <div class="navbar-wrap main-menu d-none d-lg-flex">
                                         <ul class="navigation">
@@ -195,14 +196,14 @@
                                     <div class="header-action d-none d-md-block">
                                         <ul>
                                             <li><a href="#"><i class="flaticon-two-arrows"></i></a></li>
-                                            <li><a href="wishlist.php"><i class="flaticon-heart"></i></a></li>
-                                            <li class="header-shop-cart"><a href="wishlist.php"><i class="flaticon-shopping-bag"></i><span class="cart-count">2</span></a>
+                                            <li><a href="views/wishlist.jsp"><i class="flaticon-heart"></i></a></li>
+                                            <li class="header-shop-cart"><a href="views/wishlist.jsp"><i class="flaticon-shopping-bag"></i><span class="cart-count">2</span></a>
                                                 <span class="cart-total-price">$ 128.00</span>
                                                 <ul class="minicart">
                                                     <li class="d-flex align-items-start">
                                                         <div class="cart-img">
                                                             <a href="#">
-                                                                <img src="img/product/cart_p01.jpg" alt="">
+                                                                <img src="views/img/product/cart_p01.jpg" alt="">
                                                             </a>
                                                         </div>
                                                         <div class="cart-content">
@@ -225,7 +226,7 @@
                                                     <li class="d-flex align-items-start">
                                                         <div class="cart-img">
                                                             <a href="#">
-                                                                <img src="img/product/cart_p02.jpg" alt="">
+                                                                <img src="views/img/product/cart_p02.jpg" alt="">
                                                             </a>
                                                         </div>
                                                         <div class="cart-content">
@@ -253,7 +254,7 @@
                                                     </li>
                                                     <li>
                                                         <div class="checkout-link">
-                                                            <a href="wishlist.php">Shopping Cart</a>
+                                                            <a href="wishlist.jsp">Shopping Cart</a>
                                                             <a class="red-color" href="#">Checkout</a>
                                                         </div>
                                                     </li>
@@ -297,7 +298,7 @@
                                 <div class="close-btn"><i class="fas fa-times"></i></div>
 
                                 <nav class="menu-box">
-                                    <div class="nav-logo"><a href="http://localhost:8080"><img src="img/logo/white_logo.png" alt="" title=""></a>
+                                    <div class="nav-logo"><a href="http://localhost:8080"><img src="views/img/logo/white_logo.png" alt="" title=""></a>
                                     </div>
                                     <div class="menu-outer">
                                         <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
@@ -329,7 +330,7 @@
         <main>
 
             <!-- breadcrumb-area -->
-            <section class="breadcrumb-area breadcrumb-bg" data-background="img/bg/breadcrumb_bg.jpg">
+            <section class="breadcrumb-area breadcrumb-bg" data-background="views/img/bg/breadcrumb_bg.jpg">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
@@ -367,9 +368,9 @@
                                 <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
                                     <div class="exclusive-item exclusive-item-three text-center mb-50">
                                         <div class="exclusive-item-thumb">
-                                            <a href="shop-details.html">
-                                                <img src="img/clothes/327x358/t-shirt-one.jpg" alt="">
-                                                <img class="overlay-product-thumb" src="img/clothes/327x358/t-shirt-one.jpg" alt="">
+                                            <a href="shop-details.jsp">
+                                                <img src="views/img/clothes/327x358/t-shirt-one.jpg" alt="">
+                                                <img class="overlay-product-thumb" src="views/img/clothes/327x358/t-shirt-one.jpg" alt="">
                                             </a>
                                             <ul class="action">
                                                 
@@ -378,7 +379,7 @@
                                             </ul>
                                         </div>
                                         <div class="exclusive-item-content">
-                                            <h5><a href="shop-details.html">Short Sleev T-Shirt</a></h5>
+                                            <h5><a href="views/shop-details.jsp">Short Sleev T-Shirt</a></h5>
                                             <div class="exclusive--item--price">
                                                 <del class="old-price">$15.00</del>
                                                 <span class="new-price">$10.99</span>
@@ -396,9 +397,9 @@
                                 <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
                                     <div class="exclusive-item exclusive-item-three text-center mb-50">
                                         <div class="exclusive-item-thumb">
-                                            <a href="shop-details.html">
-                                                <img src="img/clothes/327x358/t-shirt-two.jpg" alt="">
-                                                <img class="overlay-product-thumb" src="img/clothes/327x358/t-shirt-two.jpg" alt="">
+                                            <a href="shop-details.jsp">
+                                                <img src="views/img/clothes/327x358/t-shirt-two.jpg" alt="">
+                                                <img class="overlay-product-thumb" src="views/img/clothes/327x358/t-shirt-two.jpg" alt="">
                                             </a>
                                             <ul class="action">
                                                 
@@ -407,7 +408,7 @@
                                             </ul>
                                         </div>
                                         <div class="exclusive-item-content">
-                                            <h5><a href="shop-details.html">WOMAN Short Sleev T-Shirt</a></h5>
+                                            <h5><a href="views/shop-details.jsp">WOMAN Short Sleev T-Shirt</a></h5>
                                             <div class="exclusive--item--price">
                                                 <del class="old-price">$15.00</del>
                                                 <span class="new-price">$10.99</span>
@@ -425,9 +426,9 @@
                                 <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
                                     <div class="exclusive-item exclusive-item-three text-center mb-50">
                                         <div class="exclusive-item-thumb">
-                                            <a href="shop-details.html">
-                                                <img src="img/clothes/327x358/t-shirt-3.jpg" alt="">
-                                                <img class="overlay-product-thumb" src="img/clothes/327x358/t-shirt-3.jpg" alt="">
+                                            <a href="shop-details.jsp">
+                                                <img src="views/img/clothes/327x358/t-shirt-3.jpg" alt="">
+                                                <img class="overlay-product-thumb" src="views/img/clothes/327x358/t-shirt-3.jpg" alt="">
                                             </a>
                                             <ul class="action">
                                                 
@@ -436,7 +437,7 @@
                                             </ul>
                                         </div>
                                         <div class="exclusive-item-content">
-                                            <h5><a href="shop-details.html">WOMAN Short Sleev T-Shirt</a></h5>
+                                            <h5><a href="views/shop-details.jsp">WOMAN Short Sleev T-Shirt</a></h5>
                                             <div class="exclusive--item--price">
                                                 <del class="old-price">$15.00</del>
                                                 <span class="new-price">$10.99</span>
@@ -454,9 +455,9 @@
                                 <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
                                     <div class="exclusive-item exclusive-item-three text-center mb-50">
                                         <div class="exclusive-item-thumb">
-                                            <a href="shop-details.html">
-                                                <img src="img/clothes/327x358/t-shirt-4.jpg" alt="">
-                                                <img class="overlay-product-thumb" src="img/clothes/327x358/t-shirt-4.jpg" alt="">
+                                            <a href="shop-details.jsp">
+                                                <img src="views/img/clothes/327x358/t-shirt-4.jpg" alt="">
+                                                <img class="overlay-product-thumb" src="views/img/clothes/327x358/t-shirt-4.jpg" alt="">
                                             </a>
                                             <ul class="action">
                                                
@@ -465,7 +466,7 @@
                                             </ul>
                                         </div>
                                         <div class="exclusive-item-content">
-                                            <h5><a href="shop-details.html">Short Sleev T-Shirt</a></h5>
+                                            <h5><a href="views/shop-details.jsp">Short Sleev T-Shirt</a></h5>
                                             <div class="exclusive--item--price">
                                                 <del class="old-price">$15.00</del>
                                                 <span class="new-price">$10.99</span>
@@ -483,9 +484,9 @@
                                 <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
                                     <div class="exclusive-item exclusive-item-three text-center mb-50">
                                         <div class="exclusive-item-thumb">
-                                            <a href="shop-details.html">
-                                                <img src="img/clothes/327x358/t-shirt-5.jpg" alt="">
-                                                <img class="overlay-product-thumb" src="img/clothes/327x358/t-shirt-5.jpg" alt="">
+                                            <a href="shop-details.jsp">
+                                                <img src="views/img/clothes/327x358/t-shirt-5.jpg" alt="">
+                                                <img class="overlay-product-thumb" src="views/img/clothes/327x358/t-shirt-5.jpg" alt="">
                                             </a>
                                             <ul class="action">
                                                
@@ -494,7 +495,7 @@
                                             </ul>
                                         </div>
                                         <div class="exclusive-item-content">
-                                            <h5><a href="shop-details.html">Short Sleev T-Shirt</a></h5>
+                                            <h5><a href="views/shop-details.jsp">Short Sleev T-Shirt</a></h5>
                                             <div class="exclusive--item--price">
                                                 <del class="old-price">$15.00</del>
                                                 <span class="new-price">$10.99</span>
@@ -512,9 +513,9 @@
                                 <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
                                     <div class="exclusive-item exclusive-item-three text-center mb-50">
                                         <div class="exclusive-item-thumb">
-                                            <a href="shop-details.html">
-                                                <img src="img/clothes/327x358/t-shirt-6.jpg" alt="">
-                                                <img class="overlay-product-thumb" src="img/clothes/327x358/t-shirt-6.jpg" alt="">
+                                            <a href="shop-details.jsp">
+                                                <img src="views/img/clothes/327x358/t-shirt-6.jpg" alt="">
+                                                <img class="overlay-product-thumb" src="views/img/clothes/327x358/t-shirt-6.jpg" alt="">
                                             </a>
                                             <ul class="action">
                                                 
@@ -523,7 +524,7 @@
                                             </ul>
                                         </div>
                                         <div class="exclusive-item-content">
-                                            <h5><a href="shop-details.html">Short Sleev T-Shirt</a></h5>
+                                            <h5><a href="views/shop-details.jsp">Short Sleev T-Shirt</a></h5>
                                             <div class="exclusive--item--price">
                                                 <del class="old-price">$15.00</del>
                                                 <span class="new-price">$10.99</span>
@@ -541,9 +542,9 @@
                                 <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
                                     <div class="exclusive-item exclusive-item-three text-center mb-50">
                                         <div class="exclusive-item-thumb">
-                                            <a href="shop-details.html">
+                                            <a href="views/shop-details.jsp">
                                                 <img src="img/clothes/327x358/t-shirt-7.jpg" alt="">
-                                                <img class="overlay-product-thumb" src="img/clothes/327x358/t-shirt-7.jpg" alt="">
+                                                <img class="overlay-product-thumb" src="views/img/clothes/327x358/t-shirt-7.jpg" alt="">
                                             </a>
                                             <ul class="action">
                                                
@@ -552,7 +553,7 @@
                                             </ul>
                                         </div>
                                         <div class="exclusive-item-content">
-                                            <h5><a href="shop-details.html">Short Sleev T-Shirt</a></h5>
+                                            <h5><a href="views/shop-details.jsp">Short Sleev T-Shirt</a></h5>
                                             <div class="exclusive--item--price">
                                                 <del class="old-price">$15.00</del>
                                                 <span class="new-price">$10.99</span>
@@ -570,9 +571,9 @@
                                 <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
                                     <div class="exclusive-item exclusive-item-three text-center mb-50">
                                         <div class="exclusive-item-thumb">
-                                            <a href="shop-details.html">
-                                                <img src="img/clothes/327x358/t-shirt-8.jpg" alt="">
-                                                <img class="overlay-product-thumb" src="img/clothes/327x358/t-shirt-8.jpg" alt="">
+                                            <a href="views/shop-details.jsp">
+                                                <img src="views/img/clothes/327x358/t-shirt-8.jpg" alt="">
+                                                <img class="overlay-product-thumb" src="views/img/clothes/327x358/t-shirt-8.jpg" alt="">
                                             </a>
                                             <ul class="action">
                                                 
@@ -581,7 +582,7 @@
                                             </ul>
                                         </div>
                                         <div class="exclusive-item-content">
-                                            <h5><a href="shop-details.html">Long Sleev T-Shirt</a></h5>
+                                            <h5><a href="views/shop-details.jsp">Long Sleev T-Shirt</a></h5>
                                             <div class="exclusive--item--price">
                                                 <del class="old-price">$15.00</del>
                                                 <span class="new-price">$10.99</span>
@@ -599,9 +600,9 @@
                                 <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
                                     <div class="exclusive-item exclusive-item-three text-center mb-50">
                                         <div class="exclusive-item-thumb">
-                                            <a href="shop-details.html">
-                                                <img src="img/clothes/327x358/axe.jpg" alt="">
-                                                <img class="overlay-product-thumb" src="img/clothes/327x358/axe.jpg" alt="">
+                                            <a href="views/shop-details.jsp">
+                                                <img src="views/img/clothes/327x358/axe.jpg" alt="">
+                                                <img class="overlay-product-thumb" src="views/img/clothes/327x358/axe.jpg" alt="">
                                             </a>
                                             <ul class="action">
                                                 
@@ -610,7 +611,7 @@
                                             </ul>
                                         </div>
                                         <div class="exclusive-item-content">
-                                            <h5><a href="shop-details.html">HINTERLAND Theme AXE</a></h5>
+                                            <h5><a href="views/shop-details.jsp">HINTERLAND Theme AXE</a></h5>
                                             <div class="exclusive--item--price">
                                                 <del class="old-price">$69.00</del>
                                                 <span class="new-price">$58.00</span>
@@ -628,9 +629,9 @@
                                 <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
                                     <div class="exclusive-item exclusive-item-three text-center mb-50">
                                         <div class="exclusive-item-thumb">
-                                            <a href="shop-details.html">
-                                                <img src="img/clothes/327x358/cups.jpg" alt="">
-                                                <img class="overlay-product-thumb" src="img/clothes/327x358/cups.jpg" alt="">
+                                            <a href="shop-details.jsp">
+                                                <img src="views/img/clothes/327x358/cups.jpg" alt="">
+                                                <img class="overlay-product-thumb" src="views/img/clothes/327x358/cups.jpg" alt="">
                                             </a>
                                             <ul class="action">
                                                 
@@ -639,7 +640,7 @@
                                             </ul>
                                         </div>
                                         <div class="exclusive-item-content">
-                                            <h5><a href="shop-details.html">The Long Dark Theme Cup</a></h5>
+                                            <h5><a href="views/shop-details.jsp">The Long Dark Theme Cup</a></h5>
                                             <div class="exclusive--item--price">
                                                 <del class="old-price">$10.00</del>
                                                 <span class="new-price">$6.99</span>
@@ -657,9 +658,9 @@
                                 <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
                                     <div class="exclusive-item exclusive-item-three text-center mb-50">
                                         <div class="exclusive-item-thumb">
-                                            <a href="shop-details.html">
-                                                <img src="img/clothes/327x358/cups2.jpg" alt="">
-                                                <img class="overlay-product-thumb" src="img/clothes/327x358/cups2.jpg" alt="">
+                                            <a href="views/shop-details.jsp">
+                                                <img src="views/img/clothes/327x358/cups2.jpg" alt="">
+                                                <img class="overlay-product-thumb" src="views/img/clothes/327x358/cups2.jpg" alt="">
                                             </a>
                                             <ul class="action">
                                                 
@@ -668,7 +669,7 @@
                                             </ul>
                                         </div>
                                         <div class="exclusive-item-content">
-                                            <h5><a href="shop-details.html"> The Long Dark Theme Cup</a></h5>
+                                            <h5><a href="views/shop-details.jsp"> The Long Dark Theme Cup</a></h5>
                                             <div class="exclusive--item--price">
                                                 <del class="old-price">$10.00</del>
                                                 <span class="new-price">$6.99</span>
@@ -686,9 +687,9 @@
                                 <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
                                     <div class="exclusive-item exclusive-item-three text-center mb-50">
                                         <div class="exclusive-item-thumb">
-                                            <a href="shop-details.html">
-                                                <img src="img/clothes/327x358/poster.png" alt="">
-                                                <img class="overlay-product-thumb" src="img/clothes/327x358/poster.png" alt="">
+                                            <a href="views/shop-details.jsp">
+                                                <img src="views/img/clothes/327x358/poster.png" alt="">
+                                                <img class="overlay-product-thumb" src="views/img/clothes/327x358/poster.png" alt="">
                                             </a>
                                             <ul class="action">
                                                
@@ -697,7 +698,7 @@
                                             </ul>
                                         </div>
                                         <div class="exclusive-item-content">
-                                            <h5><a href="shop-details.html">The Long Dark Poster</a></h5>
+                                            <h5><a href="shop-details.jsp">The Long Dark Poster</a></h5>
                                             <div class="exclusive--item--price">
                                                 <del class="old-price">$25.00</del>
                                                 <span class="new-price">$12.99</span>
@@ -768,7 +769,7 @@
                                             <ul>
                                                 <li>
                                                     <div class="sidebar-product-thumb">
-                                                        <a href="#"><img src="img/product/sidebar_product01.jpg" alt=""></a>
+                                                        <a href="#"><img src="views/img/product/sidebar_product01.jpg" alt=""></a>
                                                     </div>
                                                     <div class="sidebar-product-content">
                                                         <div class="rating">
@@ -784,7 +785,7 @@
                                                 </li>
                                                 <li>
                                                     <div class="sidebar-product-thumb">
-                                                        <a href="#"><img src="img/product/sidebar_product02.jpg" alt=""></a>
+                                                        <a href="#"><img src="views/img/product/sidebar_product02.jpg" alt=""></a>
                                                     </div>
                                                     <div class="sidebar-product-content">
                                                         <div class="rating">
@@ -800,7 +801,7 @@
                                                 </li>
                                                 <li>
                                                     <div class="sidebar-product-thumb">
-                                                        <a href="#"><img src="img/product/sidebar_product03.jpg" alt=""></a>
+                                                        <a href="#"><img src="views/img/product/sidebar_product03.jpg" alt=""></a>
                                                     </div>
                                                     <div class="sidebar-product-content">
                                                         <div class="rating">
@@ -820,7 +821,7 @@
                                             <ul>
                                                 <li>
                                                     <div class="sidebar-product-thumb">
-                                                        <a href="#"><img src="img/product/sidebar_product01.jpg" alt=""></a>
+                                                        <a href="#"><img src="views/img/product/sidebar_product01.jpg" alt=""></a>
                                                     </div>
                                                     <div class="sidebar-product-content">
                                                         <div class="rating">
@@ -836,7 +837,7 @@
                                                 </li>
                                                 <li>
                                                     <div class="sidebar-product-thumb">
-                                                        <a href="#"><img src="img/product/sidebar_product02.jpg" alt=""></a>
+                                                        <a href="#"><img src="views/img/product/sidebar_product02.jpg" alt=""></a>
                                                     </div>
                                                     <div class="sidebar-product-content">
                                                         <div class="rating">
@@ -852,7 +853,7 @@
                                                 </li>
                                                 <li>
                                                     <div class="sidebar-product-thumb">
-                                                        <a href="#"><img src="img/product/sidebar_product03.jpg" alt=""></a>
+                                                        <a href="#"><img src="views/img/product/sidebar_product03.jpg" alt=""></a>
                                                     </div>
                                                     <div class="sidebar-product-content">
                                                         <div class="rating">
@@ -950,7 +951,7 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="footer-widget mb-50">
                                 <div class="footer-logo mb-30">
-                                    <a href="http://localhost:8080"><img style="width: 141px;" src="img/logo/logo_big2.png" alt=""></a>
+                                    <a href="http://localhost:8080"><img style="width: 141px;" src="views/img/logo/logo_big2.png" alt=""></a>
                                 </div>
                                 <div class="footer-text mb-35">
                                     <p>Namkand sodales vel online best prices Amazon Check out ethnic wear, formal wear western wear
@@ -978,7 +979,7 @@
                                         <li><a href="https://hinterlandgames.zendesk.com/hc/en-us">Returns</a></li>
                                         <li><a href="https://hinterlandgames.zendesk.com/hc/en-us">Product Recalls</a></li>
                                         <li><a href="https://hinterlandgames.zendesk.com/hc/en-us">Accessibility</a></li>
-                                        <li><a href="contact.html">Contact Us</a></li>
+                                        <li><a href="contact.jsp">Contact Us</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -1027,7 +1028,7 @@
                         </div>
                         <div class="col-lg-6 col-md-6 d-none d-md-block">
                             <div class="payment-method-img text-right">
-                                <img src="img/images/card_img.png" alt="img">
+                                <img src="views/img/images/card_img.png" alt="img">
                             </div>
                         </div>
                     </div>
@@ -1041,21 +1042,21 @@
 
 
 		<!-- JS here -->
-        <script src="js/vendor/jquery-3.5.0.min.js"></script>
-        <script src="js/popper.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/isotope.pkgd.min.js"></script>
-        <script src="js/imagesloaded.pkgd.min.js"></script>
-        <script src="js/jquery.magnific-popup.min.js"></script>
-        <script src="js/owl.carousel.min.js"></script>
-        <script src="js/jquery.odometer.min.js"></script>
-        <script src="js/jquery.countdown.min.js"></script>
-        <script src="js/jquery.appear.js"></script>
-        <script src="js/slick.min.js"></script>
-        <script src="js/ajax-form.js"></script>
-        <script src="js/wow.min.js"></script>
-        <script src="js/aos.js"></script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        <script src="views/js/vendor/jquery-3.5.0.min.js"></script>
+        <script src="views/js/popper.min.js"></script>
+        <script src="views/js/bootstrap.min.js"></script>
+        <script src="views/js/isotope.pkgd.min.js"></script>
+        <script src="views/js/imagesloaded.pkgd.min.js"></script>
+        <script src="views/js/jquery.magnific-popup.min.js"></script>
+        <script src="views/js/owl.carousel.min.js"></script>
+        <script src="views/js/jquery.odometer.min.js"></script>
+        <script src="views/js/jquery.countdown.min.js"></script>
+        <script src="views/js/jquery.appear.js"></script>
+        <script src="views/js/slick.min.js"></script>
+        <script src="views/js/ajax-form.js"></script>
+        <script src="views/js/wow.min.js"></script>
+        <script src="views/js/aos.js"></script>
+        <script src="views/js/plugins.js"></script>
+        <script src="views/js/main.js"></script>
     </body>
 </html>

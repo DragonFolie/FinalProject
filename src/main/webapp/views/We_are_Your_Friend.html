@@ -1,7 +1,5 @@
 
 
-
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -1383,7 +1381,31 @@ transition: 1s;
     font-family: 'Cookie', cursive !important;
 }
 
-
+.poster{
+    
+    height: 30px;
+    position:relative;
+    margin-right: 150px;
+    
+}
+.descr{
+    display:none;
+    margin-left:-350px;
+    padding:10px;
+    margin-top:17px;
+    background:#1f1f1f;
+    height:auto;
+    -moz-box-shadow:0 5px 5px rgba(0,0,0,0.3);
+    -webkit-box-shadow:0 5px 5px rgba(0,0,0,0.3);
+    box-shadow:0 5px 5px rgba(0,0,0,0.3);
+}
+.poster:hover .descr{
+    display:block;
+    position:absolute;
+    top:120px;
+    z-index:9999;
+    width:400px;
+}
 
 
 
@@ -1412,10 +1434,10 @@ transition: 1s;
                     <a href="https://www.facebook.com/"  target="_blank" >COMMUNITY</a>
                 </li>
                 <li>
-                    <a href="shop-right-sidebar.html"   >SHOP</a>
+                    <a href="shop-right-sidebar.jsp"   >SHOP</a>
                 </li>
                 <li>
-                    <a href="contact.html"  target="_blank"  >SUPPORT</a>
+                    <a href="contact.jsp" target="_blank"  >SUPPORT</a>
                 </li>
                 <li>
                     <!--                            <a href="views/login.jsp"   >LOGIN</a>-->
@@ -1600,15 +1622,23 @@ transition: 1s;
                         <div class="weekend"></div>
                     </div>
                 </div>
+
                 
 
                 <div class="button_send_buy">
+                    <div class="poster">
+                        *Show all seats*
+                        <div class="descr">
+                        
+                        <img src="img/cinema-seats.jpg" alt="" srcset="">
+                        </div>
+                        </div>
                    
                     <form method="post">
             
                         
 
-                            Choose time and day &nbsp
+                            Choose time and day and number of seat &nbsp
                             <select name="changeStatus">
                                 <option >8:00 - 10:00</option>
                                 <option >10:00 - 12:00</option>
@@ -1626,6 +1656,17 @@ transition: 1s;
                                 <option >Friday</option>
                                 <option >Saturday</option>
                                 <option >Sunday</option>
+                            </select>&nbsp
+                            <select name="changeStatus">
+                                <option >1</option>
+                                <option >2</option>
+                                <option >3</option>
+                                <option >4</option>
+                                <option >5</option>
+                                <option >6</option>
+                                <option >7</option>
+                                <option >8</option>
+                                <option >9</option>
                             </select>&nbsp
                             
                             <div class="button_send_buy">
@@ -1989,10 +2030,10 @@ transition: 1s;
                 <a href="https://www.facebook.com/" class="footer_list_text_li" target="_blank" >COMMUNITY</a>
             </li>
             <li>
-                <a href="shop-right-sidebar.html"  class="footer_list_text_li" >SHOP</a>
+                <a href="shop-right-sidebar.jsp" class="footer_list_text_li" >SHOP</a>
             </li>
             <li>
-                <a href="contact.html"class="footer_list_text_li"  target="_blank"  >SUPPORT</a>
+                <a href="contact.jsp" class="footer_list_text_li" target="_blank"  >SUPPORT</a>
             </li>
             <li>
                 <a href="login.html" class="footer_list_text_li"  >LOGIN</a>

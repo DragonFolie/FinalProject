@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -55,10 +56,10 @@
                               <a href="https://www.facebook.com/"  target="_blank" >COMMUNITY</a>
                           </li>
                           <li>
-                              <a href="shop-right-sidebar.html"   >SHOP</a>
+                              <a href="shop-right-sidebar.jsp"   >SHOP</a>
                           </li>
                           <li>
-                              <a href="contact.html"  target="_blank"  > SUPPORT </a>
+                              <a href="contact.jsp" target="_blank"  > SUPPORT </a>
                           </li>
 
 
@@ -73,7 +74,7 @@
 //                                      out.print("Hello, "+name_user+" Welcome to Profile");
                                       out.print(
                                               "<li>\n" +
-                                              "  Hello, "+name_user+" Welcome to <a href='views/user_profile.html'  >Profile</a>\n" +
+                                              "  Hello, "+name_user+" Welcome to <a href='views/user_profile.jsp'  >Profile</a>\n" +
                                               " </li>\n"
                                       );
 
@@ -86,7 +87,7 @@
                                                       " </li>\n" +
 
                                                       " <li>\n" +
-                                                      "     <a onclick=\"location.href='/registration'\">REGISTER</a>REGISTER</a>\n" +
+                                                      "     <a onclick=\"location.href='/registration'\">REGISTER</a>\n" +
                                                       "</li>"
                                       );
 

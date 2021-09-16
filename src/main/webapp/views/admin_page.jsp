@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -496,7 +497,7 @@ ul.summary-list > li:last-child  {
                     <a href="https://hinterlandforums.com/forums/"  target="_blank" >COMMUNITY</a>
                 </li>
                 <li>
-                    <a href="shop-right-sidebar.html"   >SHOP</a>
+                    <a href="shop-right-sidebar.jsp"   >SHOP</a>
                 </li>
                 <li>
                     <a href="https://hinterlandgames.zendesk.com/hc/en-us"  target="_blank"  > SUPPORT </a>
@@ -542,13 +543,13 @@ ul.summary-list > li:last-child  {
               <h1>Bio Graph</h1>
               <div class="row">
                   <div class="bio-row">
-                      <p><span>Add new movie </span>: <a href="newMovie.html">*click*</a></p>
+                      <p><span>Add new movie </span>: <a href="views/newMovie.jsp">*click*</a></p>
                   </div>
                   <div class="bio-row">
-                    <p><span>Delete session </span>: <a href="Ad">*click*</a></p>
+                    <p><span>Delete session </span>: <a href="#">*click*</a></p>
                 </div>
                 <div class="bio-row">
-                    <p><span>List of movies </span>: <a href="AdmiListMovie.html">*click*</a></p>
+                    <p><span>List of movies </span>: <a href="views/AdmiListMovie.jsp">*click*</a></p>
                 </div>
               </div>
           </div>
