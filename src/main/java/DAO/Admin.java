@@ -11,7 +11,9 @@ public class Admin implements  AdminDAO{
 
     private static final String FIND_NICKNAME_AND_ROLE = "SELECT NickName,Role FROM user";
     private static final String  UPDATE_ROLE = "UPDATE user SET Role = ? WHERE NickName = ?";
-    private static final String OUTPUT_TIME_AND_STATUS_ABOUT_MOVIE = "SELECT  TimeStart, TimeEnd,Status FROM session";
+
+    private static final String OUTPUT_TIME_AND_STATUS_ABOUT_MOVIE = "SELECT  TimeStart,TimeEnd,SessionDate,Status FROM session";
+
     private static final String GET_MOVIE_NAME = "SELECT  Name FROM filmdetail";
     private static final String ADD_NEW_SESSION = "INSERT INTO session (PosterUrl, CountSeat, SessionDate, TimeStart, TimeEnd, Cost,Status) VALUES (?,?,?,?,?,?,'Open');";
     private static final String ADD_NEW_MOVIE  =  "INSERT INTO filmdetail (Name, Description, Actor, Director,session_idMovie )VALUES (?,?,?,?,( SELECT MAX(idMovie) FROM session ));\n";
@@ -158,12 +160,17 @@ public class Admin implements  AdminDAO{
 
             while (resultSet.next()){
                 StringBuilder sb = new StringBuilder();
+
                 sb.append(resultSet.getString(1));
                 sb.append(",");
                 sb.append(resultSet.getString(2));
                 sb.append(",");
                 sb.append(resultSet.getString(3));
+                sb.append(",");
+                sb.append(resultSet.getString(4));
+
                 list.add(sb);
+//                System.out.println(sb.toString() + "-first");
 
 
             }

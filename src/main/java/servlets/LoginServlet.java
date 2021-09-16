@@ -49,9 +49,9 @@ public class LoginServlet  extends HttpServlet {
 //            System.out.println("find user with:" + name + "-" + password);
 
 
-            logger.info("Login user: " + name);
-            resp.sendRedirect("index.jsp");
-
+            logger.info("Logging user: " + name);
+//            resp.sendRedirect("index.jsp");
+            resp.setIntHeader("Refresh", 1);
 
 
         }

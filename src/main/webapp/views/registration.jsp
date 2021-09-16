@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>CodePen - Simple focus in/out input animation</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css'><link rel="stylesheet" href="./style.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css'><link rel="stylesheet" href="views/style.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 
 </head>
@@ -16,11 +16,13 @@
         <span></span>
           </div>
             </div>
+
+
             <nav class="header">
               <div class="header_container">
                 <div class="logo">
-                  <img src="img/logo_v2.jpg" alt="logo+Hinterland" href="index.html"srcset="">
-                  <span ><a href="index.html" class="HINTERLAND">HINTERLAND</a></span>
+                  <img src="views/img/logo_v2.jpg" alt="logo+Hinterland" href="http://localhost:8080" >
+                  <span ><a href="http://localhost:8080" >HINTERLAND</a></span>
               </div>
                   <div class="header_container_empty">
           
@@ -28,25 +30,27 @@
                   <div class="header_nav">
                       <ul class="header_inner_ul">
                           <li >
-                              <a href="movies.html">MOVIE</a>
+                              <a href="views/movies.jsp">MOVIE</a>
                           </li>
           
           
                           <li>
-                              <a href="https://hinterlandforums.com/forums/"  target="_blank" >COMMUNITY</a>
+                              <a href="https://www.facebook.com/"  target="_blank" >COMMUNITY</a>
                           </li>
                           <li>
-                              <a href="shop-right-sidebar.html"   >SHOP</a>
+                              <a href="views/shop-right-sidebar.html"   >SHOP</a>
+                          </li>
+
+                          <li>
+                              <a href="views/contact.html"  target="_blank"  > SUPPORT </a>
                           </li>
                           <li>
-                              <a href="https://hinterlandgames.zendesk.com/hc/en-us"  target="_blank"  > SUPPORT </a>
+                              <!--                            <a href="views/login.jsp"   >LOGIN</a>-->
+                              <a onclick="location.href='/login'">LOGIN</a>
                           </li>
                           <li>
-                            <a href="login.html"   >LOGIN</a>
-                        </li>
-                        <li>
-                            <a href="registration.html"    >REGISTER</a>
-                        </li>
+                              <a onclick="location.href='/registration'">REGISTER</a>
+                          </li>
                       </ul>
                   </div>
                    
@@ -54,7 +58,6 @@
               </div>
           
           </nav>
-
 
 
             <!-- partial:index.partial.html -->
@@ -69,6 +72,8 @@
 
 <div class='fire'></div>
 <div class='fire'></div>
+
+
 <!-- partial -->
 <!-- partial:index.partial.html -->
 <form method="post">
@@ -80,7 +85,7 @@
           
         </div>
         
-        <input type="text" id="name" >
+        <input type="text" id="name" name="name" >
 
         
       </div>
@@ -91,29 +96,63 @@
           
         
         
-        <input type="text" id="name" >
+        <input type="text" id="name" name="pass" >
 
 
 
         
       </div>
 
-      <div class="buttons" >
+      <div style="  margin-top: 10px; font-size: 15px; " class="wrap center"> <!-- Just to center ver and hor -->
+        <div class="wrap-label">
+            
+                        
+          <label for="gender">Gender&nbsp&nbsp
+
+          <select class="new-select"  name="gender">
+            <option ><span>Man</span></option>
+              <option >Woman</option>
+          </select>
+
+        </label>
+        </div>
+      
+
+            
+            
+            
+        
+    </form>
+
+
+
+        
+      </div>
+      
+     
+          
+        
+        
+
+
+
+
+      <div style="padding-top: 50px;" class="buttons">
         <div class="container">
-          <a href="https://twitter.com/Dave_Conner" class="btn btn-2">Login</a> 
-          <a  style="color: white" >Your dont have account?<br><a  href="registration.html" class="btn3" >Create account</a> </a>
+          <a href="" class="btn btn-2"><button type="submit"> Create</button></a>
+          
+          <a  style="color: white" >Your  have account?<br><a style="text-align: center;" href="views/login.jsp" class="btn3" >Lets login</a> </a>
             </div>
       </div>
   </div>
 </form>
 <!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.9/jquery.transit.min.js'></script><script  src="./script.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script></script><script src="views/script.js"></script>
 
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.ui.min.js'>
-</script><script  src="./script2.js"></script>
+</script><script  src="views/script2.js"></script>
 
 </body>
 </html>

@@ -18,7 +18,7 @@ public class AddServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/add.jsp");
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/registration.jsp");
         requestDispatcher.forward(req, resp);
     }
 
@@ -26,6 +26,7 @@ public class AddServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String name = req.getParameter("name");
         String password = req.getParameter("pass");
+        String gender = req.getParameter("gender");
         Logger logger =  Logger.getLogger(UserManagerDAO.class.getName());
 
         System.out.println(password + " " + name );
@@ -33,8 +34,8 @@ public class AddServlet extends HttpServlet {
         User user = new User(name, password);
         DB_ManagerDAO dbManager = new DB_ManagerDAO();
 
-        dbManager.userAdd(name,password,"20.20.20","man");
-        logger.info("2Add new user: " + name);
+        dbManager.userAdd(name,password,"20.20.2015",gender);
+
 
         req.setAttribute("userName", name);
         doGet(req, resp);

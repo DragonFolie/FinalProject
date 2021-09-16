@@ -18,19 +18,7 @@
         <div>
             <h2>Users</h2>
         </div>
-        <%
 
-            ArrayList list = new ArrayList();
-            DB_ManagerDAO dbManager = new DB_ManagerDAO();
-            list=  dbManager.findAllUsers();
-
-            for (int i = 0; i < list.size(); i++) {
-
-                out.println( "<li> " + list.get(i) + "</li>");
-
-            }
-
-        %>
     </div>
 </div>
 

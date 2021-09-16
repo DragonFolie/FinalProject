@@ -43,5 +43,11 @@
     <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java:3.11.4" level="project" />
     <orderEntry type="library" name="Maven: log4j:log4j:1.2.16" level="project" />
     <orderEntry type="library" name="tomcat-jsp-api-9.0.52" level="project" />
+    <orderEntry type="library" name="jquery" level="application" />
+    <orderEntry type="library" name="jquery.transit" level="application" />
+    <orderEntry type="library" name="velocity" level="application" />
+    <orderEntry type="library" name="font-awesome" level="application" />
+    <orderEntry type="library" name="prefixfree" level="application" />
+    <orderEntry type="library" name="meyer-reset" level="application" />
   </component>
 </module>

@@ -14,24 +14,24 @@
 
     <!-- add servlet -->
     <servlet>
-        <servlet-name>add</servlet-name>
+        <servlet-name>registration</servlet-name>
         <servlet-class>servlets.AddServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>add</servlet-name>
-        <url-pattern>/add</url-pattern>
+        <servlet-name>registration</servlet-name>
+        <url-pattern>/registration</url-pattern>
     </servlet-mapping>
 
     <!-- list servlet -->
     <servlet>
-        <servlet-name>list</servlet-name>
+        <servlet-name>movies</servlet-name>
         <servlet-class>servlets.ListServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>list</servlet-name>
-        <url-pattern>/list</url-pattern>
+        <servlet-name>movies</servlet-name>
+        <url-pattern>/movies</url-pattern>
     </servlet-mapping>
 
     <!-- Login servlet -->
