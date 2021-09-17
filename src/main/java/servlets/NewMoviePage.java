@@ -3,8 +3,9 @@ package servlets;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class NewMoviePage {
     private static String nameForMovie = null;
@@ -2173,8 +2174,8 @@ public class NewMoviePage {
                 "</html>\n";
 
 
-        File file = new File("src/main/webapp/views", nameForMovie+".jsp");
-        if(!file.exists()){
+        File file = new File("src/main/webapp/views",nameForMovie+".jsp");
+        if(file.exists()){
 
             file.createNewFile();
 
@@ -2185,6 +2186,16 @@ public class NewMoviePage {
 
         fileWriter.flush();
         fileWriter.close();
+
+
+        Path path = Paths.get("src/main/webapp/views"+nameForMovie+".jsp");
+        try {
+            byte[] bs = pageTemplate.getBytes();
+            Path writtenFilePath = Files.write(path, bs);
+            System.out.println("Written content in file:\n"+ new String(Files.readAllBytes(writtenFilePath)));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return true;
 
 
@@ -2194,20 +2205,20 @@ public class NewMoviePage {
 
     }
 
-//    public static void main(String[] args) {
-//
-//        NewMoviePage newMoviePage = new NewMoviePage();
-//
-//        newMoviePage.createDirectionForImageMovie("Baby boss");
-//        try {
-//            newMoviePage.createFile(nameForMovie,"we-are-your-friends-3.jpg","Monday","One","Two","Three","Max","Good","17","18");
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
-//
-//
-//    }
+    public static void main(String[] args) {
+
+        NewMoviePage newMoviePage = new NewMoviePage();
+
+        newMoviePage.createDirectionForImageMovie("Baby boss");
+        try {
+            newMoviePage.createFile(nameForMovie,"we-are-your-friends-3.jpg","Monday","One","Two","Three","Max","Good","17","18");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+
+    }
 
 
 }

@@ -34,4 +34,44 @@
   2021-09-17 04:59:57 INFO  LogoutServlet:52 - Logging user: admin
   2021-09-17 05:00:55 INFO  LogoutServlet:52 - Logging user: admin
   2021-09-17 05:11:16 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-17 18:04:46 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-17 18:08:12 ERROR Admin:329 - Cant addMovie java.sql.SQLIntegrityConstraintViolationException: Column 'session_idMovie' cannot be null
+  2021-09-17 18:29:30 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-17 19:21:35 ERROR Admin:429 - Cant findAllMovieName java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-17 19:24:56 INFO  UsersManager:141 - Add new user: admin
+  2021-09-17 19:25:05 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-17 19:25:57 ERROR Admin:264 -
+  Cant addSession java.sql.SQLSyntaxErrorException: Unknown column 'SessionDay' in 'field list'
+  2021-09-17 19:25:57 ERROR Admin:333 -
+  Cant addMovie java.sql.SQLIntegrityConstraintViolationException: Column 'session_idMovie' cannot be null
+  2021-09-17 19:48:14 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-17 19:51:19 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-17 20:04:48 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-17 20:15:58 ERROR Admin:429 - Cant findAllMovieName java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-17 20:15:58 ERROR Admin:429 - Cant findAllMovieName java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-17 20:15:58 ERROR Admin:429 - Cant findAllMovieName java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-17 20:16:30 ERROR Admin:429 - Cant findAllMovieName java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-17 20:16:30 ERROR Admin:429 - Cant findAllMovieName java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-17 20:16:30 ERROR Admin:429 - Cant findAllMovieName java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-17 20:16:54 ERROR Admin:429 - Cant findAllMovieName java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-17 20:16:54 ERROR Admin:429 - Cant findAllMovieName java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-17 20:16:54 ERROR Admin:429 - Cant findAllMovieName java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-17 20:17:54 ERROR Admin:429 - Cant findAllMovieName java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-17 20:17:54 ERROR Admin:429 - Cant findAllMovieName java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-17 20:17:54 ERROR Admin:429 - Cant findAllMovieName java.sql.SQLException: Illegal operation on empty result set.
+
+  2021-09-17 20:19:18 ERROR Admin:429 - Cant findAllMovieName java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-17 20:19:18 ERROR Admin:429 - Cant findAllMovieName java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-17 20:19:18 ERROR Admin:429 - Cant findAllMovieName java.sql.SQLException: Illegal operation on empty result set.
+
+  2021-09-17 20:22:10 ERROR Admin:429 - Cant findAllMovieName java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-17 20:22:10 ERROR Admin:429 - Cant findAllMovieName java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-17 20:22:10 ERROR Admin:429 - Cant findAllMovieName java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-17 20:22:47 ERROR Admin:429 - Cant findAllMovieName java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-17 20:22:47 ERROR Admin:429 - Cant findAllMovieName java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-17 20:22:47 ERROR Admin:429 - Cant findAllMovieName java.sql.SQLException: Illegal operation on empty result set.
+
+  2021-09-17 20:23:01 ERROR Admin:429 - Cant findAllMovieName java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-17 20:23:01 ERROR Admin:429 - Cant findAllMovieName java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-17 20:23:01 ERROR Admin:429 - Cant findAllMovieName java.sql.SQLException: Illegal operation on empty result set.
   

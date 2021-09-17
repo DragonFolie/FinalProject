@@ -192,7 +192,9 @@ INSERT INTO `testtable` ". "(`TestColumn1`, `TestColumn2`) ". "VALUES('Second no
             ArrayList nameOfMovie = new ArrayList();
 
 
+
             DB_ManagerDAO dbManager2 = new DB_ManagerDAO();
+            System.out.println("77");
             timeStartEnd=  dbManager2.findAllMovieSession();
 //            System.out.println(timeStartEnd.size()+  " size1 ");
             nameOfMovie = dbManager2.findAllMovieName();
@@ -213,6 +215,9 @@ INSERT INTO `testtable` ". "(`TestColumn1`, `TestColumn2`) ". "VALUES('Second no
 
                 sb.append(    timeStartEnd.get(i) ) ;
                 name.append(nameOfMovie.get(i));
+
+
+                String pageURL = dbManager2.getPageURL(name.toString());
 
 
 //                System.out.println(sb.toString() + " sb");
@@ -236,7 +241,7 @@ INSERT INTO `testtable` ". "(`TestColumn1`, `TestColumn2`) ". "VALUES('Second no
                                 "                <span class=\"time_block\">"+date +"</span>\n" +
                                 "\n" +
                                 "\n" +
-                                "                <a href='views/We_Are_Your_Friend.jsp' class=\"block_news_img_text\">\n" +
+                                "                <a href='"+pageURL+"' class=\"block_news_img_text\">\n" +
                                 "\n" +
                                 "                    <div class=\"block_news_img_text\">\n" +
                                 "                        <img src=\"views/img/MoviePoster/We_Are_YourFriend/we-are-your-friends-2.jpg\" style=\"width: 329px; height: auto;\"  alt=\"\" srcset=\"\">\n" +

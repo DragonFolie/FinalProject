@@ -7,7 +7,7 @@ public interface AdminDAO {
     ArrayList findNicknameAndRole();
     ArrayList findAllMovieSession();
     ArrayList findAllMovieName();
-     boolean addSession(String ticketCost,String countSeat,String posterURL,String date,String timeStart,String timeEnd,String status);
+     boolean addSession(String ticketCost,String countSeat,String posterURL,String date,String timeStart,String timeEnd,String status,String pageURL);
 
         boolean addEngTypeOfMovie(String nameEng,String descriptionEng);
     boolean  addMovie(String nameUkr,String descriptionUkr,String actor,String director);

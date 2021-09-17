@@ -1020,7 +1020,6 @@ div[class*=box] {
                                     out.print(
                                             "<li>\n" +
                                                     "  Hello, "+name_user+" Welcome to <a onclick=\"location.href='/admin'\"  >Admin Page</a>" +
-                                                    "Hello, \"+name_user+\" Welcome to <a href='views/Baby_boss.jsp'  >Admin Page</a>\n" +
                                                     " </li>\n"
 
                                     );

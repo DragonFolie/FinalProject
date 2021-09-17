@@ -147,10 +147,10 @@ public class DB_ManagerDAO implements InterfaceController {
 
     @Override
     public boolean addSession(String ticketCost,String countSeat,String posterURL,
-                              String date,String timeStart,String timeEnd,String status){
+                              String date,String timeStart,String timeEnd,String status,String pageURL){
 
         Admin admin = new Admin();
-        return admin.addSession(ticketCost,countSeat,posterURL,date,timeStart,timeEnd,status);
+        return admin.addSession(ticketCost,countSeat,posterURL,date,timeStart,timeEnd,status,pageURL);
 
     }
 
@@ -175,6 +175,12 @@ public class DB_ManagerDAO implements InterfaceController {
 
     }
 
+
+    public String getPageURL(String movieName) {
+        Admin admin = new Admin();
+
+        return admin.getPageURL(movieName);
+    }
 
 
 

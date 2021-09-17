@@ -35,7 +35,7 @@
 
 	<div class="container-contact100">
 		<div class="wrap-contact100">
-			<form class="contact100-form validate-form">
+			<form class="contact100-form validate-form" method="post">
 				<span class="contact100-form-title">
 					<a href="newMovie.jsp"><h2>Go back</h2></a><br><br>
 				</span>
@@ -81,7 +81,7 @@
 				</div>
 				<div class="wrap-input100 validate-input bg1" data-validate="Please an actor">
 					<span class="label-input100">First Actor *</span>
-					<input class="input100" type="text" name="actors1" placeholder="Write first actor">
+					<input class="input100" type="text" name="actors" placeholder="Write first actor">
 				</div>
 				<div class="wrap-input100 validate-input bg1" data-validate="Please an actor">
 					<span class="label-input100">Second Actor  *</span>
@@ -122,13 +122,17 @@
 
 
 				</div>
+				<div class="wrap-input100 validate-input bg1" data-validate = "Input count of seat in movie hall...">
+					<span class="label-input100">Count of Seats *</span>
+					<input class="input100" name="countOfSeat" placeholder="Input count of seat in movie hall..."></input>
+				</div>
 
 				<div class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate = "Введіть опис фільму...">
-					<span class="label-input100">Description Ukraine</span>
+					<span class="label-input100">Description Ukraine *</span>
 					<textarea class="input100" name="description" placeholder="Введіть опис фільму..."></textarea>
 				</div>
 				<div class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate = "Please Type Description">
-					<span class="label-input100">Description English</span>
+					<span class="label-input100">Description English *</span>
 					<textarea class="input100" name="descriptionENG" placeholder="Input description of movie..."></textarea>
 				</div>
 
