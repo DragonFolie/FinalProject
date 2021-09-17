@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `finaldb`.`session` (
                                                 `idMovie` INT NOT NULL AUTO_INCREMENT,
                                                 `PosterUrl` VARCHAR(45) NOT NULL,
                                                 `CountSeat` INT NOT NULL,
-                                                `SessionDate` VARCHAR(12) NOT NULL,
+                                                `SessionDay` VARCHAR(12) NOT NULL,
                                                 `Cost` INT NOT NULL,
                                                 `TimeEnd` VARCHAR(45) NOT NULL,
                                                 `TimeStart` VARCHAR(45) NOT NULL,
@@ -80,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `finaldb`.`order` (
 CREATE TABLE IF NOT EXISTS `finaldb`.`filmDetail` (
                                                    `idfilmDetail` INT NOT NULL AUTO_INCREMENT,
                                                    `Name` VARCHAR(45) NOT NULL DEFAULT 'Cancelled',
-                                                   `Description` VARCHAR(45) NOT NULL DEFAULT 'Cancelled',
+                                                   `Description` VARCHAR(1000) NOT NULL DEFAULT 'Cancelled',
                                                    `Actor` VARCHAR(100) NOT NULL DEFAULT 'Cancelled',
                                                    `Director` VARCHAR(100) NOT NULL DEFAULT 'Cancelled',
                                                    `session_idMovie` INT NOT NULL,

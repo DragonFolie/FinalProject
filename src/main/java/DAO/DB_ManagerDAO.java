@@ -147,10 +147,10 @@ public class DB_ManagerDAO implements InterfaceController {
 
     @Override
     public boolean addSession(String ticketCost,String countSeat,String posterURL,
-                              String date,String timeStart,String timeEnd){
+                              String date,String timeStart,String timeEnd,String status){
 
         Admin admin = new Admin();
-        return admin.addSession(ticketCost,countSeat,posterURL,date,timeStart,timeEnd);
+        return admin.addSession(ticketCost,countSeat,posterURL,date,timeStart,timeEnd,status);
 
     }
 

@@ -14,4 +14,24 @@
   2021-09-16 04:21:28 ERROR UsersManager:152 - Cant addUserjava.sql.SQLIntegrityConstraintViolationException: Column 'Gender' cannot be null
   2021-09-16 04:25:57 INFO  UsersManager:141 - Add new user: G2
   2021-09-16 20:01:16 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-17 01:10:25 INFO  UsersManager:141 - Add new user: admin
+  2021-09-17 01:11:16 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-17 01:45:52 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-17 01:51:12 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-17 01:52:55 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-17 02:45:39 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-17 03:22:44 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-17 03:36:08 INFO  UsersManager:141 - Add new user: user
+  2021-09-17 03:36:24 INFO  LogoutServlet:52 - Logging user: user
+  2021-09-17 03:37:55 INFO  LogoutServlet:52 - Logging user: user
+  2021-09-17 03:45:33 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-17 04:37:22 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-17 04:47:30 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-17 04:51:23 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-17 04:54:58 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-17 04:56:14 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-17 04:57:39 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-17 04:59:57 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-17 05:00:55 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-17 05:11:16 INFO  LogoutServlet:52 - Logging user: admin
   

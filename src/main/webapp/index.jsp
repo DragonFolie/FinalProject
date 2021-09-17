@@ -990,50 +990,73 @@ div[class*=box] {
                 <div class="navigation">
                     <ul>
                         <li >
-                            <a onclick="location.href='/movies'">MOVIE</a>
+                            <a onclick="location.href='/movies'">MOVIES</a>
+
                         </li>
 
-                        <li >
-                            <a href="https://www.facebook.com/" >COMMUNITY</a>
-                        </li>
 
-                        <li>
-                            <a href="views/contact.jsp" >CONTACT</a>
-                        </li>
 
                         <li>
-                            <a href="https://hinterlandgames.zendesk.com/hc/en-us"   >SUPPORT</a>
+                            <a href="https://www.facebook.com/"  target="_blank" >COMMUNITY</a>
                         </li>
+                        <li>
+                            <a href="shop-right-sidebar.jsp"   >SHOP</a>
+                        </li>
+                        <li>
+                            <a href="contact.jsp" target="_blank"  >SUPPORT</a>
+                        </li>
+
+
+
+
                         <%
 
-                        String name_user  = (String)session.getAttribute("name");
+                            String name_user  = (String)session.getAttribute("name");
 
-                        if(name_user != null ){
+                            if(name_user != null ){
+
+                                if(name_user.equals("admin")){
+
+                                    out.print(
+                                            "<li>\n" +
+                                                    "  Hello, "+name_user+" Welcome to <a onclick=\"location.href='/admin'\"  >Admin Page</a>" +
+                                                    "Hello, \"+name_user+\" Welcome to <a href='views/Baby_boss.jsp'  >Admin Page</a>\n" +
+                                                    " </li>\n"
+
+                                    );
+
+                                }
+                                if(!name_user.equals("admin")){
+
+                                    out.print(
+                                            "<li>\n" +
+                                                    "  Hello, "+name_user+" Welcome to <a onclick=\"location.href='/userProfile'\"  >Profile</a>\n" +
+                                                    " </li>\n"
+
+                                    );
+
+                                }
 
 
 
-                        //                                      out.print("Hello, "+name_user+" Welcome to Profile");
-                        out.print(
-                        "<li>\n" +
-                        "  Hello, "+name_user+" Welcome to <a href='views/user_profile.jsp'  >Profile</a>\n" +
-                        " </li>\n"
-                        );
-
-                        }
-                        if(name_user == null ) {
-
-                        out.print(
-                        "<li>\n" +
-                        "  <a onclick=\"location.href='/login'\">LOGIN</a>\n" +
-                        " </li>\n" +
-
-                        " <li>\n" +
-                        "     <a onclick=\"location.href='/registration'\">REGISTER</a>\n" +
-                        "</li>"
-                        );
+                                //                                      out.print("Hello, "+name_user+" Welcome to Profile");
 
 
-                        }
+                            }
+                            if(name_user == null ) {
+
+                                out.print(
+                                        "<li>\n" +
+                                                "  <a onclick=\"location.href='/login'\">LOGIN</a>\n" +
+                                                " </li>\n" +
+
+                                                " <li>\n" +
+                                                "     <a onclick=\"location.href='/registration'\">REGISTER</a>\n" +
+                                                "</li>"
+                                );
+
+
+                            }
 
 
 

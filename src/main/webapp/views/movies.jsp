@@ -53,7 +53,7 @@ INSERT INTO `testtable` ". "(`TestColumn1`, `TestColumn2`) ". "VALUES('Second no
                 <div class="header_nav">
                     <ul class="header_inner_ul">
                         <li >
-                            <a href="movies.jsp" style="color: white;">MOVIE</a>
+                            <a onclick="location.href='/movies'" style="color: white;">MOVIE</a>
                         </li>
         
                         <!-- <li >
@@ -273,27 +273,27 @@ INSERT INTO `testtable` ". "(`TestColumn1`, `TestColumn2`) ". "VALUES('Second no
 
 
 <%--         --%>
-<%--         <ul class="list_block_news">--%>
-<%--            <li class="block_news">--%>
-<%--                <span class="time_block">28.05.2020.</span>--%>
+         <ul class="list_block_news">
+            <li class="block_news">
+                <span class="time_block">28.05.2020.</span>
 
 
-<%--                <a href="we" class="block_news_img_text">--%>
+                <a href="views/We_Are_Your_Friend.jsp" class="block_news_img_text">
 
-<%--                    <div class="block_news_img_text">--%>
-<%--                        <img src="img/MoviePoster/We_Are_YourFriend/we-are-your-friends-2.jpg" style="width: 329px; height: auto;"  alt="" srcset="">--%>
-<%--                    </div>--%>
+                    <div class="block_news_img_text">
+                        <img src="views/img/MoviePoster/We_Are_YourFriend/we-are-your-friends-2.jpg" style="width: 329px; height: auto;"  alt="" srcset="">
+                    </div>
 
-<%--                    <div class="block_news_text">--%>
-<%--                        <h2 href="#" class="block_news_text_inner"> We are your friend</h2>--%>
+                    <div class="block_news_text">
+                        <h2 href="#" class="block_news_text_inner"> We are your friend</h2>
 
-<%--                    </div>--%>
-<%--                    --%>
-<%--                </a>--%>
-<%--                --%>
+                    </div>
 
-<%--            </li> --%>
-<%--         </ul>--%>
+                </a>
+
+
+            </li>
+         </ul>
          
             
             

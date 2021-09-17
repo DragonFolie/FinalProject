@@ -11,7 +11,7 @@ interface   InterfaceController {
       ArrayList findAllMovieSession();
       ArrayList findAllMovieName();
       boolean  updateStatusForMovie(String nameOfMovie,String setStatus);
-      boolean addSession(String ticketCost,String countSeat,String posterURL,String date,String timeStart,String timeEnd);
+      boolean addSession(String ticketCost,String countSeat,String posterURL,String date,String timeStart,String timeEnd,String status);
       boolean addEngtypeOfMovie(String nameEng,String descriptionEng);
       boolean  addMovie(String nameUkr,String descriptionUkr,String actor,String director);
 }

@@ -12,10 +12,10 @@ public class Admin implements  AdminDAO{
     private static final String FIND_NICKNAME_AND_ROLE = "SELECT NickName,Role FROM user";
     private static final String  UPDATE_ROLE = "UPDATE user SET Role = ? WHERE NickName = ?";
 
-    private static final String OUTPUT_TIME_AND_STATUS_ABOUT_MOVIE = "SELECT  TimeStart,TimeEnd,SessionDate,Status FROM session";
+    private static final String OUTPUT_TIME_AND_STATUS_ABOUT_MOVIE = "SELECT  TimeStart,TimeEnd,SessionDay,Status FROM session";
 
     private static final String GET_MOVIE_NAME = "SELECT  Name FROM filmdetail";
-    private static final String ADD_NEW_SESSION = "INSERT INTO session (PosterUrl, CountSeat, SessionDate, TimeStart, TimeEnd, Cost,Status) VALUES (?,?,?,?,?,?,'Open');";
+    private static final String ADD_NEW_SESSION = "INSERT INTO session (PosterUrl, CountSeat, SessionDay, TimeStart, TimeEnd, Cost,Status) VALUES (?,?,?,?,?,?,?);";
     private static final String ADD_NEW_MOVIE  =  "INSERT INTO filmdetail (Name, Description, Actor, Director,session_idMovie )VALUES (?,?,?,?,( SELECT MAX(idMovie) FROM session ));\n";
     private static final String ADD_ENGLISH_VERSION_OF_MOVIE = "INSERT INTO language (Name,Description,filmDetail_idfilmDetail) values (?,?,( SELECT MAX(idMovie) FROM session ));";
     private static final String GET_ID_BY_NAME_OF_MOVIE  = "SELECT idfilmDetail FROM filmdetail WHERE  Name = ? ";
@@ -230,7 +230,7 @@ public class Admin implements  AdminDAO{
 
     @Override
     public boolean addSession(String ticketCost,String  countSeat,String posterURL,
-                              String date,String timeStart,String timeEnd){
+                              String date,String timeStart,String timeEnd,String status){
 
         UsersManager usersManager = new UsersManager();
 
@@ -248,6 +248,7 @@ public class Admin implements  AdminDAO{
             preparedStatement.setString(5,timeEnd);
 
             preparedStatement.setString(6,ticketCost);
+            preparedStatement.setString(7,status);
 
             preparedStatement.execute();
 
@@ -372,6 +373,45 @@ public class Admin implements  AdminDAO{
 //            logger.info("Exception here" + e);
             logger.error("Cant updateStatusForMovie " + e);
             return false;
+        }
+
+
+    }
+
+
+
+    public int  getCountSeatsForSession(){
+
+
+        UsersManager usersManager = new UsersManager();
+
+        PreparedStatement preparedStatement = null;
+        try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
+
+//            System.out.println("conn + " +conn);
+            preparedStatement = conn.prepareStatement("SELECT CountSeat From session WHERE idMovie = ( SELECT MAX(idMovie) FROM session );");
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            resultSet.next();
+            StringBuilder sb = new StringBuilder();
+
+
+            int result = resultSet.getInt(1);
+
+
+            preparedStatement.execute();
+
+            return 1;
+
+
+
+
+
+
+        }catch (IOException | SQLException | ClassNotFoundException e) {
+//            logger.info("Exception here" + e);
+//            logger.error("Cant get Count Seats For Session " + e);
+            return 1;
         }
 
 

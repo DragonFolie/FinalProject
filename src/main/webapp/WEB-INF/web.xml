@@ -34,6 +34,17 @@
         <url-pattern>/movies</url-pattern>
     </servlet-mapping>
 
+    <!-- New Movie servlet -->
+    <servlet>
+        <servlet-name>newMovie</servlet-name>
+        <servlet-class>servlets.NewMovieServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>newMovie</servlet-name>
+        <url-pattern>/newMovie</url-pattern>
+    </servlet-mapping>
+
     <!-- Login servlet -->
     <servlet>
         <servlet-name>login</servlet-name>
@@ -68,6 +79,19 @@
         <servlet-name>admin</servlet-name>
         <url-pattern>/admin</url-pattern>
     </servlet-mapping>
+
+
+    <!-- UserProfile servlet -->
+    <servlet>
+        <servlet-name>userProfile</servlet-name>
+        <servlet-class>servlets.UserProfile</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>userProfile</servlet-name>
+        <url-pattern>/userProfile</url-pattern>
+    </servlet-mapping>
+
 
 
     <!-- Custom Tag servlet -->

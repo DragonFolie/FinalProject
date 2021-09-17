@@ -14,7 +14,7 @@ public class AdminServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/adminPage.jsp");
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/admin_page.jsp");
 
         requestDispatcher.forward(req, resp);
     }
@@ -33,15 +33,7 @@ public class AdminServlet extends HttpServlet {
         String setStatus = request.getParameter("changeStatus");
 
 
-        // Add Movie Ukraine/English language
 
-
-        String nameUkr = request.getParameter("movieName");
-        String nameEng = request.getParameter("movieNameENG");
-        String descriptionUkr = request.getParameter("description");
-        String descriptionEng = request.getParameter("descriptionENG");
-        String actors = request.getParameter("actors");
-        String director = request.getParameter("director");
 
 
         // Add new Session
@@ -66,43 +58,7 @@ public class AdminServlet extends HttpServlet {
         }
 
 
-        if (ticketCost != null && countSeat != null && posterURL != null && date != null && timeStart!= null &&timeEnd!= null  ){
 
-//            System.out.println("good1");
-            dbManager.addSession(ticketCost,countSeat,posterURL,date,timeStart,timeEnd);
-
-
-//            System.out.println("good1");
-        }
-
-
-
-
-
-        if (nameUkr != null && descriptionUkr != null && actors != null && director != null){
-
-
-
-//            System.out.println("good3");
-            dbManager.addMovie(nameUkr,descriptionUkr,actors,director);
-
-            response.setIntHeader("Refresh", 1);
-//            System.out.println("good3");
-        }
-
-
-
-
-        if (  nameEng != null &&  descriptionEng != null   ){
-
-//            System.out.println("good2");
-            dbManager.addEngtypeOfMovie(nameEng,descriptionEng);
-
-
-//            System.out.println("good2");
-
-
-        }
 
 
 

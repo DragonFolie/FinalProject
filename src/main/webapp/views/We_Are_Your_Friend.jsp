@@ -1,4 +1,13 @@
-
+<%@ page import="DAO.UsersManager" %>
+<%@ page import="java.sql.PreparedStatement" %>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.io.IOException" %>
+<%@ page import="java.sql.SQLException" %>
+<%@ page import="java.util.logging.Logger" %>
+<%@ page import="servlets.NewMoviePage" %>
+<%@ page import="DAO.DB_ManagerDAO" %>
+<%@ page import="DAO.Admin" %>
 
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -1432,7 +1441,8 @@ transition: 1s;
         <div class="header_nav">
             <ul class="header_inner_ul">
                 <li >
-                    <a href="movies.jsp">MOVIES</a>
+                    <a onclick="location.href='/movies'">MOVIES</a>
+
                 </li>
 
                
@@ -1446,13 +1456,63 @@ transition: 1s;
                 <li>
                     <a href="contact.jsp" target="_blank"  >SUPPORT</a>
                 </li>
-                <li>
-                    <!--                            <a href="views/login.jsp"   >LOGIN</a>-->
-                    <a onclick="location.href='/login'">LOGIN</a>
-                </li>
-                <li>
-                    <a onclick="location.href='/registration'">REGISTER</a>
-                </li>
+
+
+
+
+                <%
+
+                    String name_user  = (String)session.getAttribute("name");
+
+                    if(name_user != null ){
+
+                        if(name_user.equals("admin")){
+
+                            out.print(
+                                    "<li>\n" +
+                                            "  Hello, "+name_user+" Welcome to <a onclick=\"location.href='/admin'\"  >Admin Page</a>\n" +
+                                            " </li>\n"
+
+                            );
+
+                        }
+                        if(!name_user.equals("admin")){
+
+                            out.print(
+                                    "<li>\n" +
+                                            "  Hello, "+name_user+" Welcome to <a onclick=\"location.href='/userProfile'\"  >Profile</a>\n" +
+                                            " </li>\n"
+
+                            );
+
+                        }
+
+
+
+                        //                                      out.print("Hello, "+name_user+" Welcome to Profile");
+
+
+                    }
+                    if(name_user == null ) {
+
+                        out.print(
+                                "<li>\n" +
+                                        "  <a onclick=\"location.href='/login'\">LOGIN</a>\n" +
+                                        " </li>\n" +
+
+                                        " <li>\n" +
+                                        "     <a onclick=\"location.href='/registration'\">REGISTER</a>\n" +
+                                        "</li>"
+                        );
+
+
+                    }
+
+
+
+
+
+                %>
             </ul>
         </div>
          
@@ -1664,15 +1724,7 @@ transition: 1s;
                             <option >Sunday</option>
                         </select>&nbsp
                         <select name="changeStatus">
-                            <option >1</option>
-                            <option >2</option>
-                            <option >3</option>
-                            <option >4</option>
-                            <option >5</option>
-                            <option >6</option>
-                            <option >7</option>
-                            <option >8</option>
-                            <option >9</option>
+
                         </select>&nbsp
 
                         <div class="button_send_buy">

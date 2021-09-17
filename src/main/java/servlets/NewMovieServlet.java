@@ -1,0 +1,122 @@
+package servlets;
+
+import DAO.DB_ManagerDAO;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+public  class NewMovieServlet extends HttpServlet {
+
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/newMovie.jsp");
+
+        requestDispatcher.forward(req, resp);
+    }
+
+    @Override
+    public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
+        super.service(req, res);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        DB_ManagerDAO dbManager = new DB_ManagerDAO();
+
+        int threeInsertAreSuccessful = 0;
+
+
+        // Add Movie Ukraine/English language
+
+
+        String nameUkr = req.getParameter("movieName");
+        String nameEng = req.getParameter("movieNameENG");
+        String descriptionUkr = req.getParameter("description");
+        String descriptionEng = req.getParameter("descriptionENG");
+        String actors = req.getParameter("actors");
+        String actors2 = req.getParameter("actors2");
+        String actors3 = req.getParameter("actors3");
+        String actor = actors+ "," + actors2 +"," + actors3;
+
+
+        String director = req.getParameter("director");
+
+
+
+        // Add new Session
+
+        String ticketCost = req.getParameter("ticketCost");
+        String countSeat = req.getParameter("countOfSeat");
+        String posterURL = req.getParameter("posterUrl");
+        String date = req.getParameter("sessionDay");
+        String timeStart = req.getParameter("timeStart");
+        String timeEnd = req.getParameter("timeEnd");
+        String status = req.getParameter("status");
+
+        if (ticketCost != null && countSeat != null && posterURL != null && date != null && timeStart!= null &&timeEnd!= null  ){
+
+//            System.out.println("good1");
+            dbManager.addSession(ticketCost,countSeat,posterURL,date,timeStart,timeEnd,status);
+            System.out.println("+1");
+
+            threeInsertAreSuccessful +=1;
+
+//            System.out.println("good1");
+        }
+
+
+
+
+
+        if (nameUkr != null && descriptionUkr != null && actor != null && director != null){
+
+
+
+//            System.out.println("good3");
+            dbManager.addMovie(nameUkr,descriptionUkr,actor,director);
+            System.out.println("+2");
+            threeInsertAreSuccessful +=1;
+            resp.setIntHeader("Refresh", 1);
+//            System.out.println("good3");
+        }
+
+
+
+
+        if (  nameEng != null &&  descriptionEng != null   ){
+
+//            System.out.println("good2");
+            dbManager.addEngtypeOfMovie(nameEng,descriptionEng);
+            System.out.println("+3");
+            threeInsertAreSuccessful +=1;
+
+//            System.out.println("good2");
+
+
+        }
+
+        if (threeInsertAreSuccessful ==3 ){
+
+            NewMoviePage newMoviePage = new NewMoviePage();
+
+            newMoviePage.createDirectionForImageMovie(nameEng);
+
+            newMoviePage.createFile(nameEng,posterURL,date,actors,actors2,actors3,director,descriptionEng,timeStart,timeEnd);
+
+
+
+            threeInsertAreSuccessful = 0;
+        }
+
+
+
+    }
+}
