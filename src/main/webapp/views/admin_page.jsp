@@ -548,6 +548,11 @@ ul.summary-list > li:last-child  {
                   <div class="bio-row">
                     <p><span>Delete session </span>: <a href="#">*click*</a></p>
                 </div>
+
+                  <div class="bio-row">
+                      <p><span>Add new session to movie </span>: <a onclick="location.href='/newSession'">*click*</a></p>
+                  </div>
+
                 <div class="bio-row">
                     <p><span>List of movies </span>: <a href="views/AdmiListMovie.jsp">*click*</a></p>
                 </div>

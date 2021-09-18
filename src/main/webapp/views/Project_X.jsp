@@ -1515,14 +1515,12 @@ transition: 1s;
 <main class="main">
     <div class="main_inner">
         <div class="main_inner_title_content">
-            <img src="img/MoviePoster/Baby_boss/we-are-your-friends-3.jpg" class="main_inner_title_photo" alt="season's greetings" srcset="">
-            <h1 class="main_inner_title">Baby_boss</h1>
-            <span class="main_inner_date">Monday</span>
+            <img src="img/MoviePoster/Project_X/projectX.jpg" class="main_inner_title_photo" alt="season's greetings" srcset="">
+            <h1 class="main_inner_title">Project X</h1>
 
         </div>
         
         <div class="main_inner_main_content">
-            <img src="img/MoviePoster/We_Are_YourFriend/we-are-your-friends-3.jpg" class="main_inner_title_photo" alt="season's greetings" srcset="">
             <br>
             <br>
             <div class="main_text">
@@ -1532,7 +1530,7 @@ transition: 1s;
                 
 
                 <p >
-                    Good
+                    Good movie
                    <!--<a href="https://www.youtube.com/watch?v=1fkqAZ2eSEw" style="color: #666;
                     font-size: 1em; text-decoration: underline;" target="_blank">HESITANT PROSPECT.</a> -->
                 </p>
@@ -1547,7 +1545,7 @@ transition: 1s;
 
                 <p >
                     Writers: <br>
-                    <a href="https://www.imdb.com" class="test_description_movie"  target="_blank">Max</a> (screenplay),
+                    <a href="https://www.imdb.com" class="test_description_movie"  target="_blank">Max Verstapen</a> (screenplay),
                 </p>
                 
                 <br><br>
@@ -1563,7 +1561,7 @@ transition: 1s;
 
                 <p >
                     Schedule: <br>
-                    <a  class="test_description_movie"  target="_blank"> 17 and 18 every Monday</a>
+                    <a  class="test_description_movie"  target="_blank"> 11:00 and 12:30 every Tuesday</a>
                     
                    
                    
@@ -1594,12 +1592,13 @@ transition: 1s;
                     </div>
                     <div class="time-interval">
 
-                        <div>8:00 - 10:00</div>
-                        <div>10:00 - 12:00</div>
-                        <div>12:00 - 14:00</div>
-                        <div>14:00 - 16:00</div>
-                        <div>16:00 - 18:00</div>
-                        <div>18:00 - 20:00</div>
+                        <div>Time</div>
+                        <div>Time</div>
+                        <div>Time</div>
+                        <div>Time</div>
+                        <div>Time</div>
+                        <div>Time</div>
+
 
                     </div>
                     <div class="content">
@@ -1690,11 +1689,11 @@ transition: 1s;
 
                         Choose time and day and number of seat &nbsp
                         <select name="changeStatus">
-                            <option >17 - 18</option>
+                            <option >11:00 - 12:30</option>
                         </select>&nbsp
 
                         <select name="changeStatus">
-                            <option >Monday</option>
+                            <option >Tuesday</option>
                         </select>&nbsp
                         <select name="changeStatus">
                             <%

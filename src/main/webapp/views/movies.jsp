@@ -194,7 +194,10 @@ INSERT INTO `testtable` ". "(`TestColumn1`, `TestColumn2`) ". "VALUES('Second no
 
 
             DB_ManagerDAO dbManager2 = new DB_ManagerDAO();
-            System.out.println("77");
+            DB_ManagerDAO dbManager3= new DB_ManagerDAO();
+
+
+
             timeStartEnd=  dbManager2.findAllMovieSession();
 //            System.out.println(timeStartEnd.size()+  " size1 ");
             nameOfMovie = dbManager2.findAllMovieName();
@@ -217,7 +220,8 @@ INSERT INTO `testtable` ". "(`TestColumn1`, `TestColumn2`) ". "VALUES('Second no
                 name.append(nameOfMovie.get(i));
 
 
-                String pageURL = dbManager2.getPageURL(name.toString());
+                String FolderURL = dbManager2.getFolderURL(name.toString());
+                String PosterURL = dbManager3.getPosterURL(name.toString());
 
 
 //                System.out.println(sb.toString() + " sb");
@@ -241,10 +245,10 @@ INSERT INTO `testtable` ". "(`TestColumn1`, `TestColumn2`) ". "VALUES('Second no
                                 "                <span class=\"time_block\">"+date +"</span>\n" +
                                 "\n" +
                                 "\n" +
-                                "                <a href='"+pageURL+"' class=\"block_news_img_text\">\n" +
+                                "                <a href='views/"+FolderURL+".jsp' class=\"block_news_img_text\">\n" +
                                 "\n" +
                                 "                    <div class=\"block_news_img_text\">\n" +
-                                "                        <img src=\"views/img/MoviePoster/We_Are_YourFriend/we-are-your-friends-2.jpg\" style=\"width: 329px; height: auto;\"  alt=\"\" srcset=\"\">\n" +
+                                "                        <img src=\"views/img/MoviePoster/"+FolderURL+"/"+PosterURL+"\" style=\"width: 329px; height: auto;\"  alt=\"\" srcset=\"\">\n" +
                                 "                    </div>\n" +
                                 "\n" +
                                 "                    <div class=\"block_news_text\">\n" +

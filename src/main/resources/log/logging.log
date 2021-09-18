@@ -74,4 +74,28 @@
   2021-09-17 20:23:01 ERROR Admin:429 - Cant findAllMovieName java.sql.SQLException: Illegal operation on empty result set.
   2021-09-17 20:23:01 ERROR Admin:429 - Cant findAllMovieName java.sql.SQLException: Illegal operation on empty result set.
   2021-09-17 20:23:01 ERROR Admin:429 - Cant findAllMovieName java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-17 20:31:14 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-17 20:34:56 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-17 20:52:10 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-17 20:58:05 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-17 21:02:01 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-17 21:33:18 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-17 21:37:31 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-18 02:05:17 INFO  UsersManager:141 - Add new user: admin
+  2021-09-18 02:05:34 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-18 02:51:37 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-18 03:12:46 ERROR Admin:429 - Cant findAllMovieName java.sql.SQLSyntaxErrorException: Unknown column 'PageURL' in 'field list'
+  2021-09-18 03:44:56 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-18 04:32:36 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-18 04:34:05 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-18 04:34:15 ERROR Admin:593 - Cant add New Session For Movie java.sql.SQLException: After end of result set
+  2021-09-18 04:35:50 ERROR Admin:593 - Cant add New Session For Movie java.sql.SQLException: After end of result set
+  2021-09-18 04:37:05 ERROR Admin:593 - Cant add New Session For Movie java.sql.SQLException: After end of result set
+  2021-09-18 04:39:04 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-18 04:39:14 ERROR Admin:594 - Cant add New Session For Movie java.sql.SQLException: After end of result set
+  2021-09-18 04:39:51 ERROR Admin:594 - Cant add New Session For Movie java.sql.SQLException: After end of result set
+  2021-09-18 04:41:57 ERROR Admin:594 - Cant add New Session For Movie java.sql.SQLException: After end of result set
+  2021-09-18 04:44:00 ERROR Admin:594 - Cant add New Session For Movie java.sql.SQLException: After end of result set
+  2021-09-18 04:45:23 ERROR Admin:594 - Cant add New Session For Movie java.sql.SQLException: After end of result set
+  2021-09-18 04:48:25 INFO  LogoutServlet:52 - Logging user: admin
   

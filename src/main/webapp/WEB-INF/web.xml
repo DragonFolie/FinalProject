@@ -45,6 +45,17 @@
         <url-pattern>/newMovie</url-pattern>
     </servlet-mapping>
 
+    <!-- New Session for movie servlet -->
+    <servlet>
+        <servlet-name>newSession</servlet-name>
+        <servlet-class>servlets.NewSessionForMovieServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>newSession</servlet-name>
+        <url-pattern>/newSession</url-pattern>
+    </servlet-mapping>
+
     <!-- Login servlet -->
     <servlet>
         <servlet-name>login</servlet-name>

@@ -7,36 +7,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="views/AdminList/fonts/icomoon/style.css">
+    <link rel="stylesheet" href=" AdminList/fonts/icomoon/style.css">
 
-    <link rel="stylesheet" href="views/AdminList/css/owl.carousel.min.css">
+    <link rel="stylesheet" href=" AdminList/css/owl.carousel.min.css">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="views/AdminList/css/bootstrap.min.css">
-    
+    <link rel="stylesheet" href=" AdminList/css/bootstrap.min.css">
+
     <!-- Style -->
-    <link rel="stylesheet" href="views/AdminList/css/style.css">
+    <link rel="stylesheet" href=" AdminList/css/style.css">
 
     <title>Movie List</title>
-    
+
   </head>
 
-  
+
   <body>
-  
+
 
   <div class="content">
-    
+
     <div class="container">
       <h2 class="mb-5" ><a href="admin_page.jsp">Go Back</a></h2>
       <h2 class="mb-5">Movie List</h2>
-      
+
 
       <div class="table-responsive custom-table-responsive">
 
         <table class="table custom-table">
           <thead>
-            <tr>  
+            <tr>
 
               <th scope="col">
                 <label class="control control--checkbox">
@@ -44,7 +44,7 @@
                   <div class="control__indicator"></div>
                 </label>
               </th>
-              
+
               <th scope="col">Order</th>
               <th scope="col">Name</th>
               <th scope="col">Date</th>
@@ -55,6 +55,14 @@
             </tr>
           </thead>
           <tbody>
+
+
+          <%
+
+
+
+          %>
+
             <tr scope="row">
               <th scope="row">
                 <label class="control control--checkbox">
@@ -72,15 +80,24 @@
               </td>
               <td>+63 983 0962 971</td>
               <td>NY University</td>
-              
+
             <td><a href="#" class="more">Details</a></td>
             <td><a href="#" class="more">Seats</a></td>
             </tr>
+
+
+
+
+
+
             <tr class="spacer"><td colspan="100"></td></tr>
-            
-              
-              
-            
+
+
+
+
+
+
+
           </tbody>
         </table>
       </div>
@@ -89,12 +106,12 @@
     </div>
 
   </div>
-    
-    
 
-    <script src="views/AdminList/js/jquery-3.3.1.min.js"></script>
-    <script src="views/AdminList/js/popper.min.js"></script>
-    <script src="views/AdminList/js/bootstrap.min.js"></script>
-    <script src="views/AdminList/js/main.js"></script>
+
+
+    <script src="AdminList/js/jquery-3.3.1.min.js"></script>
+    <script src="AdminList/js/popper.min.js"></script>
+    <script src="AdminList/js/bootstrap.min.js"></script>
+    <script src="AdminList/js/main.js"></script>
   </body>
 </html>

@@ -122,6 +122,7 @@ public  class NewMovieServlet extends HttpServlet {
                 System.out.println(" name= " +nameEng +" poster= "+posterURL+" 1 "+actor+" a2 "+actors2+" a3 "+ actors3+" dir "+ director
                         +" desc "+descriptionEng+" ts "+ timeStart +" te" + timeEnd);
                 newMoviePage.createFile(nameEng,posterURL,date,actors,actors2,actors3,director,descriptionEng,timeStart,timeEnd);
+
             } catch (IOException e) {
 
                 e.printStackTrace();

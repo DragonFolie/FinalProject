@@ -14,7 +14,7 @@ public class NewMoviePage {
 
 
         nameOfFolder =  nameOfFolder.replaceAll(" ","_");
-        File file = new File("src/main/webapp/views/img/MoviePoster",nameOfFolder);
+        File file = new File("F:/EPAM/Final/LearnToFinal/src/main/webapp/views/img/MoviePoster",nameOfFolder);
         if (file.mkdir()){
 
             System.out.println("Direction Create " + nameOfFolder);
@@ -27,7 +27,7 @@ public class NewMoviePage {
 
     }
 
-    public boolean createFile(String nameENG,String posterURL,String day,String actor1,String actor2,String actor3,
+    public void createFile(String nameENG,String posterURL,String day,String actor1,String actor2,String actor3,
                               String director,String description,String timeStart,String timeEnd) throws IOException {
         String pageTemplate = "\n" +
                 "\n" +
@@ -1546,14 +1546,12 @@ public class NewMoviePage {
                 "<main class=\"main\">\n" +
                 "    <div class=\"main_inner\">\n" +
                 "        <div class=\"main_inner_title_content\">\n" +
-                "            <img src=\"img/MoviePoster/"+nameForMovie+"/"+posterURL+"\" class=\"main_inner_title_photo\" alt=\"season's greetings\" srcset=\"\">\n" +
+                "            <img src=\"img/MoviePoster/"+nameForMovie+"/"+posterURL+" class=\"main_inner_title_photo\" alt=\"season's greetings\" srcset=\"\">\n" +
                 "            <h1 class=\"main_inner_title\">"+nameENG+"</h1>\n" +
-                "            <span class=\"main_inner_date\">"+day+"</span>\n" +
                 "\n" +
                 "        </div>\n" +
                 "        \n" +
                 "        <div class=\"main_inner_main_content\">\n" +
-                "            <img src=\"img/MoviePoster/We_Are_YourFriend/we-are-your-friends-3.jpg\" class=\"main_inner_title_photo\" alt=\"season's greetings\" srcset=\"\">\n" +
                 "            <br>\n" +
                 "            <br>\n" +
                 "            <div class=\"main_text\">\n" +
@@ -1571,7 +1569,7 @@ public class NewMoviePage {
                 "                <br><br><br>\n" +
                 "                <p >\n" +
                 "                    Director: <br>\n" +
-                "                    <a href=\"https://www.imdb.com\" class=\"test_description_movie\"   target=\"_blank\">Max Joseph</a>\n" +
+                "                    <a href=\"https://www.imdb.com\" class=\"test_description_movie\"   target=\"_blank\" > "+director+" </a>\n" +
                 "                   \n" +
                 "                </p>\n" +
                 "                <br><br>\n" +
@@ -1585,9 +1583,9 @@ public class NewMoviePage {
                 "\n" +
                 "                <p >\n" +
                 "                    Stars: <br>\n" +
-                "                    <a href=\"https://www.imdb.com\" class=\"test_description_movie\"  target=\"_blank\"> Zac Efron ,</a>\n" +
-                "                    <a href=\"https://www.imdb.com\" class=\"test_description_movie\"  target=\"_blank\"> Wes Bentley ,</a>\n" +
-                "                    <a href=\"https://www.imdb.com\" class=\"test_description_movie\"  target=\"_blank\">Emily Ratajkowski</a>  \n" +
+                "                    <a href=\"https://www.imdb.com\" class=\"test_description_movie\"  target=\"_blank\"> "+actor1+" ,</a>\n" +
+                "                    <a href=\"https://www.imdb.com\" class=\"test_description_movie\"  target=\"_blank\"> "+actor2+" ,</a>\n" +
+                "                    <a href=\"https://www.imdb.com\" class=\"test_description_movie\"  target=\"_blank\"> "+actor3+" </a>  \n" +
                 "                   \n" +
                 "                </p>\n" +
                 "                <br><br>\n" +
@@ -2174,29 +2172,33 @@ public class NewMoviePage {
                 "</html>\n";
 
 
-        File file = new File("src/main/webapp/views",nameForMovie+".jsp");
-        if(file.exists()){
-
-            file.createNewFile();
-
-        }
-        FileWriter fileWriter = new FileWriter(file);
-        fileWriter.write(pageTemplate);
-
-
-        fileWriter.flush();
-        fileWriter.close();
-
-
-        Path path = Paths.get("src/main/webapp/views"+nameForMovie+".jsp");
+        nameENG =  nameENG.replaceAll(" ","_");
         try {
-            byte[] bs = pageTemplate.getBytes();
-            Path writtenFilePath = Files.write(path, bs);
-            System.out.println("Written content in file:\n"+ new String(Files.readAllBytes(writtenFilePath)));
-        } catch (Exception e) {
+            File file = new File("F:/EPAM/Final/LearnToFinal/src/main/webapp/views",nameENG+".jsp");
+
+            if(!file.exists()){
+
+                file.createNewFile();
+
+            }
+            FileWriter fileWriter = new FileWriter(file);
+            fileWriter.write(pageTemplate);
+
+
+            fileWriter.close();
+        } catch (IOException e) {
             e.printStackTrace();
         }
-        return true;
+
+
+//        Path path = Paths.get("src/main/webapp/views"+nameENG+".jsp");
+//        try {
+//            byte[] bs = pageTemplate.getBytes();
+//            Path writtenFilePath = Files.write(path, bs);
+//            System.out.println("Written content in file:\n"+ new String(Files.readAllBytes(writtenFilePath)));
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
 
 
 
@@ -2205,13 +2207,13 @@ public class NewMoviePage {
 
     }
 
-    public static void main(String[] args) {
+    public static void main() {
 
         NewMoviePage newMoviePage = new NewMoviePage();
 
         newMoviePage.createDirectionForImageMovie("Baby boss");
         try {
-            newMoviePage.createFile(nameForMovie,"we-are-your-friends-3.jpg","Monday","One","Two","Three","Max","Good","17","18");
+            newMoviePage.createFile("Hola me","we-are-your-friends-3.jpg","Monday","One","Two","Three","Max","Good","17","18");
         } catch (IOException e) {
             e.printStackTrace();
         }
