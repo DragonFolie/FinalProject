@@ -1459,7 +1459,6 @@ transition: 1s;
 
 
 
-
                 <%
 
                     String name_user  = (String)session.getAttribute("name");
@@ -1470,7 +1469,7 @@ transition: 1s;
 
                             out.print(
                                     "<li>\n" +
-                                            "  Hello, "+name_user+" Welcome to <a onclick=\"location.href='/admin'\"  >Admin Page</a>\n" +
+                                            "  Hello, "+name_user+" Welcome to <a onclick=\"location.href='/admin'\"  >Admin Page</a>" +
                                             " </li>\n"
 
                             );

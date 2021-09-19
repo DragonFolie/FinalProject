@@ -3,6 +3,8 @@ package DAO;
 import org.apache.log4j.Logger;
 
 import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.charset.StandardCharsets;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -19,6 +21,8 @@ public class Admin implements  AdminDAO{
     private static final String ADD_NEW_MOVIE  =  "INSERT INTO filmdetail (Name, Description, Actor, Director,session_idMovie )VALUES (?,?,?,?,( SELECT MAX(idMovie) FROM session ));\n";
     private static final String ADD_ENGLISH_VERSION_OF_MOVIE = "INSERT INTO language (Name,Description,filmDetail_idfilmDetail) values (?,?,( SELECT MAX(idMovie) FROM session ));";
     private static final String GET_ID_BY_NAME_OF_MOVIE  = "SELECT idfilmDetail FROM filmdetail WHERE  Name = ? ";
+
+
     private static final String UPDATE_STATUS_OF_MOVIE = "UPDATE session SET Status = ? WHERE idMovie = ?";
 
 
@@ -481,7 +485,190 @@ public class Admin implements  AdminDAO{
 
 
 
-    public int  getCountSeatsForSession(){
+
+
+
+    public String  addNewSessionForMovie(String movieName){
+        System.out.println("name= " + movieName);
+
+
+        UsersManager usersManager = new UsersManager();
+        StringBuilder sb = new StringBuilder();
+        StringBuilder sb2 = new StringBuilder();
+        StringBuilder sb3 = new StringBuilder();
+        int result = 0;
+        PreparedStatement preparedStatement = null;
+        try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
+
+//            System.out.println("conn + " +conn);
+
+            preparedStatement = conn.prepareStatement("Select filmDetail_idfilmDetail FROM language WHERE Name = '"+ movieName+"';");
+
+
+
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+         while(   resultSet.next()) {
+
+              result = resultSet.getInt(1);
+
+         }
+
+            preparedStatement = conn.prepareStatement("SELECt  Name, Description  From language where idLanguage = "+result+" ;");
+
+            resultSet = preparedStatement.executeQuery();
+
+         while(   resultSet.next()) {
+             sb.append(resultSet.getString(1))
+                     .append("-")
+                     .append(resultSet.getString(2))
+                     .append(";");
+
+         }
+
+
+            preparedStatement = conn.prepareStatement("SELECt Name , Description ,Actor  ,Director   From filmdetail where idfilmDetail = "+result+";");
+
+            resultSet = preparedStatement.executeQuery();
+
+         while(   resultSet.next()) {
+             sb.append(resultSet.getString(1))
+                     .append("-")
+                     .append(resultSet.getString(2))
+                     .append("-")
+                     .append(resultSet.getString(3))
+                     .append("-")
+                     .append(resultSet.getString(4))
+                     .append(";");
+         }
+
+
+
+
+            preparedStatement = conn.prepareStatement("SELECt  PosterUrl, CountSeat,  Cost  From session where idMovie = "+result+";");
+
+            resultSet = preparedStatement.executeQuery();
+
+
+         while(   resultSet.next()) {
+             sb.append(resultSet.getString(1))
+                     .append("-")
+                     .append(resultSet.getString(2))
+                     .append("-")
+                     .append(resultSet.getString(3))
+                     .append(";");
+         }
+
+
+
+            return sb.toString();
+
+
+
+
+
+
+        }catch (IOException | SQLException | ClassNotFoundException e) {
+//            logger.info("Exception here" + e);
+            logger.error("Cant add New Session For Movie " + e);
+            return "not found";
+        }
+
+
+    }
+
+
+
+
+    public ArrayList findAllMovieSessionByName(String movieName){
+
+        UsersManager usersManager = new UsersManager();
+
+        ArrayList list = new ArrayList();
+        ArrayList<Integer> listId = new ArrayList();
+
+        PreparedStatement preparedStatement = null;
+        try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
+
+// private static final String GET_ID_BY_NAME_OF_MOVIE  = "";
+
+//    private static final String OUTPUT_TIME_AND_STATUS_ABOUT_MOVIE = "SELECT  TimeStart,TimeEnd,SessionDay,Status FROM session";
+
+
+
+            System.out.println("Movie: " +movieName);
+            preparedStatement = conn.prepareStatement("SELECT idLanguage FROM language WHERE  Name = ? ");
+
+            preparedStatement.setString(1,movieName);
+
+
+            preparedStatement.execute();
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()){
+
+                System.out.println("While");
+                listId.add( resultSet.getInt(1));
+                System.out.println("Result1 = "+resultSet.getInt(1));
+
+
+
+            }
+
+
+            System.out.println("Size: " +listId.size() );
+
+            for (int i = 0; i <listId.size() ; i++) {
+
+                preparedStatement = conn.prepareStatement("SELECT  TimeStart,TimeEnd,SessionDay,Status FROM session Where idMovie = ?");
+                int number = listId.get(i);
+
+                System.out.println("Number: " +number );
+                preparedStatement.setInt(1, number );
+
+                preparedStatement.execute();
+
+                resultSet = preparedStatement.executeQuery();
+
+                while (resultSet.next()){
+
+                    StringBuilder sb = new StringBuilder();
+
+                    sb.append(resultSet.getString(1));
+                    sb.append(",");
+                    sb.append(resultSet.getString(2));
+                    sb.append(",");
+                    sb.append(resultSet.getString(3));
+                    sb.append(",");
+                    sb.append(resultSet.getString(4));
+
+                    System.out.println("SB: " +sb.toString() );
+                    list.add(sb);
+
+                }
+
+
+
+
+            }
+
+            System.out.println("Final list=" + list);
+
+            return list;
+
+
+        }catch (IOException | SQLException | ClassNotFoundException e) {
+//            logger.info("Exception here" + e);
+            logger.error("Cant findAllMovieSession " + e);
+            return null;
+        }
+
+
+    }
+
+
+
+    public int  getCountOfSeatsByDate(String day, String timeStart){
 
 
         UsersManager usersManager = new UsersManager();
@@ -490,19 +677,18 @@ public class Admin implements  AdminDAO{
         try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
 
 //            System.out.println("conn + " +conn);
-            preparedStatement = conn.prepareStatement("SELECT CountSeat From session WHERE idMovie = ( SELECT MAX(idMovie) FROM session );");
+            preparedStatement = conn.prepareStatement("SELECT CountSeat From session WHERE SessionDay = ? AND TimeStart = ?");
+            preparedStatement.setString(1,day);
+            preparedStatement.setString(2,timeStart);
+
+
             ResultSet resultSet = preparedStatement.executeQuery();
 
             resultSet.next();
-            StringBuilder sb = new StringBuilder();
 
 
-            int result = resultSet.getInt(1);
 
-
-            preparedStatement.execute();
-
-            return 1;
+            return resultSet.getInt(1);
 
 
 
@@ -520,110 +706,6 @@ public class Admin implements  AdminDAO{
 
 
 
-    public String  addNewSessionForMovie(String movieName){
-        System.out.println("name= " + movieName);
-
-
-        UsersManager usersManager = new UsersManager();
-        StringBuilder sb = new StringBuilder();
-        int result = 0;
-        PreparedStatement preparedStatement = null;
-        try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
-
-//            System.out.println("conn + " +conn);
-
-            preparedStatement = conn.prepareStatement("Select filmDetail_idfilmDetail FROM language WHERE Name = '"+ movieName+"';");
-
-
-
-
-            ResultSet resultSet = preparedStatement.executeQuery();
-         while(   resultSet.next()) {
-
-             System.out.println("1");
-              result = resultSet.getInt(1);
-
-         }
-
-            preparedStatement = conn.prepareStatement("SELECt  Name, Description  From language where idLanguage = "+result+" ;");
-
-            System.out.println("2");
-            resultSet = preparedStatement.executeQuery();
-
-            System.out.println("3");
-         while(   resultSet.next()) {
-             System.out.println("4");
-             sb.append(resultSet.getString(1))
-                     .append(",")
-                     .append(resultSet.getString(2))
-                     .append(";");
-             System.out.println("5");
-
-         }
-
-
-
-            preparedStatement = conn.prepareStatement("SELECt Name, Description, Actor, Director  From filmdetail where idfilmDetail = "+result+";");
-
-            System.out.println("6");
-            resultSet = preparedStatement.executeQuery();
-            System.out.println("7");
-
-         while(   resultSet.next()) {
-             System.out.println("8");
-             sb.append(resultSet.getString(1))
-                     .append(",")
-                     .append(resultSet.getString(2))
-                     .append(",")
-                     .append(resultSet.getString(3))
-                     .append(",")
-                     .append(resultSet.getString(4))
-                     .append(";");
-             System.out.println("9");
-         }
-
-
-
-
-            System.out.println("14");
-            preparedStatement = conn.prepareStatement("SELECt  PosterUrl, CountSeat,  Cost  From session where idMovie = "+result+";");
-
-            System.out.println("10");
-            resultSet = preparedStatement.executeQuery();
-
-
-         while(   resultSet.next()) {
-             System.out.println("11");
-             sb.append(resultSet.getString(1))
-                     .append(",")
-                     .append(resultSet.getString(2))
-                     .append(",")
-                     .append(resultSet.getString(3))
-                     .append(";");
-             System.out.println("12");
-         }
-
-
-
-
-
-
-            System.out.println("13");
-            return sb.toString();
-
-
-
-
-
-
-        }catch (IOException | SQLException | ClassNotFoundException e) {
-//            logger.info("Exception here" + e);
-            logger.error("Cant add New Session For Movie " + e);
-            return "not found";
-        }
-
-
-    }
 
 
 

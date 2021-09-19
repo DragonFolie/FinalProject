@@ -29,7 +29,7 @@ public class LoginServlet  extends HttpServlet {
 
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws  IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
           Logger logger =  Logger.getLogger(LogoutServlet.class.getName());
         String name = req.getParameter("name_login");
         String password = req.getParameter("pass_login");
@@ -51,7 +51,8 @@ public class LoginServlet  extends HttpServlet {
 
             logger.info("Logging user: " + name);
 //            resp.sendRedirect("index.jsp");
-            resp.setIntHeader("Refresh", 1);
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("/");
+            requestDispatcher.forward(req, resp);
 
 
         }

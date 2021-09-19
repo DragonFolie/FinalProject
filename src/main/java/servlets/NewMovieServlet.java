@@ -69,7 +69,7 @@ public  class NewMovieServlet extends HttpServlet {
 //            System.out.println("good1");
 
             dbManager.addSession(ticketCost,countSeat,posterURL,date,timeStart,timeEnd,status,pageURL);
-            System.out.println("+1");
+//            System.out.println("+1");
 
             threeInsertAreSuccessful +=1;
 
@@ -86,7 +86,7 @@ public  class NewMovieServlet extends HttpServlet {
 
 //            System.out.println("good3");
             dbManager.addMovie(nameUkr,descriptionUkr,actor,director);
-            System.out.println("+2");
+//            System.out.println("+2");
             threeInsertAreSuccessful +=1;
 //            System.out.println("good3");
         }
@@ -98,7 +98,7 @@ public  class NewMovieServlet extends HttpServlet {
 
 //            System.out.println("good2");
             dbManager.addEngtypeOfMovie(nameEng,descriptionEng);
-            System.out.println("+3");
+//            System.out.println("+3");
             threeInsertAreSuccessful +=1;
 
 //            System.out.println("good2");
@@ -106,21 +106,21 @@ public  class NewMovieServlet extends HttpServlet {
 
         }
 
-        System.out.println("pre");
+//        System.out.println("pre");
         if (threeInsertAreSuccessful ==3 ){
-            System.out.println("in");
+//            System.out.println("in");
             NewMoviePage newMoviePage = new NewMoviePage();
 
             try {
-                System.out.println(" name= " +nameEng);
+//                System.out.println(" name= " +nameEng);
                 newMoviePage.createDirectionForImageMovie(nameEng);
             } catch (Exception e) {
                 e.printStackTrace();
             }
 
             try {
-                System.out.println(" name= " +nameEng +" poster= "+posterURL+" 1 "+actor+" a2 "+actors2+" a3 "+ actors3+" dir "+ director
-                        +" desc "+descriptionEng+" ts "+ timeStart +" te" + timeEnd);
+//                System.out.println(" name= " +nameEng +" poster= "+posterURL+" 1 "+actor+" a2 "+actors2+" a3 "+ actors3+" dir "+ director
+//                        +" desc "+descriptionEng+" ts "+ timeStart +" te" + timeEnd);
                 newMoviePage.createFile(nameEng,posterURL,date,actors,actors2,actors3,director,descriptionEng,timeStart,timeEnd);
 
             } catch (IOException e) {

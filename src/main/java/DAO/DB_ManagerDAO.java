@@ -187,9 +187,13 @@ public class DB_ManagerDAO implements InterfaceController {
 
         return admin.getPosterURL(movieName);
     }
+    public ArrayList findAllMovieSessionByName(String movieName){
 
+        Admin admin = new Admin();
 
+        return admin.findAllMovieSessionByName(movieName);
 
+    }
 
 
 

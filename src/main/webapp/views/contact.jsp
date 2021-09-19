@@ -722,11 +722,25 @@ div[class*=box] {
                     <div class="empty"></div>
                     <div class="navigation">
                         <ul>
-                            <li><a href="https://dou.ua/">JOIN US</a></li>
-                                
-                                            <li><a href="viewes/movies.jsp" >MOVIES</a></li>
-                                            
-                                            <li><a href="https://www.facebook.com/" >COMMUNITY</a></li>
+                            <li >
+                                <a onclick="location.href='/movies'">MOVIES</a>
+
+                            </li>
+
+
+
+                            <li>
+                                <a href="https://www.facebook.com/"  target="_blank" >COMMUNITY</a>
+                            </li>
+                            <li>
+                                <a href="shop-right-sidebar.jsp"   >SHOP</a>
+                            </li>
+                            <li>
+                                <a href="contact.jsp" target="_blank"  >SUPPORT</a>
+                            </li>
+
+
+
 
                             <%
 
@@ -734,27 +748,44 @@ div[class*=box] {
 
                                 if(name_user != null ){
 
+                                    if(name_user.equals("admin")){
+
+                                        out.print(
+                                                "<li>\n" +
+                                                        "  Hello, "+name_user+" Welcome to <a onclick=\"location.href='/admin'\"  >Admin Page</a>" +
+                                                        " </li>\n"
+
+                                        );
+
+                                    }
+                                    if(!name_user.equals("admin")){
+
+                                        out.print(
+                                                "<li>\n" +
+                                                        "  Hello, "+name_user+" Welcome to <a onclick=\"location.href='/userProfile'\"  >Profile</a>\n" +
+                                                        " </li>\n"
+
+                                        );
+
+                                    }
 
 
-                                //                                      out.print("Hello, "+name_user+" Welcome to Profile");
-                                out.print(
-                                "<li>\n" +
-                                "  Hello, "+name_user+" Welcome to <a href='views/user_profile.jsp'  >Profile</a>\n" +
-                                " </li>\n"
-                                );
+
+                                    //                                      out.print("Hello, "+name_user+" Welcome to Profile");
+
 
                                 }
                                 if(name_user == null ) {
 
-                                out.print(
-                                "<li>\n" +
-                                "  <a onclick=\"location.href='/login'\">LOGIN</a>\n" +
-                                " </li>\n" +
+                                    out.print(
+                                            "<li>\n" +
+                                                    "  <a onclick=\"location.href='/login'\">LOGIN</a>\n" +
+                                                    " </li>\n" +
 
-                                " <li>\n" +
-                                "     <a onclick=\"location.href='/registration'\">REGISTER</a>\n" +
-                                "</li>"
-                                );
+                                                    " <li>\n" +
+                                                    "     <a onclick=\"location.href='/registration'\">REGISTER</a>\n" +
+                                                    "</li>"
+                                    );
 
 
                                 }
@@ -764,7 +795,6 @@ div[class*=box] {
 
 
                             %>
-
                                             
                         </ul>
 

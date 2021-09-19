@@ -5,6 +5,9 @@
 <%@ page import="servlets.NewMoviePage" %>
 <%@ page import="DAO.DB_ManagerDAO" %>
 <%@ page import="DAO.Admin" %>
+<%@ page import="java.util.regex.Matcher" %>
+<%@ page import="java.util.regex.Pattern" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -1440,7 +1443,7 @@ transition: 1s;
 
                 </li>
 
-               
+
 
                 <li>
                     <a href="https://www.facebook.com/"  target="_blank" >COMMUNITY</a>
@@ -1451,6 +1454,10 @@ transition: 1s;
                 <li>
                     <a href="contact.jsp" target="_blank"  >SUPPORT</a>
                 </li>
+
+
+
+
                 <%
 
                     String name_user  = (String)session.getAttribute("name");
@@ -1461,7 +1468,7 @@ transition: 1s;
 
                             out.print(
                                     "<li>\n" +
-                                            "  Hello, "+name_user+" Welcome to <a onclick=\"location.href='/admin'\"  >Admin Page</a>\n" +
+                                            "  Hello, "+name_user+" Welcome to <a onclick=\"location.href='/admin'\"  >Admin Page</a>" +
                                             " </li>\n"
 
                             );
@@ -1688,28 +1695,91 @@ transition: 1s;
 
 
                         Choose time and day and number of seat &nbsp
-                        <select name="changeStatus">
-                            <option >11:00 - 12:30</option>
-                        </select>&nbsp
 
-                        <select name="changeStatus">
-                            <option >Tuesday</option>
-                        </select>&nbsp
-                        <select name="changeStatus">
                             <%
 
-                    Admin admin = new Admin();
-                    
-                    for (int i = 1; i <admin.getCountSeatsForSession()+1 ; i++) {
-                        
-                        out.print("<option >"+i+"</option>");
-                        
-                    }
+                                Admin admin = new Admin();
+                                DB_ManagerDAO db_managerDAO = new DB_ManagerDAO();
+                                ArrayList infoForTimeTable = new ArrayList();
+                                 infoForTimeTable = db_managerDAO.findAllMovieSessionByName("Project X");
+
+                                String regex = "(.+),(.+),(.+),(.+)";
+                                String timeS = null;
+                                String timeE = null;
+                                String date = null;
+                                String status  = null;
+
+
+                                System.out.println("\n\nSizeInner= " + infoForTimeTable.size());
+
+                                for (int i = 0; i <infoForTimeTable.size() ; i++) {
+
+                                    StringBuilder sb = new StringBuilder();
+
+                                    sb.append(infoForTimeTable.get(i));
+                                    System.out.println("SbInner= " + sb.toString());
+
+
+                                    Matcher m = Pattern.compile(regex).matcher(sb.toString());
+                                    while (m.find()) {
+
+                                        timeS = m.group(1);
+                                        timeE = m.group(2);
+                                        date = m.group(3);
+                                        status = m.group(4);
+
+
+                                        System.out.println(timeS+" - " +timeE+" - " +date+" - " +status );
+
+
+                                    }
+
+                                    if (status.equals("Close to buy" ) ){
+                                        System.out.println("cont");
+                                        continue;
+                                    }
 
 
 
-                %>
-                        </select>&nbsp
+                                 out.print( "<table>" +
+                                                "<tr>" +
+                                                     "<td>");
+                                                            out.print("<select name="+date+">");
+                                                                out.print("<option >"+timeS +" - " + timeE+" Day: " + date  + "</option>");
+                                                            out.print("</select name=\"changeStatus\">&nbsp");
+
+                                            out.print("</td>" +
+                                                      "<td>");
+
+                                                            out.print("<select name=\\\"selectSeatOn"+date+"day\">");
+                                                            for (int k = 1; k <admin.getCountOfSeatsByDate(date,timeS) ; k++) {
+
+                                                                out.print("<option >"+k+"</option>" );
+
+
+                                                            }
+                                                            out.print("</select name=\"changeStatus\">&nbsp " +
+                                                      "</td>" +
+                                                       "<td>" +
+                                                          "<input type=\"radio\" id=\"radioButton\" value=\" \" name=\"radioButtonOn"+date+"day\">" +
+                                                                    "<input type=\"radio\" id=\"radioButton\" value=\" \" name=\"radioButtonOn"+date+"day\">" +
+                                                      "</td>" +
+                                               "<tr>" +
+                                            "</table>" );
+
+
+
+
+
+
+
+                                }
+
+
+
+                            %>
+
+
 
                         <div class="button_send_buy">
 

@@ -1466,76 +1466,82 @@ public class NewMoviePage {
                 "        </div>\n" +
                 "        <div class=\"header_nav\">\n" +
                 "            <ul class=\"header_inner_ul\">\n" +
-                "                <li >\n" +
-                "                    <a onclick=\"location.href='/movies'\">MOVIES</a>\n" +
+
+                "<li >\n" +
+                "                            <a onclick=\"location.href='/movies'\">MOVIES</a>\n" +
                 "\n" +
-                "                </li>\n" +
-                "\n" +
-                "               \n" +
-                "\n" +
-                "                <li>\n" +
-                "                    <a href=\"https://www.facebook.com/\"  target=\"_blank\" >COMMUNITY</a>\n" +
-                "                </li>\n" +
-                "                <li>\n" +
-                "                    <a href=\"shop-right-sidebar.jsp\"   >SHOP</a>\n" +
-                "                </li>\n" +
-                "                <li>\n" +
-                "                    <a href=\"contact.jsp\" target=\"_blank\"  >SUPPORT</a>\n" +
-                "                </li>\n" +
-                "                <%\n" +
-                "\n" +
-                "                    String name_user  = (String)session.getAttribute(\"name\");\n" +
-                "\n" +
-                "                    if(name_user != null ){\n" +
-                "\n" +
-                "                        if(name_user.equals(\"admin\")){\n" +
-                "\n" +
-                "                            out.print(\n" +
-                "                                    \"<li>\\n\" +\n" +
-                "                                            \"  Hello, \"+name_user+\" Welcome to <a onclick=\\\"location.href='/admin'\\\"  >Admin Page</a>\\n\" +\n" +
-                "                                            \" </li>\\n\"\n" +
-                "\n" +
-                "                            );\n" +
-                "\n" +
-                "                        }\n" +
-                "                        if(!name_user.equals(\"admin\")){\n" +
-                "\n" +
-                "                            out.print(\n" +
-                "                                    \"<li>\\n\" +\n" +
-                "                                            \"  Hello, \"+name_user+\" Welcome to <a onclick=\\\"location.href='/userProfile'\\\"  >Profile</a>\\n\" +\n" +
-                "                                            \" </li>\\n\"\n" +
-                "\n" +
-                "                            );\n" +
-                "\n" +
-                "                        }\n" +
+                "                        </li>\n" +
                 "\n" +
                 "\n" +
                 "\n" +
-                "                        //                                      out.print(\"Hello, \"+name_user+\" Welcome to Profile\");\n" +
-                "\n" +
-                "\n" +
-                "                    }\n" +
-                "                    if(name_user == null ) {\n" +
-                "\n" +
-                "                        out.print(\n" +
-                "                                \"<li>\\n\" +\n" +
-                "                                        \"  <a onclick=\\\"location.href='/login'\\\">LOGIN</a>\\n\" +\n" +
-                "                                        \" </li>\\n\" +\n" +
-                "\n" +
-                "                                        \" <li>\\n\" +\n" +
-                "                                        \"     <a onclick=\\\"location.href='/registration'\\\">REGISTER</a>\\n\" +\n" +
-                "                                        \"</li>\"\n" +
-                "                        );\n" +
-                "\n" +
-                "\n" +
-                "                    }\n" +
+                "                        <li>\n" +
+                "                            <a href=\"https://www.facebook.com/\"  target=\"_blank\" >COMMUNITY</a>\n" +
+                "                        </li>\n" +
+                "                        <li>\n" +
+                "                            <a href=\"shop-right-sidebar.jsp\"   >SHOP</a>\n" +
+                "                        </li>\n" +
+                "                        <li>\n" +
+                "                            <a href=\"contact.jsp\" target=\"_blank\"  >SUPPORT</a>\n" +
+                "                        </li>\n" +
                 "\n" +
                 "\n" +
                 "\n" +
                 "\n" +
+                "                        <%\n" +
                 "\n" +
-                "                %>\n" +
-                "            </ul>\n" +
+                "                            String name_user  = (String)session.getAttribute(\"name\");\n" +
+                "\n" +
+                "                            if(name_user != null ){\n" +
+                "\n" +
+                "                                if(name_user.equals(\"admin\")){\n" +
+                "\n" +
+                "                                    out.print(\n" +
+                "                                            \"<li>\\n\" +\n" +
+                "                                                    \"  Hello, \"+name_user+\" Welcome to <a onclick=\"location.href='/admin'\"  >Admin Page</a>\" +\n" +
+                "                                                    \" </li>\\n\"\n" +
+                "\n" +
+                "                                    );\n" +
+                "\n" +
+                "                                }\n" +
+                "                                if(!name_user.equals(\"admin\")){\n" +
+                "\n" +
+                "                                    out.print(\n" +
+                "                                            \"<li>\\n\" +\n" +
+                "                                                    \"  Hello, \"+name_user+\" Welcome to <a onclick=\\\"location.href='/userProfile'\\\"  >Profile</a>\\n\" +\n" +
+                "                                                    \" </li>\\n\"\n" +
+                "\n" +
+                "                                    );\n" +
+                "\n" +
+                "                                }\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "                                //                                      out.print(\"Hello, \"+name_user+\" Welcome to Profile\");\n" +
+                "\n" +
+                "\n" +
+                "                            }\n" +
+                "                            if(name_user == null ) {\n" +
+                "\n" +
+                "                                out.print(\n" +
+                "                                        \"<li>\\n\" +\n" +
+                "                                                \"  <a onclick=\\\"location.href='/login'\\\">LOGIN</a>\\n\" +\n" +
+                "                                                \" </li>\\n\" +\n" +
+                "\n" +
+                "                                                \" <li>\\n\" +\n" +
+                "                                                \"     <a onclick=\\\"location.href='/registration'\\\">REGISTER</a>\\n\" +\n" +
+                "                                                \"</li>\"\n" +
+                "                                );\n" +
+                "\n" +
+                "\n" +
+                "                            }\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "                        %>            " +
+                "" +
+                "</ul>\n" +
                 "        </div>\n" +
                 "         \n" +
                 "\n" +

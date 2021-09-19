@@ -48,10 +48,12 @@
                   <div class="header_nav">
                       <ul class="header_inner_ul">
                           <li >
-                              <a href="movies.jsp">MOVIE</a>
+                              <a onclick="location.href='/movies'">MOVIES</a>
+
                           </li>
-          
-          
+
+
+
                           <li>
                               <a href="https://www.facebook.com/"  target="_blank" >COMMUNITY</a>
                           </li>
@@ -59,46 +61,64 @@
                               <a href="shop-right-sidebar.jsp"   >SHOP</a>
                           </li>
                           <li>
-                              <a href="contact.jsp" target="_blank"  > SUPPORT </a>
+                              <a href="contact.jsp" target="_blank"  >SUPPORT</a>
                           </li>
 
 
-                              <%
 
-                                  String name_user  = (String)session.getAttribute("name");
+                          <%
 
-                                  if(name_user != null ){
+                              String name_user  = (String)session.getAttribute("name");
 
+                              if(name_user != null ){
 
-
-//                                      out.print("Hello, "+name_user+" Welcome to Profile");
-                                      out.print(
-                                              "<li>\n" +
-                                              "  Hello, "+name_user+" Welcome to <a href='views/user_profile.jsp'  >Profile</a>\n" +
-                                              " </li>\n"
-                                      );
-
-                                  }
-                                  if(name_user == null ) {
+                                  if(name_user.equals("admin")){
 
                                       out.print(
                                               "<li>\n" +
-                                                      "  <a onclick=\"location.href='/login'\">LOGIN</a>\n" +
-                                                      " </li>\n" +
+                                                      "  Hello, "+name_user+" Welcome to <a onclick=\"location.href='/admin'\"  >Admin Page</a>" +
+                                                      " </li>\n"
 
-                                                      " <li>\n" +
-                                                      "     <a onclick=\"location.href='/registration'\">REGISTER</a>\n" +
-                                                      "</li>"
                                       );
 
+                                  }
+                                  if(!name_user.equals("admin")){
+
+                                      out.print(
+                                              "<li>\n" +
+                                                      "  Hello, "+name_user+" Welcome to <a onclick=\"location.href='/userProfile'\"  >Profile</a>\n" +
+                                                      " </li>\n"
+
+                                      );
 
                                   }
 
 
 
+                                  //                                      out.print("Hello, "+name_user+" Welcome to Profile");
 
 
-                              %>
+                              }
+                              if(name_user == null ) {
+
+                                  out.print(
+                                          "<li>\n" +
+                                                  "  <a onclick=\"location.href='/login'\">LOGIN</a>\n" +
+                                                  " </li>\n" +
+
+                                                  " <li>\n" +
+                                                  "     <a onclick=\"location.href='/registration'\">REGISTER</a>\n" +
+                                                  "</li>"
+                                  );
+
+
+                              }
+
+
+
+
+
+                          %>
 
                       </ul>
                   </div>
@@ -153,8 +173,8 @@
 
       <div class="buttons" >
         <div class="container">
-            <a  class="btn btn-2"><button  type="submit"> Login</button></a>
-          <a  style="color: white" >Your dont have account?<br><a  href="views/registration.html" class="btn3" >Create account</a> </a>
+            <a  class="btn btn-2"><button style="outline: none;   border: 0;  background: transparent; color: white ; font-size: 15px "  type="submit"> Login</button></a>
+          <a  style="color: white" >Your dont have account?<br><a onclick="location.href='/registration'" class="btn3" >Create account</a>
             </div>
       </div>
   </div>

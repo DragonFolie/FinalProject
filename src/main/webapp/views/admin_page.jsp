@@ -489,25 +489,78 @@ ul.summary-list > li:last-child  {
         <div class="header_nav">
             <ul class="header_inner_ul">
                 <li >
-                    <a href="movies.jsp">MOVIE</a>
+                    <a onclick="location.href='/movies'">MOVIES</a>
+
                 </li>
 
 
+
                 <li>
-                    <a href="https://hinterlandforums.com/forums/"  target="_blank" >COMMUNITY</a>
+                    <a href="https://www.facebook.com/"  target="_blank" >COMMUNITY</a>
                 </li>
                 <li>
                     <a href="shop-right-sidebar.jsp"   >SHOP</a>
                 </li>
                 <li>
-                    <a href="https://hinterlandgames.zendesk.com/hc/en-us"  target="_blank"  > SUPPORT </a>
+                    <a href="contact.jsp" target="_blank"  >SUPPORT</a>
                 </li>
-                <li>
-                  <a href="login.html"   >LOGIN</a>
-              </li>
-              <li>
-                  <a href="registration.html"    >REGISTER</a>
-              </li>
+
+
+
+
+                <%
+
+                    String name_user  = (String)session.getAttribute("name");
+
+                    if(name_user != null ){
+
+                        if(name_user.equals("admin")){
+
+                            out.print(
+                                    "<li>\n" +
+                                            "  Hello, "+name_user+" Welcome to <a onclick=\"location.href='/admin'\"  >Admin Page</a>" +
+                                            " </li>\n"
+
+                            );
+
+                        }
+                        if(!name_user.equals("admin")){
+
+                            out.print(
+                                    "<li>\n" +
+                                            "  Hello, "+name_user+" Welcome to <a onclick=\"location.href='/userProfile'\"  >Profile</a>\n" +
+                                            " </li>\n"
+
+                            );
+
+                        }
+
+
+
+                        //                                      out.print("Hello, "+name_user+" Welcome to Profile");
+
+
+                    }
+                    if(name_user == null ) {
+
+                        out.print(
+                                "<li>\n" +
+                                        "  <a onclick=\"location.href='/login'\">LOGIN</a>\n" +
+                                        " </li>\n" +
+
+                                        " <li>\n" +
+                                        "     <a onclick=\"location.href='/registration'\">REGISTER</a>\n" +
+                                        "</li>"
+                        );
+
+
+                    }
+
+
+
+
+
+                %>
             </ul>
         </div>
          

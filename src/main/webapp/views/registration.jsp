@@ -31,27 +31,78 @@
                   <div class="header_nav">
                       <ul class="header_inner_ul">
                           <li >
-                              <a href="views/movies.jsp">MOVIE</a>
+                              <a onclick="location.href='/movies'">MOVIES</a>
+
                           </li>
-          
-          
+
+
+
                           <li>
                               <a href="https://www.facebook.com/"  target="_blank" >COMMUNITY</a>
                           </li>
                           <li>
-                              <a href="views/shop-right-sidebar.html"   >SHOP</a>
+                              <a href="shop-right-sidebar.jsp"   >SHOP</a>
+                          </li>
+                          <li>
+                              <a href="contact.jsp" target="_blank"  >SUPPORT</a>
                           </li>
 
-                          <li>
-                              <a href="views/contact.html"  target="_blank"  > SUPPORT </a>
-                          </li>
-                          <li>
-                              <!--                            <a href="views/login.jsp"   >LOGIN</a>-->
-                              <a onclick="location.href='/login'">LOGIN</a>
-                          </li>
-                          <li>
-                              <a onclick="location.href='/registration'">REGISTER</a>
-                          </li>
+
+
+
+                          <%
+
+                              String name_user  = (String)session.getAttribute("name");
+
+                              if(name_user != null ){
+
+                                  if(name_user.equals("admin")){
+
+                                      out.print(
+                                              "<li>\n" +
+                                                      "  Hello, "+name_user+" Welcome to <a onclick=\"location.href='/admin'\"  >Admin Page</a>" +
+                                                      " </li>\n"
+
+                                      );
+
+                                  }
+                                  if(!name_user.equals("admin")){
+
+                                      out.print(
+                                              "<li>\n" +
+                                                      "  Hello, "+name_user+" Welcome to <a onclick=\"location.href='/userProfile'\"  >Profile</a>\n" +
+                                                      " </li>\n"
+
+                                      );
+
+                                  }
+
+
+
+                                  //                                      out.print("Hello, "+name_user+" Welcome to Profile");
+
+
+                              }
+                              if(name_user == null ) {
+
+                                  out.print(
+                                          "<li>\n" +
+                                                  "  <a onclick=\"location.href='/login'\">LOGIN</a>\n" +
+                                                  " </li>\n" +
+
+                                                  " <li>\n" +
+                                                  "     <a onclick=\"location.href='/registration'\">REGISTER</a>\n" +
+                                                  "</li>"
+                                  );
+
+
+                              }
+
+
+
+
+
+                          %>
                       </ul>
                   </div>
                    
@@ -140,9 +191,9 @@
 
       <div style="padding-top: 50px;" class="buttons">
         <div class="container">
-          <a href="" class="btn btn-2"><button type="submit"> Create</button></a>
+          <a href="" class="btn btn-2"><button type="submit" style="outline: none;   border: 0;  background: transparent; color: white ; font-size: 15px "> Create</button></a>
           
-          <a  style="color: white" >Your  have account?<br><a style="text-align: center;" href="views/login.jsp" class="btn3" >Lets login</a> </a>
+          <a  style="color: white" >Your  have account?<br><a style="text-align: center;" onclick="location.href='/login'" class="btn3" >Lets login</a> </a>
             </div>
       </div>
   </div>

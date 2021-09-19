@@ -53,40 +53,56 @@ INSERT INTO `testtable` ". "(`TestColumn1`, `TestColumn2`) ". "VALUES('Second no
                 <div class="header_nav">
                     <ul class="header_inner_ul">
                         <li >
-                            <a onclick="location.href='/movies'" style="color: white;">MOVIE</a>
-                        </li>
-        
-                        <!-- <li >
-                <a href="long_dark_survival_mode.html" class="footer_list_text_li" >SURVIVAL MODE</a>
-            </li>
+                            <a onclick="location.href='/movies'">MOVIES</a>
 
-            <li>
-                <a href="long_dark_story_mode.html"  class="footer_list_text_li">STORY MODE</a>
-            </li>  -->
-        
+                        </li>
+
+
+
                         <li>
-                            <a href="https://hinterlandforums.com/forums/"   >COMMUNITY</a>
+                            <a href="https://www.facebook.com/"  target="_blank" >COMMUNITY</a>
                         </li>
                         <li>
                             <a href="shop-right-sidebar.jsp"   >SHOP</a>
                         </li>
                         <li>
-                            <a href="https://hinterlandgames.zendesk.com/hc/en-us"   >SUPPORT</a>
+                            <a href="contact.jsp" target="_blank"  >SUPPORT</a>
                         </li>
+
+
+
+
                         <%
 
                             String name_user  = (String)session.getAttribute("name");
 
                             if(name_user != null ){
 
+                                if(name_user.equals("admin")){
+
+                                    out.print(
+                                            "<li>\n" +
+                                                    "  Hello, "+name_user+" Welcome to <a onclick=\"location.href='/admin'\"  >Admin Page</a>" +
+                                                    " </li>\n"
+
+                                    );
+
+                                }
+                                if(!name_user.equals("admin")){
+
+                                    out.print(
+                                            "<li>\n" +
+                                                    "  Hello, "+name_user+" Welcome to <a onclick=\"location.href='/userProfile'\"  >Profile</a>\n" +
+                                                    " </li>\n"
+
+                                    );
+
+                                }
+
 
 
                                 //                                      out.print("Hello, "+name_user+" Welcome to Profile");
-                                out.print(
-                                        "<li>\n" +
-                                                "  Hello, "+name_user+" Welcome to <a href='views/user_profile.jsp'  >Profile</a>\n" +
-                                                " </li>\n"
-                                );
+
 
                             }
                             if(name_user == null ) {
@@ -235,7 +251,7 @@ INSERT INTO `testtable` ". "(`TestColumn1`, `TestColumn2`) ". "VALUES('Second no
 //                    System.out.println("in");
 
                     status = m.group(4);
-                    if (status.equals("Close to buy")){
+                    if (status.equals("Close to buy" ) || status.equals("New Session")){
 //                        out.println( "<li>Movie name: "+ sb2+";&nbsp&nbsp Start: " +preword  + ";&nbsp&nbsp End: " + afterword +";&nbsp&nbsp </li>" );
                         continue;
                     }
