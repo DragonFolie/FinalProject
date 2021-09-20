@@ -479,7 +479,7 @@ ul.summary-list > li:last-child  {
 <nav class="header">
     <div class="header_container">
       <div class="logo">
-        <img src="views/img/logo_v2.jpg" alt="logo+Hinterland" href="index.html"srcset="">
+        <img src="img/logo_v2.jpg" alt="logo+Hinterland" href="index.html"srcset="">
         <span ><a href="http://localhost:8080" class="HINTERLAND">HINTERLAND</a></span>
     </div>
         <div class="header_container_empty">
@@ -577,7 +577,7 @@ ul.summary-list > li:last-child  {
 
           <ul class="nav nav-pills nav-stacked">
               <li class="active"><a href="#"> <i class="fa fa-user"></i> Profile</a></li>
-              <li><a href="#"> <i class="fa fa-edit"></i> Edit profile</a></li>
+              <li><a onclick="location.href='/movieBuy'"> <i class="fa fa-edit"></i> Edit profile</a></li>
           </ul>
       </div>
   </div>

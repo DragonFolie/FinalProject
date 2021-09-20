@@ -32,11 +32,12 @@ public class NewMoviePage {
         String pageTemplate = "\n" +
                 "\n" +
                 "\n" +
-                "<%@ page import=\"java.util.logging.Logger\" %>\n" +
-                "<%@ page import=\"servlets.NewMoviePage\" %>\n" +
-                "<%@ page import=\"DAO.DB_ManagerDAO\" %>\n" +
+                "<%@ page import=\"java.util.regex.Matcher\" %>\n" +
+                "<%@ page import=\"java.util.regex.Pattern\" %>\n" +
                 "<%@ page import=\"DAO.Admin\" %>\n" +
-                "<%@ page contentType=\"text/html;charset=UTF-8\" language=\"java\" %>\n" +
+                "<%@ page import=\"DAO.DB_ManagerDAO\" %>\n" +
+                "<%@ page import=\"java.util.ArrayList\" %>\n" +
+                "<%@ page contentType=\"text/html;charset=UTF-8\" language=\"java\" %>" +
                 "<!DOCTYPE html>\n" +
                 "<html>\n" +
                 "    <head>\n" +
@@ -1495,23 +1496,13 @@ public class NewMoviePage {
                 "\n" +
                 "                                if(name_user.equals(\"admin\")){\n" +
                 "\n" +
-                "                                    out.print(\n" +
-                "                                            \"<li>\\n\" +\n" +
-                "                                                    \"  Hello, \"+name_user+\" Welcome to <a onclick=\"location.href='/admin'\"  >Admin Page</a>\" +\n" +
-                "                                                    \" </li>\\n\"\n" +
-                "\n" +
-                "                                    );\n" +
+                "                               out.print(\"<li> Hello, \"+name_user+\" Welcome to <a onclick=\\\"location.href='/admin'\\\"  >Admin Page</a> </li>\");" +
                 "\n" +
                 "                                }\n" +
                 "                                if(!name_user.equals(\"admin\")){\n" +
                 "\n" +
                 "                                    out.print(\n" +
-                "                                            \"<li>\\n\" +\n" +
-                "                                                    \"  Hello, \"+name_user+\" Welcome to <a onclick=\\\"location.href='/userProfile'\\\"  >Profile</a>\\n\" +\n" +
-                "                                                    \" </li>\\n\"\n" +
-                "\n" +
-                "                                    );\n" +
-                "\n" +
+                "                                            \"<li> Hello, \"+name_user+\" Welcome to <a onclick=\\\"location.href='/userProfile'\\\"  >Profile</a> </li>\");" +
                 "                                }\n" +
                 "\n" +
                 "\n" +
@@ -1552,7 +1543,7 @@ public class NewMoviePage {
                 "<main class=\"main\">\n" +
                 "    <div class=\"main_inner\">\n" +
                 "        <div class=\"main_inner_title_content\">\n" +
-                "            <img src=\"img/MoviePoster/"+nameForMovie+"/"+posterURL+" class=\"main_inner_title_photo\" alt=\"season's greetings\" srcset=\"\">\n" +
+                "            <img src=\"img/MoviePoster/"+nameForMovie+"/"+posterURL+"\" class=\"main_inner_title_photo\" alt=\"season's greetings\" srcset=\"\">\n" +
                 "            <h1 class=\"main_inner_title\">"+nameENG+"</h1>\n" +
                 "\n" +
                 "        </div>\n" +
@@ -1723,32 +1714,92 @@ public class NewMoviePage {
                 "\n" +
                 "\n" +
                 "\n" +
-                "                        Choose time and day and number of seat &nbsp\n" +
-                "                        <select name=\"changeStatus\">\n" +
-                "                            <option >"+timeStart+" - "+timeEnd+"</option>\n" +
-                "                        </select>&nbsp\n" +
+                "                        Available time and day and number of seat &nbsp\n" +
                 "\n" +
-                "                        <select name=\"changeStatus\">\n" +
-                "                            <option >"+day+"</option>\n" +
-                "                        </select>&nbsp\n" +
-
-
-
-                "                        <select name=\"changeStatus\">\n" +
                 "                            <%\n" +
                 "\n" +
-                "                    Admin admin = new Admin();\n" +
-                "                    \n" +
-                "                    for (int i = 1; i <admin.getCountSeatsForSession()+1 ; i++) {\n" +
-                "                        \n" +
-                "                        out.print(\"<option >\"+i+\"</option>\");\n" +
-                "                        \n" +
-                "                    }\n" +
+                "                                Admin admin = new Admin();\n" +
+                "                                DB_ManagerDAO db_managerDAO = new DB_ManagerDAO();\n" +
+                "                                ArrayList infoForTimeTable = new ArrayList();\n" +
+                "                                 infoForTimeTable = db_managerDAO.findAllMovieSessionByName(\""+nameENG+"\");\n" +
+                "\n" +
+                "                                String regex = \"(.+),(.+),(.+),(.+)\";\n" +
+                "                                String timeS = null;\n" +
+                "                                String timeE = null;\n" +
+                "                                String date = null;\n" +
+                "                                String status  = null;\n" +
+                "\n" +
+                "\n" +
+                "                                " +
+                "\n" +
+                "                                for (int i = 0; i <infoForTimeTable.size() ; i++) {\n" +
+                "\n" +
+                "                                    StringBuilder sb = new StringBuilder();\n" +
+                "\n" +
+                "                                    sb.append(infoForTimeTable.get(i));\n" +
+                "                                    System.out.println(\"SbInner= \" + sb.toString());\n" +
+                "\n" +
+                "\n" +
+                "                                    Matcher m = Pattern.compile(regex).matcher(sb.toString());\n" +
+                "                                    while (m.find()) {\n" +
+                "\n" +
+                "                                        timeS = m.group(1);\n" +
+                "                                        timeE = m.group(2);\n" +
+                "                                        date = m.group(3);\n" +
+                "                                        status = m.group(4);\n" +
+                "\n" +
+                "\n" +
+                "                                        System.out.println(timeS+\" - \" +timeE+\" - \" +date+\" - \" +status );\n" +
+                "\n" +
+                "\n" +
+                "                                    }\n" +
+                "\n" +
+                "                                    if (status.equals(\"Close to buy\" ) ){\n" +
+                "                                        System.out.println(\"cont\");\n" +
+                "                                        continue;\n" +
+                "                                    }\n" +
                 "\n" +
                 "\n" +
                 "\n" +
-                "                %>\n" +
-                "                        </select>&nbsp\n" +
+                "                                 out.print( \"<table>\" +\n" +
+                "                                                \"<tr>\" +\n" +
+                "                                                     \"<td>\");\n" +
+                "                                                            out.print(\"<select name=\"+date+\">\");\n" +
+                "                                                                out.print(\"<option >\"+timeS +\" - \" + timeE+\" Day: \" + date  + \"</option>\");\n" +
+                "                                                            out.print(\"</select name=\\\"changeStatus\\\">&nbsp\");\n" +
+                "\n" +
+                "                                            out.print(\"</td>\" +\n" +
+                "                                                      \"<td>\");\n" +
+                "\n" +
+                "                                                            out.print(\"<select name=\\\\\\\"selectSeatOn\"+date+\"day\\\">\");\n" +
+                "                                                            for (int k = 1; k <admin.getCountOfSeatsByDate(date,timeS) ; k++) {\n" +
+                "\n" +
+                "                                                                out.print(\"<option >\"+k+\"</option>\" );\n" +
+                "\n" +
+                "\n" +
+                "                                                            }\n" +
+                "                                                            out.print(\"</select name=\\\"changeStatus\\\">&nbsp \" +\n" +
+                "                                                      \"</td>\" +\n" +
+                "                                                       \"<td>\" +\n" +
+                "                                                          \"<input type=\\\"radio\\\" id=\\\"radioButton\\\" value=\\\" \\\" name=\\\"radioButtonOn\"+date+\"day\\\">\" +\n" +
+                "                                                                    \"<input type=\\\"radio\\\" id=\\\"radioButton\\\" value=\\\" \\\" name=\\\"radioButtonOn\"+date+\"day\\\">\" +\n" +
+                "                                                      \"</td>\" +\n" +
+                "                                               \"<tr>\" +\n" +
+                "                                            \"</table>\" );\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "                                }\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "                            %>\n" +
+                "\n" +
+                "\n" +
                 "\n" +
                 "                        <div class=\"button_send_buy\">\n" +
                 "\n" +
@@ -1854,7 +1905,7 @@ public class NewMoviePage {
                 "\n" +
                 "\n" +
                 "\n" +
-                "            <div id=\"btn\" onclick=\"OnButtonCommentSendClick()\"><span class=\"noselect\">Send</span><div id=\"circle\"></div></div>\n" +
+                "            <div id=\"btn\" onclick=\"OnButtonCommentSendClick()\"><span class=\"noselect\" style=\"font-size: 25px\" >Send</span><div id=\"circle\"></div></div>\n" +
                 "\n" +
                 "\n" +
                 "\n" +

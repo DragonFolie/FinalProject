@@ -11,12 +11,12 @@
 </head>
 <body>
 <!-- Page preloader -->
-        <div id="hola">
-        <div id="preloader">
-        <span></span>
-        <span></span>
-          </div>
-            </div>
+<%--        <div id="hola">--%>
+<%--        <div id="preloader">--%>
+<%--        <span></span>--%>
+<%--        <span></span>--%>
+<%--          </div>--%>
+<%--            </div>--%>
 
 
             <nav class="header">

@@ -104,4 +104,16 @@
   2021-09-18 20:29:33 INFO  UsersManager:141 - Add new user: 
   2021-09-18 22:35:36 INFO  LogoutServlet:52 - Logging user: admin
   2021-09-19 00:19:57 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-19 21:02:04 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-19 22:12:36 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-19 22:48:46 INFO  UsersManager:141 - Add new user: test
+  2021-09-19 22:50:01 INFO  LogoutServlet:52 - Logging user: test
+  2021-09-19 23:04:43 INFO  LogoutServlet:52 - Logging user: test
+  2021-09-19 23:07:53 INFO  LogoutServlet:52 - Logging user: test
+  2021-09-20 02:24:14 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-20 03:16:07 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-20 03:21:03 INFO  LogoutServlet:52 - Logging user: test
+  2021-09-20 04:23:40 ERROR Admin:714 - Cant findAllMovieSession java.sql.SQLException: Column Index out of range, 5 > 4. 
+  2021-09-20 04:24:15 ERROR Admin:714 - Cant findAllMovieSession java.sql.SQLException: Column Index out of range, 5 > 4. 
+  2021-09-20 04:25:15 INFO  LogoutServlet:52 - Logging user: test
   

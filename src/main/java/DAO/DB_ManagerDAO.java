@@ -133,6 +133,7 @@ public class DB_ManagerDAO implements InterfaceController {
 
 
 
+
     @Override
     public boolean  updateStatusForMovie(String nameOfMovie,String setStatus){
         Admin admin = new Admin();
@@ -187,6 +188,8 @@ public class DB_ManagerDAO implements InterfaceController {
 
         return admin.getPosterURL(movieName);
     }
+
+
     public ArrayList findAllMovieSessionByName(String movieName){
 
         Admin admin = new Admin();
@@ -194,6 +197,22 @@ public class DB_ManagerDAO implements InterfaceController {
         return admin.findAllMovieSessionByName(movieName);
 
     }
+
+    public String findAllMovieSessionByNameString(String movieName){
+
+        Admin admin = new Admin();
+
+        return admin.findAllMovieSessionByNameString(movieName);
+
+    }
+
+    public ArrayList findAllUniqueMovieName() {
+        Admin admin = new Admin();
+
+        return admin.findAllUniqueMovieName();
+    }
+
+
 
 
 

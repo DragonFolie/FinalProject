@@ -104,6 +104,19 @@
     </servlet-mapping>
 
 
+    <!-- Movie buy servlet -->
+    <servlet>
+        <servlet-name>movieBuy</servlet-name>
+        <servlet-class>servlets.BuyMovieServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>movieBuy</servlet-name>
+        <url-pattern>/movieBuy</url-pattern>
+    </servlet-mapping>
+
+
+
 
     <!-- Custom Tag servlet -->
 

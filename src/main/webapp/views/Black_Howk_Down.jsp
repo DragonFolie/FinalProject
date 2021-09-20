@@ -1,15 +1,12 @@
 
 
 
-<%@ page import="java.util.logging.Logger" %>
-<%@ page import="servlets.NewMoviePage" %>
-<%@ page import="DAO.DB_ManagerDAO" %>
-<%@ page import="DAO.Admin" %>
 <%@ page import="java.util.regex.Matcher" %>
 <%@ page import="java.util.regex.Pattern" %>
+<%@ page import="DAO.Admin" %>
+<%@ page import="DAO.DB_ManagerDAO" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %><!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -1438,80 +1435,67 @@ transition: 1s;
         </div>
         <div class="header_nav">
             <ul class="header_inner_ul">
-                <li >
-                    <a onclick="location.href='/movies'">MOVIES</a>
+<li >
+                            <a onclick="location.href='/movies'">MOVIES</a>
 
-                </li>
-
-
-
-                <li>
-                    <a href="https://www.facebook.com/"  target="_blank" >COMMUNITY</a>
-                </li>
-                <li>
-                    <a href="shop-right-sidebar.jsp"   >SHOP</a>
-                </li>
-                <li>
-                    <a href="contact.jsp" target="_blank"  >SUPPORT</a>
-                </li>
+                        </li>
 
 
 
-
-                <%
-
-                    String name_user  = (String)session.getAttribute("name");
-
-                    if(name_user != null ){
-
-                        if(name_user.equals("admin")){
-
-                            out.print(
-                                    "<li>\n" +
-                                            "  Hello, "+name_user+" Welcome to <a onclick=\"location.href='/admin'\"  >Admin Page</a>" +
-                                            " </li>\n"
-
-                            );
-
-                        }
-                        if(!name_user.equals("admin")){
-
-                            out.print(
-                                    "<li>\n" +
-                                            "  Hello, "+name_user+" Welcome to <a onclick=\"location.href='/userProfile'\"  >Profile</a>\n" +
-                                            " </li>\n"
-
-                            );
-
-                        }
+                        <li>
+                            <a href="https://www.facebook.com/"  target="_blank" >COMMUNITY</a>
+                        </li>
+                        <li>
+                            <a href="shop-right-sidebar.jsp"   >SHOP</a>
+                        </li>
+                        <li>
+                            <a href="contact.jsp" target="_blank"  >SUPPORT</a>
+                        </li>
 
 
 
-                        //                                      out.print("Hello, "+name_user+" Welcome to Profile");
+
+                        <%
+
+                            String name_user  = (String)session.getAttribute("name");
+
+                            if(name_user != null ){
+
+                                if(name_user.equals("admin")){
+
+                               out.print("<li> Hello, "+name_user+" Welcome to <a onclick=\"location.href='/admin'\"  >Admin Page</a> </li>");
+                                }
+                                if(!name_user.equals("admin")){
+
+                                    out.print(
+                                            "<li> Hello, "+name_user+" Welcome to <a onclick=\"location.href='/userProfile'\"  >Profile</a> </li>");                                }
 
 
-                    }
-                    if(name_user == null ) {
 
-                        out.print(
-                                "<li>\n" +
-                                        "  <a onclick=\"location.href='/login'\">LOGIN</a>\n" +
-                                        " </li>\n" +
-
-                                        " <li>\n" +
-                                        "     <a onclick=\"location.href='/registration'\">REGISTER</a>\n" +
-                                        "</li>"
-                        );
+                                //                                      out.print("Hello, "+name_user+" Welcome to Profile");
 
 
-                    }
+                            }
+                            if(name_user == null ) {
+
+                                out.print(
+                                        "<li>\n" +
+                                                "  <a onclick=\"location.href='/login'\">LOGIN</a>\n" +
+                                                " </li>\n" +
+
+                                                " <li>\n" +
+                                                "     <a onclick=\"location.href='/registration'\">REGISTER</a>\n" +
+                                                "</li>"
+                                );
+
+
+                            }
 
 
 
 
 
-                %>
-            </ul>
+                        %>            </ul>
         </div>
          
 
@@ -1522,8 +1506,8 @@ transition: 1s;
 <main class="main">
     <div class="main_inner">
         <div class="main_inner_title_content">
-            <img src="img/MoviePoster/Project_X/projectX.jpg" class="main_inner_title_photo" alt="season's greetings" srcset="">
-            <h1 class="main_inner_title">Project X</h1>
+            <img src="img/MoviePoster/Black_Howk_Down/black.jpg" class="main_inner_title_photo" alt="season's greetings" srcset="">
+            <h1 class="main_inner_title">Black Howk Down</h1>
 
         </div>
         
@@ -1537,7 +1521,7 @@ transition: 1s;
                 
 
                 <p >
-                    Good movie
+                    Down
                    <!--<a href="https://www.youtube.com/watch?v=1fkqAZ2eSEw" style="color: #666;
                     font-size: 1em; text-decoration: underline;" target="_blank">HESITANT PROSPECT.</a> -->
                 </p>
@@ -1545,30 +1529,30 @@ transition: 1s;
                 <br><br><br>
                 <p >
                     Director: <br>
-                    <a href="https://www.imdb.com" class="test_description_movie"   target="_blank">Max Joseph</a>
+                    <a href="https://www.imdb.com" class="test_description_movie"   target="_blank" > Anton Bandera </a>
                    
                 </p>
                 <br><br>
 
                 <p >
                     Writers: <br>
-                    <a href="https://www.imdb.com" class="test_description_movie"  target="_blank">Max Verstapen</a> (screenplay),
+                    <a href="https://www.imdb.com" class="test_description_movie"  target="_blank">Anton Bandera</a> (screenplay),
                 </p>
                 
                 <br><br>
 
                 <p >
                     Stars: <br>
-                    <a href="https://www.imdb.com" class="test_description_movie"  target="_blank"> Zac Efron ,</a>
-                    <a href="https://www.imdb.com" class="test_description_movie"  target="_blank"> Wes Bentley ,</a>
-                    <a href="https://www.imdb.com" class="test_description_movie"  target="_blank">Emily Ratajkowski</a>  
+                    <a href="https://www.imdb.com" class="test_description_movie"  target="_blank"> Antonio Giovinadze ,</a>
+                    <a href="https://www.imdb.com" class="test_description_movie"  target="_blank"> Mick Schumacher ,</a>
+                    <a href="https://www.imdb.com" class="test_description_movie"  target="_blank"> Pierre Gasly </a>  
                    
                 </p>
                 <br><br>
 
                 <p >
                     Schedule: <br>
-                    <a  class="test_description_movie"  target="_blank"> 11:00 and 12:30 every Tuesday</a>
+                    <a  class="test_description_movie"  target="_blank"> 04:06 and 06:06 every Tuesday</a>
                     
                    
                    
@@ -1599,13 +1583,12 @@ transition: 1s;
                     </div>
                     <div class="time-interval">
 
-                        <div>Time</div>
-                        <div>Time</div>
-                        <div>Time</div>
-                        <div>Time</div>
-                        <div>Time</div>
-                        <div>Time</div>
-
+                        <div>8:00 - 10:00</div>
+                        <div>10:00 - 12:00</div>
+                        <div>12:00 - 14:00</div>
+                        <div>14:00 - 16:00</div>
+                        <div>16:00 - 18:00</div>
+                        <div>18:00 - 20:00</div>
 
                     </div>
                     <div class="content">
@@ -1701,7 +1684,7 @@ transition: 1s;
                                 Admin admin = new Admin();
                                 DB_ManagerDAO db_managerDAO = new DB_ManagerDAO();
                                 ArrayList infoForTimeTable = new ArrayList();
-                                 infoForTimeTable = db_managerDAO.findAllMovieSessionByName("Project X");
+                                 infoForTimeTable = db_managerDAO.findAllMovieSessionByName("Black Howk Down");
 
                                 String regex = "(.+),(.+),(.+),(.+)";
                                 String timeS = null;
@@ -1710,18 +1693,28 @@ transition: 1s;
                                 String status  = null;
 
 
-
-//                                System.out.println("\n\nSizeInner= " + infoForTimeTable.size());
-
+                                
                                 for (int i = 0; i <infoForTimeTable.size() ; i++) {
 
                                     StringBuilder sb = new StringBuilder();
 
                                     sb.append(infoForTimeTable.get(i));
-//                                    System.out.println("SbInner= " + sb.toString());
+                                    System.out.println("SbInner= " + sb.toString());
 
 
+                                    Matcher m = Pattern.compile(regex).matcher(sb.toString());
+                                    while (m.find()) {
 
+                                        timeS = m.group(1);
+                                        timeE = m.group(2);
+                                        date = m.group(3);
+                                        status = m.group(4);
+
+
+                                        System.out.println(timeS+" - " +timeE+" - " +date+" - " +status );
+
+
+                                    }
 
                                     if (status.equals("Close to buy" ) ){
                                         System.out.println("cont");
@@ -1763,8 +1756,6 @@ transition: 1s;
 
 
                                 }
-
-                                System.out.println("date+"+ request.getParameter(date));
 
 
 
@@ -1876,7 +1867,7 @@ transition: 1s;
 
 
 
-            <div id="btn" onclick="OnButtonCommentSendClick()"><span class="noselect">Send</span><div id="circle"></div></div>
+            <div id="btn" onclick="OnButtonCommentSendClick()"><span class="noselect" style="font-size: 25px" >Send</span><div id="circle"></div></div>
 
 
 

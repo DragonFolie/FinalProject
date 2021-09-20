@@ -7,6 +7,9 @@ import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class Admin implements  AdminDAO{
 
@@ -221,6 +224,52 @@ public class Admin implements  AdminDAO{
         }catch (IOException | SQLException | ClassNotFoundException e) {
 //            logger.info("Exception here" + e);
 //            logger.error("Cant findAllMovieName " + e);
+
+            e.printStackTrace();
+            return null;
+        }
+
+
+    }
+
+
+    public ArrayList findAllUniqueMovieName(){
+
+        UsersManager usersManager = new UsersManager();
+
+        ArrayList list = new ArrayList();
+
+        PreparedStatement preparedStatement = null;
+        try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
+
+//            System.out.println("conn + " +conn);
+            preparedStatement = conn.prepareStatement(GET_MOVIE_NAME);
+            preparedStatement.execute();
+
+
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()){
+
+
+                list.add(resultSet.getString(1));
+
+
+            }
+
+
+
+
+
+            Set arrayList2 = new HashSet(list);
+
+            ArrayList newArray = new ArrayList(arrayList2);
+
+            return newArray;
+
+
+        }catch (IOException | SQLException | ClassNotFoundException e) {
 
             e.printStackTrace();
             return null;
@@ -596,7 +645,7 @@ public class Admin implements  AdminDAO{
 
 
 
-            System.out.println("Movie: " +movieName);
+//            System.out.println("Movie: " +movieName);
             preparedStatement = conn.prepareStatement("SELECT idLanguage FROM language WHERE  Name = ? ");
 
             preparedStatement.setString(1,movieName);
@@ -607,23 +656,23 @@ public class Admin implements  AdminDAO{
 
             while (resultSet.next()){
 
-                System.out.println("While");
+//                System.out.println("While");
                 listId.add( resultSet.getInt(1));
-                System.out.println("Result1 = "+resultSet.getInt(1));
+//                System.out.println("Result1 = "+resultSet.getInt(1));
 
 
 
             }
 
 
-            System.out.println("Size: " +listId.size() );
+//            System.out.println("Size: " +listId.size() );
 
             for (int i = 0; i <listId.size() ; i++) {
 
                 preparedStatement = conn.prepareStatement("SELECT  TimeStart,TimeEnd,SessionDay,Status FROM session Where idMovie = ?");
                 int number = listId.get(i);
 
-                System.out.println("Number: " +number );
+//                System.out.println("Number: " +number );
                 preparedStatement.setInt(1, number );
 
                 preparedStatement.execute();
@@ -642,7 +691,7 @@ public class Admin implements  AdminDAO{
                     sb.append(",");
                     sb.append(resultSet.getString(4));
 
-                    System.out.println("SB: " +sb.toString() );
+//                    System.out.println("SB: " +sb.toString() );
                     list.add(sb);
 
                 }
@@ -652,9 +701,74 @@ public class Admin implements  AdminDAO{
 
             }
 
-            System.out.println("Final list=" + list);
+//            System.out.println("Final list=" + list);
 
             return list;
+
+
+        }catch (IOException | SQLException | ClassNotFoundException e) {
+//            logger.info("Exception here" + e);
+            logger.error("Cant findAllMovieSession " + e);
+            return null;
+        }
+
+
+    }
+
+    public String findAllMovieSessionByNameString (String movieName) {
+
+        UsersManager usersManager = new UsersManager();
+
+
+        PreparedStatement preparedStatement = null;
+        try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
+
+            preparedStatement = conn.prepareStatement("SELECT idLanguage FROM language WHERE  Name = ? ");
+
+            preparedStatement.setString(1, movieName);
+            preparedStatement.execute();
+
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+           resultSet.next();
+
+           int result = resultSet.getInt(1);
+
+
+
+
+
+
+
+
+            preparedStatement = conn.prepareStatement("SELECT  TimeStart,TimeEnd,SessionDay,Status FROM session Where idMovie = ?");
+
+
+            preparedStatement.setInt(1,result);
+
+            preparedStatement.execute();
+
+            resultSet = preparedStatement.executeQuery();
+
+            resultSet.next();
+
+                StringBuilder sb = new StringBuilder();
+
+                sb.append(resultSet.getString(1));
+                sb.append(",");
+                sb.append(resultSet.getString(2));
+                sb.append(",");
+                sb.append(resultSet.getString(3));
+                sb.append(",");
+                sb.append(resultSet.getString(4));
+
+
+
+
+
+                String string = sb.toString();
+            return string;
 
 
         }catch (IOException | SQLException | ClassNotFoundException e) {
@@ -703,19 +817,6 @@ public class Admin implements  AdminDAO{
 
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
