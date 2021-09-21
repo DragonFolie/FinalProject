@@ -577,7 +577,7 @@ ul.summary-list > li:last-child  {
 
           <ul class="nav nav-pills nav-stacked">
               <li class="active"><a href="#"> <i class="fa fa-user"></i> Profile</a></li>
-              <li><a onclick="location.href='/movieBuy'"> <i class="fa fa-edit"></i> Edit profile</a></li>
+              <li><a onclick="location.href='/movieBuy'"> <i class="fa fa-edit"></i> Buy Page</a></li>
           </ul>
       </div>
   </div>

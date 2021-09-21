@@ -48,13 +48,17 @@
 				</span>
 		<%
 
+			Admin admin = new Admin();
+			DB_ManagerDAO db_managerDAO  = new DB_ManagerDAO();
 			DB_ManagerDAO db_managerDAO2 = new DB_ManagerDAO();
-			DB_ManagerDAO db_managerDAO = new DB_ManagerDAO();
-
+			DB_ManagerDAO db_managerDAO3 = new DB_ManagerDAO();
 
 
 			ArrayList allMovieName = new ArrayList();
 			ArrayList allSessionInfo = new ArrayList();
+			ArrayList uniqueSeats  = new ArrayList();
+
+
 
 
 			String regex = "(.+),(.+),(.+),(.+)";
@@ -64,7 +68,6 @@
 			String status  = null;
 
 			allMovieName= db_managerDAO2.findAllUniqueMovieName();
-			Admin admin = new Admin();
 
 			for (int i = 0; i <allMovieName.size() ; i++) {
 
@@ -89,7 +92,7 @@
 						"                    <div  class=\"wrap-input100 input100-select bg1\">\n" +
 						"                        <span class=\"label-input100\">Movie day of week *</span>\n" +
 						"                        <div>\n" +
-						"                            <select class=\"js-select2\" name=\"sessionDay\">\n" +
+						"                            <select class=\"js-select2\" name=\"movieName\">\n" +
 						"                                <option >"+allMovieName.get(i)+"</option>\n" +
 						"                            </select>\n" +
 						"                            <div class=\"dropDownSelect2\"></div>\n" +
@@ -104,6 +107,8 @@
 				for (int j = 0; j < allSessionInfo.size(); j++) {
 
 					Matcher m = Pattern.compile(regex).matcher(allSessionInfo.get(j).toString());
+
+
 					while (m.find()) {
 
 						timeS = m.group(1);
@@ -113,12 +118,14 @@
 
 
 
-//							System.out.println(timeS+" - " +timeE+" - " +date+" - " +status );
-						out.print("<option >"+timeS +" - "+timeE +" day: "+date +" </option>");
+							System.out.println(timeS+" - " +timeE+" - " +date+" - " +status );
+						out.print("<option >"+timeS +"-"+timeE +" ; "+date +"</option>");
 
 					}
 
 				}
+				uniqueSeats = db_managerDAO3.getUniqueSeatBySession(date,timeS);
+//				System.out.println(uniqueSeats + " + " + date);
 
 				out.print(" </select>\n" +
 						"                            <div class=\"dropDownSelect2\"></div>\n" +
@@ -129,8 +136,8 @@
 						"                        <span class=\"label-input100\">Movie day of week *</span>\n" +
 						"                        <div>\n" +
 						"                            <select class=\"js-select2\" name=\"numberOfSeat\">");
-				for (int k = 1; k <admin.getCountOfSeatsByDate(date,timeS) ; k++) {
-					out.print("<option >"+k+"</option>" );
+				for (int k = 1; k < uniqueSeats.size() ; k++) {
+					out.print("<option >"+uniqueSeats.get(k)+"</option>" );
 				}
 				out.print("</select> <div class=\"dropDownSelect2\"></div>\n" +
 						"                        \n" +

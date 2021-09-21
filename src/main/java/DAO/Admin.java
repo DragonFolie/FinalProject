@@ -786,6 +786,8 @@ public class Admin implements  AdminDAO{
 
 
         UsersManager usersManager = new UsersManager();
+        ArrayList arrayList= new ArrayList();
+        ArrayList arrayList1 = new ArrayList();
 
         PreparedStatement preparedStatement = null;
         try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
@@ -799,10 +801,11 @@ public class Admin implements  AdminDAO{
             ResultSet resultSet = preparedStatement.executeQuery();
 
             resultSet.next();
+            int numberForLoop =  resultSet.getInt(1);
 
 
 
-            return resultSet.getInt(1);
+            return numberForLoop;
 
 
 
@@ -818,6 +821,179 @@ public class Admin implements  AdminDAO{
 
     }
 
+
+
+
+    public boolean addOrderToUser(String nickName ,String movieName,String day,String numberOfSeat,String timeS,String timeE){
+
+        UsersManager usersManager = new UsersManager();
+
+        PreparedStatement preparedStatement = null;
+        try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
+
+//            System.out.println("conn + " +conn);
+            preparedStatement = conn.prepareStatement("Select idUser FROM user WHERE NickName = ?");
+
+            preparedStatement.setString(1,nickName);
+            preparedStatement.execute();
+
+
+
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            resultSet.next();
+
+            int idUser = resultSet.getInt(1);
+
+
+            preparedStatement = conn.prepareStatement("Select idMovie,Cost FROM session WHERE TimeStart = ? AND SessionDay = ?");
+
+            preparedStatement.setString(1,timeS);
+            preparedStatement.setString(2,day);
+            preparedStatement.execute();
+
+
+
+
+            resultSet = preparedStatement.executeQuery();
+
+            resultSet.next();
+
+            int movieId = resultSet.getInt(1);
+            String price = resultSet.getString(2);
+
+
+
+
+
+
+
+
+            preparedStatement = conn.prepareStatement("Insert Into `order` ( MovieName, Price, Day, NumberOfSeat, TimeStart, TimeEnd, user_idUser, session_idMovie)" +
+                    " values (?,?,?,?,?,?,?,?)");
+
+
+            preparedStatement.setString(1,movieName);
+            preparedStatement.setInt(2,Integer.parseInt(price));
+            preparedStatement.setString(3,day);
+            preparedStatement.setInt(4,Integer.parseInt(numberOfSeat));
+            preparedStatement.setString(5, timeS);
+            preparedStatement.setString(6, timeE);
+            preparedStatement.setInt(7, idUser);
+            preparedStatement.setInt(8, movieId);
+            preparedStatement.execute();
+
+
+
+
+
+
+
+
+            return true;
+
+        }catch (IOException | SQLException | ClassNotFoundException e) {
+//            logger.info("Exception here" + e);
+            logger.error("Cant add Order To User " + e);
+            return false;
+        }
+
+
+    }
+
+    public ArrayList  getUniqueSeatBySession(String day, String timeStart){
+
+
+        UsersManager usersManager = new UsersManager();
+        ArrayList findNumber= new ArrayList();
+        ArrayList listOfNumber = new ArrayList();
+
+        PreparedStatement preparedStatement = null;
+        try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
+
+//            System.out.println("conn + " +conn);
+            preparedStatement = conn.prepareStatement("SELECT CountSeat From session WHERE SessionDay = ? AND TimeStart = ?");
+            preparedStatement.setString(1,day);
+            preparedStatement.setString(2,timeStart);
+
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            resultSet.next();
+            int numberForLoop =  resultSet.getInt(1);
+
+
+
+
+            preparedStatement = conn.prepareStatement("SELECT NumberOfSeat FROM `order` WHERE TimeStart = ? AND Day = ? ");
+            preparedStatement.setString(1,timeStart);
+            preparedStatement.setString(2,day);
+
+
+            resultSet = preparedStatement.executeQuery();
+
+            while(resultSet.next()){
+                findNumber.add(resultSet.getInt(1));
+            }
+
+            for (int i = 0; i < numberForLoop; i++) {
+
+
+                listOfNumber.add(i);
+
+
+
+            }
+
+//            System.out.println(findNumber.size());
+//            System.out.println(listOfNumber.size());
+//            System.out.println(numberForLoop);
+
+
+            for (int i = 0; i < listOfNumber.size(); i++) {
+
+                for (int j = 0; j < findNumber.size(); j++) {
+
+                    if (findNumber.get(j) == listOfNumber.get(i)){
+
+//                        System.out.println(findNumber.get(j) + " " + listOfNumber.get(i));
+                        listOfNumber.remove(i);
+//                        System.out.println(listOfNumber);
+
+                    }
+
+                }
+
+            }
+
+
+            return listOfNumber;
+
+
+
+
+
+
+        }catch (IOException | SQLException | ClassNotFoundException e) {
+//            logger.info("Exception here" + e);
+//            logger.error("Cant get Count Seats For Session " + e);
+            return null;
+        }
+
+
+    }
+
+
+
+    public static void main(String[] args) {
+        Admin admin = new Admin();
+        ArrayList arrayList= new ArrayList();
+        arrayList =  admin.getUniqueSeatBySession("Saturday","09:16");
+
+        System.out.println(arrayList);
+
+    }
 
 
 

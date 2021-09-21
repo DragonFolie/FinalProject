@@ -487,7 +487,7 @@ ul.summary-list > li:last-child  {
 
         </div>
         <div class="header_nav">
-            <ul class="header_inner_ul">
+            <ul>
                 <li >
                     <a onclick="location.href='/movies'">MOVIES</a>
 
@@ -528,7 +528,11 @@ ul.summary-list > li:last-child  {
 
                             out.print(
                                     "<li>\n" +
-                                            "  Hello, "+name_user+" Welcome to <a onclick=\"location.href='/userProfile'\"  >Profile</a>\n" +
+                                            "  Hello, "+name_user+" <a onclick=\"location.href='/userProfile'\"  >Profile</a>\n" +
+                                            " </li>\n"+
+
+                                    "<li>\n" +
+                                            "  <button class=\"w3-btn w3-hover-light-blue w3-round-large\" onclick=\"location.href='/logout'\">Logout </button>" +
                                             " </li>\n"
 
                             );

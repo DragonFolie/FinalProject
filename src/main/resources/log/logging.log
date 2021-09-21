@@ -116,4 +116,21 @@
   2021-09-20 04:23:40 ERROR Admin:714 - Cant findAllMovieSession java.sql.SQLException: Column Index out of range, 5 > 4. 
   2021-09-20 04:24:15 ERROR Admin:714 - Cant findAllMovieSession java.sql.SQLException: Column Index out of range, 5 > 4. 
   2021-09-20 04:25:15 INFO  LogoutServlet:52 - Logging user: test
+  2021-09-20 20:45:36 INFO  LogoutServlet:52 - Logging user: test
+  2021-09-20 21:01:27 INFO  LogoutServlet:52 - Logging user: test
+  2021-09-20 22:29:36 INFO  LogoutServlet:52 - Logging user: test
+  2021-09-20 23:05:22 INFO  LogoutServlet:52 - Logging user: test
+  2021-09-20 23:09:39 INFO  LogoutServlet:52 - Logging user: test
+  2021-09-20 23:14:19 INFO  LogoutServlet:52 - Logging user: test
+  2021-09-21 00:02:00 INFO  LogoutServlet:52 - Logging user: test
+  2021-09-21 00:06:43 INFO  LogoutServlet:52 - Logging user: test
+  2021-09-21 00:37:52 INFO  LogoutServlet:52 - Logging user: test
+  2021-09-21 00:43:32 INFO  LogoutServlet:52 - Logging user: test
+  2021-09-21 18:44:13 INFO  LogoutServlet:52 - Logging user: test
+  2021-09-21 18:53:50 INFO  LogoutServlet:52 - Logging user: test
+  2021-09-21 19:02:09 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-21 19:38:50 INFO  LogoutServlet:52 - Logging user: test
+  2021-09-21 19:40:30 INFO  LogoutServlet:52 - Logging user: test
+  2021-09-21 19:41:01 INFO  LogoutServlet:52 - Logging user: test
+  2021-09-21 19:45:37 INFO  LogoutServlet:52 - Logging user: test
   

@@ -213,6 +213,18 @@ public class DB_ManagerDAO implements InterfaceController {
     }
 
 
+    public boolean addOrderToUser(String nickName ,String movieName,String day,String numberOfSeat,String timeS,String timeE){
+        Admin admin = new Admin();
+
+        return admin.addOrderToUser(nickName,movieName,day,numberOfSeat,timeS,timeE);
+    }
+
+    public ArrayList  getUniqueSeatBySession(String day, String timeStart){
+        Admin admin = new Admin();
+        return admin.getUniqueSeatBySession(day,timeStart);
+    }
+
+
 
 
 

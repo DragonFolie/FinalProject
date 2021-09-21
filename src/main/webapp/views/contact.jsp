@@ -762,7 +762,11 @@ div[class*=box] {
 
                                         out.print(
                                                 "<li>\n" +
-                                                        "  Hello, "+name_user+" Welcome to <a onclick=\"location.href='/userProfile'\"  >Profile</a>\n" +
+                                                        "  Hello, "+name_user+" <a onclick=\"location.href='/userProfile'\"  >Profile</a>\n" +
+                                                        " </li>\n"+
+
+                                                "<li>\n" +
+                                                        "  <button class=\"w3-btn w3-hover-light-blue w3-round-large\" onclick=\"location.href='/logout'\">Logout </button>" +
                                                         " </li>\n"
 
                                         );
@@ -795,7 +799,6 @@ div[class*=box] {
 
 
                             %>
-                                            
                         </ul>
 
                     </div>

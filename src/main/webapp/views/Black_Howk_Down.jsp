@@ -17,7 +17,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
-        
+
     </head>
     <style>
 /* General */
@@ -31,7 +31,7 @@ body{
          margin: 0;
          list-style:none;
          text-decoration: none;
-         
+
 
      }
      ul, ol {
@@ -70,7 +70,7 @@ li {
   transition: 0.5s;
 }
      .header{
-        
+
 
      }
      .header_container{
@@ -80,13 +80,13 @@ li {
         background-color: black;
         display: grid;
         grid-template-columns: 30% 15% 55%;
-        
 
-        
 
-        
-       
-        
+
+
+
+
+
 
 
      }
@@ -98,11 +98,11 @@ li {
             display: grid;
             grid-template-columns: 25%  75%;
         }
-        
+
 
         }
      .header_container>div.header_logo{
-         
+
      }
      .header_logo_image{
          width: 186px;
@@ -117,11 +117,11 @@ li {
          padding-top: 15px;
          text-align: center;
          vertical-align: middle;
-       
-        
-       
-    
-    
+
+
+
+
+
     }
     .header_inner_ul{
         vertical-align: middle;
@@ -148,12 +148,12 @@ li {
 
 
    /* Main *//* Main *//* Main *//* Main *//* Main *//* Main */
-   
-   
-   
+
+
+
    .main{
         background-color: #000000;
-        
+
     }
 
     .main_inner{
@@ -166,13 +166,13 @@ li {
     width: 1170px;
     }
 .main_inner_title_photo{
-    
+
     padding-top: 74px;
     margin: 0 auto;
     display: block;
-    
+
     max-width: 680px;
-    
+
     width: 100%;
     height: auto;
 
@@ -180,10 +180,10 @@ li {
 
 
 .main_inner_title{
-    
+
     font-size: 3.2em;
     margin-bottom: 60px;
-    
+
     max-width: 900px;
     color: white;
     text-align: center;
@@ -194,7 +194,7 @@ li {
     font-size: 2.2em;
     padding-top: 40px;
     margin-bottom: 60px;
-    
+
     max-width: 900px;
     color: white;
     text-align: center;
@@ -220,9 +220,9 @@ li {
     padding-top: 74px;
     margin: 0 auto;
     display: block;
-    
+
     max-width: 680px;
-    
+
     width: 100%;
     height: auto;
     margin-bottom: 74px;
@@ -238,7 +238,7 @@ li {
     max-width: 915px;
     margin: 45px auto;
     line-height: 1.65em;
-    
+
 }
 
 
@@ -268,7 +268,7 @@ li {
 
 }
 .links_img:hover{
-    
+
     opacity: 1;
     transition: 0.5s;
 
@@ -312,7 +312,7 @@ li {
 }
 
 .news_list_inner>div.news_list_inner_photo{
-    
+
 
 }
 
@@ -320,8 +320,8 @@ li {
 .about_game_forum{
 
     display: flex;
-    
-    
+
+
 
 
 }
@@ -361,8 +361,8 @@ li {
     background-color: #191b1f;
     padding-top: 30px;
     padding-bottom: 5px;
-    
-    
+
+
     max-width: 1015px;
     margin: 45px auto;
     line-height: 1.65em;
@@ -382,14 +382,14 @@ li {
 }
 
 .comment_area>div.name{
-    
-    
-    
+
+
+
 }
 .content_inner_text_third_input_type_One{
     text-align: left;
-    
-    
+
+
     padding: 12px;
     margin: 10px 0;
     border: 1px solid rgb(66, 66, 66);
@@ -399,12 +399,12 @@ li {
     font-size: 12px;
     text-align: center;
     height: 5px;
-    
+
 }
 .comment_area>div.date{
 
     display: inline-block;
-    
+
     text-align: right;
 
 
@@ -416,9 +416,9 @@ RESET STYLES
 =====
 */
 
-.field__input{ 
+.field__input{
   --uiFieldPlaceholderColor: var(--fieldPlaceholderColor, #ffffff);
-  
+
   background-color: transparent;
   border-radius: 0;
   border: none;
@@ -448,7 +448,7 @@ CORE STYLES
 .field{
   --uiFieldBorderWidth: var(--fieldBorderWidth, 2px);
   --uiFieldPaddingRight: var(--fieldPaddingRight, 1rem);
-  --uiFieldPaddingLeft: var(--fieldPaddingLeft, 1rem);   
+  --uiFieldPaddingLeft: var(--fieldPaddingLeft, 1rem);
   --uiFieldBorderColorActive: var(--fieldBorderColorActive, rgba(22, 22, 22, 1));
 
   display: var(--fieldDisplay, inline-flex);
@@ -461,7 +461,7 @@ CORE STYLES
   width: var(--fieldWidth, 60%);
   height: var(--fieldHeight, 3rem);
   padding: var(--fieldPaddingTop, 1.25rem) var(--uiFieldPaddingRight) var(--fieldPaddingBottom, .5rem) var(--uiFieldPaddingLeft);
-  border-bottom: var(--uiFieldBorderWidth) solid var(--fieldBorderColor, rgba(0, 0, 0, .25));  
+  border-bottom: var(--uiFieldBorderWidth) solid var(--fieldBorderColor, rgba(0, 0, 0, .25));
 }
 
 .field__input:focus{
@@ -535,7 +535,7 @@ CORE STYLES
   top: var(--fieldHintTopHover, .25rem);
 }
 /*
-effect 
+effect
 */
 
 .field_v2 .field__label-wrap{
@@ -582,9 +582,9 @@ body{
 .page{
   box-sizing: border-box;
   width: 100%;
-  
+
   margin: auto;
-  
+
 
   display: grid;
   grid-gap: 30px;
@@ -594,7 +594,7 @@ body{
 .text{
 
     width: 100%;
-    
+
 
 }
 
@@ -604,20 +604,20 @@ body{
     padding: 20px;
     background: rgb(7, 7, 7);
     color: white;
-    
+
     text-align: center;
     line-height: 1.48em;
     font-family: 'Yusei Magic', sans-serif;
     font-weight: 200;
     font-size: 18px;
-    
+
     transition: all 1.7s ease-in-out;
     border-color:none;
 
 }
 
 
-/* Bottun Send */ /* Bottun Send */ /* Bottun Send */ /* Bottun Send */ /* Bottun Send */ /* Bottun Send */ 
+/* Bottun Send */ /* Bottun Send */ /* Bottun Send */ /* Bottun Send */ /* Bottun Send */ /* Bottun Send */
 .button_send {
     font-family: 'Cookie', cursive;
   height: 80%;
@@ -704,13 +704,13 @@ body{
 /* Comment List *//* Comment List *//* Comment List *//* Comment List *//* Comment List *//* Comment List */
 
 .comment_list{
-    
+
 
     color: white;
     max-width: 915px;
     margin: 45px auto;
     line-height: 1.65em;
-    
+
     height: 350px;
     display: grid;
     grid-template-columns: 30% 70%;
@@ -721,23 +721,23 @@ body{
     background-color: rgb(21, 23, 26);
     position: relative;
 
-    
+
 }
 
 .comment_list_left p {
-  
+
   color: #eee;
   font-size: 24px;
   font-family: 'Cookie', cursive;
   transition: 1s;
-  
+
     margin-bottom: 10px;
 }
 .comment_list_left span{
     color: #666;
   font-size: 14px;
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  
+
   margin-bottom: 20px ;
 
 }
@@ -745,17 +745,17 @@ body{
     background-color: #1f2024;
 
 
-    
+
 }
 .comment_list_right {
     position: relative;
     color: #eee;
   font-size: 24px;
-  
+
   transition: 1s;
   padding: 20px;
     text-align: left;
-    
+
 }
 .comment_list_right_posted{
     color: #666;
@@ -767,7 +767,7 @@ body{
 }
 
 .like{
-    
+
     position: absolute;
     bottom: 45px;
     height: 30px;
@@ -785,7 +785,7 @@ body{
     cursor: pointer;
     opacity: 1;
     transition: 1s;
-    
+
 }
 .dislike{
     position: absolute;
@@ -923,23 +923,23 @@ letter-spacing: 0.03em;
 text-decoration: underline;
 color: #757575;
 }
-/* Email Sender */ /* Email Sender */ /* Email Sender */ /* Email Sender */ /* Email Sender */ /* Email Sender */ /* Email Sender */ 
-    
+/* Email Sender */ /* Email Sender */ /* Email Sender */ /* Email Sender */ /* Email Sender */ /* Email Sender */ /* Email Sender */
+
 .email_sender{
         background: url(img/hesitant-prospect-newsletter-comp.png)  center no-repeat;
         max-width: 880px;
         margin-top: 50 auto;
-        
-        
-    
-    
+
+
+
+
     }
     .email_sender_text{
         margin: 150px auto;
-        
+
         color: white;
         text-align: center;
-        
+
         font-weight: 500;
         font-size: 28px;
         line-height: 1.3em;
@@ -949,18 +949,18 @@ color: #757575;
         align-items: center;
         opacity: 0.8;
         padding: 75px;
-    
+
     }
     .email_sender_field{
         display: block;
-        
+
         border: 1px solid #ffffff66 !important;
         margin: 20px auto 48px;
         width: 100%;
         max-width: 445px;
         height: 74px;
         position: relative;
-    
+
     }
     .email_sender_field_inner{
         border-right: 1px solid #ffffff66 !important;
@@ -980,11 +980,11 @@ color: #757575;
         box-sizing: border-box;
         outline-width: 0;
         color: white;
-    
+
     }
-    
+
     .email_sender_field_inner_submit{
-    
+
     vertical-align: top;
         padding-top: 26px ;
         padding-left: 20px;
@@ -992,14 +992,14 @@ color: #757575;
         background-color: transparent;
         font-style: normal;
         border: none;
-       
-        font-size: 20px; 
+
+        font-size: 20px;
         text-transform: uppercase;
         box-sizing: border-box;
-        
-        
+
+
     }
-    
+
     .email_sender_field_inner_submit:hover{
         color: white;
         transition: 1s;
@@ -1009,7 +1009,7 @@ color: #757575;
         margin: 50px auto;
     }
     .sort_button{
-    
+
     margin-left: 20px;
     opacity: .6;
     cursor: pointer;
@@ -1057,7 +1057,7 @@ transition: 1s;
 
 
 
-/*    TIME TABLE */ 
+/*    TIME TABLE */
 
 
 
@@ -1216,7 +1216,7 @@ transition: 1s;
 }
 
 
-/* Bottun Send */ /* Bottun Send */ /* Bottun Send */ /* Bottun Send */ /* Bottun Send */ /* Bottun Send */ 
+/* Bottun Send */ /* Bottun Send */ /* Bottun Send */ /* Bottun Send */ /* Bottun Send */ /* Bottun Send */
 .button_send {
     font-family: 'Cookie', cursive;
   height: 80%;
@@ -1422,7 +1422,7 @@ transition: 1s;
 
 
     </style>
-     
+
 <body>
 <nav class="header">
     <div class="header_container">
@@ -1468,7 +1468,10 @@ transition: 1s;
                                 if(!name_user.equals("admin")){
 
                                     out.print(
-                                            "<li> Hello, "+name_user+" Welcome to <a onclick=\"location.href='/userProfile'\"  >Profile</a> </li>");                                }
+                                            "<li> Hello, "+name_user+" Welcome to <a onclick=\"location.href='/userProfile'\"  >Profile</a> </li>"+
+                                                    "<li>\n" +
+                                                    "  <button class=\"w3-btn w3-hover-light-blue w3-round-large\" style=\"outline: none;   border: 0;  background: transparent; color: white ; font-size: 15px \" onclick=\"location.href='/logout'\">Logout </button>" +
+                                                    " </li>\n");                                }
 
 
 
@@ -1497,7 +1500,7 @@ transition: 1s;
 
                         %>            </ul>
         </div>
-         
+
 
     </div>
 
@@ -1510,7 +1513,7 @@ transition: 1s;
             <h1 class="main_inner_title">Black Howk Down</h1>
 
         </div>
-        
+
         <div class="main_inner_main_content">
             <br>
             <br>
@@ -1518,7 +1521,7 @@ transition: 1s;
 
                 <h2 class="main_inner_description">Description</h2>
 
-                
+
 
                 <p >
                     Down
@@ -1530,7 +1533,7 @@ transition: 1s;
                 <p >
                     Director: <br>
                     <a href="https://www.imdb.com" class="test_description_movie"   target="_blank" > Anton Bandera </a>
-                   
+
                 </p>
                 <br><br>
 
@@ -1538,26 +1541,26 @@ transition: 1s;
                     Writers: <br>
                     <a href="https://www.imdb.com" class="test_description_movie"  target="_blank">Anton Bandera</a> (screenplay),
                 </p>
-                
+
                 <br><br>
 
                 <p >
                     Stars: <br>
                     <a href="https://www.imdb.com" class="test_description_movie"  target="_blank"> Antonio Giovinadze ,</a>
                     <a href="https://www.imdb.com" class="test_description_movie"  target="_blank"> Mick Schumacher ,</a>
-                    <a href="https://www.imdb.com" class="test_description_movie"  target="_blank"> Pierre Gasly </a>  
-                   
+                    <a href="https://www.imdb.com" class="test_description_movie"  target="_blank"> Pierre Gasly </a>
+
                 </p>
                 <br><br>
 
                 <p >
                     Schedule: <br>
                     <a  class="test_description_movie"  target="_blank"> 04:06 and 06:06 every Tuesday</a>
-                    
-                   
-                   
+
+
+
                 </p>
-                
+
                 <br>
 
             </div>
@@ -1592,8 +1595,8 @@ transition: 1s;
 
                     </div>
                     <div class="content">
-                
-                
+
+
                         <div>
                             <div class="accent-orange-gradient"></div>
                         </div>
@@ -1605,8 +1608,8 @@ transition: 1s;
                         </div>
                         <div class="weekend"></div>
                         <div class="weekend"></div>
-                
-                
+
+
                         <div></div>
                         <div></div>
                         <div></div>
@@ -1616,11 +1619,11 @@ transition: 1s;
                         <div></div>
                         <div class="weekend"></div>
                         <div class="weekend"></div>
-                
-                
+
+
                         <div>
                                 <div class="accent-pink-gradient">
-                                    
+
                                 </div>
                         </div>
                         <div></div>
@@ -1631,8 +1634,8 @@ transition: 1s;
                         <div></div>
                         <div class="weekend"></div>
                         <div class="weekend"></div>
-                
-                
+
+
                         <div></div>
                         <div></div>
                         <div></div>
@@ -1640,8 +1643,8 @@ transition: 1s;
                         <div></div>
                         <div class="weekend"></div>
                         <div class="weekend"></div>
-                
-                
+
+
                         <div>
                             <div class="accent-purple-gradient"></div>
                         </div>
@@ -1651,8 +1654,8 @@ transition: 1s;
                         <div></div>
                         <div class="weekend"></div>
                         <div class="weekend"></div>
-                
-                
+
+
                         <div></div>
                         <div></div>
                         <div></div>
@@ -1693,7 +1696,7 @@ transition: 1s;
                                 String status  = null;
 
 
-                                
+
                                 for (int i = 0; i <infoForTimeTable.size() ; i++) {
 
                                     StringBuilder sb = new StringBuilder();
@@ -1770,7 +1773,7 @@ transition: 1s;
                             <div id="btn_buy" onclick="OnButtonCommentSendClick()">
                                 <button class="button_buy" type="submit">
                                         <span >
-                                            Buy
+                                            <a onclick="location.href='/movieBuy'">Buy </a>
                                         </span>
                                 </button><div id="circle"></div>
 
@@ -1796,7 +1799,7 @@ transition: 1s;
                     <img src="img/icon-share-facebook.svg" class="links_img" width="54px" height="26px"  alt="" srcset="">
 
                 </a>
-                
+
 
 
             </li>
@@ -1806,7 +1809,7 @@ transition: 1s;
                     <img src="img/icon-share-twitter.svg" class="links_img" width="54px" height="26px" alt="" srcset="">
 
                 </a>
-                
+
 
 
             </li>
@@ -1814,19 +1817,19 @@ transition: 1s;
 
 
 
-<!-- 
-    Блоки коментів назив  comment або   comment_inner ( всередині comment-а )  
-    
-    comment_area-- поле вооду імені і дати  button_send- кнопка відправлення 
+<!--
+    Блоки коментів назив  comment або   comment_inner ( всередині comment-а )
 
-    comment_list -  коментарїї    
+    comment_area-- поле вооду імені і дати  button_send- кнопка відправлення
+
+    comment_list -  коментарїї
     comment_list_left -- блок зліва    like-- лайки     dislike- дизлайки
 
-    comment_list_right-блок справа 
+    comment_list_right-блок справа
 
 
 
---> 
+-->
 
 
 <div class="comment">
@@ -1849,14 +1852,14 @@ transition: 1s;
                       <span class="field__label-wrap">
                         <span class="field__label"> Nick name </span>
                       </span>
-                    </label>  
+                    </label>
                   </div>
             </div>
          </div>
          <br><br>
          <div class="text">
 
-            
+
 
             <textarea id="commentArea" class="text_inner" cols="85  " maxlength="909" rows="10"></textarea>
 
@@ -1875,8 +1878,8 @@ transition: 1s;
 
          <h1 class="just_nicho">COMMENTS
          </h1><br>
-         
-             
+
+
 
 
 
@@ -1934,7 +1937,7 @@ transition: 1s;
                                 <div class="comment_list_right_posted">
                                     <p>Posted date </p>
                                 </div>
-                               
+
                             </div>
                         </div>';
 
@@ -1950,11 +1953,11 @@ transition: 1s;
 
 
 
-            
+
     </div>
 </div>
 
-<!-- Блоки новин назив news_list  news_list_inner_text-текст справа  news_list_inner_photo - фото    --> 
+<!-- Блоки новин назив news_list  news_list_inner_text-текст справа  news_list_inner_photo - фото    -->
         <div class="news_list">
 
             <span class="news_list_date">07.12.2020.</span>
@@ -1962,7 +1965,7 @@ transition: 1s;
 
             <div class="news_list_inner">
 
-                
+
                 <div class="news_list_inner_photo">
 
                     <a href="#">
@@ -1970,18 +1973,18 @@ transition: 1s;
                     </a>
 
                 </div>
-                
+
 
                 <div class="news_list_inner_text">
                     HESITANT PROSPECT Update Now Live
                 </div>
-                
+
 
             </div>
 
         </div>
 
-<!-- Блоки новин назив news_list  news_list_inner_text-текст справа  news_list_inner_photo - фото    --> 
+<!-- Блоки новин назив news_list  news_list_inner_text-текст справа  news_list_inner_photo - фото    -->
 
 
         <div class="news_list">
@@ -1991,7 +1994,7 @@ transition: 1s;
 
             <div class="news_list_inner">
 
-                
+
                 <div class="news_list_inner_photo">
 
                     <a href="#">
@@ -1999,19 +2002,19 @@ transition: 1s;
                     </a>
 
                 </div>
-                
+
 
                 <div class="news_list_inner_text">
                     HESITANT PROSPECT Update Now Live
                 </div>
-                
+
 
             </div>
 
         </div>
 
 
-<!-- Блоки новин назив news_list  news_list_inner_text-текст справа  news_list_inner_photo - фото    --> 
+<!-- Блоки новин назив news_list  news_list_inner_text-текст справа  news_list_inner_photo - фото    -->
 
         <div class="news_list">
 
@@ -2020,7 +2023,7 @@ transition: 1s;
 
             <div class="news_list_inner">
 
-                
+
                 <div class="news_list_inner_photo">
 
                     <a href="#">
@@ -2028,12 +2031,12 @@ transition: 1s;
                     </a>
 
                 </div>
-                
+
 
                 <div class="news_list_inner_text">
                     HESITANT PROSPECT Update Now Live
                 </div>
-                
+
 
             </div>
 
@@ -2041,19 +2044,19 @@ transition: 1s;
 
         <div class="about_game_forum">
             <a class="email_sender_forum" href="#">NEWS & UPDATES <img class="about_game_forum_padding" src="img/icon-promo.png" alt="" srcset=""></a>
-    
-        
-    
-    
-        </div>
-        
 
-        
+
+
+
+        </div>
+
+
+
 
 
     </div>
 
-    
+
 
 </main>
 
@@ -2066,9 +2069,9 @@ transition: 1s;
         <div class="email_sender_field">
             <form action="vlad_work_with_sql_email">
 
-                
+
                 <input type="email" value="" name="EMAIL" class="email_sender_field_inner"  required="" aria-label="Your email">
-                
+
                 <button type="submit" value="Subscribe" name="subscribe"  class="email_sender_field_inner_submit">Sign Up</button>
 
 
@@ -2082,7 +2085,7 @@ transition: 1s;
 
                 <a class="footer-list-twitter" href="https://www.facebook.com/intothelongdark">
                     <img src="img/icon-share-facebook.svg" width="40px" height="40px" alt="">
-                    
+
                 </a>
 
             </li>
@@ -2097,7 +2100,7 @@ transition: 1s;
 
                 <a class="footer-list-twitter" href="https://www.youtube.com/user/hinterlandgames">
                     <img src="img/icon-youtube.svg" width="40px" height="40px" alt="">
-                    
+
                 </a>
 
             </li>
@@ -2108,7 +2111,7 @@ transition: 1s;
                 </a>
 
             </li>
-            
+
 
 
         </ul>
@@ -2118,7 +2121,7 @@ transition: 1s;
                 <a href="movies.jsp" class="footer_list_text_li">MOVIE</a>
             </li>
 
-           
+
 
             <li>
                 <a href="https://www.facebook.com/" class="footer_list_text_li" target="_blank" >COMMUNITY</a>

@@ -1807,9 +1807,7 @@ public class NewMoviePage {
                 "\n" +
                 "                            <div id=\"btn_buy\" onclick=\"OnButtonCommentSendClick()\">\n" +
                 "                                <button class=\"button_buy\" type=\"submit\">\n" +
-                "                                        <span >\n" +
-                "                                            Buy\n" +
-                "                                        </span>\n" +
+                "                                        <span ><a onclick=\"location.href='/movieBuy'\">Buy </a>  </span>\n" +
                 "                                </button><div id=\"circle\"></div>\n" +
                 "\n" +
                 "                            </div>\n" +

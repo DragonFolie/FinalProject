@@ -1463,22 +1463,12 @@ transition: 1s;
 
                                 if(name_user.equals("admin")){
 
-                                    out.print("<li> Hello, "+name_user+" Welcome to <a onclick=\"location.href='/admin'\"  >Admin Page</a> </li>");
-
+                               out.print("<li> Hello, "+name_user+" Welcome to <a onclick=\"location.href='/admin'\"  >Admin Page</a> </li>");
                                 }
                                 if(!name_user.equals("admin")){
 
                                     out.print(
-                                            "<li>\n" +
-                                                    "  Hello, "+name_user+" Welcome to <a onclick=\"location.href='/userProfile'\"  >Profile</a>\n" +
-                                                    " </li>\n"+
-                                                    "<li>\n" +
-                                                    "  <button class=\"w3-btn w3-hover-light-blue w3-round-large\" style=\"outline: none;   border: 0;  background: transparent; color: white ; font-size: 15px \" onclick=\"location.href='/logout'\">Logout </button>" +
-                                                    " </li>\n"
-
-                                    );
-
-                                }
+                                            "<li> Hello, "+name_user+" Welcome to <a onclick=\"location.href='/userProfile'\"  >Profile</a> </li>");                                }
 
 
 
@@ -1516,8 +1506,8 @@ transition: 1s;
 <main class="main">
     <div class="main_inner">
         <div class="main_inner_title_content">
-            <img src="img/MoviePoster/We_are_your_friend_2/we-are-your-friends-1.jpg" class="main_inner_title_photo" alt="season's greetings" srcset="">
-            <h1 class="main_inner_title">We are your friend 2</h1>
+            <img src="img/MoviePoster/Test/test.jpg" class="main_inner_title_photo" alt="season's greetings" srcset="">
+            <h1 class="main_inner_title">Test</h1>
 
         </div>
         
@@ -1531,7 +1521,7 @@ transition: 1s;
                 
 
                 <p >
-                    F2
+                    99
                    <!--<a href="https://www.youtube.com/watch?v=1fkqAZ2eSEw" style="color: #666;
                     font-size: 1em; text-decoration: underline;" target="_blank">HESITANT PROSPECT.</a> -->
                 </p>
@@ -1539,30 +1529,30 @@ transition: 1s;
                 <br><br><br>
                 <p >
                     Director: <br>
-                    <a href="https://www.imdb.com" class="test_description_movie"   target="_blank" > Nikki Lauda </a>
+                    <a href="https://www.imdb.com" class="test_description_movie"   target="_blank" > test </a>
                    
                 </p>
                 <br><br>
 
                 <p >
                     Writers: <br>
-                    <a href="https://www.imdb.com" class="test_description_movie"  target="_blank">Nikki Lauda</a> (screenplay),
+                    <a href="https://www.imdb.com" class="test_description_movie"  target="_blank">test</a> (screenplay),
                 </p>
                 
                 <br><br>
 
                 <p >
                     Stars: <br>
-                    <a href="https://www.imdb.com" class="test_description_movie"  target="_blank"> Max Bringe ,</a>
-                    <a href="https://www.imdb.com" class="test_description_movie"  target="_blank"> Lando Norris ,</a>
-                    <a href="https://www.imdb.com" class="test_description_movie"  target="_blank"> Aorton Senna </a>  
+                    <a href="https://www.imdb.com" class="test_description_movie"  target="_blank"> test ,</a>
+                    <a href="https://www.imdb.com" class="test_description_movie"  target="_blank"> test ,</a>
+                    <a href="https://www.imdb.com" class="test_description_movie"  target="_blank"> test </a>  
                    
                 </p>
                 <br><br>
 
                 <p >
                     Schedule: <br>
-                    <a  class="test_description_movie"  target="_blank"> 04:43 and 06:43 every Tuesday</a>
+                    <a  class="test_description_movie"  target="_blank"> 21:07 and 01:07 every Monday</a>
                     
                    
                    
@@ -1687,14 +1677,14 @@ transition: 1s;
 
 
 
-                        Choose time and day and number of seat &nbsp
+                        Available time and day and number of seat &nbsp
 
                             <%
 
                                 Admin admin = new Admin();
                                 DB_ManagerDAO db_managerDAO = new DB_ManagerDAO();
                                 ArrayList infoForTimeTable = new ArrayList();
-                                 infoForTimeTable = db_managerDAO.findAllMovieSessionByName("We are your friend 2");
+                                 infoForTimeTable = db_managerDAO.findAllMovieSessionByName("Test");
 
                                 String regex = "(.+),(.+),(.+),(.+)";
                                 String timeS = null;
@@ -1777,10 +1767,10 @@ transition: 1s;
 
 
 
-                            <div id="btn_buy" onclick="OnButtonCommentSendClick()" >
+                            <div id="btn_buy" onclick="OnButtonCommentSendClick()">
                                 <button class="button_buy" type="submit">
                                         <span >
-                                           <a onclick="location.href='/movieBuy'">Buy </a>
+                                            Buy
                                         </span>
                                 </button><div id="circle"></div>
 
@@ -1877,7 +1867,7 @@ transition: 1s;
 
 
 
-            <div id="btn" onclick="OnButtonCommentSendClick()"><span class="noselect" style="font-size: 25px">Send</span><div id="circle"></div></div>
+            <div id="btn" onclick="OnButtonCommentSendClick()"><span class="noselect" style="font-size: 25px" >Send</span><div id="circle"></div></div>
 
 
 
