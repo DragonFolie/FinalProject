@@ -1463,7 +1463,11 @@ transition: 1s;
 
                                 if(name_user.equals("admin")){
 
-                               out.print("<li> Hello, "+name_user+" Welcome to <a onclick=\"location.href='/admin'\"  >Admin Page</a> </li>");
+                               out.print("<li> Hello, "+name_user+" Welcome to <a onclick=\"location.href='/admin'\"  >Admin Page</a> </li>+\n" +
+                                       "\n" +
+                                       "                                            \"<li>\\n\" +\n" +
+                                       "                                                    \"  <button class=\\\"w3-btn w3-hover-light-blue w3-round-large\\\" style=\\\"outline: none;   border: 0;  background: transparent; color: white ; font-size: 15px \\\" onclick=\\\"location.href='/logout'\\\">Logout </button>\" +\n" +
+                                       "                                                    \" </li>\\n\"");
                                 }
                                 if(!name_user.equals("admin")){
 
@@ -1471,7 +1475,11 @@ transition: 1s;
                                             "<li> Hello, "+name_user+" Welcome to <a onclick=\"location.href='/userProfile'\"  >Profile</a> </li>"+
                                                     "<li>\n" +
                                                     "  <button class=\"w3-btn w3-hover-light-blue w3-round-large\" style=\"outline: none;   border: 0;  background: transparent; color: white ; font-size: 15px \" onclick=\"location.href='/logout'\">Logout </button>" +
-                                                    " </li>\n");                                }
+                                                    " </li>+\n" +
+                                                    "\n" +
+                                                    "                                            \"<li>\\n\" +\n" +
+                                                    "                                                    \"  <button class=\\\"w3-btn w3-hover-light-blue w3-round-large\\\" style=\\\"outline: none;   border: 0;  background: transparent; color: white ; font-size: 15px \\\" onclick=\\\"location.href='/logout'\\\">Logout </button>\" +\n" +
+                                                    "                                                    \" </li>\\n\"\n");                                }
 
 
 

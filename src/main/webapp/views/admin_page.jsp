@@ -480,14 +480,14 @@ ul.summary-list > li:last-child  {
 <nav class="header">
     <div class="header_container">
       <div class="logo">
-        <img src="img/logo_v2.jpg" alt="logo+Hinterland" href="http://localhost:8080"srcset="">
+        <img src="views/img/logo_v2.jpg" alt="logo+Hinterland" href="http://localhost:8080"srcset="">
         <span ><a href="http://localhost:8080" class="HINTERLAND">HINTERLAND</a></span>
     </div>
         <div class="header_container_empty">
 
         </div>
         <div class="header_nav">
-            <ul>
+            <ul class="header_inner_ul">
                 <li >
                     <a onclick="location.href='/movies'">MOVIES</a>
 
@@ -504,10 +504,6 @@ ul.summary-list > li:last-child  {
                 <li>
                     <a href="contact.jsp" target="_blank"  >SUPPORT</a>
                 </li>
-
-
-
-
                 <%
 
                     String name_user  = (String)session.getAttribute("name");
@@ -519,6 +515,10 @@ ul.summary-list > li:last-child  {
                             out.print(
                                     "<li>\n" +
                                             "  Hello, "+name_user+" Welcome to <a onclick=\"location.href='/admin'\"  >Admin Page</a>" +
+                                            " </li>\n"+
+
+                                            "<li>\n" +
+                                            "  <button class=\"w3-btn w3-hover-light-blue w3-round-large\" style=\"outline: none;   border: 0;  background: transparent; color: white ; font-size: 15px \" onclick=\"location.href='/logout'\">Logout </button>" +
                                             " </li>\n"
 
                             );
@@ -528,11 +528,12 @@ ul.summary-list > li:last-child  {
 
                             out.print(
                                     "<li>\n" +
-                                            "  Hello, "+name_user+" <a onclick=\"location.href='/userProfile'\"  >Profile</a>\n" +
-                                            " </li>\n"+
+                                            "  Hello, "+name_user+" Welcome to <a onclick=\"location.href='/userProfile'\"  >Profile</a>\n" +
+                                            " </li>\n"
+                                            +
 
-                                    "<li>\n" +
-                                            "  <button class=\"w3-btn w3-hover-light-blue w3-round-large\" onclick=\"location.href='/logout'\">Logout </button>" +
+                                            "<li>\n" +
+                                            "  <button class=\"w3-btn w3-hover-light-blue w3-round-large\" style=\"outline: none;   border: 0;  background: transparent; color: white ; font-size: 15px \" onclick=\"location.href='/logout'\">Logout </button>" +
                                             " </li>\n"
 
                             );

@@ -198,6 +198,15 @@ public class DB_ManagerDAO implements InterfaceController {
 
     }
 
+    public ArrayList findAllMovieSessionByNameWithID(String movieName){
+
+        Admin admin = new Admin();
+
+        return admin.findAllMovieSessionByNameWithID(movieName);
+
+    }
+
+
     public String findAllMovieSessionByNameString(String movieName){
 
         Admin admin = new Admin();
@@ -210,6 +219,14 @@ public class DB_ManagerDAO implements InterfaceController {
         Admin admin = new Admin();
 
         return admin.findAllUniqueMovieName();
+    }
+
+    public String getDescriptionMovie(String movieName){
+
+        Admin admin = new Admin();
+
+        return admin.getDescriptionMovie(movieName);
+
     }
 
 

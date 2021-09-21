@@ -1470,6 +1470,10 @@ transition: 1s;
                             out.print(
                                     "<li>\n" +
                                             "  Hello, "+name_user+" Welcome to <a onclick=\"location.href='/admin'\"  >Admin Page</a>" +
+                                            " </li>\n"+
+
+                                            "<li>\n" +
+                                            "  <button class=\"w3-btn w3-hover-light-blue w3-round-large\" style=\"outline: none;   border: 0;  background: transparent; color: white ; font-size: 15px \" onclick=\"location.href='/logout'\">Logout </button>" +
                                             " </li>\n"
 
                             );
@@ -1735,7 +1739,7 @@ transition: 1s;
 
                             <div id="btn_buy" onclick="OnButtonCommentSendClick()">
                                 <button class="button_buy" type="submit">
-                                        <span >
+                                        <span>
                                             <a onclick="location.href='/movieBuy'">Buy </a>
                                         </span>
                                 </button><div id="circle"></div>

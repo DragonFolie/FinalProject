@@ -69,9 +69,13 @@
 
 			allMovieName= db_managerDAO2.findAllUniqueMovieName();
 
+			System.out.println("MOVIE:  " + allMovieName);
+
 			for (int i = 0; i <allMovieName.size() ; i++) {
 
 				allSessionInfo = db_managerDAO.findAllMovieSessionByName(allMovieName.get(i).toString());
+
+				System.out.println("InfoSession: " + allSessionInfo  + "   Movie   " + allMovieName.get(i));
 
 
 
@@ -118,7 +122,7 @@
 
 
 
-							System.out.println(timeS+" - " +timeE+" - " +date+" - " +status );
+//							System.out.println(timeS+" - " +timeE+" - " +date+" - " +status );
 						out.print("<option >"+timeS +"-"+timeE +" ; "+date +"</option>");
 
 					}

@@ -133,4 +133,87 @@
   2021-09-21 19:40:30 INFO  LogoutServlet:52 - Logging user: test
   2021-09-21 19:41:01 INFO  LogoutServlet:52 - Logging user: test
   2021-09-21 19:45:37 INFO  LogoutServlet:52 - Logging user: test
+  2021-09-21 20:05:34 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-21 20:07:17 INFO  LogoutServlet:52 - Logging user: test
+  2021-09-21 20:11:03 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-21 23:41:18 INFO  LogoutServlet:52 - Logging user: test
+  2021-09-22 00:00:34 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-22 00:03:57 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-22 00:18:01 INFO  LogoutServlet:52 - Logging user: test
+  2021-09-22 00:19:01 INFO  LogoutServlet:52 - Logging user: test
+  2021-09-22 00:19:53 INFO  LogoutServlet:52 - Logging user: test
+  2021-09-22 00:35:09 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-22 00:59:24 INFO  LogoutServlet:52 - Logging user: test
+  2021-09-22 00:59:33 INFO  LogoutServlet:52 - Logging user: test
+  2021-09-22 01:11:28 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-22 01:42:36 ERROR Admin:845 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:42:36 ERROR Admin:845 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:42:36 ERROR Admin:845 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:42:36 ERROR Admin:845 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:42:37 ERROR Admin:845 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:42:37 ERROR Admin:845 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:42:37 ERROR Admin:845 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:44:11 ERROR Admin:845 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:44:11 ERROR Admin:845 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:44:11 ERROR Admin:845 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:44:11 ERROR Admin:845 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:44:11 ERROR Admin:845 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:44:11 ERROR Admin:845 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:44:11 ERROR Admin:845 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:44:15 ERROR Admin:845 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:44:15 ERROR Admin:845 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:44:15 ERROR Admin:845 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:44:15 ERROR Admin:845 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:44:15 ERROR Admin:845 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:44:15 ERROR Admin:845 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:44:15 ERROR Admin:845 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:44:33 ERROR Admin:845 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:44:33 ERROR Admin:845 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:44:33 ERROR Admin:845 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:44:33 ERROR Admin:845 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:44:33 ERROR Admin:845 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:44:33 ERROR Admin:845 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:44:33 ERROR Admin:845 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:44:57 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:44:57 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:44:57 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:44:57 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:44:58 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:44:58 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:44:58 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:48:16 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:48:16 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:48:16 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:48:16 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:48:16 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:48:16 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:48:16 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:52:14 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:52:14 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:52:14 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:52:14 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:52:15 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:52:15 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:52:15 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:59:27 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:59:27 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:59:27 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:59:27 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:59:27 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:59:27 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 01:59:27 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 02:00:29 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 02:00:29 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 02:00:29 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 02:00:29 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 02:00:29 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 02:00:29 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 02:00:29 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 02:01:55 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 02:01:55 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 02:01:55 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 02:01:55 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 02:01:55 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 02:01:55 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-22 02:01:55 ERROR Admin:840 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
   

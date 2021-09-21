@@ -20,7 +20,6 @@ public class LogoutServlet extends HttpServlet {
         PrintWriter out=response.getWriter();
 
 
-        request.getRequestDispatcher("index.jsp").include(request, response);
 
         HttpSession session=request.getSession();
         session.invalidate();
@@ -28,7 +27,14 @@ public class LogoutServlet extends HttpServlet {
         out.print("You are successfully logged out!");
         logger.info("Successfully logged out user: " + name);
 
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         response.setIntHeader("Refresh", 1);
+
+        request.getRequestDispatcher("/").include(request, response);
         out.close();
     }
 
