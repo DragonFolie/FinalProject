@@ -845,7 +845,7 @@ public class Admin implements  AdminDAO{
 
             resultSet.next();
             String result = resultSet.getString(1);
-            System.out.println("Result: " + resultSet.getString(1));
+//            System.out.println("Result: " + resultSet.getString(1));
 
             return result;
 
@@ -921,7 +921,7 @@ public class Admin implements  AdminDAO{
 
         }catch (IOException | SQLException | ClassNotFoundException e) {
 //            logger.info("Exception here" + e);
-            logger.error("Cant findAllMovieSession " + e);
+            logger.error("Cant find All Movie Session By Name String " + e);
             return null;
         }
 
@@ -1134,7 +1134,67 @@ public class Admin implements  AdminDAO{
 
 
 
+    public int  getCountSeatOfSession(String day, String timeStart) {
 
+
+        UsersManager usersManager = new UsersManager();
+        ArrayList findNumber = new ArrayList();
+        ArrayList listOfNumber = new ArrayList();
+
+        PreparedStatement preparedStatement = null;
+        try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
+
+//            System.out.println("conn + " +conn);
+            preparedStatement = conn.prepareStatement("SELECT CountSeat From session WHERE SessionDay = ? AND TimeStart = ?");
+            preparedStatement.setString(1, day);
+            preparedStatement.setString(2, timeStart);
+
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            resultSet.next();
+
+            return resultSet.getInt(1);
+
+
+        } catch (IOException | SQLException | ClassNotFoundException e) {
+//            logger.info("Exception here" + e);
+//            logger.error("Cant get Count Seats For Session " + e);
+            return -1;
+        }
+    }
+
+
+
+    public int maxIdSession(){
+
+
+        UsersManager usersManager = new UsersManager();
+        ArrayList findNumber = new ArrayList();
+        ArrayList listOfNumber = new ArrayList();
+
+        PreparedStatement preparedStatement = null;
+        try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
+
+//            System.out.println("conn + " +conn);
+            preparedStatement = conn.prepareStatement("SELECT MAX(idMovie) From session ");
+
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            resultSet.next();
+
+
+
+            return resultSet.getInt(1);
+
+
+        } catch (IOException | SQLException | ClassNotFoundException e) {
+//            logger.info("Exception here" + e);
+            logger.error("Cant get max Id number of Session " + e);
+            return -1;
+        }
+    }
 
     public static void main(String[] args) {
         Admin admin = new Admin();

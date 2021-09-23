@@ -116,6 +116,18 @@
     </servlet-mapping>
 
 
+    <!-- Admin list of movies servlet -->
+    <servlet>
+        <servlet-name>adminlist</servlet-name>
+        <servlet-class>servlets.AdminListMovieServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>adminlist</servlet-name>
+        <url-pattern>/adminlist</url-pattern>
+    </servlet-mapping>
+
+
 
 
     <!-- Custom Tag servlet -->

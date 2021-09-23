@@ -230,6 +230,23 @@ public class DB_ManagerDAO implements InterfaceController {
     }
 
 
+    public int  getCountSeatOfSession(String day, String timeStart){
+
+        Admin admin = new Admin();
+
+        return admin.getCountSeatOfSession(day,timeStart);
+
+    }
+
+
+    public int maxIdSession(){
+
+        Admin admin = new Admin();
+
+        return admin.maxIdSession();
+
+    }
+
     public boolean addOrderToUser(String nickName ,String movieName,String day,String numberOfSeat,String timeS,String timeE){
         Admin admin = new Admin();
 
