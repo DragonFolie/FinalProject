@@ -173,7 +173,8 @@
           float tempCountPage ;
 
 
-
+// Треба в пошуку в БД добавити OFFSET / Limit щоб воно від 4 до 8     мінімум сторінки ми вираховуємо від   (макс включно) - 4
+// ці параметри беремо req.getParam  які вказуємо в строці вибору сторінки
 
           allMovieName= db_managerDAO.findAllUniqueMovieName();
 
