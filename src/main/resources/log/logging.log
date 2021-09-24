@@ -219,4 +219,16 @@
   2021-09-22 19:24:33 INFO  LogoutServlet:52 - Logging user: admin
   2021-09-22 19:42:06 INFO  LogoutServlet:52 - Logging user: test
   2021-09-22 21:21:35 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-23 18:12:41 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-23 19:29:38 INFO  LogoutServlet:52 - Logging user: test
+  2021-09-23 19:48:03 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-23 20:03:57 INFO  LogoutServlet:52 - Logging user: test
+  2021-09-24 02:55:46 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-24 03:35:54 ERROR Admin:1274 - Cant get Info About Session And Movies java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', b.CountSeat, b.SessionDay, b.Cost, b.TimeEnd, b.TimeStart, b.Status , c.Name, ' at line 1
+  2021-09-24 03:36:18 ERROR Admin:1273 - Cant get Info About Session And Movies java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', b.CountSeat, b.SessionDay, b.Cost, b.TimeEnd, b.TimeStart, b.Status , c.Name, ' at line 1
+  2021-09-24 03:36:24 ERROR Admin:1272 - Cant get Info About Session And Movies java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', b.CountSeat, b.SessionDay, b.Cost, b.TimeEnd, b.TimeStart, b.Status , c.Name, ' at line 1
+  2021-09-24 03:53:31 ERROR Admin:1274 - Cant get Info About Session And Movies java.sql.SQLException: Column Index out of range, 13 > 12. 
+  2021-09-24 03:57:34 ERROR Admin:1269 - Cant get Info About Session And Movies java.sql.SQLException: Column Index out of range, 12 > 11. 
+  2021-09-24 03:57:50 ERROR Admin:1266 - Cant get Info About Session And Movies java.sql.SQLException: Column Index out of range, 12 > 11. 
+  2021-09-24 03:58:44 ERROR Admin:1260 - Cant get Info About Session And Movies java.sql.SQLException: Column Index out of range, 12 > 11. 
   

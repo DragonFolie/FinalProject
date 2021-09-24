@@ -409,8 +409,8 @@ public class Admin implements  AdminDAO{
             ResultSet resultSet = preparedStatement.executeQuery();
 
             resultSet.next();
-                StringBuilder sb = new StringBuilder();
-                int id = resultSet.getInt(1);
+            StringBuilder sb = new StringBuilder();
+            int id = resultSet.getInt(1);
 
 
 
@@ -458,7 +458,7 @@ public class Admin implements  AdminDAO{
 
             ResultSet resultSet = preparedStatement.executeQuery();
 
-             resultSet.next();
+            resultSet.next();
 
             String idMovie =  resultSet.getString(1);
 
@@ -466,7 +466,7 @@ public class Admin implements  AdminDAO{
             preparedStatement = conn.prepareStatement("Select FolderURL FROM session WHERE idMovie = "+idMovie+";");
 
 
-             resultSet = preparedStatement.executeQuery();
+            resultSet = preparedStatement.executeQuery();
 
             resultSet.next();
 
@@ -559,39 +559,39 @@ public class Admin implements  AdminDAO{
 
 
             ResultSet resultSet = preparedStatement.executeQuery();
-         while(   resultSet.next()) {
+            while(   resultSet.next()) {
 
-              result = resultSet.getInt(1);
+                result = resultSet.getInt(1);
 
-         }
+            }
 
             preparedStatement = conn.prepareStatement("SELECt  Name, Description  From language where idLanguage = "+result+" ;");
 
             resultSet = preparedStatement.executeQuery();
 
-         while(   resultSet.next()) {
-             sb.append(resultSet.getString(1))
-                     .append("-")
-                     .append(resultSet.getString(2))
-                     .append(";");
+            while(   resultSet.next()) {
+                sb.append(resultSet.getString(1))
+                        .append("-")
+                        .append(resultSet.getString(2))
+                        .append(";");
 
-         }
+            }
 
 
             preparedStatement = conn.prepareStatement("SELECt Name , Description ,Actor  ,Director   From filmdetail where idfilmDetail = "+result+";");
 
             resultSet = preparedStatement.executeQuery();
 
-         while(   resultSet.next()) {
-             sb.append(resultSet.getString(1))
-                     .append("-")
-                     .append(resultSet.getString(2))
-                     .append("-")
-                     .append(resultSet.getString(3))
-                     .append("-")
-                     .append(resultSet.getString(4))
-                     .append(";");
-         }
+            while(   resultSet.next()) {
+                sb.append(resultSet.getString(1))
+                        .append("-")
+                        .append(resultSet.getString(2))
+                        .append("-")
+                        .append(resultSet.getString(3))
+                        .append("-")
+                        .append(resultSet.getString(4))
+                        .append(";");
+            }
 
 
 
@@ -601,14 +601,14 @@ public class Admin implements  AdminDAO{
             resultSet = preparedStatement.executeQuery();
 
 
-         while(   resultSet.next()) {
-             sb.append(resultSet.getString(1))
-                     .append("-")
-                     .append(resultSet.getString(2))
-                     .append("-")
-                     .append(resultSet.getString(3))
-                     .append(";");
-         }
+            while(   resultSet.next()) {
+                sb.append(resultSet.getString(1))
+                        .append("-")
+                        .append(resultSet.getString(2))
+                        .append("-")
+                        .append(resultSet.getString(3))
+                        .append(";");
+            }
 
 
 
@@ -841,7 +841,7 @@ public class Admin implements  AdminDAO{
 
 
             preparedStatement.execute();
-             resultSet = preparedStatement.executeQuery();
+            resultSet = preparedStatement.executeQuery();
 
             resultSet.next();
             String result = resultSet.getString(1);
@@ -879,9 +879,9 @@ public class Admin implements  AdminDAO{
 
             ResultSet resultSet = preparedStatement.executeQuery();
 
-           resultSet.next();
+            resultSet.next();
 
-           int result = resultSet.getInt(1);
+            int result = resultSet.getInt(1);
 
 
 
@@ -901,21 +901,21 @@ public class Admin implements  AdminDAO{
 
             resultSet.next();
 
-                StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
 
-                sb.append(resultSet.getString(1));
-                sb.append(",");
-                sb.append(resultSet.getString(2));
-                sb.append(",");
-                sb.append(resultSet.getString(3));
-                sb.append(",");
-                sb.append(resultSet.getString(4));
-
-
+            sb.append(resultSet.getString(1));
+            sb.append(",");
+            sb.append(resultSet.getString(2));
+            sb.append(",");
+            sb.append(resultSet.getString(3));
+            sb.append(",");
+            sb.append(resultSet.getString(4));
 
 
 
-                String string = sb.toString();
+
+
+            String string = sb.toString();
             return string;
 
 
@@ -1196,14 +1196,100 @@ public class Admin implements  AdminDAO{
         }
     }
 
+
+
+
+    public ArrayList getInfoAboutSessionAndMovies(int countElement , int fromNumber){
+
+
+        UsersManager usersManager = new UsersManager();
+        ArrayList allInfo = new ArrayList();
+
+        PreparedStatement preparedStatement = null;
+        try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
+
+//            System.out.println("conn + " +conn);
+            preparedStatement = conn.prepareStatement("SELECT  a.idfilmDetail, a.Name, a.Description, a.Actor, a.Director," +
+                    " b.CountSeat, b.SessionDay, b.Cost, b.TimeEnd, b.TimeStart, b.Status  From filmdetail as a , session as b  " +
+                    "  WHERE idfilmDetail = idMovie   LIMIT ? OFFSET ?");
+
+            preparedStatement.setInt(1,countElement);
+            preparedStatement.setInt(2,fromNumber);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while(resultSet.next()){       //getInt
+
+                StringBuilder sb = new StringBuilder();
+                sb.append(resultSet.getInt(1));
+                sb.append(";");
+                sb.append(resultSet.getString(2));
+                sb.append(";");
+                sb.append(resultSet.getString(3));
+                sb.append(";");
+                sb.append(resultSet.getString(4));
+                sb.append(";");
+                sb.append(resultSet.getString(5));
+
+
+                sb.append(";");
+                sb.append(resultSet.getInt(6));
+                sb.append(";");
+                sb.append(resultSet.getString(7));
+                sb.append(";");
+                sb.append(resultSet.getInt(8));
+                sb.append(";");
+                sb.append(resultSet.getString(10)+ " - " + resultSet.getString(9));
+                sb.append(";");
+                sb.append(resultSet.getString(11));
+                allInfo.add(sb.toString());
+
+
+            }
+
+
+
+            return allInfo;
+
+
+        } catch (IOException | SQLException | ClassNotFoundException e) {
+//            logger.info("Exception here" + e);
+            logger.error("Cant get Info About Session And Movies " + e);
+            return null;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
     public static void main(String[] args) {
         Admin admin = new Admin();
         ArrayList arrayList= new ArrayList();
-        arrayList =  admin.getUniqueSeatBySession("Saturday","09:16");
 
-        System.out.println(arrayList);
+
+        arrayList =  admin.getInfoAboutSessionAndMovies(5,1);
+
+
+        for (int i = 0; i < arrayList.size(); i++) {
+            System.out.println( arrayList.get(i));
+        }
+//        arrayList = admin.findAllMovieName();
+//        System.out.println(arrayList);
+
+
 
     }
+
+
 
 
 

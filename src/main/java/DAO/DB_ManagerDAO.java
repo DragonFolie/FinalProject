@@ -207,6 +207,17 @@ public class DB_ManagerDAO implements InterfaceController {
     }
 
 
+    public ArrayList getInfoAboutSessionAndMovies(int countElement , int fromNumber){
+
+        Admin admin = new Admin();
+
+        return admin.getInfoAboutSessionAndMovies( countElement ,  fromNumber);
+
+
+
+    }
+
+
     public String findAllMovieSessionByNameString(String movieName){
 
         Admin admin = new Admin();

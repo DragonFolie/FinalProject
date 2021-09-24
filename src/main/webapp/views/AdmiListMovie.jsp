@@ -110,163 +110,132 @@
         </thead>
         <tbody>
 
-<form method="get">
-        <%
-
-
-          //            MOVIE:  [Baby Boss, We are your friend 2, Test, Black Howk Down, Project X]
-//            InfoSession: [12:27,08:28,Friday,Close to buy, 09:16,13:16,Saturday,New Session]   Movie   Baby Boss
-//            InfoSession: [04:43,06:43,Tuesday,Open, 09:16,13:16,Wednesday,New Session]   Movie   We are your friend 2
-//            InfoSession: [21:07,01:07,Monday,Open]   Movie   Test
-//            InfoSession: [04:06,06:06,Tuesday,Open]   Movie   Black Howk Down
-//            InfoSession: [11:00,12:30,Tuesday,Open, 01:13,03:13,Thursday,New Session]   Movie   Project X
-
-
-//            MOVIE:  [Baby Boss, We are your friend 2, Test, Black Howk Down, Project X]
-//            InfoSession: [12:27,08:28,Friday,Close to buy, 09:16,13:16,Saturday,New Session]   Movie   Baby Boss
-//            12:27 - 08:28 - Friday - Close to buy
-//            09:16 - 13:16 - Saturday - New Session
-//            InfoSession: [04:43,06:43,Tuesday,Open, 09:16,13:16,Wednesday,New Session]   Movie   We are your friend 2
-//            04:43 - 06:43 - Tuesday - Open
-//            09:16 - 13:16 - Wednesday - New Session
-//            InfoSession: [21:07,01:07,Monday,Open]   Movie   Test
-//            21:07 - 01:07 - Monday - Open
-//            InfoSession: [04:06,06:06,Tuesday,Open]   Movie   Black Howk Down
-//            04:06 - 06:06 - Tuesday - Open
-//            InfoSession: [11:00,12:30,Tuesday,Open, 01:13,03:13,Thursday,New Session]   Movie   Project X
-//            11:00 - 12:30 - Tuesday - Open
-//            01:13 - 03:13 - Thursday - New Session
+        <form method="get">
+          <%
 
 
 
 
 
-          DB_ManagerDAO db_managerDAO = new DB_ManagerDAO();
-          DB_ManagerDAO db_managerDAO2 = new DB_ManagerDAO();
-          DB_ManagerDAO db_managerDAO3 = new DB_ManagerDAO();
-          DB_ManagerDAO db_managerDAO4 = new DB_ManagerDAO();
-          DB_ManagerDAO db_managerDAO5 = new DB_ManagerDAO();
+            DB_ManagerDAO db_managerDAO = new DB_ManagerDAO();
+            DB_ManagerDAO db_managerDAO2 = new DB_ManagerDAO();
+            DB_ManagerDAO db_managerDAO3 = new DB_ManagerDAO();
+            DB_ManagerDAO db_managerDAO4 = new DB_ManagerDAO();
+            DB_ManagerDAO db_managerDAO5 = new DB_ManagerDAO();
 
-          ArrayList allMovieName = new ArrayList();
-          ArrayList allSessionInfo = new ArrayList();
-          ArrayList uniqueSeats  = new ArrayList();
-
-
-
-
-          String regex = "(.+),(.+),(.+),(.+),(.+)";
-          String id = null;
-          String timeS = null;
-          String timeE = null;
-          String date = null;
-          String status  = null;
+            ArrayList allMovieName = new ArrayList();
+            ArrayList uniqueSeats  = new ArrayList();
+            ArrayList allAboutSessionInfo = new ArrayList();
 
 
 
-          int elementsCount = db_managerDAO5.maxIdSession();
-          System.out.println(elementsCount);
-          int step = 4;
-          int countPage = 1;
-
-          int countElementOnLastPage = 0;
-
-          float tempCountPage ;
+//   6,128 ударів серця в хвилину ,F1,Max Bringe,Lando Norris,Aorton Senna,Nikki Lauda,43,Wednesday,23,09:16 - 13:16,New Session,Project X---------------
 
 
-// Треба в пошуку в БД добавити OFFSET / Limit щоб воно від 4 до 8     мінімум сторінки ми вираховуємо від   (макс включно) - 4
-// ці параметри беремо req.getParam  які вказуємо в строці вибору сторінки
+            String regex = "(.+);(.+);(.+);(.+);(.+);(.+);(.+);(.+);(.+);(.+)";
+            String nameEng = null;
+            String nameUkr = null;
+            String description  = null;
+            String actors = null;
+            String director = null;
+            String id = null;
+            String time = null;
+            String day = null;
+            String status  = null;
+            String cost = null;
+            String countOfSeats = null;
 
-          allMovieName= db_managerDAO.findAllUniqueMovieName();
+
+
+            int elementsCount = db_managerDAO5.maxIdSession();
+
+            int step = 4;
+            int countPage = 1;
+            int countElementOnLastPage = 0;
+
+
+
+            allAboutSessionInfo = db_managerDAO.getInfoAboutSessionAndMovies(8,0);
+
+
+//            System.out.println("-----------------");
+            System.out.println(allAboutSessionInfo.size());
+            for (int i = 0; i < allAboutSessionInfo.size(); i++) {
+
+                Matcher m = Pattern.compile(regex).matcher(allAboutSessionInfo.get(i).toString());
+
+
+
+
+
+
+
+                while (m.find()) {
+
+//               6;128 ударів серця в хвилину ;F1;Max Bringe,Lando Norris,Aorton Senna;Nikki Lauda;43;Wednesday;23;09:16 - 13:16;New Session;Project X
+//              [6;128 ударів серця в хвилину ;F1;Max Bringe,Lando Norris,Aorton Senna;Nikki Lauda;43;Wednesday;23;09:16 - 13:16;New Session---------------]
+
+                  id = m.group(1);
+                  nameUkr = m.group(2);
+                  description = m.group(3);
+                  actors = m.group(4);
+                  director = m.group(5);
+                  countOfSeats = m.group(6);
+                  day = m.group(7);
+                  cost = m.group(8);
+                  time = m.group(9);
+                  status = m.group(10);
 
 
 //
-//          System.out.println("MOVIE:  " + allMovieName);
-          for (int i = 0; i <allMovieName.size() ; i++) {
+                }
 
-            allSessionInfo = db_managerDAO2.findAllMovieSessionByNameWithID(allMovieName.get(i).toString());
-
-//              System.out.println("InfoSession: " + allSessionInfo + "   Movie   " + allMovieName.get(i));
-
-
-
-
-            for (int j = 0; j < allSessionInfo.size(); j++) {
-
-//              System.out.println("N:"+ allSessionInfo.size());
-
-              Matcher m = Pattern.compile(regex).matcher(allSessionInfo.get(j).toString());
-              String descriptionOfMovie = db_managerDAO3.getDescriptionMovie(allMovieName.get(i).toString());
+                out.print("<tr scope=\"row\">\n" +
+                        "              <th scope=\"row\">\n" +
+                        "                <label class=\"control control--checkbox\">\n" +
+                        "                  <input type=\"checkbox\"/>\n" +
+                        "                  <div class=\"control__indicator\"></div>\n" +
+                        "                </label>\n" +
+                        "              </th>\n" +
+                        "              <td>\n");
 
 
+                out.print(" "+  id + " ");
+                out.print("              </td>\n" +
+                        "              <td><a href=\"#\">");out.print( nameEng ); out.print(" </a></td>\n" +
+                        "              <td>\n");
+                out.print(description  );
 
-
-              while (m.find()) {
-
-                id = m.group(1);
-                timeS = m.group(2);
-                timeE = m.group(3);
-                date = m.group(4);
-                status = m.group(5);
-
-
-//							System.out.println(timeS+" - " +timeE+" - " +date+" - " +status );
-//                  out.print("<option >" + timeS + "-" + timeE + " ; " + date + "</option>");
+                out.print( "<small class=\"d-block\"> </small>\n" +
+                        "              </td>\n" +
+                        "              <td>"); out.print( time ); out.print(" </td>\n" +
+                        "              <td>"); out.print( status); out.print("</td>\n" +
+                        "\n" +
+                        "            <td><a href=\"#\" class=\"more\">" +
+                        "" +
+                        "<select class=\"js-select2\" name=\"numberOfSeat\">");
+                for (int k = 1; k < uniqueSeats.size() ; k++) {
+                  out.print("<option >"+uniqueSeats.get(k)+"</option>" );
+                }out.print(" </a></td>\n" +
+                        "            <td><a href=\"#\" class=\"more\">");out.print( countOfSeats );   out.print(" </a></td>\n" +
+                        "            </tr>");
 
               }
-              uniqueSeats = db_managerDAO3.getUniqueSeatBySession(date,timeS);
-              int countOfSeats = db_managerDAO4.getCountSeatOfSession(date,timeS);
-
-//              System.out.println(date );
-
-
-
-
-
-              out.print("<tr scope=\"row\">\n" +
-                      "              <th scope=\"row\">\n" +
-                      "                <label class=\"control control--checkbox\">\n" +
-                      "                  <input type=\"checkbox\"/>\n" +
-                      "                  <div class=\"control__indicator\"></div>\n" +
-                      "                </label>\n" +
-                      "              </th>\n" +
-                      "              <td>\n");
-
-
-              out.print(" "+  id + " ");
-              out.print("              </td>\n" +
-                      "              <td><a href=\"#\">");out.print( allMovieName.get(i).toString() ); out.print(" </a></td>\n" +
-                      "              <td>\n");
-              out.print(descriptionOfMovie  );
-
-              out.print( "<small class=\"d-block\"> </small>\n" +
-                      "              </td>\n" +
-                      "              <td>"); out.print( timeS + " - " + timeE); out.print(" </td>\n" +
-                      "              <td>"); out.print( status); out.print("</td>\n" +
-                      "\n" +
-                      "            <td><a href=\"#\" class=\"more\">" +
-                      "" +
-                      "<select class=\"js-select2\" name=\"numberOfSeat\">");
-              for (int k = 1; k < uniqueSeats.size() ; k++) {
-                out.print("<option >"+uniqueSeats.get(k)+"</option>" );
-              }out.print(" </a></td>\n" +
-                      "            <td><a href=\"#\" class=\"more\">");out.print(countOfSeats-1);   out.print(" </a></td>\n" +
-                      "            </tr>");
-
-            }
-
-
-          }
-
-
-        %>
 
 
 
 
 
 
-        <tr class="spacer"><td colspan="100"></td></tr>
-</form>
+          %>
+
+
+
+
+
+
+          <tr class="spacer"><td colspan="100"></td></tr>
+        </form>
 
 
 
@@ -282,67 +251,15 @@
         <tr>
 
           <form method="get">
-            <%
+
+               <a style="color:white"> 1-</a>
+              <input  type="text" id="name" name="numberPage" >
+
+                 <button  style="outline: none;   border: 0;  background: transparent; color: white ; font-size: 20px " type="submit"> Go</button>
+
+                <a style="color:white">Your page is: 1</a>
 
 
-
-
-//              System.out.println("--------------");
-//              System.out.println("Elements = " +elementsCount);
-
-              if (elementsCount > step){
-
-                tempCountPage = (float)elementsCount / (float)step;
-                countPage = (int)tempCountPage;
-
-                countElementOnLastPage = elementsCount % step;
-
-
-              }
-//              System.out.println("CountPAge = " + countPage);
-//
-//              System.out.println("CountElemLast = " + countElementOnLastPage);
-//              for (int i = 1; i < countPage+1; i++) {
-//
-//                if (i == countPage){
-//
-//                  for (int j = 0; j < countElementOnLastPage; j++) {
-//                    out.print("<td> " + i+j + " Last </td>");
-//                  }
-//
-//                  continue;
-//                }
-//                out.print("<td> " + i + " </td>");
-//
-//              }
-
-
-              if (countPage >1){
-
-                out.print("<a style=\"color:white\"> 1-"); out.print( countPage+1);out.print( "  </a>");
-                out.print("<input style=\" type=\"text\" id=\"name\" name=\"numberPage\" >");
-
-                out.print(" <button  style=\"outline: none;   border: 0;  background: transparent; color: white ; font-size: 20px \" type=\"submit\"> Go</button>");
-                        out.print( "");
-
-                if (request.getParameter("numberPage") == null){
-//
-                          out.println("<a style=\"color:white\">Your page is: 1</a>");
-                        }
-//                if (requestNumber > countPage+1  || requestNumber < 1){
-////                          out.println("<a style=\"color:white\">Your page is: " + request.getParameter("numberPage") + "</a>");
-                  out.println("<a style=\"color:white\">Write correct page</a>");
-//                }
-
-
-//                System.out.println("PAram:" + request.getParameter("numberPage"));
-
-
-
-
-              }
-
-            %>
           </form>
 
         </tr>

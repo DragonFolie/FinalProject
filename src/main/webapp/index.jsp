@@ -1000,10 +1000,10 @@ div[class*=box] {
                             <a href="https://www.facebook.com/"  target="_blank" >COMMUNITY</a>
                         </li>
                         <li>
-                            <a href="shop-right-sidebar.jsp"   >SHOP</a>
+                            <a href="views/shop-right-sidebar.jsp"   >SHOP</a>
                         </li>
                         <li>
-                            <a href="contact.jsp" target="_blank"  >SUPPORT</a>
+                            <a href="views/contact.jsp" target="_blank"  >SUPPORT</a>
                         </li>
 
 

@@ -480,7 +480,7 @@ ul.summary-list > li:last-child  {
 <nav class="header">
     <div class="header_container">
       <div class="logo">
-        <img src="views/img/logo_v2.jpg" alt="logo+Hinterland" href="http://localhost:8080"srcset="">
+        <img src="img/logo_v2.jpg" alt="logo+Hinterland" href="http://localhost:8080"srcset="">
         <span ><a href="http://localhost:8080" class="HINTERLAND">HINTERLAND</a></span>
     </div>
         <div class="header_container_empty">

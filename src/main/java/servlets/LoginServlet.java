@@ -27,53 +27,53 @@ public class LoginServlet  extends HttpServlet {
 
 
 
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+          Logger logger =  Logger.getLogger(LogoutServlet.class.getName());
+        String name = req.getParameter("name_login");
+        String password = req.getParameter("pass_login");
+
+
 //
-//    @Override
-//    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-//          Logger logger =  Logger.getLogger(LogoutServlet.class.getName());
-//        String name = req.getParameter("name_login");
-//        String password = req.getParameter("pass_login");
-//
-//
-////
-////        System.out.println(name +" "+ password + " login user");
-//
-//
-//
-//        if (Model.findInDb(name, password)){
-//
-//            HttpSession httpSession = req.getSession();
-//            httpSession.setAttribute("name",name);
-//
-//
-////            System.out.println("find user with:" + name + "-" + password);
-//
-//
-//            logger.info("Logging user: " + name);
-////            resp.sendRedirect("index.jsp");
-//            RequestDispatcher requestDispatcher = req.getRequestDispatcher("/");
-//            requestDispatcher.forward(req, resp);
-//
-//
-//        }
-//        if (!Model.findInDb(name, password)){
-//
-//
-//            PrintWriter out=resp.getWriter();
-//            out.print("Dont find user");
-//
-//            try {
-//                Thread.sleep(700);
-//            } catch (InterruptedException e) {
-//                logger.error("Exception here " + e);
-//            }
-//            resp.setIntHeader("Refresh", 1);
-//
-//        }
-//
-//
-//
-//    }
+//        System.out.println(name +" "+ password + " login user");
+
+
+
+        if (Model.findInDb(name, password)){
+
+            HttpSession httpSession = req.getSession();
+            httpSession.setAttribute("name",name);
+
+
+//            System.out.println("find user with:" + name + "-" + password);
+
+
+            logger.info("Logging user: " + name);
+//            resp.sendRedirect("index.jsp");
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("/");
+            requestDispatcher.forward(req, resp);
+
+
+        }
+        if (!Model.findInDb(name, password)){
+
+
+            PrintWriter out=resp.getWriter();
+            out.print("Dont find user");
+
+            try {
+                Thread.sleep(700);
+            } catch (InterruptedException e) {
+                logger.error("Exception here " + e);
+            }
+            resp.setIntHeader("Refresh", 1);
+
+        }
+
+
+
+    }
 
 
 

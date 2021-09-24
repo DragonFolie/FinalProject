@@ -147,7 +147,7 @@
 <div class='fire'></div>
 <!-- partial -->
 <!-- partial:index.partial.html -->
-<form method="get">
+<form method="post">
   <div class="center_position">
       <div class="wrap center"> <!-- Just to center ver and hor -->
         <div class="wrap-label">
