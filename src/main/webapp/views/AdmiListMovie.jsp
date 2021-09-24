@@ -111,6 +111,8 @@
         <tbody>
 
         <form method="get">
+
+
           <%
 
 
@@ -149,16 +151,56 @@
 
             int elementsCount = db_managerDAO5.maxIdSession();
 
-            int step = 4;
+            int step = 2;
             int countPage = 1;
             int countElementOnLastPage = 0;
 
+              allMovieName = db_managerDAO2.findAllMovieName();
 
 
-            allAboutSessionInfo = db_managerDAO.getInfoAboutSessionAndMovies(8,0);
+              System.out.println("------------");
+             String requesValue = request.getParameter("numberPage");
+              System.out.println("Req:" + requesValue);
+              if (requesValue == null){
+
+                  System.out.println("Req2:" + requesValue);
+                  allAboutSessionInfo = db_managerDAO.getInfoAboutSessionAndMovies(4,0);
+
+              }
+
+              if (requesValue != null){
+
+                  System.out.println("Req3:" + requesValue);
+
+                  int requestNumberPage = Integer.parseInt(requesValue) ;
+
+                  System.out.println("Number:  " + requestNumberPage);
+
+                  allAboutSessionInfo = db_managerDAO.getInfoAboutSessionAndMovies(step,(requestNumberPage*step));
+
+              }
 
 
-//            System.out.println("-----------------");
+//            if(elementsCount <= 4 ){
+//
+//                allAboutSessionInfo = db_managerDAO.getInfoAboutSessionAndMovies(4,0);
+//
+//              }
+//
+//              if(elementsCount > 4 ){
+//
+//                  countPage = elementsCount % step;
+//                  System.out.println(countPage);
+//
+//
+//                  allAboutSessionInfo = db_managerDAO.getInfoAboutSessionAndMovies(4,0);
+//
+//              }
+
+
+
+
+
             System.out.println(allAboutSessionInfo.size());
             for (int i = 0; i < allAboutSessionInfo.size(); i++) {
 
@@ -172,8 +214,7 @@
 
                 while (m.find()) {
 
-//               6;128 ударів серця в хвилину ;F1;Max Bringe,Lando Norris,Aorton Senna;Nikki Lauda;43;Wednesday;23;09:16 - 13:16;New Session;Project X
-//              [6;128 ударів серця в хвилину ;F1;Max Bringe,Lando Norris,Aorton Senna;Nikki Lauda;43;Wednesday;23;09:16 - 13:16;New Session---------------]
+//               6;128 ударів серця в хвилину ;F1;Max Bringe,Lando Norris,Aorton Senna;Nikki Lauda;43;Wednesday;23;09:16 - 13:16;New Session;
 
                   id = m.group(1);
                   nameUkr = m.group(2);
@@ -202,7 +243,7 @@
 
                 out.print(" "+  id + " ");
                 out.print("              </td>\n" +
-                        "              <td><a href=\"#\">");out.print( nameEng ); out.print(" </a></td>\n" +
+                        "              <td><a href=\"#\">");out.print( allMovieName.get(i) ); out.print(" </a></td>\n" +
                         "              <td>\n");
                 out.print(description  );
 
