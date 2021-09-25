@@ -151,7 +151,7 @@
 
             int elementsCount = db_managerDAO5.maxIdSession();
 
-            int step = 2;
+            int step = 5;
             int countPage = 1;
             int countElementOnLastPage = 0;
 
@@ -164,7 +164,7 @@
               if (requesValue == null){
 
                   System.out.println("Req2:" + requesValue);
-                  allAboutSessionInfo = db_managerDAO.getInfoAboutSessionAndMovies(4,0);
+                  allAboutSessionInfo = db_managerDAO.getInfoAboutSessionAndMovies(step,0);
 
               }
 
@@ -181,27 +181,12 @@
               }
 
 
-//            if(elementsCount <= 4 ){
-//
-//                allAboutSessionInfo = db_managerDAO.getInfoAboutSessionAndMovies(4,0);
-//
-//              }
-//
-//              if(elementsCount > 4 ){
-//
-//                  countPage = elementsCount % step;
-//                  System.out.println(countPage);
-//
-//
-//                  allAboutSessionInfo = db_managerDAO.getInfoAboutSessionAndMovies(4,0);
-//
-//              }
 
 
 
 
 
-            System.out.println(allAboutSessionInfo.size());
+//            System.out.println(allAboutSessionInfo.size());
             for (int i = 0; i < allAboutSessionInfo.size(); i++) {
 
                 Matcher m = Pattern.compile(regex).matcher(allAboutSessionInfo.get(i).toString());

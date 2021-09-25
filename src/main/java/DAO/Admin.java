@@ -1214,7 +1214,7 @@ public class Admin implements  AdminDAO{
                     "  WHERE idfilmDetail = idMovie   LIMIT ? OFFSET ?");
 
             preparedStatement.setInt(1,countElement);
-            preparedStatement.setInt(2,fromNumber-1);
+            preparedStatement.setInt(2,fromNumber);
 
             ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -1288,9 +1288,9 @@ public class Admin implements  AdminDAO{
         arrayList =  admin.getInfoAboutSessionAndMovies(5,1);
 
 
-//        for (int i = 0; i < arrayList.size(); i++) {
-//            System.out.println( arrayList.get(i));
-//        }
+        for (int i = 0; i < arrayList.size(); i++) {
+            System.out.println( arrayList.get(i));
+        }
         arrayList = admin.findAllMovieName();
         System.out.println(arrayList);
 

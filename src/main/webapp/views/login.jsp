@@ -3,7 +3,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Simple focus in/out input animation</title>
+  <title>Login</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css'><link rel="stylesheet" href="views/style.css">
@@ -20,6 +20,53 @@
 
 
     <%@include file="./style.css" %>
+
+
+    .custom-select {
+        border: 0;
+        position: relative;
+        display: block;
+        max-width: 400px;
+        min-width: 180px;
+        margin: 0 auto;
+        border: 1px solid #3D2C4B;
+        background-color: #1e1524;
+        z-index: 10;
+    }
+    .custom-select select {
+        border: none;
+        outline: none;
+        background: transparent;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border-radius: 0;
+        margin: 0;
+        display: block;
+        width: 100%;
+        padding: 12px 55px 15px 15px;
+        font-size: 14px;
+        color: orange;
+    }
+    .custom-select:after {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 50px;
+        height: 100%;
+        line-height: 38px;
+        content: "∨";
+        text-align: center;
+        color: #714BB9;
+        font-size: 24px;
+        border-left: 1px solid #3D2C4B;
+        z-index: -1;
+    }
+
+
+
+
+
 
 
 </style>
@@ -47,6 +94,7 @@
                   </div>
                   <div class="header_nav">
                       <ul class="header_inner_ul">
+
                           <li >
                               <a onclick="location.href='/movies'">MOVIES</a>
 
@@ -63,6 +111,12 @@
                           <li>
                               <a href="contact.jsp" target="_blank"  >SUPPORT</a>
                           </li>
+
+
+
+
+
+
 
 
 
@@ -123,6 +177,8 @@
 
                           %>
 
+
+
                       </ul>
                   </div>
                    
@@ -174,14 +230,44 @@
         
       </div>
 
+      <div class="wrap center"> <!-- Just to center ver and hor -->
+          <div class="wrap-label" style="border: 0;" >
+
+
+              <label class="custom-select" for="styledSelect1">
+
+                  <select id="styledSelect1" name="language">
+
+                      <option value="">English</option>
+                      <option value="1">Ukraine</option>
+
+                  </select>
+              </label>
+
+
+
+
+
+          </div>
+
+
+      </div>
+
       <div class="buttons" >
         <div class="container">
             <a  class="btn btn-2"><button style="outline: none;   border: 0;  background: transparent; color: white ; font-size: 15px "  type="submit"> Login</button></a>
           <a  style="color: white" >Your dont have account?<br><a onclick="location.href='/registration'" class="btn3" >Create account</a>
             </div>
       </div>
+
+
   </div>
 </form>
+
+
+
+
+
 
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>

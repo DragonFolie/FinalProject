@@ -231,4 +231,22 @@
   2021-09-24 03:57:34 ERROR Admin:1269 - Cant get Info About Session And Movies java.sql.SQLException: Column Index out of range, 12 > 11. 
   2021-09-24 03:57:50 ERROR Admin:1266 - Cant get Info About Session And Movies java.sql.SQLException: Column Index out of range, 12 > 11. 
   2021-09-24 03:58:44 ERROR Admin:1260 - Cant get Info About Session And Movies java.sql.SQLException: Column Index out of range, 12 > 11. 
+  2021-09-24 05:00:29 ERROR Admin:1257 - Cant get Info About Session And Movies java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1' at line 1
+  2021-09-24 05:01:16 ERROR Admin:1257 - Cant get Info About Session And Movies java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-4' at line 1
+  2021-09-25 00:10:31 ERROR Admin:1257 - Cant get Info About Session And Movies java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1' at line 1
+  2021-09-25 00:10:41 ERROR Admin:1257 - Cant get Info About Session And Movies java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1' at line 1
+  2021-09-25 00:11:18 ERROR Admin:1257 - Cant get Info About Session And Movies java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1' at line 1
+  2021-09-25 00:12:01 INFO  LogoutServlet:52 - Logging user: admin
+  2021-09-25 00:12:05 ERROR Admin:1257 - Cant get Info About Session And Movies java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1' at line 1
+  2021-09-25 00:13:16 ERROR Admin:1257 - Cant get Info About Session And Movies java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1' at line 1
+  2021-09-25 02:34:29 INFO  LogoutServlet:52 - Logging user: test
+  2021-09-25 03:02:13 INFO  LogoutServlet:54 - Logging user: admin
+  2021-09-25 03:06:52 INFO  LogoutServlet:54 - Logging user: admin
+  2021-09-25 03:09:40 INFO  LogoutServlet:54 - Logging user: admin
+  2021-09-25 03:18:08 INFO  LogoutServlet:54 - Logging user: admin
+  2021-09-25 04:00:46 INFO  LogoutServlet:54 - Logging user: admin
+  2021-09-25 04:06:22 INFO  LogoutServlet:54 - Logging user: admin
+  2021-09-25 04:10:41 INFO  LogoutServlet:54 - Logging user: admin
+  2021-09-25 04:17:32 INFO  LogoutServlet:54 - Logging user: admin
+  2021-09-25 04:18:55 INFO  LogoutServlet:54 - Logging user: admin
   

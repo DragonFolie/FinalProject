@@ -33,6 +33,7 @@ public class LoginServlet  extends HttpServlet {
           Logger logger =  Logger.getLogger(LogoutServlet.class.getName());
         String name = req.getParameter("name_login");
         String password = req.getParameter("pass_login");
+        String language = req.getParameter("language");
 
 
 //
@@ -44,6 +45,7 @@ public class LoginServlet  extends HttpServlet {
 
             HttpSession httpSession = req.getSession();
             httpSession.setAttribute("name",name);
+            httpSession.setAttribute("language",language);
 
 
 //            System.out.println("find user with:" + name + "-" + password);

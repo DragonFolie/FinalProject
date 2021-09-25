@@ -1,4 +1,6 @@
 import java.io.*;
+import java.util.Locale;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -13,29 +15,21 @@ public class HelloServlet extends HttpServlet {
         System.out.println("Init");
     }
 
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("index.jsp");
+        requestDispatcher.forward(req, resp);
 
+        String language =  req.getParameter("language");
 
+        System.out.println("in2");
+    }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response)throws  IOException {
 
         response.setContentType("text/html");
 
-
-        try (PrintWriter writer = response.getWriter()) {
-            String name = request.getParameter("username");
-            String age = request.getParameter("user_age");
-            String gender = request.getParameter("gender");
-            String country = request.getParameter("country");
-            String[] courses = request.getParameterValues("courses");
-            writer.println("<p>Name: " + name + "</p>");
-            System.out.println(name);
-            writer.println("<p>Age: " + age + "</p>");
-            writer.println("<p>Gender: " + gender + "</p>");
-            writer.println("<p>Country: " + country + "</p>");
-            writer.println("<h4>Courses</h4>");
-            for (String course : courses)
-                writer.println("<li>" + course + "</li>");
-        }
+        System.out.println("in");
 
 
     }

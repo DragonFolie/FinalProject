@@ -480,7 +480,7 @@ ul.summary-list > li:last-child  {
 <nav class="header">
     <div class="header_container">
       <div class="logo">
-        <img src="img/logo_v2.jpg" alt="logo+Hinterland" href="http://localhost:8080"srcset="">
+        <img src="views/img/logo_v2.jpg" alt="logo+Hinterland" href="http://localhost:8080"srcset="">
         <span ><a href="http://localhost:8080" class="HINTERLAND">HINTERLAND</a></span>
     </div>
         <div class="header_container_empty">
@@ -499,10 +499,10 @@ ul.summary-list > li:last-child  {
                     <a href="https://www.facebook.com/"  target="_blank" >COMMUNITY</a>
                 </li>
                 <li>
-                    <a href="shop-right-sidebar.jsp"   >SHOP</a>
+                    <a href="views/shop-right-sidebar.jsp"   >SHOP</a>
                 </li>
                 <li>
-                    <a href="contact.jsp" target="_blank"  >SUPPORT</a>
+                    <a href="views/contact.jsp" target="_blank"  >SUPPORT</a>
                 </li>
                 <%
 

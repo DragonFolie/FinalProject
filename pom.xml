@@ -10,10 +10,13 @@
     <name>LearnToFinal</name>
     <packaging>war</packaging>
 
+
     <properties>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
         <junit.version>5.7.0</junit.version>
+        <servlet.version>3.1.0</servlet.version>
+        <jstl.version>1.2</jstl.version>
     </properties>
 
     <dependencies>
@@ -58,6 +61,23 @@
             <artifactId>log4j</artifactId>
             <version>1.2.16</version>
         </dependency>
+
+
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>${jstl.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>${servlet.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+
+
 
     </dependencies>
 

@@ -104,6 +104,18 @@
     </servlet-mapping>
 
 
+    <!-- UserProfile servlet -->
+    <servlet>
+        <servlet-name>shop</servlet-name>
+        <servlet-class>servlets.ShopServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>shop</servlet-name>
+        <url-pattern>/shop</url-pattern>
+    </servlet-mapping>
+
+
     <!-- Movie buy servlet -->
     <servlet>
         <servlet-name>movieBuy</servlet-name>
@@ -126,6 +138,9 @@
         <servlet-name>adminlist</servlet-name>
         <url-pattern>/adminlist</url-pattern>
     </servlet-mapping>
+
+
+
 
 
 
