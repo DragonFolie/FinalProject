@@ -1,9 +1,16 @@
+<%@ page import="java.util.ResourceBundle" %>
+<%@ page import="java.util.Locale" %>
+
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page isELIgnored="false" %>
 
 <fmt:setBundle basename="messages"/>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -1005,20 +1012,32 @@
                         <a href="https://www.facebook.com/"  target="_blank" >COMMUNITY</a>
                     </li>
                     <li>
-                        <a href="views/shop-right-sidebar.jsp"   >SHOP</a>
+                        <a href="views/shop-right-sidebar.jsp"  >
+                            <%
+
+                                ResourceBundle resourceBundle =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
+                                out.print( resourceBundle.getString("admin"));
+
+
+
+                            %>
+                        </a>
                     </li>
+
+
                     <li>
-                        <a href="views/contact.jsp" target="_blank"  ><fmt:message key="admin" /></a>
+                        <a href="views/contact.jsp" target="_blank"  > Contact</a>
                     </li>
 
-
+<%--                    <fmt:message key="admin" />--%>
 
 
 
 
                     <%
-
                         String name_user  = (String)session.getAttribute("name");
+
+
 
                         if(name_user != null ){
 
