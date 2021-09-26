@@ -249,4 +249,40 @@
   2021-09-25 04:10:41 INFO  LogoutServlet:54 - Logging user: admin
   2021-09-25 04:17:32 INFO  LogoutServlet:54 - Logging user: admin
   2021-09-25 04:18:55 INFO  LogoutServlet:54 - Logging user: admin
+  2021-09-26 00:30:57 INFO  LogoutServlet:60 - Logging user: admin   Role: 2
+  2021-09-26 00:32:13 INFO  LogoutServlet:60 - Logging user: admin   Role: 2
+  2021-09-26 00:34:40 INFO  LogoutServlet:60 - Logging user: admin   Role: 2
+  2021-09-26 00:36:28 INFO  LogoutServlet:62 - Logging user: admin   Role: 2
+  2021-09-26 00:36:55 INFO  LogoutServlet:62 - Logging user: admin   Role: 2
+  2021-09-26 00:44:30 INFO  LogoutServlet:62 - Logging user: test   Role: 1
+  2021-09-26 00:46:49 INFO  LogoutServlet:62 - Logging user: test   Role: 1
+  2021-09-26 00:46:51 INFO  LogoutServlet:31 - Successfully logged out user: test   Role : 1
+  2021-09-26 00:46:53 INFO  LogoutServlet:31 - Successfully logged out user: null   Role : null
+  2021-09-26 00:46:54 INFO  LogoutServlet:31 - Successfully logged out user: null   Role : null
+  2021-09-26 00:46:55 INFO  LogoutServlet:31 - Successfully logged out user: null   Role : null
+  2021-09-26 00:46:57 INFO  LogoutServlet:31 - Successfully logged out user: null   Role : null
+  2021-09-26 00:46:58 INFO  LogoutServlet:31 - Successfully logged out user: null   Role : null
+  2021-09-26 00:46:59 INFO  LogoutServlet:31 - Successfully logged out user: null   Role : null
+  2021-09-26 00:47:01 INFO  LogoutServlet:31 - Successfully logged out user: null   Role : null
+  2021-09-26 00:47:02 INFO  LogoutServlet:31 - Successfully logged out user: null   Role : null
+  2021-09-26 00:47:04 INFO  LogoutServlet:31 - Successfully logged out user: null   Role : null
+  2021-09-26 00:47:05 INFO  LogoutServlet:31 - Successfully logged out user: null   Role : null
+  2021-09-26 00:47:06 INFO  LogoutServlet:31 - Successfully logged out user: null   Role : null
+  2021-09-26 00:47:08 INFO  LogoutServlet:31 - Successfully logged out user: null   Role : null
+  2021-09-26 00:47:09 INFO  LogoutServlet:31 - Successfully logged out user: null   Role : null
+  2021-09-26 00:47:10 INFO  LogoutServlet:31 - Successfully logged out user: null   Role : null
+  2021-09-26 00:48:21 INFO  LogoutServlet:62 - Logging user: admin   Role: 2
+  2021-09-26 00:48:53 INFO  LogoutServlet:32 - Successfully logged out user: admin   Role : 2
+  2021-09-26 01:16:20 INFO  LogoutServlet:62 - Logging user: test   Role: 1
+  2021-09-26 02:52:29 INFO  LogoutServlet:62 - Logging user: test   Role: 1
+  2021-09-26 02:52:53 INFO  LogoutServlet:62 - Logging user: test   Role: 1
+  2021-09-26 02:53:56 INFO  LogoutServlet:65 - Logging user: test   Role: 1
+  2021-09-26 03:00:08 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: English
+  2021-09-26 03:04:26 INFO  LogoutServlet:32 - Successfully logged out user: test   Role : 1
+  2021-09-26 03:04:35 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-26 03:07:30 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-26 03:07:34 INFO  LogoutServlet:32 - Successfully logged out user: test   Role : 1
+  2021-09-26 03:07:56 INFO  LogoutServlet:32 - Successfully logged out user: null   Role : null
+  2021-09-26 03:10:50 INFO  LogoutServlet:32 - Successfully logged out user: null   Role : null
+  2021-09-26 03:10:51 INFO  LogoutServlet:32 - Successfully logged out user: null   Role : null
   

@@ -1,6 +1,7 @@
 package servlets;
 
 import DAO.Admin;
+import DAO.DB_ManagerDAO;
 import DAO.UserManagerDAO;
 import model.Model;
 import org.apache.log4j.Logger;
@@ -31,13 +32,21 @@ public class LoginServlet  extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
           Logger logger =  Logger.getLogger(LogoutServlet.class.getName());
+
+
         String name = req.getParameter("name_login");
         String password = req.getParameter("pass_login");
         String language = req.getParameter("language");
 
+        DB_ManagerDAO db_managerDAO=  new DB_ManagerDAO();
+
+        String role = db_managerDAO.getRoleByName(name);
+
 
 //
 //        System.out.println(name +" "+ password + " login user");
+
+        System.out.println(role);
 
 
 
@@ -46,12 +55,13 @@ public class LoginServlet  extends HttpServlet {
             HttpSession httpSession = req.getSession();
             httpSession.setAttribute("name",name);
             httpSession.setAttribute("language",language);
+            httpSession.setAttribute("role",role);
 
 
 //            System.out.println("find user with:" + name + "-" + password);
 
 
-            logger.info("Logging user: " + name);
+            logger.info("Logging user: " + name  + "   Role: " +  role+ "   Language: " +  language);
 //            resp.sendRedirect("index.jsp");
             RequestDispatcher requestDispatcher = req.getRequestDispatcher("/");
             requestDispatcher.forward(req, resp);

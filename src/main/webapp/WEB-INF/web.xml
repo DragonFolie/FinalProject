@@ -8,6 +8,29 @@
 
 
 
+    <error-page>
+        <error-code>500</error-code>
+        <location>/500.jsp</location>
+    </error-page>
+
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/404.jsp</location>
+    </error-page>
+
+    <error-page>
+        <error-code>403</error-code>
+        <location>/403.jsp</location>
+    </error-page>
+
+    <error-page>
+        <error-code>408</error-code>
+        <location>/408.jsp</location>
+    </error-page>
+
+
+
 
 
 
@@ -128,6 +151,10 @@
     </servlet-mapping>
 
 
+
+
+
+
     <!-- Admin list of movies servlet -->
     <servlet>
         <servlet-name>adminlist</servlet-name>
@@ -138,6 +165,9 @@
         <servlet-name>adminlist</servlet-name>
         <url-pattern>/adminlist</url-pattern>
     </servlet-mapping>
+
+
+
 
 
 
@@ -157,7 +187,16 @@
         <url-pattern>/tag</url-pattern>
     </servlet-mapping>
 
-    <!-- Custom Tag -->
+    <!-- Authentication filter -->
+
+    <filter>
+        <filter-name>mainFilter</filter-name>
+        <filter-class>Filter.Filter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>mainFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
 
 

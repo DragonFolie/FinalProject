@@ -17,6 +17,8 @@ public class Admin implements  AdminDAO{
     private static final String FIND_NICKNAME_AND_ROLE = "SELECT NickName,Role FROM user";
     private static final String  UPDATE_ROLE = "UPDATE user SET Role = ? WHERE NickName = ?";
 
+    private static final String GET_ROLE = "SELECT Role From ";
+
     private static final String GET_ALL_INFO_MOVIE = "";
 
     private static final String OUTPUT_TIME_AND_STATUS_ABOUT_MOVIE = "SELECT  TimeStart,TimeEnd,SessionDay,Status FROM session";
@@ -1261,13 +1263,43 @@ public class Admin implements  AdminDAO{
 
 
 
-    public String printListOfMovie(int countOfElements){
-
-        return null;
 
 
+    public String getRoleByName(String name){
 
+
+        UsersManager usersManager = new UsersManager();
+        String role = null;
+
+        PreparedStatement preparedStatement = null;
+        try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
+
+//            System.out.println("conn + " +conn);
+            preparedStatement = conn.prepareStatement("SELECT  Role FROM user WHERE NickName = ?");
+
+            preparedStatement.setString(1,name);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while(resultSet.next()){       //getInt
+
+                role =  resultSet.getString(1);
+
+            }
+
+
+
+            return role;
+
+
+        } catch (IOException | SQLException | ClassNotFoundException e) {
+//            logger.info("Exception here" + e);
+            logger.error("Cant get Role By Name " + e);
+            return null;
+        }
     }
+
+
 
 
 

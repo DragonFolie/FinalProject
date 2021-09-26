@@ -270,6 +270,12 @@ public class DB_ManagerDAO implements InterfaceController {
     }
 
 
+    public String getRoleByName(String name){
+
+        Admin admin = new Admin();
+        return admin.getRoleByName(name);
+    }
+
 
 
 

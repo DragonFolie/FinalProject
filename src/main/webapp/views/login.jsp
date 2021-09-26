@@ -238,8 +238,8 @@
 
                   <select id="styledSelect1" name="language">
 
-                      <option value="">English</option>
-                      <option value="1">Ukraine</option>
+                      <option >English</option>
+                      <option >Ukraine</option>
 
                   </select>
               </label>

@@ -262,7 +262,7 @@ public class UsersManager implements UserManagerDAO  {
         PreparedStatement preparedStatement = null;
         try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
 
-            System.out.println("name and pass:" + name + "-" + password );
+//            System.out.println("name and pass:" + name + "-" + password );
 
             preparedStatement = conn.prepareStatement(FIND_USER_IN_DB);
             preparedStatement.setString(1,name);

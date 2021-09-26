@@ -1014,9 +1014,23 @@
                     <li>
                         <a href="views/shop-right-sidebar.jsp"  >
                             <%
+                                String language = (String)session.getAttribute("language");
 
-                                ResourceBundle resourceBundle =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
-                                out.print( resourceBundle.getString("admin"));
+                                if (language.equals("Ukraine")){
+
+                                    ResourceBundle resourceBundle =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
+                                    out.print( resourceBundle.getString("shop"));
+
+                                }
+
+                                System.out.println(language.equals("Ukraine"));
+                                if (!language.equals("Ukraine")){
+
+                                    out.print("SHOP");
+
+                                }
+
+
 
 
 
@@ -1026,7 +1040,7 @@
 
 
                     <li>
-                        <a href="views/contact.jsp" target="_blank"  > Contact</a>
+                        <a href="views/contact.jsp" target="_blank"  > CONTACT </a>
                     </li>
 
 <%--                    <fmt:message key="admin" />--%>
@@ -1035,13 +1049,20 @@
 
 
                     <%
+
+
                         String name_user  = (String)session.getAttribute("name");
+                        String role  = (String)session.getAttribute("role");
+
+                        System.out.println("Lang:" + language);
 
 
 
-                        if(name_user != null ){
 
-                            if(name_user.equals("admin")){
+
+                        if(role != null ){
+
+                            if(role.equals("2")){
 
                                 out.print(
                                         "<li>\n" +
@@ -1055,7 +1076,7 @@
                                 );
 
                             }
-                            if(!name_user.equals("admin")){
+                            if(role.equals("1")){
 
                                 out.print(
                                         "<li>\n" +
