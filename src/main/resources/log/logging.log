@@ -285,4 +285,6 @@
   2021-09-26 03:07:56 INFO  LogoutServlet:32 - Successfully logged out user: null   Role : null
   2021-09-26 03:10:50 INFO  LogoutServlet:32 - Successfully logged out user: null   Role : null
   2021-09-26 03:10:51 INFO  LogoutServlet:32 - Successfully logged out user: null   Role : null
+  2021-09-26 04:21:50 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-26 04:22:08 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
   

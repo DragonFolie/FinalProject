@@ -1,5 +1,6 @@
 <%@ page import="java.util.ResourceBundle" %>
 <%@ page import="java.util.Locale" %>
+<%@ page import="java.io.IOException" %>
 
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -1009,10 +1010,34 @@
 
 
                     <li>
-                        <a href="https://www.facebook.com/"  target="_blank" >COMMUNITY</a>
+                        <a href="https://www.facebook.com/"  target="_blank" >
+
+                            <%
+
+
+                                ResourceBundle resourceBundle =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
+                                out.print("<a href=\"views/shop-right-sidebar.jsp\"  > "+ resourceBundle.getString("shop") +"   </a>" );
+
+
+
+
+                            %>
+
+                        </a>
                     </li>
                     <li>
-                        <a href="views/shop-right-sidebar.jsp"  > SHOP   </a>
+
+                            <%
+
+
+                                        ResourceBundle resourceBundleShopShop =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
+                                        out.print("<a href=\"views/shop-right-sidebar.jsp\"  > "+ resourceBundleShopShop.getString("shop") +"   </a>" );
+
+
+
+
+                            %>
+
                     </li>
 
 
@@ -1020,12 +1045,13 @@
                         <a href="views/contact.jsp" target="_blank"  > CONTACT </a>
                     </li>
 
-                    <%--                    <fmt:message key="admin" />--%>
+<%--                    <fmt:message key="admin" />--%>
 
 
 
 
                     <%
+
 
                         String name_user  = (String)session.getAttribute("name");
                         String role  = (String)session.getAttribute("role");
