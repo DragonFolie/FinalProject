@@ -1003,7 +1003,18 @@
             <div class="navigation">
                 <ul>
                     <li >
-                        <a onclick="location.href='/movies'">MOVIES</a>
+                        <a onclick="location.href='/moviesUa'">
+                            <%
+
+
+                                ResourceBundle resourceBundleMovie =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
+                                out.print(" "+ resourceBundleMovie.getString("movie") +"   " );
+
+
+
+
+                            %>
+                        </a>
 
                     </li>
 
@@ -1012,40 +1023,42 @@
                     <li>
                         <a href="https://www.facebook.com/"  target="_blank" >
 
-                            <%
 
-
-                                ResourceBundle resourceBundle =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
-                                out.print("<a href=\"views/shop-right-sidebar.jsp\"  > "+ resourceBundle.getString("shop") +"   </a>" );
-
-
-
-
-                            %>
 
                         </a>
                     </li>
                     <li>
 
-                            <%
+                        <%
 
 
-                                        ResourceBundle resourceBundleShopShop =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
-                                        out.print("<a href=\"views/shop-right-sidebar.jsp\"  > "+ resourceBundleShopShop.getString("shop") +"   </a>" );
+                            ResourceBundle resourceBundleShopShop =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
+                            out.print("<a href=\"views/shop-right-sidebar.jsp\"  > "+ resourceBundleShopShop.getString("shop") +"   </a>" );
 
 
 
 
-                            %>
+                        %>
 
                     </li>
 
 
                     <li>
-                        <a href="views/contact.jsp" target="_blank"  > CONTACT </a>
+                        <a href="views/contact.jsp" target="_blank"  >
+                            <%
+
+
+                                ResourceBundle  resourceBundleSupport =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
+                                out.print(" "+ resourceBundleSupport.getString("support") +"  " );
+
+
+
+
+                            %>
+                        </a>
                     </li>
 
-<%--                    <fmt:message key="admin" />--%>
+                    <%--                    <fmt:message key="admin" />--%>
 
 
 
@@ -1066,13 +1079,15 @@
                             if(role.equals("2")){
 
                                 out.print(
-                                        "<li>\n" +
-                                                "  Hello, "+name_user+" Welcome to <a onclick=\"location.href='/admin'\"  >Admin Page</a>" +
-                                                " </li>\n"+
+                                        "<li>\n" );
+                                ResourceBundle  resourceBundleHello =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
+                                out.print("<a href=\"views/shop-right-sidebar.jsp\"  > "+ resourceBundleHello.getString("hello") +"   </a>" );
+                                out.print( name_user+" Your <a onclick=\"location.href='/adminUa'\"  >Admin Page</a>" +
+                                        " </li>\n"+
 
-                                                "<li>\n" +
-                                                "  <button class=\"w3-btn w3-hover-light-blue w3-round-large\" style=\"outline: none;   border: 0;  background: transparent; color: white ; font-size: 15px \" onclick=\"location.href='/logout'\">Logout </button>" +
-                                                " </li>\n"
+                                        "<li>\n" +
+                                        "  <button class=\"w3-btn w3-hover-light-blue w3-round-large\" style=\"outline: none;   border: 0;  background: transparent; color: white ; font-size: 15px \" onclick=\"location.href='/logout'\">Logout </button>" +
+                                        " </li>\n"
 
                                 );
 
@@ -1081,12 +1096,23 @@
 
                                 out.print(
                                         "<li>\n" +
-                                                "  Hello, "+name_user+" <a onclick=\"location.href='/userProfile'\"  >Profile</a>\n" +
-                                                " </li>\n"+
+                                                "  Hello, "+name_user+" <a onclick=\"location.href='/userProfileUa'\"  >");
+                                ResourceBundle  resourceBundleProfile =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
+                                out.print(" "+ resourceBundleProfile.getString("profile") +"   " );
 
-                                                "<li>\n" +
-                                                "  <button class=\"w3-btn w3-hover-light-blue w3-round-large\" style=\"outline: none;   border: 0;  background: transparent; color: white ; font-size: 15px \" onclick=\"location.href='/logout'\">Logout </button>" +
-                                                " </li>\n"
+                                out.print( "</a>\n" +
+                                        " </li>\n"+
+
+                                        "<li>\n" +
+                                        "  <button class=\"w3-btn w3-hover-light-blue w3-round-large\" style=\"outline: none;   border: 0;  background: transparent; color: white ; font-size: 15px \" onclick=\"location.href='/logoutUa'\">");
+
+                                ResourceBundle resourceBundleSLogout =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
+                                out.print("   "+ resourceBundleSLogout.getString("logout") +"   " );
+
+
+
+                                out.print("</button>" +
+                                        " </li>\n"
 
                                 );
 
@@ -1102,12 +1128,21 @@
 
                             out.print(
                                     "<li>\n" +
-                                            "  <a onclick=\"location.href='/login'\">LOGIN</a>\n" +
-                                            " </li>\n" +
+                                            "  <a onclick=\"location.href='/loginUa'\">");
 
-                                            " <li>\n" +
-                                            "     <a onclick=\"location.href='/registration'\">REGISTER</a>\n" +
-                                            "</li>"
+                            ResourceBundle resourceBundleSLogout =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
+                            out.print("   "+ resourceBundleSLogout.getString("login") +"   " );
+
+                            out.print( "</a>\n" +
+                                    " </li>\n" +
+
+                                    " <li>\n" +
+                                    "     <a onclick=\"location.href='/registrationUa'\">");
+                            ResourceBundle resourceBundleSRegister =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
+                            out.print("   "+ resourceBundleSRegister.getString("register") +"   " );
+
+                            out.print( "</a>\n" +
+                                    "</li>"
                             );
 
 
@@ -1265,15 +1300,57 @@
                     <div class="down_menu_inner_fifth_list" >
                         <ul style="font-weight: bold;">
 
-                            <li><a href="https://dou.ua/">JOIN US</a></li>
+                            <li><a href="https://dou.ua/">
 
-                            <li><a href="views/movies.jsp" >MOVIE</a></li>
+                                <%
 
-                            <li><a href="https://www.facebook.com/" >COMMUNITY</a></li>
 
-                            <li><a href="views/contact.jsp">CONTACT</a></li>
+                                    ResourceBundle resourceBundleJoinUs =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
+                                    out.print("<a href=\"views/shop-right-sidebar.jsp\"  > "+ resourceBundleJoinUs.getString("joinUs") +"   </a>" );
 
-                            <li><a href="views/contact.jsp" >SUPPORT</a></li>
+
+
+
+                                %>
+
+                            </a></li>
+
+                            <li><a href="views/movies.jsp" ><%
+
+
+                                resourceBundleMovie =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
+                                out.print("<a href=\"views/shop-right-sidebar.jsp\"  > "+ resourceBundleMovie.getString("movie") +"   </a>" );
+
+
+
+
+                            %></a></li>
+
+                            <li><a href="https://www.facebook.com/" >
+                                <%
+
+
+                                    resourceBundleSupport =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
+                                    out.print("<a href=\"views/shop-right-sidebar.jsp\"  > "+ resourceBundleSupport.getString("support") +"   </a>" );
+
+
+
+
+                                %>
+                            </a></li>
+
+                            <li><a href="views/contact.jsp"><%
+
+
+                                resourceBundleSupport =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
+                                out.print("<a href=\"views/shop-right-sidebar.jsp\"  > "+ resourceBundleSupport.getString("community") +"   </a>" );
+
+
+
+
+                            %></a></li>
+
+
 
 
 

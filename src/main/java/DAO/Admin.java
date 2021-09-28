@@ -237,6 +237,48 @@ public class Admin implements  AdminDAO{
     }
 
 
+
+
+
+    public ArrayList findAllMovieUkraineName(){
+
+        UsersManager usersManager = new UsersManager();
+
+        ArrayList list = new ArrayList();
+
+        PreparedStatement preparedStatement = null;
+        try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
+
+//            System.out.println("conn + " +conn);
+            preparedStatement = conn.prepareStatement("SELECT DISTINCT Name FROM filmdetail;");
+            preparedStatement.execute();
+
+
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()){
+                StringBuilder sb = new StringBuilder();
+                sb.append(resultSet.getString(1));
+                list.add(sb);
+
+
+            }
+            return list;
+
+
+        }catch (IOException | SQLException | ClassNotFoundException e) {
+//            logger.info("Exception here" + e);
+//            logger.error("Cant findAllMovieName " + e);
+
+            e.printStackTrace();
+            return null;
+        }
+
+
+    }
+
+
     public ArrayList findAllUniqueMovieName(){
 
         UsersManager usersManager = new UsersManager();
@@ -1317,13 +1359,11 @@ public class Admin implements  AdminDAO{
         ArrayList arrayList= new ArrayList();
 
 
-        arrayList =  admin.getInfoAboutSessionAndMovies(5,1);
+        arrayList =  admin.findAllMovieUkraineName();
 
 
-        for (int i = 0; i < arrayList.size(); i++) {
-            System.out.println( arrayList.get(i));
-        }
-        arrayList = admin.findAllMovieName();
+
+
         System.out.println(arrayList);
 
 

@@ -82,7 +82,10 @@
 <div class="content">
 
   <div class="container">
-    <h2 class="mb-5" ><a href="admin_page.jsp">Go Back</a></h2>
+    <h2 class="mb-5" ><a  style="color: white" href="javascript:history.back()"
+                            data-categ="notFound"
+                            data-value="back2Crello404"
+                            class="notfound-back">Go back>Go Back</a></h2>
     <h2 class="mb-5">Movie List</h2>
 
 

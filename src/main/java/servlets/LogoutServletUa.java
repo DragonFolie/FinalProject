@@ -13,17 +13,34 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 
-public class LogoutServlet extends HttpServlet {
+public class LogoutServletUa extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
+
+
+
+
+
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("ua/index.jsp");
+            requestDispatcher.forward(request, response);
+
+
+    }
+
+
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+
         Logger logger =  Logger.getLogger(LogoutServlet.class.getName());
 
-        HttpSession session = request.getSession();
+        HttpSession session = req.getSession();
 
         String name = (String)session.getAttribute("name");
         String role = (String)session.getAttribute("role");
-        response.setContentType("text/html");
-        PrintWriter out=response.getWriter();
+        resp.setContentType("text/html");
+        PrintWriter out=resp.getWriter();
 
 
 
@@ -32,11 +49,6 @@ public class LogoutServlet extends HttpServlet {
 
         logger.info("Successfully logged out user: " + name + "   Role : " +  role);
 
-
-
-
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/");
-            requestDispatcher.forward(request, response);
 
 
     }

@@ -287,4 +287,255 @@
   2021-09-26 03:10:51 INFO  LogoutServlet:32 - Successfully logged out user: null   Role : null
   2021-09-26 04:21:50 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
   2021-09-26 04:22:08 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-27 22:50:45 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-27 22:52:44 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-27 23:16:25 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-27 23:19:29 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-27 23:20:12 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-27 23:40:51 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-27 23:41:05 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-27 23:44:30 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-27 23:44:34 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-27 23:50:18 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-27 23:57:12 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-27 23:58:08 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-27 23:58:30 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 00:04:35 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 01:28:33 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 01:31:58 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 01:32:25 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 01:32:28 INFO  LogoutServlet:36 - Successfully logged out user: test   Role : 1
+  2021-09-28 01:33:00 INFO  LogoutServlet:36 - Successfully logged out user: null   Role : null
+  2021-09-28 01:33:14 INFO  LogoutServlet:36 - Successfully logged out user: null   Role : null
+  2021-09-28 01:33:20 INFO  LogoutServlet:36 - Successfully logged out user: null   Role : null
+  2021-09-28 01:34:57 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 01:34:59 INFO  LogoutServlet:36 - Successfully logged out user: test   Role : 1
+  2021-09-28 01:40:17 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 01:40:18 INFO  LogoutServlet:36 - Successfully logged out user: test   Role : 1
+  2021-09-28 01:47:46 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 01:48:29 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 01:54:07 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 01:57:43 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 01:59:31 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 02:00:47 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 02:02:14 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 02:09:33 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 02:32:42 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 03:47:30 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 03:49:04 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 03:49:07 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 03:49:07 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 03:49:07 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 03:49:07 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 03:49:07 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 03:49:07 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 03:49:07 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 03:49:07 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 03:52:13 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 03:52:39 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 04:05:04 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 04:06:01 INFO  LogoutServlet:33 - Successfully logged out user: test   Role : 1
+  2021-09-28 04:06:07 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 04:07:11 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 04:07:55 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 04:08:11 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 04:09:27 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 04:11:22 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 04:11:41 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 04:11:43 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 04:12:13 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 04:12:17 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: English
+  2021-09-28 04:12:18 INFO  LogoutServlet:33 - Successfully logged out user: test   Role : 1
+  2021-09-28 04:12:25 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 04:13:15 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 04:15:09 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:15:09 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:15:09 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:15:09 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:15:09 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:15:09 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:15:09 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:15:09 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:15:20 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:15:20 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:15:20 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:15:20 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:15:20 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:15:20 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:15:20 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:15:20 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:21:07 INFO  LogoutServlet:65 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 04:22:24 INFO  LogoutServlet:65 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 04:22:57 INFO  LogoutServlet:65 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 04:24:54 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 04:24:56 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:24:56 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:24:56 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:24:56 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:24:56 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:24:56 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:24:56 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:24:56 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:26:09 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 04:27:33 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 04:27:36 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:27:36 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:27:36 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:27:36 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:27:36 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:27:36 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:27:36 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:27:36 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:29:01 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 04:29:03 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:29:03 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:29:03 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:29:03 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:29:03 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:29:03 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:29:03 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:29:03 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:29:34 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:29:34 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:29:34 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:29:34 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:29:34 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:29:34 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:29:34 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:29:34 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:29:54 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 04:29:56 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:29:56 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:29:56 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:29:56 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:29:56 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:29:56 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:29:56 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:29:56 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:31:56 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 04:32:45 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 04:33:55 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 04:34:31 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 04:35:03 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 04:35:34 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: Ukraine
+  2021-09-28 04:37:05 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:37:05 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:37:05 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:37:05 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:37:05 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:37:05 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:37:05 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:37:05 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:38:27 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:38:27 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:38:27 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:38:27 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:38:27 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:38:27 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:38:27 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:38:27 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:42:56 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:42:56 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:42:56 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:42:56 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:42:56 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:42:56 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:42:56 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:42:56 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:46:25 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:46:25 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:46:25 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:46:25 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:46:25 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:46:25 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:46:25 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:46:25 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:47:21 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:47:21 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:47:21 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:47:21 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:47:21 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:47:21 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:47:21 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:47:21 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:47:53 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:47:53 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:47:53 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:47:53 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:47:53 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:47:53 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:47:53 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:47:53 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:50:31 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:50:31 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:50:31 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:50:31 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:50:31 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:50:31 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:50:31 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:50:31 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:53:24 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:53:24 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:53:24 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:53:24 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:53:24 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:53:24 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:53:24 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:53:24 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:54:27 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:54:27 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:54:27 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:54:27 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:54:27 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:54:27 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:54:27 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:54:27 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:54:54 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:54:54 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:54:54 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:54:54 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:54:54 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:54:54 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:54:54 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:54:54 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:55:24 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:55:24 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:55:24 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:55:24 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:55:24 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:55:24 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:55:24 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:55:24 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:56:11 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:56:11 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:56:11 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:56:11 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:56:11 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:56:11 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:56:11 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:56:11 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:56:35 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:56:35 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:56:35 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:56:35 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:56:35 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:56:35 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:56:35 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:56:35 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:57:24 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:57:24 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:57:24 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:57:24 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:57:24 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:57:24 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:57:24 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:57:24 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:58:03 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:58:03 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:58:03 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:58:03 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:58:03 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:58:03 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:58:03 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 04:58:03 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
   

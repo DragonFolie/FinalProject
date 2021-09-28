@@ -14,10 +14,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.*;
 
-public class LoginServlet  extends HttpServlet {
+public class LoginServletUa  extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/login.jsp");
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("ua/login.jsp");
         requestDispatcher.forward(req, resp);
 
 
@@ -31,7 +31,7 @@ public class LoginServlet  extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-        Logger logger =  Logger.getLogger(LogoutServlet.class.getName());
+          Logger logger =  Logger.getLogger(LogoutServlet.class.getName());
 
 
         String name = req.getParameter("name_login");
@@ -65,8 +65,7 @@ public class LoginServlet  extends HttpServlet {
 //            resp.sendRedirect("index.jsp");
 
             if (language.equals("Ukraine")){
-
-                RequestDispatcher requestDispatcher = req.getRequestDispatcher("/index");
+                RequestDispatcher requestDispatcher = req.getRequestDispatcher("/ua/");
                 requestDispatcher.forward(req, resp);
 
             }

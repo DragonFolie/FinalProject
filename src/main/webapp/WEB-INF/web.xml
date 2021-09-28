@@ -8,26 +8,11 @@
 
 
 
-    <error-page>
-        <error-code>500</error-code>
-        <location>/500.jsp</location>
-    </error-page>
 
 
-    <error-page>
-        <error-code>404</error-code>
-        <location>/404.jsp</location>
-    </error-page>
 
-    <error-page>
-        <error-code>403</error-code>
-        <location>/403.jsp</location>
-    </error-page>
 
-    <error-page>
-        <error-code>408</error-code>
-        <location>/408.jsp</location>
-    </error-page>
+
 
 
 
@@ -165,6 +150,110 @@
         <servlet-name>adminlist</servlet-name>
         <url-pattern>/adminlist</url-pattern>
     </servlet-mapping>
+
+
+
+
+
+
+
+    <!-- UA  servlet --><!-- UA  servlet --><!-- UA  servlet --><!-- UA  servlet -->
+
+
+
+    <!-- index servlet -->
+    <servlet>
+        <servlet-name>index</servlet-name>
+        <servlet-class>servlets.IndexUaServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>index</servlet-name>
+        <url-pattern>/index</url-pattern>
+    </servlet-mapping>
+
+
+
+
+
+    <!-- add servlet -->
+    <servlet>
+        <servlet-name>registrationUa</servlet-name>
+        <servlet-class>servlets.AddServletUa</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>registrationUa</servlet-name>
+        <url-pattern>/registrationUa</url-pattern>
+    </servlet-mapping>
+
+    <!-- list servlet -->
+    <servlet>
+        <servlet-name>moviesUa</servlet-name>
+        <servlet-class>servlets.ListServletUa</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>moviesUa</servlet-name>
+        <url-pattern>/moviesUa</url-pattern>
+    </servlet-mapping>
+
+
+
+
+
+    <!-- Login servlet -->
+    <servlet>
+        <servlet-name>loginUa</servlet-name>
+        <servlet-class>servlets.LoginServletUa</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>loginUa</servlet-name>
+        <url-pattern>/loginUa</url-pattern>
+    </servlet-mapping>
+
+    <!-- LogOut servlet -->
+    <servlet>
+        <servlet-name>logoutUa</servlet-name>
+        <servlet-class>servlets.LogoutServletUa</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>logoutUa</servlet-name>
+        <url-pattern>/logoutUa</url-pattern>
+    </servlet-mapping>
+
+
+
+    <!-- Admin servlet -->
+    <servlet>
+        <servlet-name>adminUa</servlet-name>
+        <servlet-class>servlets.AdminServletUa</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>adminUa</servlet-name>
+        <url-pattern>/adminUa</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- UserProfile servlet -->
+    <servlet>
+        <servlet-name>userProfileUa</servlet-name>
+        <servlet-class>servlets.UserProfileUa</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>userProfileUa</servlet-name>
+        <url-pattern>/userProfileUa</url-pattern>
+    </servlet-mapping>
+
+
+
+
+
+
 
 
 

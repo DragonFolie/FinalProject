@@ -9,7 +9,7 @@ import java.io.IOException;
 
 
 @WebServlet(name = "Error404Servlet" , urlPatterns = "/exception")
-public class TestError404Servlet extends HttpServlet {
+public class TestError500Servlet extends HttpServlet {
 
 
     @Override

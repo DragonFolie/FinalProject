@@ -147,7 +147,10 @@ p {
   <div class="titanic"></div>
 
   <h1 data-txt="5⬡⬡" aria-label="Internal Server Error">5<span data-overlay="🤦‍♀️">⬡</span><span data-overlay="🤦‍♂️">⬡</span></h1>
-  <p>It's broken, but it's not your fault.<br><br>Go back</p>
+  <p >It's broken, but it's not your fault.<br><br><a style="color: white" href="javascript:history.back()"
+                                                      data-categ="notFound"
+                                                      data-value="back2Crello404"
+                                                      class="notfound-back">Go back</a></p>
   
 </body>
 </html>

@@ -2151,7 +2151,7 @@ public class NewMoviePage {
                 "\n" +
                 "        <ul class=\"footer_list_text\">\n" +
                 "            <li >\n" +
-                "                <a href=\"movies.jsp\" class=\"footer_list_text_li\">MOVIE</a>\n" +
+                "                <a href=\"moviesUa.jsp\" class=\"footer_list_text_li\">MOVIE</a>\n" +
                 "            </li>\n" +
                 "\n" +
                 "           \n" +

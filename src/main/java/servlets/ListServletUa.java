@@ -11,10 +11,12 @@ import javax.servlet.http.HttpSession;
 import java.io.*;
 import java.util.List;
 
-public class ListServlet  extends HttpServlet {
+public class ListServletUa  extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+
 
         Model model = Model.getInstance();
         List<String> names = model.list();
@@ -26,17 +28,19 @@ public class ListServlet  extends HttpServlet {
 
 
 
-        
-            RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/movies.jsp");
-            requestDispatcher.forward(req, resp);
 
-
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("ua/moviesUa.jsp");
+        requestDispatcher.forward(req, resp);
 
 
 
 
     }
 
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 
+
+    }
 }
