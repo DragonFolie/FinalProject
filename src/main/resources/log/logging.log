@@ -538,4 +538,18 @@
   2021-09-28 04:58:03 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
   2021-09-28 04:58:03 ERROR Admin:527 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
   2021-09-28 04:58:03 ERROR Admin:574 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 23:09:26 ERROR Admin:530 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 23:09:26 ERROR Admin:577 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 23:09:26 ERROR Admin:530 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 23:09:26 ERROR Admin:577 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 23:09:26 ERROR Admin:530 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 23:09:26 ERROR Admin:577 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 23:09:26 ERROR Admin:530 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 23:09:26 ERROR Admin:577 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 23:09:26 ERROR Admin:530 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 23:09:26 ERROR Admin:577 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 23:09:27 ERROR Admin:530 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 23:09:27 ERROR Admin:577 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 23:09:27 ERROR Admin:530 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-28 23:09:27 ERROR Admin:577 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
   

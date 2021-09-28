@@ -285,18 +285,20 @@ INSERT INTO `testtable` ". "(`TestColumn1`, `TestColumn2`) ". "VALUES('Second no
 
             ArrayList timeStartEnd = new ArrayList();
             ArrayList nameOfMovie = new ArrayList();
-            ArrayList nameOfMovie2 = new ArrayList();
+            ArrayList nameOfMovieUkr = new ArrayList();
+
 
 
             DB_ManagerDAO dbManager2 = new DB_ManagerDAO();
             DB_ManagerDAO dbManager3= new DB_ManagerDAO();
-            DB_ManagerDAO dbManager4= new DB_ManagerDAO();
+
 
 
             timeStartEnd=  dbManager2.findAllMovieSession();
 //            System.out.println(timeStartEnd.size()+  " size1 ");
-            nameOfMovie = dbManager4.findAllMovieName();
-            nameOfMovie2 = dbManager4.findAllMovieUkraineName();
+            nameOfMovie = dbManager2.findAllMovieName();
+
+            nameOfMovieUkr = dbManager2.findAllMovieUkrName();
 //            System.out.println(nameOfMovie.size()+  " size2 ");
 
             String timeS = null;
@@ -307,24 +309,23 @@ INSERT INTO `testtable` ". "(`TestColumn1`, `TestColumn2`) ". "VALUES('Second no
 
             String regex = "(.+),(.+),(.+),(.+)";
 
-
-            for (int i = 0; i < nameOfMovie2.size(); i++) {
+            for (int i = 0; i < timeStartEnd.size(); i++) {
 
                 StringBuilder sb = new StringBuilder() ;
                 StringBuilder name = new StringBuilder() ;
-                StringBuilder name2 = new StringBuilder() ;
+                StringBuilder nameUkr = new StringBuilder() ;
 
                 sb.append(    timeStartEnd.get(i) ) ;
                 name.append(nameOfMovie.get(i));
-                name2.append(nameOfMovie2.get(i));
+
+
+                nameUkr.append(nameOfMovieUkr.get(i));
+
+
 
 
                 String FolderURL = dbManager2.getFolderURL(name.toString());
                 String PosterURL = dbManager3.getPosterURL(name.toString());
-
-                System.out.println("++++++++++++++++++++++");
-                System.out.println("Folder:"+FolderURL + " - " +name.toString());
-                System.out.println("Poster:"+PosterURL + " - " +name.toString());
 
 
 //                System.out.println(sb.toString() + " sb");
@@ -351,11 +352,11 @@ INSERT INTO `testtable` ". "(`TestColumn1`, `TestColumn2`) ". "VALUES('Second no
                             "                <a href='views/"+FolderURL+".jsp' class=\"block_news_img_text\">\n" +
                             "\n" +
                             "                    <div class=\"block_news_img_text\">\n" +
-                            "                        <img src=\"/views/img/MoviePoster/"+FolderURL+"/"+PosterURL+"\" style=\"width: 329px; height: auto;\"  alt=\"\" srcset=\"\">\n" +
+                            "                        <img src=\"views/img/MoviePoster/"+FolderURL+"/"+PosterURL+"\" style=\"width: 329px; height: auto;\"  alt=\"\" srcset=\"\">\n" +
                             "                    </div>\n" +
                             "\n" +
                             "                    <div class=\"block_news_text\">\n" +
-                            "                        <h2 href='views/We_Are_Your_Friend.jsp' class=\"block_news_text_inner\"> "+ name2+"</h2>\n" +
+                            "                        <h2 href='views/We_Are_Your_Friend.jsp' class=\"block_news_text_inner\"> "+ nameUkr+"</h2>\n" +
                             "\n" +
                             "                    </div>\n" +
                             "                    \n" +

@@ -237,10 +237,7 @@ public class Admin implements  AdminDAO{
     }
 
 
-
-
-
-    public ArrayList findAllMovieUkraineName(){
+    public ArrayList findAllMovieUkrName(){
 
         UsersManager usersManager = new UsersManager();
 
@@ -250,7 +247,7 @@ public class Admin implements  AdminDAO{
         try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
 
 //            System.out.println("conn + " +conn);
-            preparedStatement = conn.prepareStatement("SELECT DISTINCT Name FROM filmdetail;");
+            preparedStatement = conn.prepareStatement("SELECT  Name FROM filmdetail");
             preparedStatement.execute();
 
 
@@ -277,6 +274,12 @@ public class Admin implements  AdminDAO{
 
 
     }
+
+
+
+
+
+
 
 
     public ArrayList findAllUniqueMovieName(){
@@ -1359,7 +1362,7 @@ public class Admin implements  AdminDAO{
         ArrayList arrayList= new ArrayList();
 
 
-        arrayList =  admin.findAllMovieUkraineName();
+        arrayList =  admin.findAllMovieUkrName();
 
 
 

@@ -130,10 +130,10 @@ public class DB_ManagerDAO implements InterfaceController {
     }
 
 
-    public ArrayList findAllMovieUkraineName() {
+    public ArrayList findAllMovieUkrName() {
         Admin admin = new Admin();
 
-        return admin.findAllMovieUkraineName();
+        return admin.findAllMovieUkrName();
     }
 
 
