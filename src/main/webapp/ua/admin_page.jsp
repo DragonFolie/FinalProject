@@ -481,17 +481,17 @@ ul.summary-list > li:last-child  {
 
 <nav class="header">
     <div class="header_container">
-      <div class="logo">
-        <img src="views/img/logo_v2.jpg" alt="logo+Hinterland" href="http://localhost:8080"srcset="">
-        <span ><a href="http://localhost:8080" class="HINTERLAND">HINTERLAND</a></span>
-    </div>
+        <div class="logo">
+            <img src="views/img/logo_v2.jpg" alt="logo+Hinterland" onclick="location.href='/index'" srcset="">
+            <span ><a onclick="location.href='/index'" class="HINTERLAND">HINTERLAND</a></span>
+        </div>
         <div class="header_container_empty">
 
         </div>
         <div class="header_nav">
             <ul class="header_inner_ul">
                 <li >
-                    <a onclick="location.href='/movies'">
+                    <a onclick="location.href='/moviesUa'">
                         <%
 
 
@@ -570,7 +570,7 @@ ul.summary-list > li:last-child  {
                                     "<li>\n" );
                             ResourceBundle  resourceBundleHello =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
                             out.print("<a href=\"views/shop-right-sidebar.jsp\"  > "+ resourceBundleHello.getString("hello") +"   </a>" );
-                            out.print( name_user+" Your <a onclick=\"location.href='/admin'\"  >Admin Page</a>" +
+                            out.print( name_user+" Your <a onclick=\"location.href='/adminUa'\"  >Admin Page</a>" +
                                     " </li>\n"+
 
                                     "<li>\n" +
@@ -584,7 +584,7 @@ ul.summary-list > li:last-child  {
 
                             out.print(
                                     "<li>\n" +
-                                            "  Hello, "+name_user+" <a onclick=\"location.href='/userProfile'\"  >");
+                                            "  Hello, "+name_user+" <a onclick=\"location.href='/userProfileUa'\"  >");
                             ResourceBundle  resourceBundleProfile =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
                             out.print(" "+ resourceBundleProfile.getString("profile") +"   " );
 
@@ -592,7 +592,7 @@ ul.summary-list > li:last-child  {
                                     " </li>\n"+
 
                                     "<li>\n" +
-                                    "  <button class=\"w3-btn w3-hover-light-blue w3-round-large\" style=\"outline: none;   border: 0;  background: transparent; color: white ; font-size: 15px \" onclick=\"location.href='/logout'\">");
+                                    "  <button class=\"w3-btn w3-hover-light-blue w3-round-large\" style=\"outline: none;   border: 0;  background: transparent; color: white ; font-size: 15px \" onclick=\"location.href='/logoutUa'\">");
 
                             ResourceBundle resourceBundleSLogout =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
                             out.print("   "+ resourceBundleSLogout.getString("logout") +"   " );
@@ -616,16 +616,16 @@ ul.summary-list > li:last-child  {
 
                         out.print(
                                 "<li>\n" +
-                                        "  <a onclick=\"location.href='/login'\">");
+                                        "  <a onclick=\"location.href='/loginUa'\">");
 
-                        ResourceBundle resourceBundleSLogout =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
-                        out.print("   "+ resourceBundleSLogout.getString("login") +"   " );
+                        ResourceBundle resourceBundleSLogin =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
+                        out.print("   "+ resourceBundleSLogin.getString("login") +"   " );
 
                         out.print( "</a>\n" +
                                 " </li>\n" +
 
                                 " <li>\n" +
-                                "     <a onclick=\"location.href='/registration'\">");
+                                "     <a onclick=\"location.href='/registrationUa'\">");
                         ResourceBundle resourceBundleSRegister =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
                         out.print("   "+ resourceBundleSRegister.getString("register") +"   " );
 
@@ -641,12 +641,9 @@ ul.summary-list > li:last-child  {
 
 
                 %>
-
-
-
             </ul>
         </div>
-         
+
 
     </div>
 

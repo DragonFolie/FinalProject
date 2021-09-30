@@ -17,10 +17,10 @@ import java.io.*;
 public class LoginServletUa  extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("ua/login.jsp");
+
+
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("ua/loginUa.jsp");
         requestDispatcher.forward(req, resp);
-
-
 
 
 
@@ -64,18 +64,13 @@ public class LoginServletUa  extends HttpServlet {
             logger.info("Logging user: " + name  + "   Role: " +  role+ "   Language: " +  language);
 //            resp.sendRedirect("index.jsp");
 
-            if (language.equals("Ukraine")){
-                RequestDispatcher requestDispatcher = req.getRequestDispatcher("/ua/");
+
+            resp.setIntHeader("Refresh", 1);
+
+                RequestDispatcher requestDispatcher = req.getRequestDispatcher("/index");
                 requestDispatcher.forward(req, resp);
 
-            }
 
-            if (!language.equals("Ukraine")){
-
-                RequestDispatcher requestDispatcher = req.getRequestDispatcher("/");
-                requestDispatcher.forward(req, resp);
-
-            }
 
 
 

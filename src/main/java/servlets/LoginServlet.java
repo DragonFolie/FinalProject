@@ -64,19 +64,15 @@ public class LoginServlet  extends HttpServlet {
             logger.info("Logging user: " + name  + "   Role: " +  role+ "   Language: " +  language);
 //            resp.sendRedirect("index.jsp");
 
-            if (language.equals("Ukraine")){
 
-                RequestDispatcher requestDispatcher = req.getRequestDispatcher("/index");
-                requestDispatcher.forward(req, resp);
 
-            }
 
-            if (!language.equals("Ukraine")){
+
 
                 RequestDispatcher requestDispatcher = req.getRequestDispatcher("/");
                 requestDispatcher.forward(req, resp);
 
-            }
+
 
 
 

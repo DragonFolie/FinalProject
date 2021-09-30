@@ -552,4 +552,50 @@
   2021-09-28 23:09:27 ERROR Admin:577 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
   2021-09-28 23:09:27 ERROR Admin:530 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
   2021-09-28 23:09:27 ERROR Admin:577 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-09-29 03:02:00 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
+  2021-09-29 03:05:05 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
+  2021-09-29 03:10:36 INFO  LogoutServlet:33 - Successfully logged out user: test   Role : 1
+  2021-09-29 03:12:15 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
+  2021-09-29 03:12:19 INFO  LogoutServlet:33 - Successfully logged out user: test   Role : 1
+  2021-09-29 03:12:32 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
+  2021-09-29 03:15:41 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
+  2021-09-29 03:15:49 INFO  LogoutServlet:33 - Successfully logged out user: test   Role : 1
+  2021-09-29 03:15:55 INFO  LogoutServlet:33 - Successfully logged out user: null   Role : null
+  2021-09-29 03:19:38 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
+  2021-09-29 03:19:51 INFO  LogoutServlet:33 - Successfully logged out user: test   Role : 1
+  2021-09-29 03:20:42 INFO  LogoutServlet:33 - Successfully logged out user: null   Role : null
+  2021-09-29 03:20:47 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
+  2021-09-29 03:20:55 INFO  LogoutServlet:33 - Successfully logged out user: test   Role : 1
+  2021-09-29 03:21:10 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
+  2021-09-29 03:21:14 INFO  LogoutServlet:33 - Successfully logged out user: test   Role : 1
+  2021-09-29 03:21:22 INFO  LogoutServlet:33 - Successfully logged out user: null   Role : null
+  2021-09-29 03:21:51 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
+  2021-09-29 03:21:57 INFO  LogoutServlet:33 - Successfully logged out user: test   Role : 1
+  2021-09-29 03:21:59 INFO  LogoutServlet:33 - Successfully logged out user: null   Role : null
+  2021-09-29 03:22:00 INFO  LogoutServlet:33 - Successfully logged out user: null   Role : null
+  2021-09-29 03:22:01 INFO  LogoutServlet:33 - Successfully logged out user: null   Role : null
+  2021-09-29 03:22:03 INFO  LogoutServlet:33 - Successfully logged out user: null   Role : null
+  2021-09-29 03:22:04 INFO  LogoutServlet:33 - Successfully logged out user: null   Role : null
+  2021-09-29 03:22:05 INFO  LogoutServlet:33 - Successfully logged out user: null   Role : null
+  2021-09-29 03:22:07 INFO  LogoutServlet:33 - Successfully logged out user: null   Role : null
+  2021-09-29 03:22:08 INFO  LogoutServlet:33 - Successfully logged out user: null   Role : null
+  2021-09-29 03:22:09 INFO  LogoutServlet:33 - Successfully logged out user: null   Role : null
+  2021-09-29 03:22:11 INFO  LogoutServlet:33 - Successfully logged out user: null   Role : null
+  2021-09-29 03:22:12 INFO  LogoutServlet:33 - Successfully logged out user: null   Role : null
+  2021-09-29 03:22:13 INFO  LogoutServlet:33 - Successfully logged out user: null   Role : null
+  2021-09-29 03:22:15 INFO  LogoutServlet:33 - Successfully logged out user: null   Role : null
+  2021-09-29 03:22:16 INFO  LogoutServlet:33 - Successfully logged out user: null   Role : null
+  2021-09-29 03:22:18 INFO  LogoutServlet:33 - Successfully logged out user: null   Role : null
+  2021-09-29 03:22:19 INFO  LogoutServlet:33 - Successfully logged out user: null   Role : null
+  2021-09-29 03:22:20 INFO  LogoutServlet:33 - Successfully logged out user: null   Role : null
+  2021-09-29 03:25:20 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
+  2021-09-29 03:25:23 INFO  LogoutServlet:33 - Successfully logged out user: test   Role : 1
+  2021-09-29 03:38:47 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
+  2021-09-29 03:46:47 INFO  LogoutServlet:64 - Logging user: admin   Role: 2   Language: null
+  2021-09-30 02:02:25 INFO  LogoutServlet:64 - Logging user: admin   Role: 2   Language: null
+  2021-09-30 02:06:25 INFO  LogoutServlet:64 - Logging user: admin   Role: 2   Language: null
+  2021-09-30 02:06:35 INFO  LogoutServlet:33 - Successfully logged out user: admin   Role : 2
+  2021-09-30 02:21:06 INFO  LogoutServlet:64 - Logging user: admin   Role: 2   Language: null
+  2021-09-30 02:22:01 INFO  LogoutServlet:33 - Successfully logged out user: admin   Role : 2
+  2021-09-30 03:18:27 INFO  LogoutServlet:64 - Logging user: admin   Role: 2   Language: null
   

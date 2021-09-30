@@ -996,8 +996,8 @@
     <div class="header">
         <div class="inner_header">
             <div class="logo">
-                <img src="views/img/logo.jpg" alt="logo+Hinterland" href="index.html"srcset="">
-                <span ><a href="index.jsp" class="HINTERLAND">HINTERLAND</a></span>
+                <img src="views/img/logo.jpg" alt="logo+Hinterland" onclick="location.href='/index'" srcset="">
+                <span ><a onclick="location.href='/index'" class="HINTERLAND">HINTERLAND</a></span>
             </div>
             <div class="empty"></div>
             <div class="navigation">
@@ -1104,7 +1104,7 @@
                                         " </li>\n"+
 
                                         "<li>\n" +
-                                        "  <button class=\"w3-btn w3-hover-light-blue w3-round-large\" style=\"outline: none;   border: 0;  background: transparent; color: white ; font-size: 15px \" onclick=\"location.href='/logoutUa'\">");
+                                        "  <button class=\"w3-btn w3-hover-light-blue w3-round-large\" style=\"outline: none;   border: 0;  background: transparent; color: white ; font-size: 15px \" onclick=\"location.href='/logout'\">");
 
                                 ResourceBundle resourceBundleSLogout =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
                                 out.print("   "+ resourceBundleSLogout.getString("logout") +"   " );
@@ -1350,6 +1350,18 @@
 
                             %></a></li>
 
+                            <li><a onclick="location.href='/movies'" >
+                                <%
+
+
+                                    resourceBundleSupport =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
+                                    out.print(" "+ resourceBundleSupport.getString("Change_language") +"  " );
+
+
+
+
+                                %>
+                            </a></li>
 
 
 
@@ -1401,11 +1413,11 @@
 
 
                     <div class="down_menu_inner_seventh_police" style="">
-                        THE LONG DARK ©2012-2021 Hinterland Studio Inc. "THE LONG DARK", "Hinterland" and the fox logo are registered
-                        trademarks or trademarks of Hinterland Studio Inc. All rights reserved.
+                        The Hinterland ©2012-2021 Hinterland Studio Inc. "Hinterland" and the fox logo are registered
+                        trademarks or trademarks of Hinterland  . All rights reserved.
 
                         <span style="text-decoration: underline ;">Privacy Policy</span>
-                        <span style="text-decoration: underline ;"><a style=" color: #AE1E2C;">The Long Dark Privacy Policy</a></span>
+                        <span style="text-decoration: underline ;"><a style=" color: #AE1E2C;">The Hinterland Privacy Policy</a></span>
 
 
 

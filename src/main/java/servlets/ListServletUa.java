@@ -18,16 +18,6 @@ public class ListServletUa  extends HttpServlet {
 
 
 
-        Model model = Model.getInstance();
-        List<String> names = model.list();
-        req.setAttribute("userNames", names);
-
-
-        HttpSession httpSession = req.getSession();
-        String language = (String)httpSession.getAttribute("username");
-
-
-
 
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("ua/moviesUa.jsp");
         requestDispatcher.forward(req, resp);

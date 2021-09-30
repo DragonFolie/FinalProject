@@ -57,9 +57,9 @@ INSERT INTO `testtable` ". "(`TestColumn1`, `TestColumn2`) ". "VALUES('Second no
 <nav class="header">
     <div class="header_container">
         <div class="logo">
-            <img src="views/img/logo_v2.jpg"  alt="logo+Hinterland" href="http://localhost:8080">
+            <img src="views/img/logo_v2.jpg"  alt="logo+Hinterland" onclick="location.href='index'">
 
-            <span ><a href="http://localhost:8080" >HINTERLAND</a></span>
+            <span ><a onclick="location.href='index'" >HINTERLAND</a></span>
         </div>
         <div class="header_container_empty">
 
@@ -146,7 +146,7 @@ INSERT INTO `testtable` ". "(`TestColumn1`, `TestColumn2`) ". "VALUES('Second no
                                     "<li>\n" );
                             ResourceBundle  resourceBundleHello =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
                             out.print("<a href=\"views/shop-right-sidebar.jsp\"  > "+ resourceBundleHello.getString("hello") +"   </a>" );
-                            out.print( name_user+" Your <a onclick=\"location.href='/admin'\"  >Admin Page</a>" +
+                            out.print( name_user+" Your <a onclick=\"location.href='/adminUa'\"  >Admin Page</a>" +
                                     " </li>\n"+
 
                                     "<li>\n" +
@@ -243,10 +243,12 @@ INSERT INTO `testtable` ". "(`TestColumn1`, `TestColumn2`) ". "VALUES('Second no
 </nav>
 <main class="main">
     <section class="news">
-        <h1 class="new_title_main">
-            Movie list
+        <h1 class="new_title_main_2">
+                <%
+                    ResourceBundle resourceBundleSList =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
+                    out.print("   "+ resourceBundleSList.getString("movieList") +"   " );
 
-
+                %>
             <!-- SORTING BUTTON -->
 
 
@@ -346,7 +348,12 @@ INSERT INTO `testtable` ". "(`TestColumn1`, `TestColumn2`) ". "VALUES('Second no
 
                     out.print("<ul class=\"list_block_news\">\n" +
                             "            <li class=\"block_news\">\n" +
-                            "                <span class=\"time_block\">"+date +"</span>\n" +
+                            "                <span class=\"time_block\">");
+
+                    ResourceBundle resourceBundleSRegister =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
+                    out.print("   "+ resourceBundleSRegister.getString(date ) +"   " );
+
+                    out.print("</span>\n" +
                             "\n" +
                             "\n" +
                             "                <a href='views/"+FolderURL+".jsp' class=\"block_news_img_text\">\n" +
@@ -432,7 +439,19 @@ INSERT INTO `testtable` ". "(`TestColumn1`, `TestColumn2`) ". "VALUES('Second no
 
     <div class="footer_inner">
 
-        <h2 >SIGN UP FOR NEWS & UPDATES</h2>
+        <h2 >
+            <%
+
+
+                ResourceBundle resourceBundleSign_Up =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
+                out.print(" "+ resourceBundleSign_Up.getString("SIGN_UP_FOR_NEWS_&_UPDATES") +"   " );
+
+
+
+
+            %>
+
+        </h2>
 
         <div class="email_sender_field">
             <form action="vlad_work_with_sql_email">
@@ -527,8 +546,8 @@ INSERT INTO `testtable` ". "(`TestColumn1`, `TestColumn2`) ". "VALUES('Second no
                     <%
 
 
-                        ResourceBundle resourceBundleJoinUs =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
-                        out.print("  "+ resourceBundleJoinUs.getString("shop") +"   " );
+                        ResourceBundle resourceBundleShop =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
+                        out.print("  "+ resourceBundleShop.getString("shop") +"   " );
 
 
 
@@ -536,20 +555,33 @@ INSERT INTO `testtable` ". "(`TestColumn1`, `TestColumn2`) ". "VALUES('Second no
                     %>
                 </a>
             </li>
-            <li>
-                <a href="contact.jsp" class="footer_list_text_li" target="_blank"  >
-                    <%
+            <li><a href="views/shop-right-sidebar.jsp" class="footer_list_text_li" >
+
+                <%
 
 
-                        resourceBundleSupport =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
-                        out.print(" "+ resourceBundleSupport.getString("support") +"  " );
+                    resourceBundleSupport =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
+                    out.print(" "+ resourceBundleSupport.getString("support") +"  " );
 
 
 
 
-                    %>
+                %>
                 </a>
             </li>
+
+            <li><a class="footer_list_text_li" onclick="location.href='/moviesUa'" >
+                <%
+
+
+                    resourceBundleSupport =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
+                    out.print(" "+ resourceBundleSupport.getString("Change_language") +"  " );
+
+
+
+
+                %>
+            </a></li>
 
         </ul>
 
@@ -560,9 +592,8 @@ INSERT INTO `testtable` ". "(`TestColumn1`, `TestColumn2`) ". "VALUES('Second no
         </div>
 
         <div class="footer_logo_text">
-            <p class="copyright">THE LONG DARK © 2012-2021 Hinterland Studio Inc.<br>
-                "THE LONG DARK", "Hinterland" and the fox logo are registered trademarks or trademarks of Hinterland Studio Inc. All rights reserved.<br>
-                Nintendo Switch is a trademark of Nintendo.
+            <p class="copyright">The Hinterland © 2012-2021 Hinterland  Inc.<br>
+                "Hinterland" and the fox logo are registered trademarks or trademarks of Hinterland Studio Inc. All rights reserved.<br>
 
             </p>
             <p class="copyright"><a class="copyright_1"  href="https://hinterlandgames.com/privacy-policy/">Privacy Policy</a></p>

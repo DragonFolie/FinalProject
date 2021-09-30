@@ -2,6 +2,8 @@
 <%@ page import="DAO.DB_ManagerDAO" %>
 <%@ page import="java.util.regex.Matcher" %>
 <%@ page import="java.util.regex.Pattern" %>
+<%@ page import="java.util.ResourceBundle" %>
+<%@ page import="java.util.Locale" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!DOCTYPE html>
@@ -421,6 +423,7 @@ INSERT INTO `testtable` ". "(`TestColumn1`, `TestColumn2`) ". "VALUES('Second no
             <li>
                 <a href="contact.jsp" class="footer_list_text_li" target="_blank"  >SUPPORT</a>
             </li>
+            <li><a class="footer_list_text_li" onclick="location.href='/moviesUa'" > Change language </a></li>
 
         </ul>
 
@@ -431,7 +434,7 @@ INSERT INTO `testtable` ". "(`TestColumn1`, `TestColumn2`) ". "VALUES('Second no
         </div>
 
         <div class="footer_logo_text">
-            <p class="copyright">THE LONG DARK © 2012-2021 Hinterland Studio Inc.<br>
+            <p class="copyright">The Hinterland © 2012-2021 Hinterland Studio Inc.<br>
                 "THE LONG DARK", "Hinterland" and the fox logo are registered trademarks or trademarks of Hinterland Studio Inc. All rights reserved.<br>
                 Nintendo Switch is a trademark of Nintendo.
 

@@ -126,7 +126,7 @@
 
                                       out.print(
                                               "<li>\n" +
-                                                      "  Hello, "+name_user+" <a onclick=\"location.href='/userProfile'\"  >");
+                                                      "  Hello, "+name_user+" <a onclick=\"location.href='/userProfileUa'\"  >");
                                       ResourceBundle  resourceBundleProfile =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
                                       out.print(" "+ resourceBundleProfile.getString("profile") +"   " );
 
@@ -158,7 +158,7 @@
 
                                   out.print(
                                           "<li>\n" +
-                                                  "  <a onclick=\"location.href='/login'\">");
+                                                  "  <a onclick=\"location.href='/loginUa'\">");
 
                                   ResourceBundle resourceBundleSLogout =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
                                   out.print("   "+ resourceBundleSLogout.getString("login") +"   " );
@@ -167,7 +167,7 @@
                                           " </li>\n" +
 
                                           " <li>\n" +
-                                          "     <a onclick=\"location.href='/registration'\">");
+                                          "     <a onclick=\"location.href='/registrationUa'\">");
                                   ResourceBundle resourceBundleSRegister =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
                                   out.print("   "+ resourceBundleSRegister.getString("register") +"   " );
 
@@ -274,9 +274,48 @@
 
       <div style="padding-top: 50px;" class="buttons">
         <div class="container">
-          <a href="" class="btn btn-2"><button type="submit" style="outline: none;   border: 0;  background: transparent; color: white ; font-size: 15px "> Create</button></a>
-          
-          <a  style="color: white" >Your  have account?<br><a style="text-align: center;" onclick="location.href='/login'" class="btn3" >Lets login</a> </a>
+          <a href="" class="btn btn-2"><button type="submit" style="outline: none;   border: 0;  background: transparent; color: white ; font-size: 15px ">
+
+              <%
+
+
+                  ResourceBundle resourceBundleSLogin2 =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
+                  out.print("   "+ resourceBundleSLogin2.getString("login") +"   " );
+
+
+
+
+              %>
+
+          </button></a>
+
+            <a  style="color: white" >
+
+                    <%
+
+
+                        ResourceBundle resourceBundleSDontHaveAccount =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
+                        out.print("   "+ resourceBundleSDontHaveAccount.getString("have_account") +"   " );
+
+
+
+
+                    %>
+
+                <br><a onclick="location.href='/loginUa'" class="btn3" >
+
+                <%
+
+
+                    ResourceBundle resourceBundleSRegist =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
+                    out.print("   "+ resourceBundleSRegist.getString("login_account") +"   " );
+
+
+
+
+                %>
+
+            </a>
             </div>
       </div>
   </div>

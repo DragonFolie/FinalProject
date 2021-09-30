@@ -12,7 +12,7 @@ public class UserProfileUa extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/user_profile.jsp");
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("ua/user_profile.jsp");
 
         requestDispatcher.forward(req, resp);
     }

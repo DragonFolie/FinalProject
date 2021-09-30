@@ -230,28 +230,28 @@
         
       </div>
 
-      <div class="wrap center"> <!-- Just to center ver and hor -->
-          <div class="wrap-label" style="border: 0;" >
+<%--      <div class="wrap center"> <!-- Just to center ver and hor -->--%>
+<%--          <div class="wrap-label" style="border: 0;" >--%>
 
 
-              <label class="custom-select" for="styledSelect1">
+<%--              <label class="custom-select" for="styledSelect1">--%>
 
-                  <select id="styledSelect1" name="language">
+<%--                  <select id="styledSelect1" name="language">--%>
 
-                      <option >English</option>
-                      <option >Ukraine</option>
+<%--                      <option >English</option>--%>
+<%--                      <option >Ukraine</option>--%>
 
-                  </select>
-              </label>
-
-
+<%--                  </select>--%>
+<%--              </label>--%>
 
 
 
-          </div>
 
 
-      </div>
+<%--          </div>--%>
+
+
+<%--      </div>--%>
 
       <div class="buttons" >
         <div class="container">

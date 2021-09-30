@@ -183,6 +183,20 @@ li {
   text-align: center;
   font-size: 5.3em;
 }
+
+
+.new_title_main_2{
+
+  font-family: "Yusei Magic", sans-serif;
+  padding-top: 104px;
+  padding-bottom: 42px;
+  letter-spacing: 0em;
+  color: white;
+  text-align: center;
+  font-size: 3.6em;
+
+
+}
 .list_block_news {
   margin: 50px auto;
   margin-top: 50px;

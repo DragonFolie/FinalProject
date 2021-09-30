@@ -1024,7 +1024,6 @@
 
 
 
-
                     <%
 
                         String name_user  = (String)session.getAttribute("name");
@@ -1249,6 +1248,8 @@
 
                             <li><a href="views/contact.jsp" >SUPPORT</a></li>
 
+                            <li><a onclick="location.href='/index'" >Change language</a></li>
+
 
 
                         </ul>
@@ -1298,8 +1299,8 @@
 
 
                     <div class="down_menu_inner_seventh_police" style="">
-                        THE LONG DARK ©2012-2021 Hinterland Studio Inc. "THE LONG DARK", "Hinterland" and the fox logo are registered
-                        trademarks or trademarks of Hinterland Studio Inc. All rights reserved.
+                        The Hinterland ©2012-2021 Hinterland Studio Inc. "Hinterland" and the fox logo are registered
+                        trademarks or trademarks of Hinterland  Inc. All rights reserved.
 
                         <span style="text-decoration: underline ;">Privacy Policy</span>
                         <span style="text-decoration: underline ;"><a style=" color: #AE1E2C;">The Long Dark Privacy Policy</a></span>
