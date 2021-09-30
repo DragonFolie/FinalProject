@@ -598,4 +598,14 @@
   2021-09-30 02:21:06 INFO  LogoutServlet:64 - Logging user: admin   Role: 2   Language: null
   2021-09-30 02:22:01 INFO  LogoutServlet:33 - Successfully logged out user: admin   Role : 2
   2021-09-30 03:18:27 INFO  LogoutServlet:64 - Logging user: admin   Role: 2   Language: null
+  2021-09-30 03:43:59 INFO  LogoutServlet:64 - Logging user: admin   Role: 2   Language: null
+  2021-09-30 03:51:11 INFO  LogoutServlet:33 - Successfully logged out user: admin   Role : 2
+  2021-09-30 04:12:19 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
+  2021-09-30 04:14:09 INFO  LogoutServlet:33 - Successfully logged out user: test   Role : 1
+  2021-09-30 04:40:58 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
+  2021-09-30 04:41:24 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
+  2021-09-30 04:51:11 ERROR AdminServlet:51 - java.lang.IllegalStateException: Cannot forward after response has been committed
+  2021-09-30 05:02:20 ERROR AdminServlet:60 - java.lang.NullPointerException
+  2021-09-30 05:07:04 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
+  2021-09-30 05:08:02 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
   

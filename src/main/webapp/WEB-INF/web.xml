@@ -10,10 +10,7 @@
 
 
 
-<!--    <error-page>-->
-<!--        <error-code>500</error-code>-->
-<!--        <location>/500.jsp</location>-->
-<!--    </error-page>-->
+
 
     <error-page>
         <error-code>404</error-code>
@@ -31,7 +28,10 @@
     </error-page>
 
 
-
+    <error-page>
+        <error-code>500</error-code>
+        <location>/500.jsp</location>
+    </error-page>
 
 
     <!-- add servlet -->

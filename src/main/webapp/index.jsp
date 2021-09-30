@@ -1026,6 +1026,9 @@
 
                     <%
 
+                        System.out.println();
+
+
                         String name_user  = (String)session.getAttribute("name");
                         String role  = (String)session.getAttribute("role");
 

@@ -7,7 +7,7 @@ new Vue({
     allowRotate: true,
     gameOver: false,
     inGame: false,
-    timeLimit: 11,
+    timeLimit: 25,
     timer: null,
     sandColor: '#4a08a0',
     boundsColor: '#BBBBBB',
