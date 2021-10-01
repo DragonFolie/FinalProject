@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -18,13 +19,56 @@ public class BuyMovieServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/movieChoise.jsp");
-        requestDispatcher.forward(req, resp);
+
+
+
+        Logger logger =  Logger.getLogger(AdminServlet.class.getName());
+
+
+        HttpSession httpSession = req.getSession();
+
+        String role = (String) httpSession.getAttribute("role");
+
+        try {
+            if (role == null ){
+
+
+
+
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("403.jsp");
+                dispatcher.forward(req, resp);
+                resp.setIntHeader("Refresh", 1);
+                return;
+
+
+            }
+
+            if (Objects.equals(role, "2")){
+
+                RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/Admin_page.jsp");
+
+                requestDispatcher.forward(req, resp);
+
+
+            }
+            else {
+
+
+                RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/movieChoise.jsp");
+                requestDispatcher.forward(req, resp);
+
+            }
+        }catch (Exception e){
+            logger.error(e);
+        }
+
     }
 
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+
 
         DB_ManagerDAO dbManager = new DB_ManagerDAO();
         Logger logger = Logger.getLogger(BuyMovieServlet.class.getName());

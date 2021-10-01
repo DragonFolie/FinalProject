@@ -608,4 +608,15 @@
   2021-09-30 05:02:20 ERROR AdminServlet:60 - java.lang.NullPointerException
   2021-09-30 05:07:04 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
   2021-09-30 05:08:02 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
+  2021-09-30 05:11:11 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
+  2021-09-30 05:14:32 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
+  2021-10-01 02:57:36 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
+  2021-10-01 02:58:52 INFO  LogoutServlet:33 - Successfully logged out user: test   Role : 1
+  2021-10-01 02:59:02 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
+  2021-10-01 02:59:28 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
+  2021-10-01 03:02:16 ERROR AdminServlet:62 - java.lang.IllegalArgumentException: Path [403.jsp] does not start with a "/" character
+  2021-10-01 03:02:45 ERROR AdminServlet:62 - java.lang.IllegalArgumentException: Path [403.jsp] does not start with a "/" character
+  2021-10-01 03:26:40 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
+  2021-10-01 03:54:25 ERROR AdminServlet:54 - java.lang.IllegalArgumentException: Path [403.jsp] does not start with a "/" character
+  2021-10-01 04:24:27 ERROR AdminServlet:62 - java.lang.IllegalArgumentException: Path [403.jsp] does not start with a "/" character
   

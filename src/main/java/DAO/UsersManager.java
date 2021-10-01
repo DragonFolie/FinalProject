@@ -235,8 +235,8 @@ public class UsersManager implements UserManagerDAO  {
                 result = resultSet.getString(1);
             }
 
-
-            System.out.println("Result: " +result );
+//
+//            System.out.println("Result: " +result );
             return   result;
 
 
