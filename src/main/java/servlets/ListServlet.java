@@ -21,9 +21,6 @@ public class ListServlet  extends HttpServlet {
         req.setAttribute("userNames", names);
 
 
-        HttpSession httpSession = req.getSession();
-        String language = (String)httpSession.getAttribute("username");
-
 
 
         

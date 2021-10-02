@@ -1353,25 +1353,25 @@ public class Admin implements  AdminDAO{
 
 
 
-
-
-
-
-    public static void main(String[] args) {
-        Admin admin = new Admin();
-        ArrayList arrayList= new ArrayList();
-
-
-        arrayList =  admin.findAllMovieUkrName();
-
-
-
-
-        System.out.println(arrayList);
-
-
-
-    }
+//
+//
+//
+//
+//    public static void main(String[] args) {
+//        Admin admin = new Admin();
+//        ArrayList arrayList= new ArrayList();
+//
+//
+//        arrayList =  admin.findAllMovieUkrName();
+//
+//
+//
+//
+//        System.out.println(arrayList);
+//
+//
+//
+//    }
 
 
 

@@ -24,20 +24,6 @@ public class UsersManager implements UserManagerDAO  {
 
 
 
-    public static void main(String[] args) {
-//////
-//        UsersManager usersManager = new UsersManager();
-//        usersManager.userAdd("1","test2","test3","test4");
-        try {
-            logger.info("test");
-        } catch (Exception e) {
-            logger.error("ex" + e);
-        }
-
-
-    }
-
-
 
 
 
@@ -144,6 +130,7 @@ public class UsersManager implements UserManagerDAO  {
 
                 System.out.println( resultSet.getString(1));
             }
+
             return true;
 
 

@@ -13,12 +13,13 @@ import java.util.Objects;
 
 public class AdminListMovieServlet extends HttpServlet {
 
+
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 
 
-        String numberPage =  req.getParameter("numberPage");
 
         Logger logger =  Logger.getLogger(AdminServlet.class.getName());
 
@@ -46,7 +47,7 @@ public class AdminListMovieServlet extends HttpServlet {
             else {
 
 
-                RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/AdmiListMovie.jsp");
+                RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/AdminListMovie.jsp");
                 requestDispatcher.forward(req, resp);
 
             }
@@ -57,6 +58,11 @@ public class AdminListMovieServlet extends HttpServlet {
 
 
 
+
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
     }
 }

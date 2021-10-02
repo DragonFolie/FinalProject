@@ -1,4 +1,4 @@
-
+package DAO;
 
 import DAO.UsersManager;
 import org.junit.Assert;

@@ -23,7 +23,6 @@ public class LogoutServlet extends HttpServlet {
         String name = (String)session.getAttribute("name");
         String role = (String)session.getAttribute("role");
         response.setContentType("text/html");
-        PrintWriter out=response.getWriter();
 
 
 
@@ -35,8 +34,8 @@ public class LogoutServlet extends HttpServlet {
 
 
 
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/");
-            requestDispatcher.forward(request, response);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/");
+        requestDispatcher.forward(request, response);
 
 
     }

@@ -22,15 +22,15 @@ public class DB_ManagerDAO implements InterfaceController {
 
 
 
-    public static void main(String[] args) throws SQLException, IOException, ClassNotFoundException {
+//    public static void main(String[] args) throws SQLException, IOException, ClassNotFoundException {
+////
+//        DB_ManagerDAO dbManager = new DB_ManagerDAO();
+//        dbManager.testConnection();
 //
-        DB_ManagerDAO dbManager = new DB_ManagerDAO();
-        dbManager.testConnection();
-
-
-
-
-    }
+//
+//
+//
+//    }
 
 
 
@@ -281,6 +281,12 @@ public class DB_ManagerDAO implements InterfaceController {
 
         Admin admin = new Admin();
         return admin.getRoleByName(name);
+    }
+
+    public int  getCountOfSeatsByDate(String day, String timeStart){
+        Admin admin = new Admin();
+        return admin.getCountOfSeatsByDate(day,timeStart);
+
     }
 
 

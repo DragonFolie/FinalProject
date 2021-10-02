@@ -619,4 +619,53 @@
   2021-10-01 03:26:40 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
   2021-10-01 03:54:25 ERROR AdminServlet:54 - java.lang.IllegalArgumentException: Path [403.jsp] does not start with a "/" character
   2021-10-01 04:24:27 ERROR AdminServlet:62 - java.lang.IllegalArgumentException: Path [403.jsp] does not start with a "/" character
+  2021-10-02 02:42:19 INFO  UsersManager:32 - test
+  2021-10-02 03:17:45 ERROR Admin:577 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-02 03:17:45 ERROR Admin:530 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-02 03:18:31 ERROR Admin:530 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-02 03:18:31 ERROR Admin:577 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-02 03:19:34 ERROR Admin:530 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-02 03:19:34 ERROR Admin:577 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-02 03:36:20 ERROR Admin:902 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-02 03:36:43 ERROR Admin:902 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-02 03:37:28 ERROR Admin:971 - Cant find All Movie Session By Name String java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-02 03:51:14 ERROR Admin:1304 - Cant get Info About Session And Movies java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1 OFFSET 1' at line 1
+  2021-10-02 03:51:36 ERROR Admin:1304 - Cant get Info About Session And Movies java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1 OFFSET 1' at line 1
+  2021-10-02 03:52:13 ERROR Admin:1304 - Cant get Info About Session And Movies java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1 OFFSET -1' at line 1
+  2021-10-02 03:52:18 ERROR Admin:1304 - Cant get Info About Session And Movies java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1' at line 1
+  2021-10-02 03:55:27 ERROR Admin:902 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-02 03:55:27 ERROR Admin:971 - Cant find All Movie Session By Name String java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-02 03:55:27 ERROR Admin:530 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-02 03:55:27 ERROR Admin:1304 - Cant get Info About Session And Movies java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1 OFFSET 1' at line 1
+  2021-10-02 03:55:27 ERROR Admin:1304 - Cant get Info About Session And Movies java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1 OFFSET -1' at line 1
+  2021-10-02 03:55:27 ERROR Admin:1304 - Cant get Info About Session And Movies java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1' at line 1
+  2021-10-02 03:55:28 ERROR Admin:577 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-02 03:58:09 ERROR Admin:902 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-02 03:58:09 ERROR Admin:971 - Cant find All Movie Session By Name String java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-02 03:58:09 ERROR Admin:530 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-02 03:58:09 ERROR Admin:1304 - Cant get Info About Session And Movies java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1 OFFSET 1' at line 1
+  2021-10-02 03:58:09 ERROR Admin:1304 - Cant get Info About Session And Movies java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1 OFFSET -1' at line 1
+  2021-10-02 03:58:09 ERROR Admin:1304 - Cant get Info About Session And Movies java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1' at line 1
+  2021-10-02 03:58:09 ERROR Admin:577 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-02 03:58:10 ERROR Admin:902 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-02 03:58:10 ERROR Admin:971 - Cant find All Movie Session By Name String java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-02 03:58:10 ERROR Admin:530 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-02 03:58:10 ERROR Admin:1304 - Cant get Info About Session And Movies java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1 OFFSET 1' at line 1
+  2021-10-02 03:58:10 ERROR Admin:1304 - Cant get Info About Session And Movies java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1 OFFSET -1' at line 1
+  2021-10-02 03:58:10 ERROR Admin:1304 - Cant get Info About Session And Movies java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1' at line 1
+  2021-10-02 03:58:10 ERROR Admin:577 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-02 04:13:32 ERROR Admin:902 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-02 04:13:33 ERROR Admin:971 - Cant find All Movie Session By Name String java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-02 04:13:33 ERROR Admin:530 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-02 04:13:33 ERROR Admin:1304 - Cant get Info About Session And Movies java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1 OFFSET 1' at line 1
+  2021-10-02 04:13:33 ERROR Admin:1304 - Cant get Info About Session And Movies java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1 OFFSET -1' at line 1
+  2021-10-02 04:13:33 ERROR Admin:1304 - Cant get Info About Session And Movies java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1' at line 1
+  2021-10-02 04:13:33 ERROR Admin:577 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-02 04:13:33 ERROR Admin:902 - Cant get Description of Movie java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-02 04:13:33 ERROR Admin:971 - Cant find All Movie Session By Name String java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-02 04:13:33 ERROR Admin:530 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-02 04:13:34 ERROR Admin:1304 - Cant get Info About Session And Movies java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1 OFFSET 1' at line 1
+  2021-10-02 04:13:34 ERROR Admin:1304 - Cant get Info About Session And Movies java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1 OFFSET -1' at line 1
+  2021-10-02 04:13:34 ERROR Admin:1304 - Cant get Info About Session And Movies java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1' at line 1
+  2021-10-02 04:13:34 ERROR Admin:577 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
   

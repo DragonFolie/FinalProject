@@ -14,7 +14,6 @@ public class ShopServlet extends HttpServlet {
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/shop-right-sidebar.jsp");
         requestDispatcher.forward(req, resp);
 
-        String numberPage =  req.getParameter("numberPage");
     }
 
     @Override
