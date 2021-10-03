@@ -85,7 +85,7 @@
     <h2 class="mb-5" ><a  style="color: white" href="javascript:history.back()"
                             data-categ="notFound"
                             data-value="back2Crello404"
-                            class="notfound-back">Go back>Go Back</a></h2>
+                            class="notfound-back">Go back</a></h2>
     <h2 class="mb-5">Movie List</h2>
 
 
@@ -281,12 +281,12 @@
 
           <form method="get">
 
-               <a style="color:white"> 1-</a>
+               <a style="color:white"> From 0 </a>
               <input  type="text" id="name" name="numberPage" >
 
                  <button  style="outline: none;   border: 0;  background: transparent; color: white ; font-size: 20px " type="submit"> Go</button>
 
-                <a style="color:white">Your page is: 1</a>
+                <a style="color:white">Your page is: 0</a>
 
 
           </form>

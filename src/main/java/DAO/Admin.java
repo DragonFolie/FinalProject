@@ -12,6 +12,7 @@ import java.util.Set;
 /**
  *
  * This class make  action include: update, add,get  to DataBase
+ * By action from Admin Role
  * @author DragonFolie
  *
  *
@@ -32,7 +33,7 @@ public class Admin implements  AdminDAO{
     private static final String GET_MOVIE_NAME = "SELECT  Name FROM language  ";
     private static final String ADD_NEW_MOVIE = "INSERT INTO filmdetail (Name, Description, Actor, Director,session_idMovie )VALUES (?,?,?,?,( SELECT MAX(idMovie) FROM session ))";
     private static final String ADD_NEW_SESSION =  "INSERT INTO session (PosterUrl, CountSeat, SessionDay, TimeStart, TimeEnd, Cost,Status,FolderURL) VALUES (?,?,?,?,?,?,?,?)";
-    private static final String ADD_ENGLISH_VERSION_OF_MOVIE = "INSERT INTO language (Name,Description,filmDetail_idfilmDetail) values (?,?,( SELECT MAX(idMovie) FROM session ));";
+    private static final String ADD_ENGLISH_VERSION_OF_MOVIE = "INSERT INTO language (Name,Description,filmDetail_idfilmDetail) values (?,?,( SELECT MAX(idMovie) FROM session ))";
     private static final String GET_ID_BY_NAME_OF_MOVIE  = "SELECT idfilmDetail FROM filmdetail WHERE  Name = ? ";
     private static final String UPDATE_STATUS_OF_MOVIE = "UPDATE session SET Status = ? WHERE idMovie = ?";
     private static final String UKRAINE_NAME =  "SELECT  Name FROM filmdetail";
@@ -514,7 +515,8 @@ public class Admin implements  AdminDAO{
 
 //            System.out.println("conn + " +conn);
 
-            preparedStatement = conn.prepareStatement("Select filmDetail_idfilmDetail FROM language WHERE Name = '"+ movieName+"'");
+            preparedStatement = conn.prepareStatement("Select filmDetail_idfilmDetail FROM language WHERE Name = ?");
+            preparedStatement.setString(1,movieName);
 
             preparedStatement.execute();
 
@@ -524,11 +526,12 @@ public class Admin implements  AdminDAO{
 
             resultSet.next();
 
-            String idMovie =  resultSet.getString(1);
+            int idMovie =  resultSet.getInt(1);
 
 
-            preparedStatement = conn.prepareStatement("Select FolderURL FROM session WHERE idMovie = "+idMovie+";");
-
+            preparedStatement = conn.prepareStatement("Select FolderURL FROM session WHERE idMovie = ?");
+            System.out.println(idMovie);
+            preparedStatement.setInt(1,idMovie);
 
             resultSet = preparedStatement.executeQuery();
 

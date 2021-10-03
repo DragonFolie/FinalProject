@@ -67,7 +67,7 @@ INSERT INTO `testtable` ". "(`TestColumn1`, `TestColumn2`) ". "VALUES('Second no
         <div class="header_nav">
             <ul class="header_inner_ul">
                 <li >
-                    <a onclick="location.href='/movies'">
+                    <a onclick="location.href='/moviesUa'">
                         <%
 
 
@@ -160,7 +160,7 @@ INSERT INTO `testtable` ". "(`TestColumn1`, `TestColumn2`) ". "VALUES('Second no
 
                             out.print(
                                     "<li>\n" +
-                                            "  Hello, "+name_user+" <a onclick=\"location.href='/userProfile'\"  >");
+                                            "  Hello, "+name_user+" <a onclick=\"location.href='/userProfileUa'\"  >");
                             ResourceBundle  resourceBundleProfile =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
                             out.print(" "+ resourceBundleProfile.getString("profile") +"   " );
 
@@ -192,7 +192,7 @@ INSERT INTO `testtable` ". "(`TestColumn1`, `TestColumn2`) ". "VALUES('Second no
 
                         out.print(
                                 "<li>\n" +
-                                        "  <a onclick=\"location.href='/login'\">");
+                                        "  <a onclick=\"location.href='/loginUa'\">");
 
                         ResourceBundle resourceBundleSLogout =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
                         out.print("   "+ resourceBundleSLogout.getString("login") +"   " );
@@ -201,7 +201,7 @@ INSERT INTO `testtable` ". "(`TestColumn1`, `TestColumn2`) ". "VALUES('Second no
                                 " </li>\n" +
 
                                 " <li>\n" +
-                                "     <a onclick=\"location.href='/registration'\">");
+                                "     <a onclick=\"location.href='/registrationUa'\">");
                         ResourceBundle resourceBundleSRegister =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
                         out.print("   "+ resourceBundleSRegister.getString("register") +"   " );
 
@@ -350,8 +350,6 @@ INSERT INTO `testtable` ". "(`TestColumn1`, `TestColumn2`) ". "VALUES('Second no
                             "            <li class=\"block_news\">\n" +
                             "                <span class=\"time_block\">");
 
-                    ResourceBundle resourceBundleSRegister =  ResourceBundle.getBundle("messages" , new Locale("ua","Ua"));
-                    out.print("   "+ resourceBundleSRegister.getString(date ) +"   " );
 
                     out.print("</span>\n" +
                             "\n" +
@@ -395,7 +393,6 @@ INSERT INTO `testtable` ". "(`TestColumn1`, `TestColumn2`) ". "VALUES('Second no
         <%--         --%>
         <ul class="list_block_news">
             <li class="block_news">
-                <span class="time_block">28.05.2020.</span>
 
 
                 <a href="views/We_Are_Your_Friend.jsp" class="block_news_img_text">

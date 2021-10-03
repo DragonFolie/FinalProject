@@ -668,4 +668,33 @@
   2021-10-02 04:13:34 ERROR Admin:1304 - Cant get Info About Session And Movies java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1 OFFSET -1' at line 1
   2021-10-02 04:13:34 ERROR Admin:1304 - Cant get Info About Session And Movies java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1' at line 1
   2021-10-02 04:13:34 ERROR Admin:577 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-03 03:25:59 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
+  2021-10-03 03:31:36 INFO  LogoutServlet:32 - Successfully logged out user: test   Role : 1
+  2021-10-03 03:31:45 INFO  LogoutServlet:64 - Logging user: admin   Role: 2   Language: null
+  2021-10-03 03:41:39 ERROR Admin:452 - Cant addMovie com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'Description' at row 1
+  2021-10-03 03:41:39 ERROR Admin:415 - Cant addEngTypeOfMovie com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'Description' at row 1
+  2021-10-03 03:47:54 ERROR Admin:415 - Cant addEngTypeOfMovie java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`finaldb`.`language`, CONSTRAINT `fk_language_filmDetail1` FOREIGN KEY (`filmDetail_idfilmDetail`) REFERENCES `filmdetail` (`idfilmDetail`))
+  2021-10-03 03:52:13 ERROR Admin:548 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-03 03:52:13 ERROR Admin:595 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-03 03:53:29 ERROR Admin:548 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-03 03:53:30 ERROR Admin:595 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-03 03:54:08 ERROR AdminServlet:62 - java.lang.IllegalArgumentException: Path [403.jsp] does not start with a "/" character
+  2021-10-03 03:54:15 ERROR Admin:548 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-03 03:54:15 ERROR Admin:595 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-03 03:55:26 ERROR Admin:548 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-03 03:55:26 ERROR Admin:595 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-03 03:56:20 ERROR Admin:548 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-03 03:56:20 ERROR Admin:595 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-03 03:56:49 ERROR Admin:548 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-03 03:56:49 ERROR Admin:595 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-03 03:57:08 ERROR Admin:548 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-03 03:57:08 ERROR Admin:595 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-03 04:06:13 ERROR Admin:550 - Cant find FolderURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-03 04:06:13 ERROR Admin:597 - Cant find PosterURL java.sql.SQLException: Illegal operation on empty result set.
+  2021-10-03 04:10:22 INFO  UsersManager:141 - Add new user: admin
+  2021-10-03 04:16:17 INFO  UsersManager:141 - Add new user: admin
+  2021-10-03 04:16:35 INFO  LogoutServlet:64 - Logging user: admin   Role: 2   Language: null
+  2021-10-03 04:20:08 INFO  LogoutServlet:32 - Successfully logged out user: admin   Role : 2
+  2021-10-03 04:20:39 INFO  UsersManager:141 - Add new user: admin
+  2021-10-03 04:20:46 INFO  LogoutServlet:64 - Logging user: admin   Role: 1   Language: null
   

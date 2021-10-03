@@ -6,6 +6,20 @@ import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 
+
+/**
+ *
+ * This class make  action include: update, add,get  to DataBase
+ * By action from User Role
+ * @author DragonFolie
+ *
+ *
+ * The actions in the method match their name
+ *
+ **/
+
+
+
 public class UsersManager implements UserManagerDAO  {
 
     private static final String ADD_USER = "INSERT INTO user (NickName,Dateofbirth,Gender,Role,Password) values (?,?,?,?,?) ";

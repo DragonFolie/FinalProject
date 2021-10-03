@@ -260,10 +260,11 @@ INSERT INTO `testtable` ". "(`TestColumn1`, `TestColumn2`) ". "VALUES('Second no
 //                        out.println( "<li>Movie name: "+ sb2+";&nbsp&nbsp Start: " +preword  + ";&nbsp&nbsp End: " + afterword +";&nbsp&nbsp </li>" );
                         continue;
                     }
+                    System.out.println("------------------------");
+                    System.out.println( name + " - " + FolderURL);
 
                         out.print("<ul class=\"list_block_news\">\n" +
                                 "            <li class=\"block_news\">\n" +
-                                "                <span class=\"time_block\">"+date +"</span>\n" +
                                 "\n" +
                                 "\n" +
                                 "                <a href='views/"+FolderURL+".jsp' class=\"block_news_img_text\">\n" +
@@ -305,7 +306,6 @@ INSERT INTO `testtable` ". "(`TestColumn1`, `TestColumn2`) ". "VALUES('Second no
 <%--         --%>
          <ul class="list_block_news">
             <li class="block_news">
-                <span class="time_block">28.05.2020.</span>
 
 
                 <a href="views/We_Are_Your_Friend.jsp" class="block_news_img_text">

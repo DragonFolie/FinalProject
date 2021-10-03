@@ -1,15 +1,12 @@
 
 
 
-<%@ page import="java.util.logging.Logger" %>
-<%@ page import="servlets.NewMoviePage" %>
-<%@ page import="DAO.DB_ManagerDAO" %>
-<%@ page import="DAO.Admin" %>
-<%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.regex.Matcher" %>
 <%@ page import="java.util.regex.Pattern" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
+<%@ page import="DAO.Admin" %>
+<%@ page import="DAO.DB_ManagerDAO" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %><!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -1466,36 +1463,12 @@ transition: 1s;
 
                                 if(name_user.equals("admin")){
 
-                                    out.print(
-                                            "<li>\n" +
-                                                    "  Hello, "+name_user+" Welcome to <a onclick=\"location.href='/admin'\"  >Admin Page</a>" +
-                                                    " </li>\n"+
-
-                                                    "<li>\n" +
-                                                    "  <button class=\"w3-btn w3-hover-light-blue w3-round-large\" style=\"outline: none;   border: 0;  background: transparent; color: white ; font-size: 15px \" onclick=\"location.href='/logout'\">Logout </button>" +
-                                                    " </li>\n"
-
-
-                                    );
-
+                               out.print("<li> Hello, "+name_user+" Welcome to <a onclick=\"location.href='/admin'\"  >Admin Page</a> </li>");
                                 }
                                 if(!name_user.equals("admin")){
 
                                     out.print(
-                                            "<li>\n" +
-                                                    "  Hello, "+name_user+" Welcome to <a onclick=\"location.href='/userProfile'\"  >Profile</a>\n" +
-                                                    " </li>\n"+
-                                                    "<li>\n" +
-                                                    "  <button class=\"w3-btn w3-hover-light-blue w3-round-large\" style=\"outline: none;   border: 0;  background: transparent; color: white ; font-size: 15px \" onclick=\"location.href='/logout'\">Logout </button>" +
-                                                    " </li>\n"+
-
-                                                    "<li>\n" +
-                                                    "  <button class=\"w3-btn w3-hover-light-blue w3-round-large\" style=\"outline: none;   border: 0;  background: transparent; color: white ; font-size: 15px \" onclick=\"location.href='/logout'\">Logout </button>" +
-                                                    " </li>\n"
-
-                                    );
-
-                                }
+                                            "<li> Hello, "+name_user+" Welcome to <a onclick=\"location.href='/userProfile'\"  >Profile</a> </li>");                                }
 
 
 
@@ -1533,8 +1506,8 @@ transition: 1s;
 <main class="main">
     <div class="main_inner">
         <div class="main_inner_title_content">
-            <img src="img/MoviePoster/Baby_Boss/baby_boss.jpg" class="main_inner_title_photo" alt="season's greetings" srcset="">
-            <h1 class="main_inner_title">Baby Boss</h1>
+            <img src="img/MoviePoster/null/test.jpg" class="main_inner_title_photo" alt="season's greetings" srcset="">
+            <h1 class="main_inner_title">test</h1>
 
         </div>
         
@@ -1548,7 +1521,7 @@ transition: 1s;
                 
 
                 <p >
-                    Very good movie
+                    tets
                    <!--<a href="https://www.youtube.com/watch?v=1fkqAZ2eSEw" style="color: #666;
                     font-size: 1em; text-decoration: underline;" target="_blank">HESITANT PROSPECT.</a> -->
                 </p>
@@ -1556,30 +1529,30 @@ transition: 1s;
                 <br><br><br>
                 <p >
                     Director: <br>
-                    <a href="https://www.imdb.com" class="test_description_movie"   target="_blank" > Totto Wolf </a>
+                    <a href="https://www.imdb.com" class="test_description_movie"   target="_blank" > test </a>
                    
                 </p>
                 <br><br>
 
                 <p >
                     Writers: <br>
-                    <a href="https://www.imdb.com" class="test_description_movie"  target="_blank">Totto Wolf</a> (screenplay),
+                    <a href="https://www.imdb.com" class="test_description_movie"  target="_blank">test</a> (screenplay),
                 </p>
                 
                 <br><br>
 
                 <p >
                     Stars: <br>
-                    <a href="https://www.imdb.com" class="test_description_movie"  target="_blank"> Den Falkone ,</a>
-                    <a href="https://www.imdb.com" class="test_description_movie"  target="_blank"> Alex Albon ,</a>
-                    <a href="https://www.imdb.com" class="test_description_movie"  target="_blank"> Carlo Sainz </a>  
+                    <a href="https://www.imdb.com" class="test_description_movie"  target="_blank"> test ,</a>
+                    <a href="https://www.imdb.com" class="test_description_movie"  target="_blank"> test ,</a>
+                    <a href="https://www.imdb.com" class="test_description_movie"  target="_blank"> test </a>  
                    
                 </p>
                 <br><br>
 
                 <p >
                     Schedule: <br>
-                    <a  class="test_description_movie"  target="_blank"> 12:27 and 08:28 every Friday</a>
+                    <a  class="test_description_movie"  target="_blank"> 06:25 and 10:25 every Monday</a>
                     
                    
                    
@@ -1704,14 +1677,14 @@ transition: 1s;
 
 
 
-                        Choose time and day and number of seat &nbsp
+                        Available time and day and number of seat &nbsp
 
                             <%
 
                                 Admin admin = new Admin();
                                 DB_ManagerDAO db_managerDAO = new DB_ManagerDAO();
                                 ArrayList infoForTimeTable = new ArrayList();
-                                 infoForTimeTable = db_managerDAO.findAllMovieSessionByName("Baby Boss");
+                                 infoForTimeTable = db_managerDAO.findAllMovieSessionByName("test");
 
                                 String regex = "(.+),(.+),(.+),(.+)";
                                 String timeS = null;
@@ -1796,9 +1769,7 @@ transition: 1s;
 
                             <div id="btn_buy" onclick="OnButtonCommentSendClick()">
                                 <button class="button_buy" type="submit">
-                                        <span > <a
-                                            <a onclick="location.href='/movieBuy'">Buy </a>
-                                        </span>
+                                        <span ><a onclick="location.href='/movieBuy'">Buy </a>  </span>
                                 </button><div id="circle"></div>
 
                             </div>
@@ -1894,7 +1865,7 @@ transition: 1s;
 
 
 
-            <div id="btn" onclick="OnButtonCommentSendClick()"><span class="noselect">Send</span><div id="circle"></div></div>
+            <div id="btn" onclick="OnButtonCommentSendClick()"><span class="noselect" style="font-size: 25px" >Send</span><div id="circle"></div></div>
 
 
 
@@ -2142,7 +2113,7 @@ transition: 1s;
 
         <ul class="footer_list_text">
             <li >
-                <a href="movies.jsp" class="footer_list_text_li">MOVIE</a>
+                <a href="moviesUa.jsp" class="footer_list_text_li">MOVIE</a>
             </li>
 
            
