@@ -137,14 +137,15 @@
 //   6,128 ударів серця в хвилину ,F1,Max Bringe,Lando Norris,Aorton Senna,Nikki Lauda,43,Wednesday,23,09:16 - 13:16,New Session,Project X---------------
 
 
-            String regex = "(.+);(.+);(.+);(.+);(.+);(.+);(.+);(.+);(.+);(.+)";
+            String regex = "(.+);(.+);(.+);(.+);(.+);(.+);(.+);(.+);((.+)-(.+));(.+)";
             String nameEng = null;
             String nameUkr = null;
             String description  = null;
             String actors = null;
             String director = null;
             String id = null;
-            String time = null;
+            String timeS = null;
+            String timeE = null;
             String day = null;
             String status  = null;
             String cost = null;
@@ -212,12 +213,15 @@
                   countOfSeats = m.group(6);
                   day = m.group(7);
                   cost = m.group(8);
-                  time = m.group(9);
-                  status = m.group(10);
+                  timeS = m.group(10);
+                  timeE = m.group(11);
+                  status = m.group(12);
 
 
 //
                 }
+
+                uniqueSeats = db_managerDAO3.getUniqueSeatBySession(day,timeS);
 
                 out.print("<tr scope=\"row\">\n" +
                         "              <th scope=\"row\">\n" +
@@ -237,7 +241,7 @@
 
                 out.print( "<small class=\"d-block\"> </small>\n" +
                         "              </td>\n" +
-                        "              <td>"); out.print( time ); out.print(" </td>\n" +
+                        "              <td>"); out.print( timeS + " - " + timeE ); out.print(" </td>\n" +
                         "              <td>"); out.print( status); out.print("</td>\n" +
                         "\n" +
                         "            <td><a href=\"#\" class=\"more\">" +

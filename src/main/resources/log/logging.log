@@ -697,4 +697,114 @@
   2021-10-03 04:20:08 INFO  LogoutServlet:32 - Successfully logged out user: admin   Role : 2
   2021-10-03 04:20:39 INFO  UsersManager:141 - Add new user: admin
   2021-10-03 04:20:46 INFO  LogoutServlet:64 - Logging user: admin   Role: 1   Language: null
+  2021-10-03 04:24:47 INFO  UsersManager:141 - Add new user: admin
+  2021-10-03 04:24:58 INFO  LogoutServlet:64 - Logging user: admin   Role: 2   Language: null
+  2021-10-03 04:44:50 INFO  LogoutServlet:64 - Logging user: admin   Role: 2   Language: null
+  2021-10-03 04:45:48 INFO  LogoutServlet:32 - Successfully logged out user: admin   Role : 2
+  2021-10-03 04:45:53 INFO  UsersManager:141 - Add new user: test
+  2021-10-03 04:45:56 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
+  2021-10-03 04:46:08 ERROR Admin:1105 - Cant add Order To User java.sql.SQLException: Field 'OrderDate' doesn't have a default value
+  2021-10-03 04:46:37 ERROR Admin:1105 - Cant add Order To User java.sql.SQLException: Field 'OrderDate' doesn't have a default value
+  2021-10-03 04:51:12 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
+  2021-10-03 04:51:24 ERROR Admin:1106 - Cant add Order To User java.sql.SQLSyntaxErrorException: Column 'Day' specified twice
+  2021-10-03 04:53:06 ERROR Admin:1106 - Cant add Order To User java.sql.SQLSyntaxErrorException: Column 'Day' specified twice
+  2021-10-03 04:53:59 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
+  2021-10-03 04:54:08 ERROR Admin:1105 - Cant add Order To User java.sql.SQLException: Field 'OrderDate' doesn't have a default value
+  2021-10-03 04:55:25 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
+  2021-10-03 04:56:43 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
+  2021-10-03 04:56:46 ERROR Admin:1187 - Cant get Count Seats For Session java.sql.SQLSyntaxErrorException: Unknown column 'Day' in 'where clause'
+  2021-10-03 04:56:46 ERROR AdminServlet:62 - org.apache.jasper.JasperException: Произошла ошибка при обработке [/views/movieChoise.jsp] в строке [143]
+
+140: 						"                        <span class=\"label-input100\">Movie day of week *</span>\n" +
+141: 						"                        <div>\n" +
+142: 						"                            <select class=\"js-select2\" name=\"numberOfSeat\">");
+143: 				for (int k = 1; k < uniqueSeats.size() ; k++) {
+144: 					out.print("<option >"+uniqueSeats.get(k)+"</option>" );
+145: 				}
+146: 				out.print("</select> <div class=\"dropDownSelect2\"></div>\n" +
+
+
+Stacktrace:
+  2021-10-03 04:57:29 ERROR Admin:1187 - Cant get Count Seats For Session java.sql.SQLSyntaxErrorException: Unknown column 'Day' in 'where clause'
+  2021-10-03 04:57:29 ERROR AdminServlet:62 - org.apache.jasper.JasperException: Произошла ошибка при обработке [/views/movieChoise.jsp] в строке [143]
+
+140: 						"                        <span class=\"label-input100\">Movie day of week *</span>\n" +
+141: 						"                        <div>\n" +
+142: 						"                            <select class=\"js-select2\" name=\"numberOfSeat\">");
+143: 				for (int k = 0; k < uniqueSeats.size() ; k++) {
+144: 					out.print("<option >"+uniqueSeats.get(k)+"</option>" );
+145: 				}
+146: 				out.print("</select> <div class=\"dropDownSelect2\"></div>\n" +
+
+
+Stacktrace:
+  2021-10-03 04:59:17 ERROR Admin:1187 - Cant get Count Seats For Session java.sql.SQLSyntaxErrorException: Unknown column 'Day' in 'where clause'
+  2021-10-03 04:59:17 ERROR AdminServlet:62 - org.apache.jasper.JasperException: Произошла ошибка при обработке [/views/movieChoise.jsp] в строке [143]
+
+140: 						"                        <span class=\"label-input100\">Movie day of week *</span>\n" +
+141: 						"                        <div>\n" +
+142: 						"                            <select class=\"js-select2\" name=\"numberOfSeat\">");
+143: 				for (int k = 1; k < uniqueSeats.size() ; k++) {
+144: 					out.print("<option >"+uniqueSeats.get(k)+"</option>" );
+145: 				}
+146: 				out.print("</select> <div class=\"dropDownSelect2\"></div>\n" +
+
+
+Stacktrace:
+  2021-10-03 04:59:47 ERROR Admin:1187 - Cant get Count Seats For Session java.sql.SQLSyntaxErrorException: Unknown column 'Day' in 'where clause'
+  2021-10-03 04:59:47 ERROR AdminServlet:62 - org.apache.jasper.JasperException: Произошла ошибка при обработке [/views/movieChoise.jsp] в строке [143]
+
+140: 						"                        <span class=\"label-input100\">Movie day of week *</span>\n" +
+141: 						"                        <div>\n" +
+142: 						"                            <select class=\"js-select2\" name=\"numberOfSeat\">");
+143: 				for (int k = 1; k < uniqueSeats.size() ; k++) {
+144: 					out.print("<option >"+uniqueSeats.get(k)+"</option>" );
+145: 				}
+146: 				out.print("</select> <div class=\"dropDownSelect2\"></div>\n" +
+
+
+Stacktrace:
+  2021-10-03 05:06:00 ERROR Admin:1187 - Cant get Count Seats For Session java.sql.SQLSyntaxErrorException: Unknown column 'Day' in 'where clause'
+  2021-10-03 05:06:00 ERROR AdminServlet:62 - org.apache.jasper.JasperException: Произошла ошибка при обработке [/views/movieChoise.jsp] в строке [132]
+
+129: 
+130: 				}
+131: 				uniqueSeats = db_managerDAO3.getUniqueSeatBySession(date,timeS);
+132: 				System.out.println(uniqueSeats.size());
+133: 				System.out.println(uniqueSeats);
+134: 				System.out.println("--------------------");
+135: //				System.out.println(uniqueSeats + " + " + date);
+
+
+Stacktrace:
+  2021-10-03 05:06:44 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
+  2021-10-03 05:06:48 ERROR Admin:1187 - Cant get Count Seats For Session java.sql.SQLSyntaxErrorException: Unknown column 'Day' in 'where clause'
+  2021-10-03 05:06:48 ERROR AdminServlet:62 - org.apache.jasper.JasperException: Произошла ошибка при обработке [/views/movieChoise.jsp] в строке [132]
+
+129: 
+130: 				}
+131: 				uniqueSeats = db_managerDAO3.getUniqueSeatBySession(date,timeS);
+132: 				System.out.println("unisize:" +uniqueSeats.size());
+133: 				System.out.println("uni:" + uniqueSeats);
+134: 				System.out.println("--------------------");
+135: //				System.out.println(uniqueSeats + " + " + date);
+
+
+Stacktrace:
+  2021-10-03 05:08:06 ERROR Admin:1187 - Cant get Count Seats For Session java.sql.SQLSyntaxErrorException: Unknown column 'Day' in 'where clause'
+  2021-10-03 05:08:06 ERROR AdminServlet:62 - org.apache.jasper.JasperException: Произошла ошибка при обработке [/views/movieChoise.jsp] в строке [132]
+
+129: 
+130: 				}
+131: 				uniqueSeats = db_managerDAO3.getUniqueSeatBySession(date,timeS);
+132: 				System.out.println("unisize:" +uniqueSeats.size());
+133: 				System.out.println("uni:" + uniqueSeats);
+134: 				System.out.println("--------------------");
+135: //				System.out.println(uniqueSeats + " + " + date);
+
+
+Stacktrace:
+  2021-10-03 05:08:57 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
+  2021-10-03 05:09:26 INFO  LogoutServlet:32 - Successfully logged out user: test   Role : 1
+  2021-10-03 05:09:31 INFO  LogoutServlet:64 - Logging user: admin   Role: 2   Language: null
   

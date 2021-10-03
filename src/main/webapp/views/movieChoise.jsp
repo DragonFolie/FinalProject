@@ -122,13 +122,16 @@
 
 
 
-//							System.out.println(timeS+" - " +timeE+" - " +date+" - " +status );
+							System.out.println("Name:" +allMovieName.get(i)  +   "----" + timeS+"-" +timeE+"-" +date+ "-" +status );
 						out.print("<option >"+timeS +"-"+timeE +" ; "+date +"</option>");
 
 					}
 
 				}
 				uniqueSeats = db_managerDAO3.getUniqueSeatBySession(date,timeS);
+				System.out.println("unisize:" +uniqueSeats.size());
+				System.out.println("uni:" + uniqueSeats);
+				System.out.println("--------------------");
 //				System.out.println(uniqueSeats + " + " + date);
 
 				out.print(" </select>\n" +
@@ -140,6 +143,7 @@
 						"                        <span class=\"label-input100\">Movie day of week *</span>\n" +
 						"                        <div>\n" +
 						"                            <select class=\"js-select2\" name=\"numberOfSeat\">");
+
 				for (int k = 1; k < uniqueSeats.size() ; k++) {
 					out.print("<option >"+uniqueSeats.get(k)+"</option>" );
 				}

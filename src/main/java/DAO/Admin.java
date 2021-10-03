@@ -1077,7 +1077,7 @@ public class Admin implements  AdminDAO{
 
 
 
-            preparedStatement = conn.prepareStatement("Insert Into `order` ( MovieName, Price, Day, NumberOfSeat, TimeStart, TimeEnd, user_idUser, session_idMovie)" +
+            preparedStatement = conn.prepareStatement("Insert Into `order` ( MovieName, Price, OrderDate, NumberOfSeat, TimeStart, TimeEnd, user_idUser, session_idMovie)" +
                     " values (?,?,?,?,?,?,?,?)");
 
 
@@ -1133,7 +1133,7 @@ public class Admin implements  AdminDAO{
 
 
 
-            preparedStatement = conn.prepareStatement("SELECT NumberOfSeat FROM `order` WHERE TimeStart = ? AND Day = ? ");
+            preparedStatement = conn.prepareStatement("SELECT NumberOfSeat FROM `order` WHERE TimeStart = ? AND OrderDate = ? ");
             preparedStatement.setString(1,timeStart);
             preparedStatement.setString(2,day);
 
@@ -1298,7 +1298,7 @@ public class Admin implements  AdminDAO{
                 sb.append(";");
                 sb.append(resultSet.getInt(8));
                 sb.append(";");
-                sb.append(resultSet.getString(10)+ " - " + resultSet.getString(9));
+                sb.append(resultSet.getString(10)+ "-" + resultSet.getString(9));
                 sb.append(";");
                 sb.append(resultSet.getString(11));
                 allInfo.add(sb.toString());
