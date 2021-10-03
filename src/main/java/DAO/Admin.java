@@ -3,39 +3,58 @@ package DAO;
 import org.apache.log4j.Logger;
 
 import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.nio.charset.StandardCharsets;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
+
+
+/**
+ *
+ * This class make  action include: update, add,get  to DataBase
+ * @author DragonFolie
+ *
+ *
+ * The actions in the method match their name
+ *
+ **/
+
 
 public class Admin implements  AdminDAO{
 
 
+
     private static final String FIND_NICKNAME_AND_ROLE = "SELECT NickName,Role FROM user";
     private static final String  UPDATE_ROLE = "UPDATE user SET Role = ? WHERE NickName = ?";
-
     private static final String GET_ROLE = "SELECT Role From ";
-
     private static final String GET_ALL_INFO_MOVIE = "";
-
     private static final String OUTPUT_TIME_AND_STATUS_ABOUT_MOVIE = "SELECT  TimeStart,TimeEnd,SessionDay,Status FROM session";
-
     private static final String GET_MOVIE_NAME = "SELECT  Name FROM language  ";
-    private static final String ADD_NEW_SESSION = "INSERT INTO session (PosterUrl, CountSeat, SessionDay, TimeStart, TimeEnd, Cost,Status) VALUES (?,?,?,?,?,?,?);";
-    private static final String ADD_NEW_MOVIE  =  "INSERT INTO filmdetail (Name, Description, Actor, Director,session_idMovie )VALUES (?,?,?,?,( SELECT MAX(idMovie) FROM session ));\n";
+    private static final String ADD_NEW_MOVIE = "INSERT INTO filmdetail (Name, Description, Actor, Director,session_idMovie )VALUES (?,?,?,?,( SELECT MAX(idMovie) FROM session ))";
+    private static final String ADD_NEW_SESSION =  "INSERT INTO session (PosterUrl, CountSeat, SessionDay, TimeStart, TimeEnd, Cost,Status,FolderURL) VALUES (?,?,?,?,?,?,?,?)";
     private static final String ADD_ENGLISH_VERSION_OF_MOVIE = "INSERT INTO language (Name,Description,filmDetail_idfilmDetail) values (?,?,( SELECT MAX(idMovie) FROM session ));";
     private static final String GET_ID_BY_NAME_OF_MOVIE  = "SELECT idfilmDetail FROM filmdetail WHERE  Name = ? ";
-
-
     private static final String UPDATE_STATUS_OF_MOVIE = "UPDATE session SET Status = ? WHERE idMovie = ?";
+    private static final String UKRAINE_NAME =  "SELECT  Name FROM filmdetail";
+    private static final String GET_ID_MOVIE_FROM_LANGUAGE_TABLE = "SELECT idLanguage FROM language WHERE  Name = ? ";
+    private static final String GET_INFO_TIME_AND_DATE_AND_STATUS_ABOUT_SESSION = "SELECT  TimeStart,TimeEnd,SessionDay,Status FROM session Where idMovie = ?";
+    private static final String  GET_COUNTSEAT_FROM_SESSION_WHERE_SESSIONDAY_AND_TIMESTART = "SELECT CountSeat From session WHERE SessionDay = ? AND TimeStart = ?";
+    private static final String GET_USERID_WHERE_NAME = "Select idUser FROM user WHERE NickName = ?" ;
+    private static final String  GET_IDMOVIE_AND_COST_FROM_SESSION_WHERE_TIMESTART_AND_SESSIONDAY = "Select idMovie,Cost FROM session WHERE TimeStart = ? AND SessionDay = ?";
 
 
+
+    /**
+     *
+     * This variables  used for making connection to DataBase
+     * FileName is a file where program take link to connect DataBase
+     *
+      */
     private  Connection connection;
     private static UsersManager instance;
     public static final String FILANAME = "app.properties";
+
+
     private static Logger logger =  Logger.getLogger(Admin.class.getName());
 
 
@@ -96,7 +115,7 @@ public class Admin implements  AdminDAO{
 
 
         }catch (IOException | SQLException | ClassNotFoundException e) {
-//            logger.info("Exception here" + e);
+
             logger.error("Cant updateRole " + e);
             return false;
         }
@@ -140,7 +159,7 @@ public class Admin implements  AdminDAO{
 
 
         }catch (IOException | SQLException | ClassNotFoundException e) {
-//            logger.info("Exception here" + e);
+
             logger.error("Cant findNicknameAndRole " + e);
             return null;
         }
@@ -189,7 +208,7 @@ public class Admin implements  AdminDAO{
 
 
         }catch (IOException | SQLException | ClassNotFoundException e) {
-//            logger.info("Exception here" + e);
+
             logger.error("Cant findAllMovieSession " + e);
             return null;
         }
@@ -226,10 +245,9 @@ public class Admin implements  AdminDAO{
 
 
         }catch (IOException | SQLException | ClassNotFoundException e) {
-//            logger.info("Exception here" + e);
-//            logger.error("Cant findAllMovieName " + e);
 
-            e.printStackTrace();
+            logger.error("Cant findAllMovieName " + e);
+
             return null;
         }
 
@@ -247,7 +265,7 @@ public class Admin implements  AdminDAO{
         try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
 
 //            System.out.println("conn + " +conn);
-            preparedStatement = conn.prepareStatement("SELECT  Name FROM filmdetail");
+            preparedStatement = conn.prepareStatement(UKRAINE_NAME);
             preparedStatement.execute();
 
 
@@ -265,10 +283,9 @@ public class Admin implements  AdminDAO{
 
 
         }catch (IOException | SQLException | ClassNotFoundException e) {
-//            logger.info("Exception here" + e);
-//            logger.error("Cant findAllMovieName " + e);
 
-            e.printStackTrace();
+            logger.error("Cant findAllMovieName " + e);
+
             return null;
         }
 
@@ -342,7 +359,7 @@ public class Admin implements  AdminDAO{
 
 //            System.out.println("conn + " +conn);
 
-            preparedStatement = conn.prepareStatement("INSERT INTO session (PosterUrl, CountSeat, SessionDay, TimeStart, TimeEnd, Cost,Status,FolderURL) VALUES (?,?,?,?,?,?,?,?)");
+            preparedStatement = conn.prepareStatement(ADD_NEW_SESSION);
 
             preparedStatement.setString(1,posterURL);
             preparedStatement.setString(2,countSeat);
@@ -362,7 +379,7 @@ public class Admin implements  AdminDAO{
 
 
         }catch (IOException | SQLException | ClassNotFoundException e) {
-//            logger.info("Exception here" + e);
+
             logger.error("Cant addSession " + e);
             return false;
         }
@@ -394,7 +411,7 @@ public class Admin implements  AdminDAO{
 
 
         }catch (IOException | SQLException | ClassNotFoundException e) {
-//            logger.info("Exception here" + e);
+
             logger.error("Cant addEngTypeOfMovie " + e);
             return false;
         }
@@ -415,7 +432,7 @@ public class Admin implements  AdminDAO{
 //            System.out.println("conn + " +conn);
 
 //            preparedStatement = conn.prepareStatement(ADD_NEW_MOVIE);
-            preparedStatement= conn.prepareStatement("INSERT INTO filmdetail (Name, Description, Actor, Director,session_idMovie )VALUES (?,?,?,?,( SELECT MAX(idMovie) FROM session ))");
+            preparedStatement= conn.prepareStatement(ADD_NEW_MOVIE);
             preparedStatement.setString(1,nameUkr);
 
             preparedStatement.setString(2,descriptionUkr);
@@ -431,7 +448,7 @@ public class Admin implements  AdminDAO{
 
 
         }catch (IOException | SQLException | ClassNotFoundException e) {
-//            logger.info("Exception here" + e);
+
             logger.error("Cant addMovie " + e);
             return false;
         }
@@ -476,7 +493,7 @@ public class Admin implements  AdminDAO{
 
 
         }catch (IOException | SQLException | ClassNotFoundException e) {
-//            logger.info("Exception here" + e);
+
             logger.error("Cant updateStatusForMovie " + e);
             return false;
         }
@@ -526,7 +543,7 @@ public class Admin implements  AdminDAO{
 
 
         }catch (IOException | SQLException | ClassNotFoundException e) {
-//            logger.info("Exception here" + e);
+
             logger.error("Cant find FolderURL " + e);
             return null;
         }
@@ -573,7 +590,7 @@ public class Admin implements  AdminDAO{
 
 
         }catch (IOException | SQLException | ClassNotFoundException e) {
-//            logger.info("Exception here" + e);
+
             logger.error("Cant find PosterURL " + e);
             return null;
         }
@@ -598,7 +615,6 @@ public class Admin implements  AdminDAO{
         PreparedStatement preparedStatement = null;
         try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
 
-//            System.out.println("conn + " +conn);
 
             preparedStatement = conn.prepareStatement("Select filmDetail_idfilmDetail FROM language WHERE Name = '"+ movieName+"';");
 
@@ -667,7 +683,6 @@ public class Admin implements  AdminDAO{
 
 
         }catch (IOException | SQLException | ClassNotFoundException e) {
-//            logger.info("Exception here" + e);
             logger.error("Cant add New Session For Movie " + e);
             return "not found";
         }
@@ -688,14 +703,7 @@ public class Admin implements  AdminDAO{
         PreparedStatement preparedStatement = null;
         try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
 
-// private static final String GET_ID_BY_NAME_OF_MOVIE  = "";
-
-//    private static final String OUTPUT_TIME_AND_STATUS_ABOUT_MOVIE = "SELECT  TimeStart,TimeEnd,SessionDay,Status FROM session";
-
-
-
-//            System.out.println("Movie: " +movieName);
-            preparedStatement = conn.prepareStatement("SELECT idLanguage FROM language WHERE  Name = ? ");
+            preparedStatement = conn.prepareStatement(GET_ID_MOVIE_FROM_LANGUAGE_TABLE);
 
             preparedStatement.setString(1,movieName);
 
@@ -718,7 +726,7 @@ public class Admin implements  AdminDAO{
 
             for (int i = 0; i <listId.size() ; i++) {
 
-                preparedStatement = conn.prepareStatement("SELECT  TimeStart,TimeEnd,SessionDay,Status FROM session Where idMovie = ?");
+                preparedStatement = conn.prepareStatement(GET_INFO_TIME_AND_DATE_AND_STATUS_ABOUT_SESSION);
                 int number = listId.get(i);
 
 //                System.out.println("Number: " +number );
@@ -756,7 +764,7 @@ public class Admin implements  AdminDAO{
 
 
         }catch (IOException | SQLException | ClassNotFoundException e) {
-//            logger.info("Exception here" + e);
+
             logger.error("Cant find All Movie Session By Name " + e);
             return null;
         }
@@ -782,7 +790,7 @@ public class Admin implements  AdminDAO{
 
 
 //            System.out.println("Movie: " +movieName);
-            preparedStatement = conn.prepareStatement("SELECT idLanguage FROM language WHERE  Name = ? ");
+            preparedStatement = conn.prepareStatement(GET_ID_MOVIE_FROM_LANGUAGE_TABLE);
 
             preparedStatement.setString(1,movieName);
 
@@ -845,7 +853,7 @@ public class Admin implements  AdminDAO{
 
 
         }catch (IOException | SQLException | ClassNotFoundException e) {
-//            logger.info("Exception here" + e);
+
             logger.error("Cant find All Movie Session By Name With ID  ( in Select in DB ) " + e);
             return null;
         }
@@ -898,7 +906,7 @@ public class Admin implements  AdminDAO{
 
 
         }catch (IOException | SQLException | ClassNotFoundException e) {
-//            logger.info("Exception here" + e);
+
             logger.error("Cant get Description of Movie " + e);
             return null;
         }
@@ -918,7 +926,7 @@ public class Admin implements  AdminDAO{
         PreparedStatement preparedStatement = null;
         try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
 
-            preparedStatement = conn.prepareStatement("SELECT idLanguage FROM language WHERE  Name = ? ");
+            preparedStatement = conn.prepareStatement(GET_ID_MOVIE_FROM_LANGUAGE_TABLE);
 
             preparedStatement.setString(1, movieName);
             preparedStatement.execute();
@@ -937,7 +945,7 @@ public class Admin implements  AdminDAO{
 
 
 
-            preparedStatement = conn.prepareStatement("SELECT  TimeStart,TimeEnd,SessionDay,Status FROM session Where idMovie = ?");
+            preparedStatement = conn.prepareStatement(GET_INFO_TIME_AND_DATE_AND_STATUS_ABOUT_SESSION);
 
 
             preparedStatement.setInt(1,result);
@@ -967,7 +975,7 @@ public class Admin implements  AdminDAO{
 
 
         }catch (IOException | SQLException | ClassNotFoundException e) {
-//            logger.info("Exception here" + e);
+
             logger.error("Cant find All Movie Session By Name String " + e);
             return null;
         }
@@ -988,7 +996,7 @@ public class Admin implements  AdminDAO{
         try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
 
 //            System.out.println("conn + " +conn);
-            preparedStatement = conn.prepareStatement("SELECT CountSeat From session WHERE SessionDay = ? AND TimeStart = ?");
+            preparedStatement = conn.prepareStatement(GET_COUNTSEAT_FROM_SESSION_WHERE_SESSIONDAY_AND_TIMESTART);
             preparedStatement.setString(1,day);
             preparedStatement.setString(2,timeStart);
 
@@ -1008,13 +1016,14 @@ public class Admin implements  AdminDAO{
 
 
         }catch (IOException | SQLException | ClassNotFoundException e) {
-//            logger.info("Exception here" + e);
-//            logger.error("Cant get Count Seats For Session " + e);
+
+            logger.error("Cant get Count Seats For Session " + e);
             return 1;
         }
 
 
     }
+
 
 
 
@@ -1027,7 +1036,7 @@ public class Admin implements  AdminDAO{
         try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
 
 //            System.out.println("conn + " +conn);
-            preparedStatement = conn.prepareStatement("Select idUser FROM user WHERE NickName = ?");
+            preparedStatement = conn.prepareStatement(GET_USERID_WHERE_NAME);
 
             preparedStatement.setString(1,nickName);
             preparedStatement.execute();
@@ -1042,7 +1051,7 @@ public class Admin implements  AdminDAO{
             int idUser = resultSet.getInt(1);
 
 
-            preparedStatement = conn.prepareStatement("Select idMovie,Cost FROM session WHERE TimeStart = ? AND SessionDay = ?");
+            preparedStatement = conn.prepareStatement(GET_IDMOVIE_AND_COST_FROM_SESSION_WHERE_TIMESTART_AND_SESSIONDAY);
 
             preparedStatement.setString(1,timeS);
             preparedStatement.setString(2,day);
@@ -1089,7 +1098,7 @@ public class Admin implements  AdminDAO{
             return true;
 
         }catch (IOException | SQLException | ClassNotFoundException e) {
-//            logger.info("Exception here" + e);
+
             logger.error("Cant add Order To User " + e);
             return false;
         }
@@ -1171,8 +1180,8 @@ public class Admin implements  AdminDAO{
 
 
         }catch (IOException | SQLException | ClassNotFoundException e) {
-//            logger.info("Exception here" + e);
-//            logger.error("Cant get Count Seats For Session " + e);
+
+            logger.error("Cant get Count Seats For Session " + e);
             return null;
         }
 
@@ -1205,8 +1214,8 @@ public class Admin implements  AdminDAO{
 
 
         } catch (IOException | SQLException | ClassNotFoundException e) {
-//            logger.info("Exception here" + e);
-//            logger.error("Cant get Count Seats For Session " + e);
+
+            logger.error("Cant get Count Seats For Session " + e);
             return -1;
         }
     }
@@ -1237,7 +1246,7 @@ public class Admin implements  AdminDAO{
 
 
         } catch (IOException | SQLException | ClassNotFoundException e) {
-//            logger.info("Exception here" + e);
+
             logger.error("Cant get max Id number of Session " + e);
             return -1;
         }
@@ -1300,7 +1309,7 @@ public class Admin implements  AdminDAO{
 
 
         } catch (IOException | SQLException | ClassNotFoundException e) {
-//            logger.info("Exception here" + e);
+
             logger.error("Cant get Info About Session And Movies " + e);
             return null;
         }
@@ -1338,7 +1347,7 @@ public class Admin implements  AdminDAO{
 
 
         } catch (IOException | SQLException | ClassNotFoundException e) {
-//            logger.info("Exception here" + e);
+
             logger.error("Cant get Role By Name " + e);
             return null;
         }

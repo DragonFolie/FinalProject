@@ -10,6 +10,19 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.Properties;
 
+
+
+/**
+ *
+ * This class make  redirect to class and method where are located
+ * @author DragonFolie
+ *
+ *
+ * The actions in the method match their name
+ *
+ **/
+
+
 public class DB_ManagerDAO implements InterfaceController {
 
 
@@ -22,15 +35,6 @@ public class DB_ManagerDAO implements InterfaceController {
 
 
 
-//    public static void main(String[] args) throws SQLException, IOException, ClassNotFoundException {
-////
-//        DB_ManagerDAO dbManager = new DB_ManagerDAO();
-//        dbManager.testConnection();
-//
-//
-//
-//
-//    }
 
 
 
