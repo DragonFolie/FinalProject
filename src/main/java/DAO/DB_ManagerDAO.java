@@ -309,6 +309,15 @@ public class DB_ManagerDAO implements InterfaceController {
     }
 
 
+    public int getIdUserByNickName(String nickNameUser){
+
+        Admin admin = new Admin();
+        return admin.getIdUserByNickName(nickNameUser);
+
+
+    }
+
+
 
 
 

@@ -1405,7 +1405,7 @@ public class Admin implements  AdminDAO{
         PreparedStatement preparedStatement = null;
         try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
 
-//            System.out.println("conn + " +conn);
+
             preparedStatement = conn.prepareStatement("SELECT idfilmDetail FROM filmdetail WHERE Description = ?");
             preparedStatement.setString(1,descriptionUkr);
             preparedStatement.execute();
@@ -1441,6 +1441,45 @@ public class Admin implements  AdminDAO{
 
             logger.error("Cant get Eng Description Of Movie By Ukr Description " + e);
             return null;
+        }
+    }
+
+
+    public int getIdUserByNickName(String nickNameUser){
+
+
+        UsersManager usersManager = new UsersManager();
+        int result = 0;
+
+        PreparedStatement preparedStatement = null;
+        try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
+
+
+            preparedStatement = conn.prepareStatement("SELECT idUser FROM user WHERE NickName = ?");
+            preparedStatement.setString(1,nickNameUser);
+            preparedStatement.execute();
+
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()){
+                result  = resultSet.getInt(1);
+            }
+
+
+
+
+
+
+
+
+            return result;
+
+
+        } catch (IOException | SQLException | ClassNotFoundException e) {
+
+            logger.error("Cant get Id User By NickName " + e);
+            return -1;
         }
     }
 

@@ -963,4 +963,9 @@ Stacktrace:
   2021-10-04 03:15:11 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
   2021-10-04 03:18:12 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
   2021-10-04 03:19:02 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
+  2021-10-04 03:49:13 INFO  LogoutServlet:64 - Logging user: admin   Role: 2   Language: null
+  2021-10-04 03:56:27 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
+  2021-10-04 04:10:54 INFO  LogoutServlet:32 - Successfully logged out user: admin   Role : 2
+  2021-10-04 04:10:57 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
+  2021-10-04 04:29:37 INFO  LogoutServlet:64 - Logging user: admin   Role: 2   Language: null
   

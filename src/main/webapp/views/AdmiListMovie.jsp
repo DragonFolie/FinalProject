@@ -167,18 +167,18 @@
               System.out.println("Req:" + requesValue);
               if (requesValue == null){
 
-                  System.out.println("Req2:" + requesValue);
+//                  System.out.println("Req2:" + requesValue);
                   allAboutSessionInfo = db_managerDAO.getInfoAboutSessionAndMovies(step,0);
 
               }
 
               if (requesValue != null){
 
-                  System.out.println("Req3:" + requesValue);
+//                  System.out.println("Req3:" + requesValue);
 
                   int requestNumberPage = Integer.parseInt(requesValue) ;
 
-                  System.out.println("Number:  " + requestNumberPage);
+//                  System.out.println("Number:  " + requestNumberPage);
 
                   allAboutSessionInfo = db_managerDAO.getInfoAboutSessionAndMovies(step,(requestNumberPage*step));
 
@@ -195,7 +195,7 @@
 
                 Matcher m = Pattern.compile(regex).matcher(allAboutSessionInfo.get(i).toString());
 
-                System.out.println("Info: " + allAboutSessionInfo.get(i));
+//                System.out.println("Info: " + allAboutSessionInfo.get(i));
 
 
 
