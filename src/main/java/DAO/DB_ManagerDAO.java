@@ -293,6 +293,21 @@ public class DB_ManagerDAO implements InterfaceController {
 
     }
 
+    public boolean updateStatusMovie(String newStatus,String timeStart, String timeEnd, String sessionDay){
+
+        Admin admin = new Admin();
+        return admin.updateStatusMovie(newStatus,timeStart,timeEnd,sessionDay);
+
+    }
+
+
+    public String getEngDescriptionOfMovieByUkrDescription(String descriptionUkr){
+
+        Admin admin = new Admin();
+        return admin.getEngDescriptionOfMovieByUkrDescription(descriptionUkr);
+
+    }
+
 
 
 

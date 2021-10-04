@@ -16,7 +16,7 @@ import static org.mockito.Mockito.*;
 public class AdminListMovieServletTest {
 
 
-    private static final String PATH = "views/AdminListMovie.jsp";
+    private static final String PATH = "/adminlist";
 
 
     @Test(expected = NullPointerException.class)

@@ -42,6 +42,7 @@ public class Admin implements  AdminDAO{
     private static final String  GET_COUNTSEAT_FROM_SESSION_WHERE_SESSIONDAY_AND_TIMESTART = "SELECT CountSeat From session WHERE SessionDay = ? AND TimeStart = ?";
     private static final String GET_USERID_WHERE_NAME = "Select idUser FROM user WHERE NickName = ?" ;
     private static final String  GET_IDMOVIE_AND_COST_FROM_SESSION_WHERE_TIMESTART_AND_SESSIONDAY = "Select idMovie,Cost FROM session WHERE TimeStart = ? AND SessionDay = ?";
+    private static final String UPDATE_MOVIE_STATUS = "s";
 
 
 
@@ -1355,6 +1356,94 @@ public class Admin implements  AdminDAO{
             return null;
         }
     }
+
+
+    public boolean updateStatusMovie(String newStatus,String timeStart, String timeEnd, String sessionDay){
+
+
+        UsersManager usersManager = new UsersManager();
+        String role = null;
+
+        PreparedStatement preparedStatement = null;
+        try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
+
+//            System.out.println("conn + " +conn);
+            preparedStatement = conn.prepareStatement("UPDATE session SET Status = ? WHERE TimeStart = ? AND TimeEnd = ? AND SessionDay  = ?");
+
+            preparedStatement.setString(1,newStatus);
+            preparedStatement.setString(2,timeStart);
+            preparedStatement.setString(3,timeEnd);
+            preparedStatement.setString(4,sessionDay);
+
+            preparedStatement.execute();
+
+
+
+
+
+
+            return true;
+
+
+        } catch (IOException | SQLException | ClassNotFoundException e) {
+
+            logger.error("Cant update Status Movie " + e);
+            return false;
+        }
+    }
+
+
+
+
+    public String getEngDescriptionOfMovieByUkrDescription(String descriptionUkr){
+
+
+        UsersManager usersManager = new UsersManager();
+        int id = 0;
+        String result = null;
+
+        PreparedStatement preparedStatement = null;
+        try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
+
+//            System.out.println("conn + " +conn);
+            preparedStatement = conn.prepareStatement("SELECT idfilmDetail FROM filmdetail WHERE Description = ?");
+            preparedStatement.setString(1,descriptionUkr);
+            preparedStatement.execute();
+
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()){
+                 id = resultSet.getInt(1);
+            }
+
+
+            preparedStatement = conn.prepareStatement("SELECT Description FROM language WHERE filmDetail_idfilmDetail = ?");
+            preparedStatement.setInt(1,id);
+            preparedStatement.execute();
+
+            ResultSet resultSet1 = preparedStatement.executeQuery();
+
+            while (resultSet1.next()){
+
+                result = resultSet1.getString(1);
+            }
+
+
+
+
+
+
+            return result;
+
+
+        } catch (IOException | SQLException | ClassNotFoundException e) {
+
+            logger.error("Cant get Eng Description Of Movie By Ukr Description " + e);
+            return null;
+        }
+    }
+
 
 
 

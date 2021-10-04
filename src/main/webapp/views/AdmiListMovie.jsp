@@ -195,6 +195,8 @@
 
                 Matcher m = Pattern.compile(regex).matcher(allAboutSessionInfo.get(i).toString());
 
+                System.out.println("Info: " + allAboutSessionInfo.get(i));
+
 
 
 
@@ -221,6 +223,8 @@
 //
                 }
 
+                String ukrDescription = db_managerDAO4.getEngDescriptionOfMovieByUkrDescription(description);
+
                 uniqueSeats = db_managerDAO3.getUniqueSeatBySession(day,timeS);
 
                 out.print("<tr scope=\"row\">\n" +
@@ -237,7 +241,7 @@
                 out.print("              </td>\n" +
                         "              <td><a href=\"#\">");out.print( allMovieName.get(i) ); out.print(" </a></td>\n" +
                         "              <td>\n");
-                out.print(description  );
+                out.print( ukrDescription  );
 
                 out.print( "<small class=\"d-block\"> </small>\n" +
                         "              </td>\n" +

@@ -13,7 +13,7 @@ import static org.mockito.Mockito.*;
 
 public class TestError500ServletTest {
 
-    private static final String PATH = "views/registration.jsp";
+    private static final String PATH = "/registration";
 
     @Test(expected = NullPointerException.class)
     public void doGet() throws ServletException, IOException {

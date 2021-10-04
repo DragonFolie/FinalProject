@@ -77,125 +77,94 @@
 
 
 
-
-
-      .header {
-        margin-bottom: 200px;
-        font-size: 15px;
-        text-decoration: none;
-      }
-      .header_container {
-        width: auto;
-        height: 52px;
-        background-color: black;
-        display: grid;
-        grid-template-columns: 30% 15% 55%;
-      }
-      @media (max-width: 1100px) {
-        .header_container_empty {
-          display: none;
-        }
-        .header_container {
-          display: grid;
-          grid-template-columns: 25% 75%;
-        }
-      }
-      .header_container > div.header_logo {
-      }
-      .header_logo_image {
-        width: 186px;
-        height: 62px;
-        padding-left: 35%;
-      }
-
-      .header_container > div.header_container_empty {
-      }
-      .header_container > div.header_nav {
-        padding-top: 15px;
-        text-align: center;
-        vertical-align: middle;
-      }
-      .header_inner_ul {
-        vertical-align: middle;
-
-        margin: 0; /* Обнуляем значение отступов */
-        padding: 4px; /* Значение полей */
-      }
-
-      .header_inner_ul a {
-        color: #666;
-        text-decoration: none;
-      }
-      .header_inner_ul a:hover {
-        color: white;
-        transition: 0.5s;
-      }
-
-      .header_inner_ul li {fon
-        vertical-align: middle;
-        display: inline; /* Отображать как строчный элемент */
-        margin-right: 20px; /* Отступ слева */
-        color: #666;
-        padding: 3px; /* Поля вокруг текста */
-      }
-
-      .header {
-      }
-      .header_container {
-        border-bottom: 1px solid #171717;
-
+      /*  HEADER  PC */ /*  HEADER  PC */ /*  HEADER  PC */ /*  HEADER  PC */ /*  HEADER  PC */ /*  HEADER  PC */
+      .header{
         width: 100%;
-        height: 62px;
+        height: 80px;
+        display: inline-block;
         background-color: black;
+        color: #666666;
+
+
+
+
+      }
+
+
+      .inner_header{
+        text-align:center;
+        vertical-align: middle;
         display: grid;
-        grid-template-columns: 30% 15% 55%;
-      }
-      @media (max-width: 1100px) {
-        .header_container_empty {
-          display: none;
-        }
-        .header_container {
-          display: grid;
-          grid-template-columns: 25% 75%;
-        }
-      }
-      .header_container > div.header_logo {
-      }
-      .header_logo_image {
-        width: 186px;
-        height: 62px;
-        padding-left: 35%;
-      }
+        grid-template-columns: 33% 2% 65%;
 
-      .header_container > div.header_container_empty {
-      }
-      .header_container > div.header_nav {
-        padding-top: 15px;
-        text-align: center;
-        vertical-align: middle;
-      }
-      .header_inner_ul {
-        vertical-align: middle;
 
-        margin: 0; /* Обнуляем значение отступов */
-        padding: 4px; /* Значение полей */
       }
+      .inner_header > div.logo{
+        padding-left: 50px;
+        font-size: 32px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
 
-      .header_inner_ul a {
+
+
+      }
+      .inner_header > div.logo a{
         color: #666;
       }
-      .header_inner_ul a:hover {
+      .inner_header > div.logo a:hover{
         color: white;
         transition: 0.5s;
       }
 
-      .header_inner_ul li {
-        vertical-align: middle;
-        display: inline; /* Отображать как строчный элемент */
-        margin-right: 20px; /* Отступ слева */
-        color: #666;
-        padding: 3px; /* Поля вокруг текста */
+      .inner_header > div.empty{
+        display: inline-block;
+
       }
+      .inner_header > div.navigation{
+        color: #666666;
+
+        font-size: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+      }
+      .inner_header > div.navigation li{
+        display: inline;
+        padding: 10px;
+
+      }
+      .inner_header > div.navigation li:hover{
+        color:white;
+        transition: 0.5s;
+      }
+      .inner_header > div.navigation a{
+        color: #666;
+      }
+      .inner_header > div.navigation a:hover{
+        color: white;
+        transition: 0.5s;
+      }
+
+
+
+
+      .logo_container_mobile_menu{
+        display: none;
+      }
+
+
+
+
+
+
+
+      <%@include file="css/long_dark_news.css" %>
+
+
+
 
 
 
@@ -206,7 +175,7 @@
 
     </style>
     <body>
-    <nav class="header">
+    <nav class="header" style="margin-bottom: 250px">
       <div class="header_container">
         <div class="logo">
           <img src="views/img/logo_v2.jpg"  alt="logo+Hinterland" href="http://localhost:8080">
@@ -217,7 +186,7 @@
 
         </div>
         <div class="header_nav">
-          <ul>
+          <ul class="header_inner_ul">
             <li >
               <a onclick="location.href='/movies'">MOVIES</a>
 
@@ -229,10 +198,10 @@
               <a href="https://www.facebook.com/"  target="_blank" >COMMUNITY</a>
             </li>
             <li>
-              <a href="shop-right-sidebar.jsp"   >SHOP</a>
+              <a href="views/shop-right-sidebar.jsp"   >SHOP</a>
             </li>
             <li>
-              <a href="contact.jsp" target="_blank"  >SUPPORT</a>
+              <a href="views/contact.jsp" target="_blank"  >SUPPORT</a>
             </li>
 
 
@@ -249,10 +218,6 @@
                   out.print(
                           "<li>\n" +
                                   "  Hello, "+name_user+" Welcome to <a onclick=\"location.href='/admin'\"  >Admin Page</a>" +
-                                  " </li>\n"+
-
-                                  "<li>\n" +
-                                  "  <button class=\"w3-btn w3-hover-light-blue w3-round-large\" style=\"outline: none;   border: 0;  background: transparent; color: white ; font-size: 15px \" onclick=\"location.href='/logout'\">Logout </button>" +
                                   " </li>\n"
 
                   );
@@ -262,13 +227,8 @@
 
                   out.print(
                           "<li>\n" +
-                                  "  Hello, "+name_user+" <a onclick=\"location.href='/userProfile'\"  >Profile</a>\n" +
+                                  "  Hello, "+name_user+" Welcome to <a onclick=\"location.href='/userProfile'\"  >Profile</a>\n" +
                                   " </li>\n"+
-
-                                  "<li>\n" +
-                                  "  <button class=\"w3-btn w3-hover-light-blue w3-round-large\" onclick=\"location.href='/logout'\">Logout </button>" +
-                                  " </li>\n"+
-
                                   "<li>\n" +
                                   "  <button class=\"w3-btn w3-hover-light-blue w3-round-large\" style=\"outline: none;   border: 0;  background: transparent; color: white ; font-size: 15px \" onclick=\"location.href='/logout'\">Logout </button>" +
                                   " </li>\n"
@@ -303,6 +263,36 @@
 
 
             %>
+            <li>
+              <a>
+
+
+
+                <!-- Search field -->
+
+
+
+                <button id="searchButton" class="button_search_button" onclick="OnSearchButtonClick()">
+                                        <span class="noselect">
+                                            <img src="views/img/loupe.png" alt="">
+                                        </span>
+                  <div id="circle"></div>
+                </button>
+
+
+
+                <input class="search_field" placeholder="Search text" type="text" size="15" id="searchField" onkeydown="OnSearchSubmit(this, this.value)">
+
+
+
+
+
+
+
+
+
+              </a>
+            </li>
           </ul>
         </div>
 

@@ -87,7 +87,7 @@ public class AdminTest {
 
         String result = admin.getFolderURL("test");
 
-        Assert.assertEquals("Test" , result);
+        Assert.assertEquals("test" , result);
 
 
 
@@ -172,7 +172,7 @@ public class AdminTest {
     @Test
     public void getDescriptionMovieShouldReturnTrue() {
 
-        String result = admin.getDescriptionMovie("Test");
+        String result = admin.getDescriptionMovie("test");
 
         Assert.assertEquals("test",result);
 

@@ -129,8 +129,8 @@
 
 				}
 				uniqueSeats = db_managerDAO3.getUniqueSeatBySession(date,timeS);
-				System.out.println("unisize:" +uniqueSeats.size());
-				System.out.println("uni:" + uniqueSeats);
+//				System.out.println("unisize:" +uniqueSeats.size());
+//				System.out.println("uni:" + uniqueSeats);
 				System.out.println("--------------------");
 //				System.out.println(uniqueSeats + " + " + date);
 

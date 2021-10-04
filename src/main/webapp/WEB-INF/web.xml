@@ -28,10 +28,10 @@
     </error-page>
 
 
-<!--    <error-page>-->
-<!--        <error-code>500</error-code>-->
-<!--        <location>/500.jsp</location>-->
-<!--    </error-page>-->
+    <error-page>
+        <error-code>500</error-code>
+        <location>/500.jsp</location>
+    </error-page>
 
 
     <!-- add servlet -->
@@ -164,6 +164,21 @@
         <servlet-name>adminlist</servlet-name>
         <url-pattern>/adminlist</url-pattern>
     </servlet-mapping>
+
+
+
+
+    <!-- Update  Status of movies servlet -->
+    <servlet>
+        <servlet-name>updateStatus</servlet-name>
+        <servlet-class>servlets.UpdateMovieStatus</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>updateStatus</servlet-name>
+        <url-pattern>/updateStatus</url-pattern>
+    </servlet-mapping>
+
 
 
 
