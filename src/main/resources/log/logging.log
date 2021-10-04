@@ -968,4 +968,45 @@ Stacktrace:
   2021-10-04 04:10:54 INFO  LogoutServlet:32 - Successfully logged out user: admin   Role : 2
   2021-10-04 04:10:57 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
   2021-10-04 04:29:37 INFO  LogoutServlet:64 - Logging user: admin   Role: 2   Language: null
+  2021-10-04 18:32:27 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
+  2021-10-04 18:32:36 INFO  LogoutServlet:32 - Successfully logged out user: test   Role : 1
+  2021-10-04 18:32:41 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
+  2021-10-04 18:32:47 INFO  LogoutServlet:64 - Logging user: admin   Role: 2   Language: null
+  2021-10-04 20:03:10 INFO  LogoutServlet:64 - Logging user: test   Role: 1   Language: null
+  2021-10-04 20:03:12 ERROR AdminServlet:60 - org.apache.jasper.JasperException: Произошла ошибка при обработке [/views/user_profile.jsp] в строке [3469]
+
+3466:                                             ArrayList orderInfo= new ArrayList();  // Black Hawk down;33;4;05:10 - 08:10
+3467: 
+3468:                                             int id =  db_managerDAO.getIdUserByNickName(name_user);
+3469:                                             orderInfo = db_managerDAO2.getAllUserOrder(id);
+3470: 
+3471:                                             String movieName = null;
+3472:                                             String price = null;
+
+
+Stacktrace:
+  2021-10-04 20:03:56 ERROR AdminServlet:60 - org.apache.jasper.JasperException: Произошла ошибка при обработке [/views/user_profile.jsp] в строке [3469]
+
+3466:                                             ArrayList orderInfo= new ArrayList();  // Black Hawk down;33;4;05:10 - 08:10
+3467: 
+3468:                                             int id =  db_managerDAO.getIdUserByNickName(name_user);
+3469:                                             orderInfo = db_managerDAO2.getAllUserOrder(id);
+3470: 
+3471:                                             String movieName = null;
+3472:                                             String price = null;
+
+
+Stacktrace:
+  2021-10-04 20:05:45 ERROR AdminServlet:60 - org.apache.jasper.JasperException: Произошла ошибка при обработке [/views/user_profile.jsp] в строке [3469]
+
+3466:                                             ArrayList orderInfo= new ArrayList();  // Black Hawk down;33;4;05:10 - 08:10
+3467: 
+3468:                                             int id =  db_managerDAO.getIdUserByNickName(name_user);
+3469:                                             orderInfo = db_managerDAO2.getAllUserOrder(id);
+3470: 
+3471:                                             String movieName = null;
+3472:                                             String price = null;
+
+
+Stacktrace:
   

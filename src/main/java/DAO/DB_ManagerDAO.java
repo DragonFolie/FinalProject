@@ -317,6 +317,13 @@ public class DB_ManagerDAO implements InterfaceController {
 
     }
 
+    public ArrayList getAllUserOrder(int idUser){
+
+        Admin admin = new Admin();
+        return admin.getAllUserOrder(idUser);
+
+    }
+
 
 
 

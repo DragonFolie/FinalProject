@@ -1449,6 +1449,7 @@ public class Admin implements  AdminDAO{
 
 
         UsersManager usersManager = new UsersManager();
+
         int result = 0;
 
         PreparedStatement preparedStatement = null;
@@ -1484,6 +1485,43 @@ public class Admin implements  AdminDAO{
     }
 
 
+    public ArrayList getAllUserOrder(int idUser){
+
+
+        UsersManager usersManager = new UsersManager();
+        int result = 0;
+        ArrayList arrayList = new ArrayList();
+
+        PreparedStatement preparedStatement = null;
+        try (Connection conn = usersManager.getConnection(usersManager.getFILANAME())) {
+
+
+            preparedStatement = conn.prepareStatement("SELECT MovieName,Price,NumberOfSeat,TimeStart,TimeEnd,OrderDate FROM" +
+                    " `order` WHERE user_idUser = ?");
+            preparedStatement.setInt(1,idUser);
+            preparedStatement.execute();
+
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()){
+                StringBuilder sb = new StringBuilder();
+                sb.append(resultSet.getString(1)  )
+                        .append(";")
+                .append(resultSet.getString(2)  )
+                        .append(";")
+                .append(resultSet.getString(3)  )
+                        .append(";")
+                .append(resultSet.getString(4)  )
+                        .append(" - ")
+                .append(resultSet.getString(5) )
+                        .append(";")
+                        .append(resultSet.getString(6) );
+
+
+                arrayList.add(sb.toString());
+//                System.out.println(sb.toString());
+            }
 
 
 
@@ -1493,25 +1531,48 @@ public class Admin implements  AdminDAO{
 
 
 
+
+            return arrayList;
+
+
+        } catch (IOException | SQLException | ClassNotFoundException e) {
+
+            logger.error("Cant get Id User By NickName " + e);
+            return null;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
 //
 //
 //
 //
-//    public static void main(String[] args) {
-//        Admin admin = new Admin();
-//        ArrayList arrayList= new ArrayList();
-//
-//
-//        arrayList =  admin.findAllMovieUkrName();
-//
-//
-//
-//
-//        System.out.println(arrayList);
-//
-//
-//
-//    }
+    public static void main(String[] args) {
+        Admin admin = new Admin();
+
+        ArrayList arrayList= new ArrayList();
+
+
+        arrayList =  admin.getAllUserOrder(2);
+
+
+
+
+
+        System.out.println(arrayList);
+
+
+
+    }
 
 
 

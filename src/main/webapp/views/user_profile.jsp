@@ -1,4 +1,7 @@
 <%@ page import="DAO.DB_ManagerDAO" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.regex.Matcher" %>
+<%@ page import="java.util.regex.Pattern" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -3450,34 +3453,91 @@
 
 
 
-                    <div class="col-md-6">
-                        <div class="panel">
-                            <div class="panel-body">
-                                <div class="bio-chart">
-                                    <div style="display:inline;width:100px;height:100px;"><canvas width="100" height="100px"></canvas>
+
                                         <%
 
                                             DB_ManagerDAO db_managerDAO = new DB_ManagerDAO();
+                                            DB_ManagerDAO db_managerDAO2 = new DB_ManagerDAO();
+                                            String regex = "(.+);(.+);(.+);(.+);(.+)";
+                                            ArrayList orderInfo= new ArrayList();  // Black Hawk down;33;4;05:10 - 08:10
+
+                                            int id =  db_managerDAO.getIdUserByNickName(name_user);
+                                            orderInfo = db_managerDAO2.getAllUserOrder(id);
+
+                                            String movieName = null;
+                                            String price = null;
+                                            String numberOfSeat = null;
+                                            String time = null;
+                                            String day = null;
+
+
+
+
+                                            for (int i = 0; i < orderInfo.size(); i++) {
+
+
+                                                Matcher m = Pattern.compile(regex).matcher(orderInfo.get(i).toString());
+
+                                                System.out.println("ORDERINFO:" + orderInfo.get(i).toString() );
+                                                while (m.find()) {
+
+                                                    System.out.println("here");
+
+                                                    movieName = m.group(1);
+                                                    price = m.group(2);
+                                                    numberOfSeat = m.group(3);
+                                                    time = m.group(4);
+                                                    day = m.group(5);
+
+                                                    System.out.println(movieName+ " - " + price + " - " +numberOfSeat+ " - " + time+ " - " +day );
+
+                                                }
+
+                                                System.out.println(movieName+ " - " + price + " - " +numberOfSeat+ " - " + time+ " - " +day );
+
+
+                                                out.print("<div class=\"col-md-6\">\n" +
+                                                        "                        <div class=\"panel\">\n" +
+                                                        "                            <div class=\"panel-body\">\n" +
+                                                        "                                <div class=\"bio-chart\">\n" +
+                                                        "                                    <div style=\"display:inline;width:100px;height:100px;\"><canvas width=\"100\" height=\"100px\"></canvas>");
+
+                                                out.print("<input class=\"knob\" data-width=\"100\" data-height=\"100\" data-displayprevious=\"true\" data-thickness=\".2\" " +
+                                                        "data-fgcolor=\"#e06b7d\" data-bgcolor=\"#e8e8e8\" style=\"width: 54px; height: 33px; position: absolute; vertical-align: middle; margin-top: 33px; margin-left: -77px; border: 0px; font-weight: bold; font-style: normal; font-variant: normal; font-stretch: normal; font-size: 20px; line-height: normal; font-family: Arial; text-align: center; color: rgb(224, 107, 125); padding: 0px; -webkit-appearance: none; background: none;\"> ");
 
 
 
 
 
 
-                                        out.print("<input class=\"knob\" data-width=\"100\" data-height=\"100\" data-displayprevious=\"true\" data-thickness=\".2\" value=\"" + 99 + "\" data-fgcolor=\"#e06b7d\" data-bgcolor=\"#e8e8e8\" style=\"width: 54px; height: 33px; position: absolute; vertical-align: middle; margin-top: 33px; margin-left: -77px; border: 0px; font-weight: bold; font-style: normal; font-variant: normal; font-stretch: normal; font-size: 20px; line-height: normal; font-family: Arial; text-align: center; color: rgb(224, 107, 125); padding: 0px; -webkit-appearance: none; background: none;\"> ");
 
 
-                                        %>
-                                    </div>
-                                </div>
-                                <div class="bio-desk">
-                                    <h4 class="red">Envato Website</h4>
-                                    <p>Started : 15 July</p>
-                                    <p>Deadline : 15 August</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+
+
+
+
+
+
+                                                out.print("</div></div> " );
+
+
+                                                out.print("<div class=\"bio-desk\">\n" +
+                                                    "                                    <h4 class=\"red\">"+ movieName+"</h4>\n" +
+                                                    "                                    <p>Price : " + price +"</p>\n" +
+                                                    "                                    <p>Number of seat : " + numberOfSeat + "</p>\n" +
+                                                        "<p>When? : " + time + " - "+  day  + "</p>" +
+                                                    "" +
+                                                    " </div>");
+
+                                                out.print("</div>\n" +
+                                                    "                        </div>\n" +
+                                                    "                    </div>");
+
+
+                                    }
+                                %>
+
 
 
 
